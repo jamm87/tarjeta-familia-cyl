@@ -101,7 +101,7 @@ console.log("\nBuscador");
   const titulo = await pagina.textContent("#titulo-resultados");
   ok(/comercios .*código postal 05200 \(Arévalo\)/.test(titulo), `Búsqueda por CP desde la URL: «${titulo}»`);
   const primero = await pagina.textContent(".lista-establecimientos li:first-child .distancia");
-  ok(primero === "En esta localidad", `El primer resultado está en la localidad buscada («${primero}»)`);
+  ok(primero === "En este código postal", `El primer resultado está en el código postal buscado («${primero}»)`);
 
   // Sugerencias y selección solo con teclado.
   await pagina.goto(BASE + "buscar/index.html");
@@ -136,6 +136,26 @@ console.log("\nBuscador");
     await pagina.click("#mas");
     ok(await pagina.evaluate(() => document.activeElement.matches(".lista-establecimientos li:nth-child(21) article")), "«Mostrar más» lleva el foco al primer resultado nuevo");
   }
+
+  // Código postal sin comercios: se muestran los más cercanos (09110 = Castrojeriz).
+  await pagina.goto(BASE + "buscar/index.html?q=09110&km=5");
+  const tituloCP = await pagina.textContent("#titulo-resultados");
+  ok(/más cercanos al código postal 09110 \(Castrojeriz\)/.test(tituloCP), `CP sin comercios cerca muestra los más cercanos: «${tituloCP}»`);
+  ok(await pagina.$$eval(".lista-establecimientos > li", (els) => els.length) === 10, "Se muestran los 10 más cercanos");
+
+  // Código postal de fuera de Castilla y León.
+  await pagina.goto(BASE + "buscar/index.html?q=28001");
+  ok(/no es de Castilla y León/.test(await pagina.textContent("#titulo-resultados")), "Un CP de fuera de Castilla y León da un mensaje claro");
+
+  // Municipio: incluye sus pedanías (Trobajo del Camino es de San Andrés del Rabanedo).
+  await pagina.goto(BASE + "buscar/index.html?q=San%20Andr%C3%A9s%20del%20Rabanedo");
+  const pedania = await pagina.$$eval(".establecimiento", (els) => els.filter((e) => /Trobajo del Camino/.test(e.textContent)).map((e) => e.querySelector(".distancia").textContent));
+  ok(pedania.length > 0 && pedania.every((t) => t === "En este municipio"), `Buscar un municipio incluye sus pedanías (${pedania.length} en Trobajo del Camino)`);
+
+  // El texto libre también busca por tipo de comercio.
+  await pagina.goto(BASE + "buscar/index.html?q=Ar%C3%A9valo&texto=zapater%C3%ADa&km=50");
+  const tipos = await pagina.$$eval(".etiqueta-cat", (els) => [...new Set(els.map((e) => e.textContent))]);
+  ok(tipos.length === 1 && tipos[0] === "Calzado", `«zapatería» en el texto libre encuentra calzado (${tipos.join(", ")})`);
 
   // Localidad inexistente.
   await pagina.fill("#q", "Xyzzyville");

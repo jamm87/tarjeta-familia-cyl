@@ -15,7 +15,7 @@
         <form class="panel-busqueda" id="form-busqueda" role="search" aria-label="Buscar comercios colaboradores">
           <div class="donde">
             <div class="campo combo">
-              <label for="q">Localidad o código postal</label>
+              <label for="q">Localidad, municipio o código postal</label>
               <input type="text" id="q" name="q" autocomplete="off" spellcheck="false"
                      role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerencias"
                      aria-describedby="ayuda-q" placeholder="Por ejemplo: Arévalo o 05200">
@@ -46,8 +46,8 @@
               </select>
             </div>
             <div class="campo">
-              <label for="texto">Nombre del comercio o calle</label>
-              <input type="search" id="texto" name="texto" autocomplete="off" placeholder="Opcional">
+              <label for="texto">Nombre, calle o tipo de comercio</label>
+              <input type="search" id="texto" name="texto" autocomplete="off" placeholder="Opcional. Por ejemplo: farmacia">
             </div>
           </div>
         </form>
@@ -62,7 +62,7 @@
           </div>
           <p class="visualmente-oculto" role="status" aria-live="polite" id="anuncio"></p>
           <div id="inicio-busqueda">
-            <p>Escribe tu localidad o código postal, o pulsa «Usar mi ubicación». También puedes ver los comercios de una provincia:</p>
+            <p>Escribe tu localidad, municipio o código postal, o pulsa «Usar mi ubicación». Aunque en tu zona no haya comercios colaboradores, te mostraremos los más cercanos. También puedes ver los comercios de una provincia:</p>
             <ul class="provincias-rapidas" id="provincias"></ul>
           </div>
           <div id="nota-resultados"></div>

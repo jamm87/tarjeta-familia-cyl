@@ -35,36 +35,7 @@
    "cp": "42005"
   }
  ],
- "sinCoordenadas": [
-  {
-   "id": 474,
-   "nombre": "FARMACIA AMOR MARIA LOPEZ GONZALEZ",
-   "localidad": "Barrientos de la Vega",
-   "cp": "24394",
-   "provincia": "León"
-  },
-  {
-   "id": 527,
-   "nombre": "FARMACIA JOSE LUIS MORENO CARRILLO",
-   "localidad": "Miñambres de la Valduerna",
-   "cp": "24765",
-   "provincia": "León"
-  },
-  {
-   "id": 716,
-   "nombre": "FARMACIA RAFAEL LUCAS SÁNCHEZ",
-   "localidad": "Cascon de la Nava",
-   "cp": "34170",
-   "provincia": "Palencia"
-  },
-  {
-   "id": 737,
-   "nombre": "FARMACIA AUREA SALVADOR",
-   "localidad": "Quintanilla del Puente",
-   "cp": "34250",
-   "provincia": "Palencia"
-  }
- ],
+ "sinCoordenadas": [],
  "nombresCorregidos": {
   "Avila": "Ávila",
   "Villaverde de Iscar": "Villaverde de Íscar",

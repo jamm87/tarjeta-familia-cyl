@@ -19,6 +19,23 @@ Abre `index.html` en el navegador. Funciona sin servidor. Para una experiencia m
 python3 -m http.server 8080   # y abre http://localhost:8080
 ```
 
+## Publicarlo en GitHub Pages
+
+Es una web estática: no necesita servidor, base de datos ni compilación en GitHub.
+
+1. En GitHub: **Settings → Pages**.
+2. En **Source**, elige **Deploy from a branch**, la rama con el código y la carpeta **/ (root)**, y pulsa **Save**.
+3. En uno o dos minutos estará en `https://<usuario>.github.io/tarjeta-familia-cyl/`. Cada `git push` la actualiza sola.
+
+El fichero `.nojekyll` hace que GitHub sirva los ficheros tal cual. Con el plan gratuito de GitHub, el repositorio tiene que ser público.
+
+### Cómo se gestionan los datos
+
+- **Los datos son ficheros JSON dentro del repositorio** (`data/`). El buscador los carga en el navegador y hace todos los cálculos allí (distancias, filtros), sin servidor. También hay una copia en `.js` para que funcione abriendo los HTML con doble clic.
+- **Para actualizarlos**, se ejecutan los scripts (ver más abajo) con el PDF nuevo y se hace `git push`: GitHub Pages publica la versión nueva.
+- **El mapa** usa Leaflet, que va incluido en `vendor/`, y las teselas públicas de OpenStreetMap, que pide el navegador de quien lo consulta. Es gratuito y no necesita clave. Para un uso oficial con mucho tráfico conviene usar el mapa base del IGN (servicio WMTS gratuito) o un proveedor de teselas propio, porque la política de uso de OpenStreetMap limita el tráfico intenso.
+- **En una versión definitiva**, lo ideal es que la Junta mantenga el listado como datos (una hoja de cálculo o su portal de datos abiertos) y que un proceso automático (por ejemplo, GitHub Actions) regenere `data/` y la web cada vez que cambie.
+
 ## Estructura
 
 | Carpeta / fichero | Contenido |
@@ -27,7 +44,7 @@ python3 -m http.server 8080   # y abre http://localhost:8080
 | `src/paginas/`, `src/parciales/` | Contenido de las páginas y plantilla común |
 | `assets/` | CSS, JavaScript (buscador, formulario, filtro de sectores) e imágenes |
 | `data/establecimientos.json` | 1.623 comercios con categoría y coordenadas (también en `.js` para usar sin servidor) |
-| `data/localidades.json` | 2.285 localidades de Castilla y León con coordenadas, para buscar |
+| `data/localidades.json` | 2.289 localidades, los municipios y los 1.965 códigos postales de Castilla y León, para buscar |
 | `data/sectores.json` | 116 sectores autorizados, agrupados |
 | `data/incidencias-listado.json` | Problemas de calidad encontrados en el PDF oficial |
 | `scripts/` | Extracción de los PDF, geocodificación y generación de páginas |
@@ -61,8 +78,7 @@ En este prototipo las coordenadas son **por localidad**:
 
 - 1.550 comercios, con el punto del núcleo urbano (GeoNames);
 - 68, con el centroide del municipio del IGN;
-- 1, con la media de su código postal;
-- 4 sin situar.
+- 5, con el municipio de su código postal, según la relación oficial del CNIG (`fuentes/codigos-postales-municipios-cnig.csv`).
 
 El modo `--cartociudad` geocodifica cada dirección con el servicio oficial del IGN y guarda una caché en `data/cache-cartociudad.json`. No se ha podido probar contra el servicio real, porque la red del entorno donde se preparó el prototipo no permitía acceder a `www.cartociudad.es`. Revisa el resultado la primera vez que lo ejecutes.
 

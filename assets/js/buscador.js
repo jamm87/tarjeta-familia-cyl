@@ -37,34 +37,45 @@
 
   // ---- Índices ------------------------------------------------------------------------
 
+  // El texto libre busca en el nombre, la dirección y el tipo de comercio (sector).
   const establecimientos = DATOS.establecimientos.map((e) => ({
     ...e,
     claveLocalidad: `${e.provincia}|${normaliza(e.localidad)}`,
-    buscable: normaliza(`${e.nombre} ${e.direccion}`),
+    buscable: normaliza(`${e.nombre} ${e.direccion} ${nombreCategoria[e.categoria]}`),
   }));
-  const comerciosPorLocalidad = {};
-  for (const e of establecimientos) comerciosPorLocalidad[e.claveLocalidad] = (comerciosPorLocalidad[e.claveLocalidad] ?? 0) + 1;
+  const cuenta = (lista, clave) => {
+    const c = {};
+    for (const e of lista) c[clave(e)] = (c[clave(e)] ?? 0) + 1;
+    return c;
+  };
+  const comerciosPorLocalidad = cuenta(establecimientos, (e) => e.claveLocalidad);
+  const comerciosPorMunicipio = cuenta(establecimientos, (e) => e.municipio);
+  const comerciosPorCP = cuenta(establecimientos, (e) => e.cp);
 
-  const localidades = LOC.localidades.map(([nombre, prov, lat, lon]) => {
+  // Municipios (código INE) y códigos postales oficiales (CNIG) de toda Castilla y León.
+  const municipios = Object.fromEntries(Object.entries(LOC.municipios).map(([ine, [nombre, lat, lon]]) =>
+    [ine, { ine, nombre, lat, lon, provincia: LOC.provincias[ine.slice(0, 2)] }]));
+
+  // Una localidad que es cabecera de su municipio busca en todo el municipio (con sus pedanías).
+  const localidades = LOC.localidades.map(([nombre, prov, lat, lon, ine]) => {
     const provincia = LOC.provincias[prov];
     const n = normaliza(nombre);
-    return { tipo: "localidad", nombre, provincia, lat, lon, n, sin: sinArticulo(n), comercios: comerciosPorLocalidad[`${provincia}|${n}`] ?? 0 };
+    const esMunicipio = Boolean(ine && normaliza(municipios[ine]?.nombre ?? "") === n);
+    const comercios = esMunicipio ? comerciosPorMunicipio[ine] ?? 0 : comerciosPorLocalidad[`${provincia}|${n}`] ?? 0;
+    return { tipo: "localidad", nombre, provincia, lat, lon, ine, esMunicipio, n, sin: sinArticulo(n), comercios };
   });
 
-  const codigosPostales = {};
-  for (const e of establecimientos) {
-    if (e.lat == null) continue;
-    const cp = (codigosPostales[e.cp] ??= { tipo: "cp", nombre: e.cp, cp: e.cp, provincia: e.provincia, localidades: new Set(), lat: 0, lon: 0, cuenta: 0 });
-    cp.localidades.add(e.localidad);
-    cp.lat += e.lat;
-    cp.lon += e.lon;
-    cp.cuenta++;
-  }
-  for (const cp of Object.values(codigosPostales)) {
-    cp.lat /= cp.cuenta;
-    cp.lon /= cp.cuenta;
-    cp.descripcion = [...cp.localidades].join(", ");
-  }
+  const codigosPostales = Object.fromEntries(Object.entries(LOC.codigosPostales).map(([cp, ines]) => {
+    const ms = ines.map((i) => municipios[i]);
+    return [cp, {
+      tipo: "cp", nombre: cp, cp, ines,
+      provincia: LOC.provincias[cp.slice(0, 2)],
+      descripcion: ms.map((m) => m.nombre).join(", "),
+      lat: ms.reduce((t, m) => t + m.lat, 0) / ms.length,
+      lon: ms.reduce((t, m) => t + m.lon, 0) / ms.length,
+      comercios: comerciosPorCP[cp] ?? 0,
+    }];
+  }));
 
   function distanciaKm(a, b) {
     const rad = Math.PI / 180;
@@ -97,9 +108,10 @@
   }
 
   function describeLugar(l) {
-    if (l.tipo === "cp") return { principal: l.cp, extra: `${l.descripcion} · ${l.provincia}` };
     const comercios = l.comercios ? ` · ${l.comercios} ${l.comercios === 1 ? "comercio" : "comercios"}` : "";
-    return { principal: l.nombre, extra: `${l.provincia}${comercios}` };
+    if (l.tipo === "cp") return { principal: l.cp, extra: `${l.descripcion} · ${l.provincia}${comercios}` };
+    const municipio = !l.esMunicipio && l.ine && municipios[l.ine] ? ` (municipio de ${municipios[l.ine].nombre})` : "";
+    return { principal: l.nombre, extra: `${l.provincia}${municipio}${comercios}` };
   }
 
   function pintaSugerencias() {
@@ -188,6 +200,7 @@
     const c = normaliza(valor);
     if (!c) return null;
     if (/^\d{5}$/.test(c)) return codigosPostales[c] ?? { tipo: "cp-desconocido", nombre: c };
+    if (/^\d+$/.test(c)) return { tipo: "cp-incompleto", nombre: c };
     const exactas = localidades.filter((l) => l.n === c || l.sin === sinArticulo(c));
     if (exactas.length) return exactas.sort((a, b) => b.comercios - a.comercios)[0];
     const parecidas = buscaLugares(valor, 1);
@@ -280,12 +293,29 @@
   let pagina = 1;
   let resultados = [];
 
+  // Zona del propio origen: la misma localidad, el mismo municipio o el mismo código postal.
+  function zonaDe(e) {
+    if (origen.tipo === "localidad") {
+      if (e.claveLocalidad === `${origen.provincia}|${origen.n}`) return "localidad";
+      if (origen.esMunicipio && e.municipio === origen.ine) return "municipio";
+    }
+    if (origen.tipo === "cp") {
+      if (e.cp === origen.cp) return "cp";
+      if (origen.ines.includes(e.municipio)) return "municipio";
+    }
+    return null;
+  }
+
+  const MAS_CERCANOS = 10;
+  let soloCercanos = false; // no hay nada en el radio: se muestran los más cercanos
+
   function calcula() {
     const cat = selCategoria.value;
     const radio = Number(selRadio.value);
     const palabras = normaliza(texto.value).split(" ").filter(Boolean);
     const filtrados = establecimientos.filter((e) =>
       (!cat || e.categoria === cat) && palabras.every((p) => e.buscable.includes(p)));
+    soloCercanos = false;
 
     if (origen.tipo === "provincia") {
       return filtrados
@@ -293,21 +323,31 @@
         .map((e) => ({ e, d: null }))
         .sort((a, b) => a.e.localidad.localeCompare(b.e.localidad, "es") || a.e.nombre.localeCompare(b.e.nombre, "es"));
     }
-    const claveOrigen = origen.tipo === "localidad" ? `${origen.provincia}|${origen.n}` : null;
-    return filtrados
+    const ordenados = filtrados
+      .filter((e) => e.lat != null)
       .map((e) => {
-        if (e.lat == null) return { e, d: e.claveLocalidad === claveOrigen ? 0 : null };
-        const mismaLocalidad = e.claveLocalidad === claveOrigen || (origen.tipo === "cp" && origen.localidades.has(e.localidad));
-        return { e, d: mismaLocalidad ? 0 : distanciaKm(origen, e), mismaLocalidad };
+        const z = zonaDe(e);
+        return { e, z, d: z ? 0 : distanciaKm(origen, e) };
       })
-      .filter((r) => r.d != null && (!radio || r.d <= radio || r.mismaLocalidad))
       .sort((a, b) => a.d - b.d || a.e.localidad.localeCompare(b.e.localidad, "es") || a.e.nombre.localeCompare(b.e.nombre, "es"));
+    const enRadio = ordenados.filter((r) => !radio || r.d <= radio);
+    if (enRadio.length || !ordenados.length) return enRadio;
+    // Aunque no haya ninguno en el radio elegido, se muestran los más cercanos.
+    soloCercanos = true;
+    return ordenados.slice(0, MAS_CERCANOS);
+  }
+
+  function aLugar() {
+    if (origen.tipo === "ubicacion") return "a tu ubicación";
+    if (origen.tipo === "cp") return `al código postal ${origen.cp} (${origen.descripcion})`;
+    return `a ${origen.nombre} (${origen.provincia})`;
   }
 
   function textoOrigen() {
     if (origen.tipo === "provincia") return `en la provincia de ${origen.nombre}`;
     if (origen.tipo === "ubicacion") return "cerca de tu ubicación";
     if (origen.tipo === "cp") return `cerca del código postal ${origen.cp} (${origen.descripcion})`;
+    if (origen.tipo === "localidad" && origen.esMunicipio) return `cerca de ${origen.nombre} y su municipio (${origen.provincia})`;
     return `cerca de ${origen.nombre} (${origen.provincia})`;
   }
 
@@ -316,15 +356,20 @@
     nota.replaceChildren();
     actualizaUrl();
 
-    if (origen.tipo === "desconocido" || origen.tipo === "cp-desconocido") {
+    if (["desconocido", "cp-desconocido", "cp-incompleto"].includes(origen.tipo)) {
       resultados = [];
-      titulo.textContent = origen.tipo === "cp-desconocido"
-        ? `No tenemos comercios con el código postal ${origen.nombre}`
-        : `No encontramos «${origen.nombre}»`;
+      const deCyL = LOC.provincias[origen.nombre.slice(0, 2)];
+      titulo.textContent = {
+        "cp-desconocido": deCyL ? `No encontramos el código postal ${origen.nombre}` : `El código postal ${origen.nombre} no es de Castilla y León`,
+        "cp-incompleto": "El código postal debe tener 5 cifras",
+        desconocido: `No encontramos «${origen.nombre}»`,
+      }[origen.tipo];
       const p = document.createElement("p");
-      p.textContent = origen.tipo === "cp-desconocido"
-        ? "Prueba a escribir el nombre de tu localidad: así buscaremos los comercios más cercanos."
-        : "Revisa cómo está escrito o elige una de las sugerencias que aparecen al escribir.";
+      p.textContent = origen.tipo === "desconocido"
+        ? "Revisa cómo está escrito o elige una de las sugerencias que aparecen al escribir."
+        : deCyL || origen.tipo === "cp-incompleto"
+          ? "Revísalo o escribe el nombre de tu localidad o municipio."
+          : "La Tarjeta Familia solo se puede usar en comercios de Castilla y León.";
       nota.append(p);
       lista.replaceChildren();
       zonaMas.hidden = true;
@@ -340,11 +385,18 @@
     const radio = Number(selRadio.value);
     const filtroCat = selCategoria.value ? ` de ${nombreCategoria[selCategoria.value].toLowerCase()}` : "";
     const enRadio = origen.tipo !== "provincia" && radio ? ` a menos de ${radio} km` : "";
-    titulo.textContent = total
-      ? `${total.toLocaleString("es-ES")} ${total === 1 ? "comercio" : "comercios"}${filtroCat}${enRadio} ${textoOrigen()}`
-      : `No hay comercios colaboradores${filtroCat}${enRadio} ${textoOrigen()}`;
+    titulo.textContent = soloCercanos
+      ? `${total === 1 ? "El comercio" : `Los ${total} comercios`}${filtroCat} más ${total === 1 ? "cercano" : "cercanos"} ${aLugar()}`
+      : total
+        ? `${total.toLocaleString("es-ES")} ${total === 1 ? "comercio" : "comercios"}${filtroCat}${enRadio} ${textoOrigen()}`
+        : `No hay comercios colaboradores${filtroCat}${enRadio} ${textoOrigen()}`;
 
-    if (!total) {
+    if (soloCercanos) {
+      const p = document.createElement("p");
+      p.className = "aviso aviso--info";
+      p.textContent = `No hay comercios colaboradores${filtroCat} a menos de ${radio} km. Te mostramos los más cercanos. Recuerda que también puedes pagar en otras tiendas de un sector autorizado.`;
+      nota.append(p);
+    } else if (!total) {
       const p = document.createElement("p");
       p.append("Recuerda que también puedes pagar en otras tiendas de un ");
       const a = document.createElement("a");
@@ -370,7 +422,7 @@
       if (mismo > POR_PAGINA && !texto.value && !selCategoria.value) {
         const p = document.createElement("p");
         p.className = "aproximada";
-        p.textContent = `Hay ${mismo} comercios en ${origen.tipo === "cp" ? "tu zona" : origen.nombre}. Para encontrar uno concreto, filtra por tipo de comercio o escribe el nombre o la calle.`;
+        p.textContent = `Hay ${mismo} comercios en ${origen.tipo === "cp" ? "tu zona" : origen.nombre}. Para encontrar uno concreto, elige el tipo de comercio o escribe el nombre, la calle o lo que necesitas (por ejemplo: farmacia, zapatería).`;
         nota.append(p);
       }
     }
@@ -386,7 +438,7 @@
   function pintaPagina(enfocarPrimero) {
     const desde = (pagina - 1) * POR_PAGINA;
     const trozo = resultados.slice(desde, desde + POR_PAGINA);
-    const nuevos = trozo.map(({ e, d }) => tarjeta(e, d));
+    const nuevos = trozo.map(({ e, d, z }) => tarjeta(e, d, z));
     lista.append(...nuevos);
     const quedan = resultados.length - desde - trozo.length;
     zonaMas.hidden = quedan <= 0;
@@ -406,7 +458,9 @@
     return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(destino)}`;
   }
 
-  function tarjeta(e, d) {
+  const TEXTO_ZONA = { localidad: "En esta localidad", municipio: "En este municipio", cp: "En este código postal" };
+
+  function tarjeta(e, d, z) {
     const li = document.createElement("li");
     const art = document.createElement("article");
     art.className = "establecimiento";
@@ -427,7 +481,7 @@
     if (d != null) {
       const dist = document.createElement("span");
       dist.className = "distancia";
-      dist.textContent = d === 0 && origen.tipo !== "ubicacion" ? "En esta localidad" : `A ${formatoKm(d)} aprox.`;
+      dist.textContent = z ? TEXTO_ZONA[z] : `A ${formatoKm(d)} aprox.`;
       meta.append(dist);
     }
 

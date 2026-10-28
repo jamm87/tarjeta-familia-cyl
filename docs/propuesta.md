@@ -113,13 +113,14 @@ Es la pieza que más mejora la experiencia de las familias.
 ### Cómo funciona
 
 1. **¿Dónde estás?** Hay tres formas, y todas dan el mismo resultado:
-   - escribir la **localidad** (con sugerencias al teclear de las 2.285 localidades de Castilla y León, tengan o no comercios);
-   - escribir el **código postal**;
+   - escribir la **localidad o el municipio** (con sugerencias al teclear de las 2.289 localidades de Castilla y León, tengan o no comercios). Al buscar un municipio se incluyen sus pedanías: «San Andrés del Rabanedo» muestra también los comercios de Trobajo del Camino;
+   - escribir el **código postal**: vale cualquiera de los 1.965 de Castilla y León, gracias a la relación oficial entre códigos postales y municipios del CNIG;
    - pulsar **«Usar mi ubicación»**. Se pide permiso al navegador solo al pulsar, y la ubicación no se guarda ni se envía.
-2. **Filtros**: tipo de comercio (11 categorías: farmacia, supermercado, ropa infantil, óptica…), distancia (5, 10, 25 o 50 km, o toda la comunidad) y nombre o calle.
+2. **Filtros**: tipo de comercio (11 categorías: farmacia, supermercado, ropa infantil, óptica…), distancia (5, 10, 25 o 50 km, o toda la comunidad) y un texto libre que busca en el nombre, la calle y el tipo de comercio («farmacia», «zapatería»).
 3. **Resultados en lista, ordenados por distancia.** Cada comercio muestra el nombre, el tipo, la distancia, la dirección y «Cómo llegar». Se cargan de 20 en 20.
-4. **Mapa opcional** («Lista y mapa»). Agrupa los comercios de cada localidad en un marcador con el número. Si no hay resultados, propone ampliar la distancia y recuerda que hay más comercios en los sectores autorizados.
-5. **La búsqueda queda en la dirección de la página** (`?q=Arévalo&cat=farmacia`), así que se puede guardar o compartir.
+4. **Nunca se queda vacío.** 1.571 de los 1.965 códigos postales de Castilla y León no tienen ningún comercio colaborador. Si no hay ninguno en la distancia elegida, se muestran los 10 más cercanos, con un aviso, y se recuerda que también se puede pagar en otras tiendas de un sector autorizado.
+5. **Mapa opcional** («Lista y mapa»). Agrupa los comercios de cada localidad en un marcador con el número.
+6. **La búsqueda queda en la dirección de la página** (`?q=Arévalo&cat=farmacia`), así que se puede guardar o compartir.
 
 ### Por qué la lista va primero y el mapa es opcional
 
@@ -132,8 +133,9 @@ Un mapa no es accesible por sí solo con lector de pantalla y en el móvil ocupa
 - **Coordenadas**: en este prototipo son **por localidad**:
   - 1.550 comercios, con el punto del núcleo urbano (GeoNames);
   - 68, con el centroide del municipio del IGN (pedanías y núcleos pequeños);
-  - 1, con el de su código postal;
-  - 4 pedanías no se han podido situar con seguridad y no se han inventado.
+  - 5, con el municipio que corresponde a su código postal según el CNIG.
+
+  Cada comercio lleva además el código INE de su municipio, para poder buscar por municipio.
 
   Por eso las distancias son aproximadas y en las ciudades todos los comercios aparecen «en esta localidad».
 - **Siguiente paso**: geocodificar cada dirección con **CartoCiudad**, el geocodificador oficial y gratuito del IGN. El script `scripts/geocodificar.mjs --cartociudad` ya lo hace y guarda una caché. No se pudo ejecutar desde el entorno donde se preparó el prototipo porque su red no permitía acceder a ese servicio.
@@ -189,7 +191,7 @@ Objetivo: **WCAG 2.2 nivel AA** (EN 301 549, RD 1112/2018).
 - **Horario de MoneyToPay.** El mismo documento dice «24 h al día, 365 días» y «de lunes a viernes de 8 a 17 horas».
 - **Si la familia puede ver o cambiar en la web de MoneyToPay el nombre «Tarjeta Regalo/Empresa».** Si no, si se puede pedir que aparezca como «Tarjeta Familia».
 - **Si, al devolver un producto, el importe vuelve a la tarjeta.** Las condiciones solo dicen que no se devuelve en efectivo.
-- **Las 4 pedanías que no hemos podido situar en su municipio:** Barrientos de la Vega, Miñambres de la Valduerna, Cascón de la Nava y Quintanilla del Puente.
+- **Las pedanías que solo hemos podido situar por su código postal:** Barrientos de la Vega, Miñambres de la Valduerna, Cascón de la Nava, Quintanilla del Puente y La Parra.
 
 ## 9. Métricas para medir la mejora
 

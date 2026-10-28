@@ -6,6 +6,10 @@
 // Entrada:  data/establecimientos-base.json (scripts/extraer_establecimientos.py)
 // Salida:   data/establecimientos.json, data/localidades.json, data/incidencias-listado.json
 //
+// Cada comercio lleva además el código INE de su municipio, para poder buscar por
+// municipio (incluye pedanías) y por código postal. La relación código postal → municipio
+// es la del Centro Nacional de Información Geográfica (fuentes/codigos-postales-municipios-cnig.csv).
+//
 // Fuentes de coordenadas, de más a menos precisa:
 //   1. "direccion": CartoCiudad (geocodificador oficial del IGN). Se guarda en
 //      data/cache-cartociudad.json para no repetir consultas.
@@ -115,8 +119,36 @@ const municipios = feature(atlas, atlas.objects.municipalities).features
     nombre: nombreOficial(f.properties.name),
     provincia: PROVINCIAS[String(f.id).slice(0, 2)].nombre,
     ine: String(f.id),
+    geometria: f.geometry,
     ...centroide(f.geometry),
   }));
+const porIne = new Map(municipios.map((m) => [m.ine, m]));
+
+// Municipio cuyo término contiene el punto (contorno exterior de cada polígono).
+function municipioEn(lat, lon) {
+  const dentro = (anillo) => {
+    let si = false;
+    for (let i = 0, j = anillo.length - 1; i < anillo.length; j = i++) {
+      const [xi, yi] = anillo[i], [xj, yj] = anillo[j];
+      if ((yi > lat) !== (yj > lat) && lon < ((xj - xi) * (lat - yi)) / (yj - yi) + xi) si = !si;
+    }
+    return si;
+  };
+  return municipios.find((m) => {
+    const poligonos = m.geometria.type === "Polygon" ? [m.geometria.coordinates] : m.geometria.coordinates;
+    return poligonos.some(([exterior]) => dentro(exterior));
+  })?.ine ?? null;
+}
+
+// Código postal -> municipios (códigos INE de 5 cifras).
+const municipiosPorCP = new Map();
+for (const linea of readFileSync(new URL("fuentes/codigos-postales-municipios-cnig.csv", raiz), "utf8").trim().split("\n").slice(1)) {
+  const [cp, ine] = linea.split(",");
+  const codigo = ine.trim().padStart(5, "0");
+  if (!porIne.has(codigo)) continue;
+  if (!municipiosPorCP.has(cp)) municipiosPorCP.set(cp, []);
+  municipiosPorCP.get(cp).push(codigo);
+}
 
 // "Cistérniga, La" -> "La Cistérniga"
 function nombreOficial(n) {
@@ -163,8 +195,8 @@ function busca(nombre, provincia) {
   const k = `${provincia}|${clave(nombre)}`;
   const municipio = porMunicipio.get(k);
   const nucleo = porNucleo.get(k);
-  if (nucleo) return { nombre: municipio?.nombre ?? nucleo.nombre, lat: nucleo.lat, lon: nucleo.lon, precision: "localidad" };
-  if (municipio) return { nombre: municipio.nombre, lat: municipio.lat, lon: municipio.lon, precision: "municipio" };
+  if (nucleo) return { nombre: municipio?.nombre ?? nucleo.nombre, lat: nucleo.lat, lon: nucleo.lon, precision: "localidad", ine: municipio?.ine };
+  if (municipio) return { nombre: municipio.nombre, lat: municipio.lat, lon: municipio.lon, precision: "municipio", ine: municipio.ine };
   return null;
 }
 
@@ -174,7 +206,7 @@ function localiza(localidadPdf, provincia) {
   if (directa && !(directa.nombre in PEDANIAS && PEDANIAS[directa.nombre] !== directa.nombre)) return directa;
   const nombre = directa?.nombre ?? Object.keys(PEDANIAS).find((p) => clave(p) === clave(corregida)) ?? corregida;
   const padre = PEDANIAS[nombre] && busca(PEDANIAS[nombre], provincia);
-  if (padre) return { nombre, lat: padre.lat, lon: padre.lon, precision: "municipio", municipio: padre.nombre };
+  if (padre) return { nombre, lat: padre.lat, lon: padre.lon, precision: "municipio", ine: padre.ine };
   return directa;
 }
 
@@ -271,6 +303,7 @@ for (const e of base.establecimientos) {
     lat: lugar?.lat ?? null,
     lon: lugar?.lon ?? null,
     precision: lugar?.precision ?? null,
+    municipio: lugar?.ine ?? null,
   };
   if (conexion) {
     const punto = await cartociudad({ ...e, localidad }, lugar);
@@ -282,16 +315,30 @@ for (const e of base.establecimientos) {
   salida.push(registro);
 }
 
-// Respaldo: si la localidad no aparece en ningún índice, se usa la posición media de los
-// otros establecimientos del mismo código postal.
-const porCP = {};
-for (const e of salida) if (e.lat != null) (porCP[e.cp] ??= []).push(e);
+// Punto de referencia de cada municipio: el del núcleo urbano con su nombre (GeoNames) si
+// existe; si no, el centroide del término municipal.
+for (const m of municipios) {
+  const nucleo = porNucleo.get(`${m.provincia}|${clave(m.nombre)}`);
+  m.punto = nucleo ? { lat: nucleo.lat, lon: nucleo.lon } : { lat: m.lat, lon: m.lon };
+}
+const puntoMedio = (ines) => {
+  const puntos = ines.map((i) => porIne.get(i).punto);
+  return {
+    lat: redondea(puntos.reduce((s, p) => s + p.lat, 0) / puntos.length),
+    lon: redondea(puntos.reduce((s, p) => s + p.lon, 0) / puntos.length),
+  };
+};
+
 for (const e of salida) {
-  if (e.lat != null || !porCP[e.cp]) continue;
-  const mismos = porCP[e.cp];
-  e.lat = redondea(mismos.reduce((s, x) => s + x.lat, 0) / mismos.length);
-  e.lon = redondea(mismos.reduce((s, x) => s + x.lon, 0) / mismos.length);
-  e.precision = "codigo-postal";
+  const delCP = municipiosPorCP.get(e.cp) ?? [];
+  // Municipio: el de su nombre o pedanía; si no, el que contiene su punto; si no, el del CP.
+  e.municipio ??= (e.lat != null && municipioEn(e.lat, e.lon)) || (delCP.length === 1 ? delCP[0] : null);
+  // Respaldo: sin coordenadas, se sitúa en el municipio (o municipios) de su código postal.
+  if (e.lat == null && delCP.length) {
+    const ines = e.municipio && delCP.includes(e.municipio) ? [e.municipio] : delCP;
+    Object.assign(e, puntoMedio(ines), { precision: "codigo-postal" });
+    e.municipio ??= ines[0];
+  }
 }
 incidencias.sinCoordenadas = incidencias.sinCoordenadas.filter((i) => salida.some((e) => e.id === i.id && e.lat == null));
 
@@ -316,25 +363,32 @@ escribir("data/establecimientos.json", datosEstablecimientos);
 escribirJs("data/establecimientos.js", "DATOS_ESTABLECIMIENTOS", datosEstablecimientos);
 
 // Todas las localidades de CyL (aunque no tengan comercios colaboradores), para poder
-// buscar "cerca de mi pueblo".
+// buscar "cerca de mi pueblo", con el municipio al que pertenecen.
 const localidades = new Map();
-for (const m of municipios) localidades.set(`${m.provincia}|${clave(m.nombre)}`, { nombre: m.nombre, provincia: m.provincia, lat: m.lat, lon: m.lon });
+for (const m of municipios) {
+  localidades.set(`${m.provincia}|${clave(m.nombre)}`, { nombre: m.nombre, provincia: m.provincia, ...m.punto, ine: m.ine });
+}
 for (const n of nucleos) {
   const k = `${n.provincia}|${clave(n.nombre)}`;
-  const previo = localidades.get(k);
-  localidades.set(k, { nombre: previo?.nombre ?? n.nombre, provincia: n.provincia, lat: n.lat, lon: n.lon });
+  if (!localidades.has(k)) localidades.set(k, { ...n, ine: municipioEn(n.lat, n.lon) });
 }
 for (const e of salida) {
   const k = `${e.provincia}|${clave(e.localidad)}`;
-  if (!localidades.has(k) && e.lat != null) localidades.set(k, { nombre: e.localidad, provincia: e.provincia, lat: e.lat, lon: e.lon });
+  if (!localidades.has(k) && e.lat != null) {
+    localidades.set(k, { nombre: e.localidad, provincia: e.provincia, lat: e.lat, lon: e.lon, ine: e.municipio });
+  }
 }
 const listaLocalidades = [...localidades.values()]
-  .map((l) => [l.nombre, codigoProvincia[l.provincia], l.lat, l.lon])
+  .map((l) => [l.nombre, codigoProvincia[l.provincia], l.lat, l.lon, l.ine ?? null])
   .sort((a, b) => a[0].localeCompare(b[0], "es"));
 const datosLocalidades = {
-  campos: ["nombre", "provincia", "lat", "lon"],
+  campos: ["nombre", "provincia", "lat", "lon", "municipio"],
   provincias: Object.fromEntries(Object.entries(PROVINCIAS).map(([c, p]) => [c, p.nombre])),
   localidades: listaLocalidades,
+  // Código INE -> [nombre, lat, lon] del municipio
+  municipios: Object.fromEntries(municipios.map((m) => [m.ine, [m.nombre, m.punto.lat, m.punto.lon]])),
+  // Código postal -> códigos INE de los municipios que abarca (CNIG)
+  codigosPostales: Object.fromEntries([...municipiosPorCP].sort()),
 };
 escribir("data/localidades.json", datosLocalidades);
 escribirJs("data/localidades.js", "DATOS_LOCALIDADES", datosLocalidades);
@@ -346,5 +400,6 @@ const precisiones = {};
 for (const e of salida) precisiones[e.precision] = (precisiones[e.precision] ?? 0) + 1;
 console.log(`${salida.length} establecimientos (de ${base.total} filas del PDF; ${base.total - salida.length} duplicados)`);
 console.log("Precisión de las coordenadas:", precisiones);
-console.log(`${listaLocalidades.length} localidades en el índice de búsqueda`);
+console.log(`${listaLocalidades.length} localidades y ${municipiosPorCP.size} códigos postales en el índice de búsqueda`);
+console.log(`Sin municipio: ${salida.filter((e) => !e.municipio).length}`);
 console.log(`Incidencias: ${incidencias.duplicados.length} duplicados, ${incidencias.provinciaDistintaDelCP.length} con provincia distinta del CP, ${incidencias.sinCoordenadas.length} sin coordenadas`);
