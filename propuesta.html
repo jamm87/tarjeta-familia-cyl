@@ -199,14 +199,14 @@
 <ul>
 <li>El listado se convierte automáticamente del PDF a datos con <code>scripts/extraer_establecimientos.py</code>, que comprueba los totales por provincia.</li>
 <li>Cada comercio se clasifica por su nombre con reglas revisables. Así se hicieron las 11 categorías; 88 quedan como «Otros comercios».</li>
-<li><strong>Coordenadas</strong>: por ahora son <strong>por localidad</strong>:</li>
-<li>1.550 comercios, con el punto del núcleo urbano (GeoNames);</li>
-<li>68, con el centroide del municipio del IGN (pedanías y núcleos pequeños);</li>
-<li>5, con el municipio que corresponde a su código postal según el CNIG.</li>
+<li><strong>Coordenadas</strong>: se obtienen con <strong>CartoCiudad</strong>, el geocodificador oficial y gratuito del IGN, desde un flujo de GitHub Actions (<code>Actualizar coordenadas</code>) que guarda una caché para no repetir consultas:</li>
+<li>1.478 comercios (91 %), situados por su dirección;</li>
+<li>135, en el punto de su localidad o pedanía (GeoNames o CartoCiudad);</li>
+<li>7, en el centro de su municipio (IGN);</li>
+<li>3, en el municipio de su código postal (CNIG).</li>
 </ul>
-<p>Cada comercio lleva además el código INE de su municipio, para poder buscar por municipio.</p>
-<p>Por eso las distancias son aproximadas y en las ciudades todos los comercios aparecen «en esta localidad».
-- <strong>Siguiente paso</strong>: geocodificar cada dirección con <strong>CartoCiudad</strong>, el geocodificador oficial y gratuito del IGN. El script <code>scripts/geocodificar.mjs --cartociudad</code> ya lo hace y guarda una caché. No se pudo ejecutar desde el entorno donde se preparó la web porque su red no permitía acceder a ese servicio.</p>
+<p>Cada comercio lleva además el código INE de su municipio, para poder buscar por municipio. Las aldeas y pedanías del nomenclátor del INE (4.609) también se pueden buscar; unas 2.100 tienen punto propio y el resto se sitúa en su municipio.
+- <strong>Recomendación</strong>: que el listado oficial incluya las coordenadas de cada comercio (o al menos la dirección normalizada), para no tener que deducirlas.</p>
 <h2>6. Formulario para comercios</h2>
 <p>Sustituye al PDF rellenable:</p>
 <ul>

@@ -130,15 +130,14 @@ Un mapa no es accesible por sí solo con lector de pantalla y en el móvil ocupa
 
 - El listado se convierte automáticamente del PDF a datos con `scripts/extraer_establecimientos.py`, que comprueba los totales por provincia.
 - Cada comercio se clasifica por su nombre con reglas revisables. Así se hicieron las 11 categorías; 88 quedan como «Otros comercios».
-- **Coordenadas**: por ahora son **por localidad**:
-  - 1.550 comercios, con el punto del núcleo urbano (GeoNames);
-  - 68, con el centroide del municipio del IGN (pedanías y núcleos pequeños);
-  - 5, con el municipio que corresponde a su código postal según el CNIG.
+- **Coordenadas**: se obtienen con **CartoCiudad**, el geocodificador oficial y gratuito del IGN, desde un flujo de GitHub Actions (`Actualizar coordenadas`) que guarda una caché para no repetir consultas:
+  - 1.478 comercios (91 %), situados por su dirección;
+  - 135, en el punto de su localidad o pedanía (GeoNames o CartoCiudad);
+  - 7, en el centro de su municipio (IGN);
+  - 3, en el municipio de su código postal (CNIG).
 
-  Cada comercio lleva además el código INE de su municipio, para poder buscar por municipio.
-
-  Por eso las distancias son aproximadas y en las ciudades todos los comercios aparecen «en esta localidad».
-- **Siguiente paso**: geocodificar cada dirección con **CartoCiudad**, el geocodificador oficial y gratuito del IGN. El script `scripts/geocodificar.mjs --cartociudad` ya lo hace y guarda una caché. No se pudo ejecutar desde el entorno donde se preparó la web porque su red no permitía acceder a ese servicio.
+  Cada comercio lleva además el código INE de su municipio, para poder buscar por municipio. Las aldeas y pedanías del nomenclátor del INE (4.609) también se pueden buscar; unas 2.100 tienen punto propio y el resto se sitúa en su municipio.
+- **Recomendación**: que el listado oficial incluya las coordenadas de cada comercio (o al menos la dirección normalizada), para no tener que deducirlas.
 
 ## 6. Formulario para comercios
 
