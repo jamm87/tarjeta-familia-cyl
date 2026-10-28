@@ -18539,5 +18539,7826 @@
   "lat": 41.51486,
   "lon": -5.52836,
   "tipo": "callejero"
+ },
+ "Avenida Juan Pablo II 1, Ávila": {
+  "lat": 40.64791,
+  "lon": -4.69876,
+  "tipo": "portal"
+ },
+ "Calle Eduardo de Marquina 22, Ávila": {
+  "lat": 40.65638,
+  "lon": -4.69231,
+  "tipo": "portal"
+ },
+ "Avenida Juan Carlos I 9, Ávila": {
+  "lat": 40.66129,
+  "lon": -4.67694,
+  "tipo": "portal"
+ },
+ "Paseo De la Estación 11, Ávila": {
+  "lat": 40.65713,
+  "lon": -4.68644,
+  "tipo": "portal"
+ },
+ "Calle Rio Tera 7, Ávila": {
+  "lat": 40.66614,
+  "lon": -4.6796,
+  "tipo": "portal"
+ },
+ "Calle Nuestra Señora de Sonsoles 51, Ávila": {
+  "lat": 40.65076,
+  "lon": -4.69744,
+  "tipo": "portal"
+ },
+ "Avenida Juan Carlos I 45, Ávila": {
+  "lat": 40.66855,
+  "lon": -4.65834,
+  "tipo": "portal"
+ },
+ "Avenida Santa Cruz de Tenerife 1, Ávila": {
+  "lat": 40.65884,
+  "lon": -4.68797,
+  "tipo": "portal"
+ },
+ "Calle Hornos Caleros 16, Ávila": {
+  "lat": 40.65529,
+  "lon": -4.6863,
+  "tipo": "portal"
+ },
+ "Calle Duque de Alba 8, Ávila": {
+  "lat": 40.65494,
+  "lon": -4.69376,
+  "tipo": "portal"
+ },
+ "Avenida Enida Madrid 64, Ávila": {
+  "lat": 40.65906,
+  "lon": -4.69937,
+  "tipo": "portal"
+ },
+ "Calle Hornos Caleros 60, Ávila": {
+  "lat": 40.64981,
+  "lon": -4.67515,
+  "tipo": "portal"
+ },
+ "Paseo De la Estación 18, Ávila": {
+  "lat": 40.65676,
+  "lon": -4.68665,
+  "tipo": "portal"
+ },
+ "Calle Valle del Tietar 6, Ávila": {
+  "lat": 40.64945,
+  "lon": -4.70106,
+  "tipo": "portal"
+ },
+ "Calle Doctor Jesús Galán 28, Ávila": {
+  "lat": 40.65104,
+  "lon": -4.69446,
+  "tipo": "portal"
+ },
+ "Avenida De la Juventud 31, Ávila": {
+  "lat": 40.64669,
+  "lon": -4.6842,
+  "tipo": "portal"
+ },
+ "Calle Caléndula, Ávila": {
+  "lat": 40.64057,
+  "lon": -4.69424,
+  "tipo": "callejero"
+ },
+ "Calle Capitán Peñas 17, Ávila": {
+  "lat": 40.65309,
+  "lon": -4.69034,
+  "tipo": "portal"
+ },
+ "Calle Vasco de la Zarza 9, Ávila": {
+  "lat": 40.65289,
+  "lon": -4.70302,
+  "tipo": "portal"
+ },
+ "Avenida Enida de Portugal 1, Ávila": null,
+ "Avenida Enida de Portugal, Ávila": null,
+ "Paseo De San Roque 33, Ávila": {
+  "lat": 40.65328,
+  "lon": -4.68693,
+  "tipo": "portal"
+ },
+ "Calle Ntra Sra de Sonsoles 83, Ávila": {
+  "lat": 40.64717,
+  "lon": -4.69809,
+  "tipo": "portal"
+ },
+ "Plaza De Santa Teresa 6, Ávila": {
+  "lat": 40.65479,
+  "lon": -4.69633,
+  "tipo": "portal"
+ },
+ "Avenida Juan Carlos I 35, Ávila": {
+  "lat": 37.66824,
+  "lon": -4.73017,
+  "tipo": "portal"
+ },
+ "Plaza Santa Teresa 2, Ávila": {
+  "lat": 40.65454,
+  "lon": -4.69666,
+  "tipo": "portal"
+ },
+ "Calle Agustin Rodriguez Sahagun 30, Ávila": {
+  "lat": 40.64808,
+  "lon": -4.68074,
+  "tipo": "portal"
+ },
+ "Calle Rejero Lorenzo 4, Ávila": {
+  "lat": 40.66072,
+  "lon": -4.67473,
+  "tipo": "portal"
+ },
+ "Calle Obispo Acuña 10, Ávila": {
+  "lat": 40.64454,
+  "lon": -4.70098,
+  "tipo": "portal"
+ },
+ "Calle Cuartel de la Montaña 19, Ávila": {
+  "lat": 40.65659,
+  "lon": -4.68463,
+  "tipo": "portal"
+ },
+ "Calle Felix Hernandez 14, Ávila": {
+  "lat": 40.65175,
+  "lon": -4.69283,
+  "tipo": "portal"
+ },
+ "Calle Arevalo 7, Ávila": {
+  "lat": 40.65592,
+  "lon": -4.69073,
+  "tipo": "portal"
+ },
+ "Calle Ntra Sra de Sonsoles 63, Ávila": {
+  "lat": 40.65112,
+  "lon": -4.69756,
+  "tipo": "portal"
+ },
+ "Calle Bajada de Don Alonso 15, Ávila": {
+  "lat": 40.65197,
+  "lon": -4.69007,
+  "tipo": "portal"
+ },
+ "Avenida Madrid 13, Ávila": {
+  "lat": 40.65775,
+  "lon": -4.69188,
+  "tipo": "portal"
+ },
+ "Calle Cruz Roja 1, Ávila": {
+  "lat": 40.65653,
+  "lon": -4.689,
+  "tipo": "portal"
+ },
+ "Calle Don Juan Jose Martin 6, Ávila": null,
+ "Calle Don Juan Jose Martin, Ávila": {
+  "lat": 40.65615,
+  "lon": -4.69275,
+  "tipo": "callejero"
+ },
+ "Carretera Burgohondo 20, Ávila": {
+  "lat": 40.64522,
+  "lon": -4.70522,
+  "tipo": "portal"
+ },
+ "Paseo San Roque 11, Ávila": {
+  "lat": 40.65393,
+  "lon": -4.68988,
+  "tipo": "portal"
+ },
+ "Paseo De la Estacion 8, Ávila": {
+  "lat": 40.65617,
+  "lon": -4.68818,
+  "tipo": "portal"
+ },
+ "Calle Jesús Galán 57, Ávila": {
+  "lat": 40.65051,
+  "lon": -4.6957,
+  "tipo": "portal"
+ },
+ "Carretera Burgohondo, Ávila": {
+  "lat": 40.64785,
+  "lon": -4.70514,
+  "tipo": "callejero"
+ },
+ "Carretera Valladolid C/Río Chico 1 3 C/ Río Arevalillo 5, Ávila": null,
+ "Carretera Valladolid C/Río Chico 1 3 C/ Río Arevalillo, Ávila": null,
+ "Calle Agustín Rodríguez Sahagún 21, Ávila": {
+  "lat": 40.64787,
+  "lon": -4.68165,
+  "tipo": "portal"
+ },
+ "Calle Cuartel de la Montaña 9, Ávila": {
+  "lat": 40.65635,
+  "lon": -4.68616,
+  "tipo": "portal"
+ },
+ "Calle Duque de Alba. 3, Ávila": {
+  "lat": 40.65508,
+  "lon": -4.69359,
+  "tipo": "portal"
+ },
+ "Avenida Juan Pablo II 2, Ávila": {
+  "lat": 40.64773,
+  "lon": -4.6988,
+  "tipo": "portal"
+ },
+ "Calle Triste Condesa 21, Arenas de San Pedro": {
+  "lat": 40.2101,
+  "lon": -5.08841,
+  "tipo": "portal"
+ },
+ "Plaza Del Condestable Davalos 1, Arenas de San Pedro": {
+  "lat": 40.20954,
+  "lon": -5.0911,
+  "tipo": "portal"
+ },
+ "Calle Triste Condesa 46, Arenas de San Pedro": {
+  "lat": 40.21032,
+  "lon": -5.08725,
+  "tipo": "portal"
+ },
+ "Avenida Enida de Lourdes 29, Arenas de San Pedro": {
+  "lat": 40.21084,
+  "lon": -5.08304,
+  "tipo": "portal"
+ },
+ "Plaza Del Prado 7, Arenas de San Pedro": {
+  "lat": 40.21009,
+  "lon": -5.08622,
+  "tipo": "portal"
+ },
+ "Plaza Condestable Dávalos 3, Arenas de San Pedro": {
+  "lat": 40.20952,
+  "lon": -5.09137,
+  "tipo": "portal"
+ },
+ "Calle Triste Condesa 40, Arenas de San Pedro": {
+  "lat": 40.21024,
+  "lon": -5.08756,
+  "tipo": "portal"
+ },
+ "Calle Triste Condesa 2, Arenas de San Pedro": {
+  "lat": 40.20966,
+  "lon": -5.09078,
+  "tipo": "portal"
+ },
+ "Avenida Constitucion 30, Arenas de San Pedro": {
+  "lat": 40.20926,
+  "lon": -5.08131,
+  "tipo": "portal"
+ },
+ "Calle Triste Condesa 16, Arenas de San Pedro": {
+  "lat": 40.20993,
+  "lon": -5.08883,
+  "tipo": "portal"
+ },
+ "Calle Triste Condesa 17, Arenas de San Pedro": {
+  "lat": 40.20992,
+  "lon": -5.08915,
+  "tipo": "portal"
+ },
+ "Calle Triste Condesa 29, Arenas de San Pedro": {
+  "lat": 40.21029,
+  "lon": -5.08771,
+  "tipo": "portal"
+ },
+ "Calle Nuestra Señora de las Angustias 3, Arévalo": null,
+ "Calle Nuestra Señora de las Angustias, Arévalo": {
+  "lat": 41.06134,
+  "lon": -4.71935,
+  "tipo": "callejero"
+ },
+ "Avenida Enida Emilio Romero 13C, Arévalo": null,
+ "Avenida Enida Emilio Romero, Arévalo": null,
+ "Calle Las Piscinas, Arévalo": {
+  "lat": 41.05715,
+  "lon": -4.72148,
+  "tipo": "callejero"
+ },
+ "Calle Teso Nuevo 6, Arévalo": {
+  "lat": 41.05853,
+  "lon": -4.719,
+  "tipo": "portal"
+ },
+ "Plaza Del Arrabal 1, Arévalo": {
+  "lat": 41.06404,
+  "lon": -4.72047,
+  "tipo": "portal"
+ },
+ "Plaza Del Tello 2, Arévalo": {
+  "lat": 41.06311,
+  "lon": -4.71892,
+  "tipo": "portal"
+ },
+ "Avenida De Emilio Romero 20, Arévalo": {
+  "lat": 41.05684,
+  "lon": -4.71575,
+  "tipo": "portal"
+ },
+ "Avenida De los Deportes 8, Arévalo": {
+  "lat": 41.05752,
+  "lon": -4.71807,
+  "tipo": "portal"
+ },
+ "Calle Alameda 6, Arévalo": {
+  "lat": 40.97781,
+  "lon": -4.774,
+  "tipo": "portal"
+ },
+ "Calle Barrionuevo 23, Arévalo": {
+  "lat": 41.05842,
+  "lon": -4.7169,
+  "tipo": "portal"
+ },
+ "Calle Luz, Arévalo": {
+  "lat": 41.05821,
+  "lon": -4.71967,
+  "tipo": "callejero"
+ },
+ "Calle Teso Nuevo 10, Arévalo": {
+  "lat": 41.05789,
+  "lon": -4.71899,
+  "tipo": "portal"
+ },
+ "Calle Emilio Romero 21, Arévalo": {
+  "lat": 41.0576,
+  "lon": -4.71644,
+  "tipo": "portal"
+ },
+ "Calle Madrigal de las Altas Torres 26, Arévalo": {
+  "lat": 41.07709,
+  "lon": -4.73483,
+  "tipo": "portal"
+ },
+ "Calle Domingo Labajo 2, Candeleda": {
+  "lat": 40.15386,
+  "lon": -5.24056,
+  "tipo": "portal"
+ },
+ "Calle Ramon, Candeleda": null,
+ "Calle Mayor 4, Cardeñosa": {
+  "lat": 40.74259,
+  "lon": -4.74524,
+  "tipo": "portal"
+ },
+ "Calle Nueva 9, Casavieja": {
+  "lat": 38.78519,
+  "lon": -1.32877,
+  "tipo": "portal"
+ },
+ "Calle Nueva, Casavieja": {
+  "lat": 40.28037,
+  "lon": -4.76636,
+  "tipo": "callejero"
+ },
+ "Calle Toledo 7, Cebreros": {
+  "lat": 40.45442,
+  "lon": -4.46431,
+  "tipo": "portal"
+ },
+ "Plaza De la Rinconada 2, Villaverde de Íscar": {
+  "lat": 41.30722,
+  "lon": -4.52584,
+  "tipo": "portal"
+ },
+ "Avenida Jose Antonio Vaca de Osma 3, El Barco de Ávila": {
+  "lat": 40.35836,
+  "lon": -5.52228,
+  "tipo": "portal"
+ },
+ "Avenida Martires del Tiemblo 28, El Tiemblo": {
+  "lat": 40.41466,
+  "lon": -4.5003,
+  "tipo": "portal"
+ },
+ "Paseo De Recoletos 26, El Tiemblo": {
+  "lat": 40.41091,
+  "lon": -4.49641,
+  "tipo": "portal"
+ },
+ "Calle Martires de el Tiemblo 32, El Tiemblo": {
+  "lat": 40.41395,
+  "lon": -4.49991,
+  "tipo": "portal"
+ },
+ "Calle Llama del Amor Viva 4, Fontiveros": {
+  "lat": 40.92975,
+  "lon": -4.96368,
+  "tipo": "portal"
+ },
+ "Avenida Concentracion 8, Fontiveros": {
+  "lat": 40.92463,
+  "lon": -4.96172,
+  "tipo": "portal"
+ },
+ "Avenida Enida Antonio Fernandez Orts 6, Gavilanes": null,
+ "Avenida Enida Antonio Fernandez Orts, Gavilanes": null,
+ "Calle Cristo 4, Gemuño": {
+  "lat": 40.59263,
+  "lon": -4.78134,
+  "tipo": "portal"
+ },
+ "Calle La Mira de Gredos 5, Hoyos del Espino": {
+  "lat": 40.35606,
+  "lon": -5.17549,
+  "tipo": "portal"
+ },
+ "Plaza De la Igualdad 2, La Adrada": {
+  "lat": 40.3017,
+  "lon": -4.63719,
+  "tipo": "portal"
+ },
+ "Calle Carretera. 5, La Cañada": {
+  "lat": 40.86534,
+  "lon": -0.09752,
+  "tipo": "portal"
+ },
+ "Calle Carretera., La Cañada": {
+  "lat": 40.8657,
+  "lon": -0.09893,
+  "tipo": "callejero"
+ },
+ "Calle Mayor 36, La Horcajada": {
+  "lat": 40.4368,
+  "lon": -5.46723,
+  "tipo": "portal"
+ },
+ "Calle La Cruz Egido 6, La Parra": null,
+ "Calle La Cruz Egido, La Parra": null,
+ "Calle Sanroque 12, Langa": {
+  "lat": 36.72879,
+  "lon": -4.41511,
+  "tipo": "portal"
+ },
+ "Calle Sanroque, Langa": null,
+ "Calle Sargentos Provisionales 14, Lanzahíta": {
+  "lat": 40.20366,
+  "lon": -4.9381,
+  "tipo": "portal"
+ },
+ "Calle La Reguera 2, Lanzahíta": {
+  "lat": 40.20343,
+  "lon": -4.93787,
+  "tipo": "portal"
+ },
+ "Avenida Principal 104, Las Navas del Marqués": {
+  "lat": 40.60268,
+  "lon": -4.33348,
+  "tipo": "portal"
+ },
+ "Calle Gracia, Las Navas del Marqués": {
+  "lat": 40.60224,
+  "lon": -4.33368,
+  "tipo": "callejero"
+ },
+ "Avenida Principal 53, Las Navas del Marqués": {
+  "lat": 40.60349,
+  "lon": -4.33067,
+  "tipo": "portal"
+ },
+ "Calle Isabel la Católica 11, Madrigal de las Altas Torres": {
+  "lat": 41.08883,
+  "lon": -4.99644,
+  "tipo": "portal"
+ },
+ "Calle Cantarranas, Madrigal de las Altas Torres": {
+  "lat": 41.08977,
+  "lon": -4.99449,
+  "tipo": "callejero"
+ },
+ "Carretera Gavilanes 3, Mijares": {
+  "lat": 40.29663,
+  "lon": -4.83807,
+  "tipo": "portal"
+ },
+ "Calle Larga 61, Mijares": {
+  "lat": 42.13602,
+  "lon": -3.34461,
+  "tipo": "portal"
+ },
+ "Calle Arenal 1, Mombeltrán": {
+  "lat": 40.25932,
+  "lon": -5.01877,
+  "tipo": "portal"
+ },
+ "Calle La Iglesia 24, Navaluenga": {
+  "lat": 40.41129,
+  "lon": -4.70803,
+  "tipo": "portal"
+ },
+ "Calle Avila 2., Papatrigo": {
+  "lat": 40.86819,
+  "lon": -4.83476,
+  "tipo": "portal"
+ },
+ "Calle En Medio 25, Pedro Bernardo": {
+  "lat": 40.2433,
+  "lon": -4.91273,
+  "tipo": "portal"
+ },
+ "Calle Tiñosillos 15, Pedro-Rodríguez": {
+  "lat": 40.93595,
+  "lon": -4.78292,
+  "tipo": "portal"
+ },
+ "Carretera De Ávila, Piedrahíta": {
+  "lat": 40.46664,
+  "lon": -5.32006,
+  "tipo": "callejero"
+ },
+ "Calle Alhóndiga, Piedrahíta": {
+  "lat": 40.46413,
+  "lon": -5.32641,
+  "tipo": "callejero"
+ },
+ "Plaza Nueva 3, Poyales del Hoyo": {
+  "lat": 40.1731,
+  "lon": -5.16573,
+  "tipo": "portal"
+ },
+ "Calle La Parrilla 3, San Juan de la Nava": {
+  "lat": 40.47879,
+  "lon": -4.6825,
+  "tipo": "portal"
+ },
+ "Carretera De Santo Tomé de Zabarcos, San Pedro del Arroyo": {
+  "lat": 40.80159,
+  "lon": -4.87409,
+  "tipo": "callejero"
+ },
+ "Calle Mediodia 2, Santa Cruz del Valle": {
+  "lat": 40.25143,
+  "lon": -5.00316,
+  "tipo": "portal"
+ },
+ "Calle San Cristobal 21, Santa María del Berrocal": {
+  "lat": 40.50711,
+  "lon": -5.40188,
+  "tipo": "portal"
+ },
+ "Avenida De Madrid 29, Sotillo de la Adrada": {
+  "lat": 40.29376,
+  "lon": -4.58264,
+  "tipo": "portal"
+ },
+ "Calle San Marcos 11, Tiñosillos": {
+  "lat": 40.93715,
+  "lon": -4.72799,
+  "tipo": "portal"
+ },
+ "Calle Barcelona, Burgos": {
+  "lat": 42.3501,
+  "lon": -3.66959,
+  "tipo": "callejero"
+ },
+ "Calle Cardenal Segura 1, Burgos": {
+  "lat": 42.34134,
+  "lon": -3.70235,
+  "tipo": "portal"
+ },
+ "Calle Rosa Chacel 3, Burgos": {
+  "lat": 42.36312,
+  "lon": -3.65903,
+  "tipo": "portal"
+ },
+ "Calle Islas Baleares Galerias Comerciales del H.U.B.U., Burgos": null,
+ "Calle Fco. Garcia Lorca 6, Burgos": null,
+ "Calle Fco. Garcia Lorca, Burgos": null,
+ "Calle Salas 14, Burgos": {
+  "lat": 42.33464,
+  "lon": -3.69806,
+  "tipo": "portal"
+ },
+ "Calle Ana Lopidana 3, Burgos": {
+  "lat": 42.3453,
+  "lon": -3.6976,
+  "tipo": "portal"
+ },
+ "Avenida Cantabria 111, Burgos": {
+  "lat": 42.35928,
+  "lon": -3.69447,
+  "tipo": "portal"
+ },
+ "Avenida Derechos Humanos 18, Burgos": {
+  "lat": 42.35216,
+  "lon": -3.66769,
+  "tipo": "portal"
+ },
+ "Plaza España 2, Burgos": {
+  "lat": 42.34447,
+  "lon": -3.69779,
+  "tipo": "portal"
+ },
+ "Calle Severo Ochoa 15, Burgos": {
+  "lat": 42.35282,
+  "lon": -3.67902,
+  "tipo": "portal"
+ },
+ "Calle Guardia Civil 5, Burgos": {
+  "lat": 42.345,
+  "lon": -3.6948,
+  "tipo": "portal"
+ },
+ "Calle Lerma 1, Burgos": {
+  "lat": 42.33163,
+  "lon": -3.69966,
+  "tipo": "portal"
+ },
+ "Calle Condesa de Mencia 119, Burgos": {
+  "lat": 42.35905,
+  "lon": -3.68121,
+  "tipo": "portal"
+ },
+ "Avenida Enida de la Paz 26, Burgos": {
+  "lat": 42.34543,
+  "lon": -3.69139,
+  "tipo": "portal"
+ },
+ "Calle Vitoria 158, Burgos": {
+  "lat": 42.35185,
+  "lon": -3.6717,
+  "tipo": "toponimo"
+ },
+ "Calle Madrid 19, Burgos": {
+  "lat": 42.33629,
+  "lon": -3.70046,
+  "tipo": "portal"
+ },
+ "Calle Francisco Grandmontagne 26, Burgos": {
+  "lat": 42.35004,
+  "lon": -3.67029,
+  "tipo": "portal"
+ },
+ "Avenida Enida de la Paz 15, Burgos": {
+  "lat": 42.34448,
+  "lon": -3.69335,
+  "tipo": "portal"
+ },
+ "Carretera Tra. Madrid, Burgos": {
+  "lat": 42.33286,
+  "lon": -3.70028,
+  "tipo": "callejero"
+ },
+ "Calle Rey Don Pedro 60, Burgos": {
+  "lat": 42.34949,
+  "lon": -3.69696,
+  "tipo": "portal"
+ },
+ "Calle Severo Ochoa 13, Burgos": {
+  "lat": 42.3528,
+  "lon": -3.67923,
+  "tipo": "portal"
+ },
+ "Calle San Francisco 31, Burgos": {
+  "lat": 42.3461,
+  "lon": -3.7016,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 19, Burgos": {
+  "lat": 40.28577,
+  "lon": -6.7279,
+  "tipo": "portal"
+ },
+ "Calle Esteban Saez Alvarado 32, Burgos": {
+  "lat": 42.36099,
+  "lon": -3.66753,
+  "tipo": "portal"
+ },
+ "Calle Villalon 9, Burgos": {
+  "lat": 42.34162,
+  "lon": -3.71562,
+  "tipo": "portal"
+ },
+ "Calle Juan de Garay 2, Burgos": {
+  "lat": 42.33577,
+  "lon": -3.69714,
+  "tipo": "portal"
+ },
+ "Calle Poza 12, Burgos": {
+  "lat": 42.36706,
+  "lon": -3.65308,
+  "tipo": "portal"
+ },
+ "Calle Brasil 19, Burgos": {
+  "lat": 42.34908,
+  "lon": -3.73627,
+  "tipo": "portal"
+ },
+ "Calle Condesa Mencia 159, Burgos": {
+  "lat": 42.36171,
+  "lon": -3.676,
+  "tipo": "portal"
+ },
+ "Plaza De Mio Cid 2, Burgos": {
+  "lat": 42.34114,
+  "lon": -3.69978,
+  "tipo": "portal"
+ },
+ "Calle Bda Juan Xxiii Bloque 1, Burgos": null,
+ "Calle Bda Juan Xxiii Bloque, Burgos": null,
+ "Calle Esteban Sáez de Alvarado 14, Burgos": {
+  "lat": 42.3584,
+  "lon": -3.66478,
+  "tipo": "portal"
+ },
+ "Calle San Juan 25, Burgos": {
+  "lat": 42.34281,
+  "lon": -3.69835,
+  "tipo": "portal"
+ },
+ "Paseo Del Espolon 22, Burgos": {
+  "lat": 42.34051,
+  "lon": -3.70171,
+  "tipo": "portal"
+ },
+ "Avenida De los Derechos Humanos 66, Burgos": {
+  "lat": 42.34779,
+  "lon": -3.6668,
+  "tipo": "portal"
+ },
+ "Calle Bartolome Ordoñez 1, Burgos": {
+  "lat": 42.34731,
+  "lon": -3.68094,
+  "tipo": "portal"
+ },
+ "Calle Federico Garcia Lorca 7, Burgos": {
+  "lat": 42.35014,
+  "lon": -3.66569,
+  "tipo": "portal"
+ },
+ "Calle Vitoria 20, Burgos": {
+  "lat": 42.34145,
+  "lon": -3.69724,
+  "tipo": "portal"
+ },
+ "Calle Calzadas 30, Burgos": {
+  "lat": 42.34489,
+  "lon": -3.68828,
+  "tipo": "portal"
+ },
+ "Calle Europa 2, Burgos": {
+  "lat": 42.33006,
+  "lon": -3.69966,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 12, Burgos": {
+  "lat": 42.34136,
+  "lon": -3.70208,
+  "tipo": "portal"
+ },
+ "Calle Madre Teresa de Calcuta 3, Burgos": {
+  "lat": 42.34837,
+  "lon": -3.67156,
+  "tipo": "portal"
+ },
+ "Calle Villadiego 2, Burgos": {
+  "lat": 42.34214,
+  "lon": -3.73087,
+  "tipo": "portal"
+ },
+ "Calle Vicente Aleixandre 9, Burgos": {
+  "lat": 42.35408,
+  "lon": -3.67697,
+  "tipo": "portal"
+ },
+ "Avenida De la Paz 22, Burgos": {
+  "lat": 42.34507,
+  "lon": -3.69136,
+  "tipo": "portal"
+ },
+ "Calle Martinez del Campo 2, Burgos": null,
+ "Calle Martinez del Campo, Burgos": {
+  "lat": 42.33917,
+  "lon": -3.70625,
+  "tipo": "callejero"
+ },
+ "Plaza Vega 11, Burgos": {
+  "lat": 42.33873,
+  "lon": -3.70246,
+  "tipo": "portal"
+ },
+ "Calle Camino Casa de la Vega 2, Burgos": null,
+ "Calle Camino Casa de la Vega, Burgos": null,
+ "Avenida Reyes Catolicos 20, Burgos": {
+  "lat": 42.34703,
+  "lon": -3.69372,
+  "tipo": "portal"
+ },
+ "Calle Villarcayo 8, Burgos": {
+  "lat": 42.34994,
+  "lon": -3.69683,
+  "tipo": "portal"
+ },
+ "Calle Hermanas Mirabal 56, Burgos": {
+  "lat": 42.36297,
+  "lon": -3.6652,
+  "tipo": "portal"
+ },
+ "Calle Rosa de Lima Manzano 7, Burgos": {
+  "lat": 42.34646,
+  "lon": -3.71527,
+  "tipo": "portal"
+ },
+ "Calle Federico Olmedo 21, Burgos": {
+  "lat": 42.35017,
+  "lon": -3.69145,
+  "tipo": "portal"
+ },
+ "Paseo Laserna 3, Burgos": {
+  "lat": 42.33596,
+  "lon": -3.71016,
+  "tipo": "portal"
+ },
+ "Calle Condesa Mencia 139, Burgos": {
+  "lat": 42.36005,
+  "lon": -3.67906,
+  "tipo": "portal"
+ },
+ "Avenida Arlanzon 15, Burgos": {
+  "lat": 42.34156,
+  "lon": -3.69428,
+  "tipo": "portal"
+ },
+ "Avenida Del Cid Campeador 85, Burgos": {
+  "lat": 42.35122,
+  "lon": -3.69563,
+  "tipo": "portal"
+ },
+ "Avenida Cantabria 31, Burgos": {
+  "lat": 42.3481,
+  "lon": -3.68844,
+  "tipo": "portal"
+ },
+ "Calle Luis Alberdi 15, Burgos": {
+  "lat": 42.3519,
+  "lon": -3.66314,
+  "tipo": "portal"
+ },
+ "Calle Vitoria 141, Burgos": {
+  "lat": 42.35032,
+  "lon": -3.67473,
+  "tipo": "portal"
+ },
+ "Calle San Zadornil 8, Burgos": {
+  "lat": 42.34374,
+  "lon": -3.71404,
+  "tipo": "portal"
+ },
+ "Plaza Alonso Martinez 7A, Burgos": {
+  "lat": 42.34364,
+  "lon": -3.69995,
+  "tipo": "portal"
+ },
+ "Calle Cristobal Colón 3, Burgos": {
+  "lat": 42.34773,
+  "lon": -3.6947,
+  "tipo": "portal"
+ },
+ "Avenida Enida del Cid 21, Burgos": {
+  "lat": 42.34568,
+  "lon": -3.69782,
+  "tipo": "portal"
+ },
+ "Carretera Poza 45, Burgos": {
+  "lat": 42.35624,
+  "lon": -3.66454,
+  "tipo": "portal"
+ },
+ "Avenida Enida de los Derechos Humanos 36, Burgos": {
+  "lat": 42.35053,
+  "lon": -3.66689,
+  "tipo": "portal"
+ },
+ "Calle San Juan 26, Burgos": {
+  "lat": 42.34276,
+  "lon": -3.69838,
+  "tipo": "portal"
+ },
+ "Calle San Pablo 12, Burgos": {
+  "lat": 42.33784,
+  "lon": -3.69929,
+  "tipo": "portal"
+ },
+ "Calle Vitoria 155, Burgos": {
+  "lat": 42.35184,
+  "lon": -3.67201,
+  "tipo": "portal"
+ },
+ "Calle Alejandro Yagüe 7, Burgos": {
+  "lat": 42.352,
+  "lon": -3.66954,
+  "tipo": "portal"
+ },
+ "Calle Sanz Pastor 8, Burgos": {
+  "lat": 42.3446,
+  "lon": -3.69926,
+  "tipo": "portal"
+ },
+ "Calle Vitoria 260, Burgos": {
+  "lat": 42.35455,
+  "lon": -3.66141,
+  "tipo": "portal"
+ },
+ "Avenida Del Cid Campeador 77, Burgos": {
+  "lat": 42.35062,
+  "lon": -3.69591,
+  "tipo": "portal"
+ },
+ "Calle Santiago 1, Burgos": {
+  "lat": 42.34979,
+  "lon": -3.67464,
+  "tipo": "portal"
+ },
+ "Calle La Igualdad 13, Burgos": {
+  "lat": 42.35068,
+  "lon": -3.66837,
+  "tipo": "portal"
+ },
+ "Avenida Castilla, Burgos": {
+  "lat": 42.35447,
+  "lon": -3.67613,
+  "tipo": "callejero"
+ },
+ "Calle La Paloma 8, Burgos": {
+  "lat": 42.34129,
+  "lon": -3.70297,
+  "tipo": "portal"
+ },
+ "Calle San Agustin 7, Burgos": {
+  "lat": 42.33308,
+  "lon": -3.70048,
+  "tipo": "portal"
+ },
+ "Calle Calzadas 4, Burgos": {
+  "lat": 42.34374,
+  "lon": -3.69213,
+  "tipo": "portal"
+ },
+ "Calle Francisco Sarmiento 9, Burgos": {
+  "lat": 42.34948,
+  "lon": -3.6951,
+  "tipo": "portal"
+ },
+ "Calle Monte Sano 4, Burgos": {
+  "lat": 42.34328,
+  "lon": -3.71607,
+  "tipo": "portal"
+ },
+ "Calle Marqués de Berlanga 1, Burgos": {
+  "lat": 42.35982,
+  "lon": -3.67672,
+  "tipo": "portal"
+ },
+ "Calle Lain Calvo 34, Burgos": {
+  "lat": 42.34232,
+  "lon": -3.70175,
+  "tipo": "portal"
+ },
+ "Calle Alejandro Yagüe 15, Burgos": {
+  "lat": 42.35239,
+  "lon": -3.66886,
+  "tipo": "portal"
+ },
+ "Paseo De los Comuneros 21, Burgos": {
+  "lat": 42.35041,
+  "lon": -3.6855,
+  "tipo": "portal"
+ },
+ "Calle Avellano 4, Burgos": {
+  "lat": 42.34347,
+  "lon": -3.70119,
+  "tipo": "portal"
+ },
+ "Calle General San Pastor 5, Burgos": null,
+ "Calle General San Pastor, Burgos": null,
+ "Calle Vitoria 301, Burgos": {
+  "lat": 42.36245,
+  "lon": -3.63683,
+  "tipo": "portal"
+ },
+ "Avenida Cid Campeador 3, Burgos": {
+  "lat": 42.34343,
+  "lon": -3.69913,
+  "tipo": "portal"
+ },
+ "Avenida De los Derechos Humanos 35, Burgos": {
+  "lat": 42.35053,
+  "lon": -3.66689,
+  "tipo": "portal"
+ },
+ "Calle Vitoria 202, Burgos": {
+  "lat": 42.35304,
+  "lon": -3.66925,
+  "tipo": "portal"
+ },
+ "Calle Vitoria 172, Burgos": {
+  "lat": 42.35138,
+  "lon": -3.67232,
+  "tipo": "portal"
+ },
+ "Calle Ntra. Sra. de Fatima 1, Burgos": {
+  "lat": 42.35051,
+  "lon": -3.67558,
+  "tipo": "portal"
+ },
+ "Calle Pg Pentasa 3, Burgos": null,
+ "Calle Pg Pentasa, Burgos": null,
+ "Calle Lain Calvo 42, Burgos": {
+  "lat": 42.34255,
+  "lon": -3.70156,
+  "tipo": "portal"
+ },
+ "Calle General Sanz Pastor 8, Burgos": {
+  "lat": 42.3446,
+  "lon": -3.69926,
+  "tipo": "portal"
+ },
+ "Avenida Reyes Catolicos 12, Burgos": {
+  "lat": 42.34523,
+  "lon": -3.69535,
+  "tipo": "portal"
+ },
+ "Calle San Pablo 10, Burgos": {
+  "lat": 42.3277,
+  "lon": -3.80843,
+  "tipo": "portal"
+ },
+ "Calle Lain Calvo 28, Burgos": {
+  "lat": 42.34271,
+  "lon": -3.70153,
+  "tipo": "portal"
+ },
+ "Calle Francisco Grandmontagne 19, Burgos": {
+  "lat": 42.35025,
+  "lon": -3.67008,
+  "tipo": "portal"
+ },
+ "Calle Condesa Mencia 108, Burgos": {
+  "lat": 42.35908,
+  "lon": -3.67988,
+  "tipo": "portal"
+ },
+ "Calle Vitoria 169, Burgos": {
+  "lat": 42.35251,
+  "lon": -3.67087,
+  "tipo": "portal"
+ },
+ "Calle San Juan 18, Burgos": {
+  "lat": 42.34278,
+  "lon": -3.69906,
+  "tipo": "portal"
+ },
+ "Avenida Del Cid 90, Burgos": {
+  "lat": 42.35074,
+  "lon": -3.6955,
+  "tipo": "portal"
+ },
+ "Avenida Del Cid 88, Burgos": {
+  "lat": 42.35064,
+  "lon": -3.69554,
+  "tipo": "portal"
+ },
+ "Avenida Islas Baleares . Galería Comercial Hubu, Burgos": {
+  "lat": 42.35927,
+  "lon": -3.68783,
+  "tipo": "toponimo"
+ },
+ "Calle Fco Granmontagne 14, Burgos": {
+  "lat": 42.351,
+  "lon": -3.67038,
+  "tipo": "portal"
+ },
+ "Calle Vicente Aleixandre 15, Burgos": {
+  "lat": 42.35458,
+  "lon": -3.67724,
+  "tipo": "portal"
+ },
+ "Calle Villalon 1, Burgos": {
+  "lat": 42.34127,
+  "lon": -3.71641,
+  "tipo": "portal"
+ },
+ "Calle Vitoria 163, Burgos": {
+  "lat": 42.35213,
+  "lon": -3.67147,
+  "tipo": "portal"
+ },
+ "Calle Clunia 17, Burgos": {
+  "lat": 42.34718,
+  "lon": -3.69492,
+  "tipo": "portal"
+ },
+ "Calle Vitoria 177, Burgos": {
+  "lat": 42.35296,
+  "lon": -3.66998,
+  "tipo": "portal"
+ },
+ "Avenida De la Paz 9, Burgos": {
+  "lat": 42.34451,
+  "lon": -3.69455,
+  "tipo": "portal"
+ },
+ "Avenida Arlanzon 31, Burgos": {
+  "lat": 42.34231,
+  "lon": -3.69249,
+  "tipo": "portal"
+ },
+ "Carretera Tra. Santander Km.2, Burgos": null,
+ "Calle Maria Amigo 7, Burgos": {
+  "lat": 42.35378,
+  "lon": -3.6652,
+  "tipo": "portal"
+ },
+ "Calle Jose Mªcodon 4, Burgos": {
+  "lat": 42.36015,
+  "lon": -3.66599,
+  "tipo": "portal"
+ },
+ "Calle Miranda 12, Burgos": {
+  "lat": 42.33824,
+  "lon": -3.69984,
+  "tipo": "portal"
+ },
+ "Calle Vitoria 178, Burgos": {
+  "lat": 42.35166,
+  "lon": -3.67177,
+  "tipo": "portal"
+ },
+ "Calle Santiago 22, Burgos": {
+  "lat": 42.34958,
+  "lon": -3.67155,
+  "tipo": "portal"
+ },
+ "Calle Condesa Mencía 106, Burgos": {
+  "lat": 42.35897,
+  "lon": -3.68056,
+  "tipo": "portal"
+ },
+ "Calle Trespaderne 5, Burgos": {
+  "lat": 42.33152,
+  "lon": -3.70602,
+  "tipo": "portal"
+ },
+ "Calle Santo Domingo de Silos 1, Burgos": {
+  "lat": 42.34734,
+  "lon": -3.6926,
+  "tipo": "portal"
+ },
+ "Calle Doctor Santamaria 5, Burgos": {
+  "lat": 42.33537,
+  "lon": -3.70537,
+  "tipo": "portal"
+ },
+ "Calle Diego Lainez 9, Burgos": {
+  "lat": 42.34779,
+  "lon": -3.69874,
+  "tipo": "portal"
+ },
+ "Calle Calvario 8, Burgos": {
+  "lat": 42.33491,
+  "lon": -3.69643,
+  "tipo": "portal"
+ },
+ "Avenida Constitucion 7, Burgos": {
+  "lat": 38.38029,
+  "lon": -6.59198,
+  "tipo": "portal"
+ },
+ "Avenida Constitucion, Burgos": {
+  "lat": 38.3798,
+  "lon": -6.59332,
+  "tipo": "callejero"
+ },
+ "Calle Río Viejo, Burgos": {
+  "lat": 42.3677,
+  "lon": -3.65598,
+  "tipo": "callejero"
+ },
+ "Calle Luís Rodríguez de Arango -C/ Doctor José Luís Santamaría, Burgos": null,
+ "Calle Juan Ramón Jiménez, Burgos": {
+  "lat": 42.3475,
+  "lon": -3.66356,
+  "tipo": "callejero"
+ },
+ "Calle Benedictas de San José 12, Burgos": {
+  "lat": 42.34122,
+  "lon": -3.71295,
+  "tipo": "portal"
+ },
+ "Calle San Pablo 22, Burgos": {
+  "lat": 42.33666,
+  "lon": -3.69986,
+  "tipo": "portal"
+ },
+ "Calle Vitoria 168, Burgos": {
+  "lat": 42.35122,
+  "lon": -3.6726,
+  "tipo": "portal"
+ },
+ "Calle Madrid 17B, Burgos": {
+  "lat": 42.33649,
+  "lon": -3.70056,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 29, Burgos": {
+  "lat": 40.28551,
+  "lon": -6.7277,
+  "tipo": "portal"
+ },
+ "Calle Avellanos 5, Burgos": {
+  "lat": 42.34322,
+  "lon": -3.70163,
+  "tipo": "portal"
+ },
+ "Plaza Roma 13, Burgos": {
+  "lat": 42.35224,
+  "lon": -3.66837,
+  "tipo": "portal"
+ },
+ "Calle San Juan 29, Burgos": {
+  "lat": 42.34282,
+  "lon": -3.69809,
+  "tipo": "portal"
+ },
+ "Calle Bejar 5, Aranda de Duero": {
+  "lat": 41.6706,
+  "lon": -3.68849,
+  "tipo": "portal"
+ },
+ "Calle Miranda Do Douro 4, Aranda de Duero": {
+  "lat": 41.66953,
+  "lon": -3.68636,
+  "tipo": "portal"
+ },
+ "Calle San Francisco 31, Aranda de Duero": {
+  "lat": 41.6744,
+  "lon": -3.68597,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 14, Aranda de Duero": {
+  "lat": 41.67013,
+  "lon": -3.68815,
+  "tipo": "portal"
+ },
+ "Calle Pisuerga 3, Aranda de Duero": {
+  "lat": 41.66003,
+  "lon": -3.69382,
+  "tipo": "portal"
+ },
+ "Calle Concepción Arenal 36, Aranda de Duero": {
+  "lat": 40.302,
+  "lon": -3.43993,
+  "tipo": "portal"
+ },
+ "Calle Concepción Arenal, Aranda de Duero": null,
+ "Calle Pizarro 6, Aranda de Duero": {
+  "lat": 41.67073,
+  "lon": -3.68099,
+  "tipo": "portal"
+ },
+ "Avenida Castilla 58, Aranda de Duero": {
+  "lat": 41.66555,
+  "lon": -3.6913,
+  "tipo": "portal"
+ },
+ "Plaza Santa Maria 6, Aranda de Duero": {
+  "lat": 41.671,
+  "lon": -3.68919,
+  "tipo": "portal"
+ },
+ "Calle San Gregorio 3, Aranda de Duero": {
+  "lat": 41.67067,
+  "lon": -3.68474,
+  "tipo": "portal"
+ },
+ "Calle Bejar 3, Aranda de Duero": {
+  "lat": 41.67056,
+  "lon": -3.6885,
+  "tipo": "portal"
+ },
+ "Avenida Benjamin Palencia 4, Aranda de Duero": null,
+ "Avenida Benjamin Palencia, Aranda de Duero": {
+  "lat": 41.65956,
+  "lon": -3.68973,
+  "tipo": "callejero"
+ },
+ "Calle Boticas 5, Aranda de Duero": {
+  "lat": 41.67114,
+  "lon": -3.6885,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 9, Aranda de Duero": {
+  "lat": 41.67015,
+  "lon": -3.68873,
+  "tipo": "portal"
+ },
+ "Avenida Ruperta Baraya 16, Aranda de Duero": {
+  "lat": 41.66893,
+  "lon": -3.69268,
+  "tipo": "portal"
+ },
+ "Calle San Francisco 7, Aranda de Duero": {
+  "lat": 41.67237,
+  "lon": -3.68547,
+  "tipo": "portal"
+ },
+ "Calle Rafael Alberti 1, Aranda de Duero": {
+  "lat": 41.66291,
+  "lon": -3.69294,
+  "tipo": "portal"
+ },
+ "Calle Carrequemada 86, Aranda de Duero": {
+  "lat": 41.67186,
+  "lon": -3.68254,
+  "tipo": "portal"
+ },
+ "Calle Burgo de Osma, Aranda de Duero": {
+  "lat": 41.66513,
+  "lon": -3.68779,
+  "tipo": "callejero"
+ },
+ "Calle Burgo de Osma 52, Aranda de Duero": {
+  "lat": 41.66694,
+  "lon": -3.68847,
+  "tipo": "portal"
+ },
+ "Calle Santa Lucia 6, Aranda de Duero": {
+  "lat": 41.67021,
+  "lon": -3.68783,
+  "tipo": "portal"
+ },
+ "Calle San Miguel 38, Arcos": {
+  "lat": 42.2648,
+  "lon": -3.75453,
+  "tipo": "portal"
+ },
+ "Avenida Cerezo de Ro Tirón, Belorado": null,
+ "Plaza Mayor 8, Belorado": {
+  "lat": 42.42038,
+  "lon": -3.19053,
+  "tipo": "portal"
+ },
+ "Calle Las Cercas, Belorado": {
+  "lat": 42.41989,
+  "lon": -3.19135,
+  "tipo": "callejero"
+ },
+ "Calle Cercas 1, Belorado": {
+  "lat": 42.41979,
+  "lon": -3.19106,
+  "tipo": "portal"
+ },
+ "Calle Santa Maria Bajera 29, Briviesca": {
+  "lat": 42.55255,
+  "lon": -3.32338,
+  "tipo": "portal"
+ },
+ "Calle Marques de Torresoto 20, Briviesca": {
+  "lat": 42.54982,
+  "lon": -3.3232,
+  "tipo": "portal"
+ },
+ "Calle La Tejera 2, Briviesca": {
+  "lat": 42.55057,
+  "lon": -3.32484,
+  "tipo": "portal"
+ },
+ "Calle Medina 1, Briviesca": {
+  "lat": 41.49511,
+  "lon": 1.66693,
+  "tipo": "portal"
+ },
+ "Calle Medina, Briviesca": {
+  "lat": 42.55151,
+  "lon": -3.32462,
+  "tipo": "callejero"
+ },
+ "Calle El Sol 3, Espinosa de los Monteros": {
+  "lat": 43.07714,
+  "lon": -3.55222,
+  "tipo": "portal"
+ },
+ "Calle Progreso 8, Espinosa de los Monteros": {
+  "lat": 43.07606,
+  "lon": -3.55097,
+  "tipo": "portal"
+ },
+ "Calle El Sol 10, Espinosa de los Monteros": {
+  "lat": 43.07739,
+  "lon": -3.55219,
+  "tipo": "portal"
+ },
+ "Calle Miranda de Arias 22, Fuentespina": {
+  "lat": 41.63102,
+  "lon": -3.68548,
+  "tipo": "portal"
+ },
+ "Calle Rodriguez Valcarcel 4, Huerta de Rey": {
+  "lat": 41.84028,
+  "lon": -3.34838,
+  "tipo": "portal"
+ },
+ "Calle San Juan 3, La Puebla de Arganzón": {
+  "lat": 42.76553,
+  "lon": -2.83241,
+  "tipo": "portal"
+ },
+ "Calle Mayor 68, Lerma": {
+  "lat": 42.02609,
+  "lon": -3.75672,
+  "tipo": "portal"
+ },
+ "Calle Mayor 2, Lerma": {
+  "lat": 41.97928,
+  "lon": -3.66857,
+  "tipo": "portal"
+ },
+ "Plaza De los Mesones 24, Lerma": {
+  "lat": 37.01046,
+  "lon": -2.7393,
+  "tipo": "portal"
+ },
+ "Plaza De los Mesones, Lerma": null,
+ "Calle Principe de Asturias 4, Medina de Pomar": {
+  "lat": 42.93358,
+  "lon": -3.48519,
+  "tipo": "portal"
+ },
+ "Calle Juan de Medina 7, Medina de Pomar": {
+  "lat": 42.93375,
+  "lon": -3.48661,
+  "tipo": "portal"
+ },
+ "Avenida De Burgos 14, Medina de Pomar": {
+  "lat": 42.93057,
+  "lon": -3.48461,
+  "tipo": "portal"
+ },
+ "Avenida E. de Burgos 10, Medina de Pomar": {
+  "lat": 42.93095,
+  "lon": -3.48511,
+  "tipo": "portal"
+ },
+ "Avenida De Burgos 15, Medina de Pomar": {
+  "lat": 42.93008,
+  "lon": -3.48316,
+  "tipo": "portal"
+ },
+ "Calle Briviesca 3, Medina de Pomar": {
+  "lat": 42.93194,
+  "lon": -3.48496,
+  "tipo": "portal"
+ },
+ "Calle Doctor Fleming 5, Medina de Pomar": {
+  "lat": 42.9335,
+  "lon": -3.48697,
+  "tipo": "portal"
+ },
+ "Avenida Burgos 2, Medina de Pomar": {
+  "lat": 42.93135,
+  "lon": -3.48557,
+  "tipo": "portal"
+ },
+ "Calle Doctor Fleming 13, Medina de Pomar": {
+  "lat": 42.93341,
+  "lon": -3.48801,
+  "tipo": "portal"
+ },
+ "Calle Infanta Leonor 3, Medina de Pomar": {
+  "lat": 42.93392,
+  "lon": -3.49659,
+  "tipo": "portal"
+ },
+ "Calle Briviesca 2, Medina de Pomar": {
+  "lat": 42.93152,
+  "lon": -3.48524,
+  "tipo": "portal"
+ },
+ "Plaza Del Cid 3, Melgar de Fernamental": {
+  "lat": 42.40361,
+  "lon": -4.24726,
+  "tipo": "portal"
+ },
+ "Avenida Alcalde Enrique Maestru 16, Melgar de Fernamental": {
+  "lat": 42.40246,
+  "lon": -4.24358,
+  "tipo": "portal"
+ },
+ "Calle Cid 12, Miranda de Ebro": {
+  "lat": 42.68618,
+  "lon": -2.94433,
+  "tipo": "portal"
+ },
+ "Calle Concepcion Arenal 4, Miranda de Ebro": {
+  "lat": 42.68854,
+  "lon": -2.94195,
+  "tipo": "portal"
+ },
+ "Calle Condado de Treviño 27, Miranda de Ebro": {
+  "lat": 42.68405,
+  "lon": -2.94486,
+  "tipo": "portal"
+ },
+ "Calle Condado de Treviño 40, Miranda de Ebro": {
+  "lat": 42.68517,
+  "lon": -2.94279,
+  "tipo": "portal"
+ },
+ "Calle Arenal 63, Miranda de Ebro": {
+  "lat": 42.68571,
+  "lon": -2.94461,
+  "tipo": "portal"
+ },
+ "Ronda Del Ferrocarril 21, Miranda de Ebro": {
+  "lat": 42.68378,
+  "lon": -2.94802,
+  "tipo": "portal"
+ },
+ "Calle Condado de Treviño 36B, Miranda de Ebro": {
+  "lat": 42.68487,
+  "lon": -2.94321,
+  "tipo": "portal"
+ },
+ "Calle Estacion 5, Miranda de Ebro": {
+  "lat": 42.68589,
+  "lon": -2.94732,
+  "tipo": "portal"
+ },
+ "Calle Alfonso VI 23, Miranda de Ebro": {
+  "lat": 42.68447,
+  "lon": -2.94562,
+  "tipo": "portal"
+ },
+ "Calle De la Estacion 32, Miranda de Ebro": {
+  "lat": 42.68712,
+  "lon": -2.9449,
+  "tipo": "portal"
+ },
+ "Calle Arenal 77, Miranda de Ebro": {
+  "lat": 42.68649,
+  "lon": -2.94335,
+  "tipo": "portal"
+ },
+ "Calle Francisco Cantera 13, Miranda de Ebro": {
+  "lat": 42.68575,
+  "lon": -2.94503,
+  "tipo": "portal"
+ },
+ "Plaza Abastos 8, Miranda de Ebro": null,
+ "Plaza Abastos, Miranda de Ebro": {
+  "lat": 42.68547,
+  "lon": -2.94561,
+  "tipo": "callejero"
+ },
+ "Calle La Estacion 42, Miranda de Ebro": {
+  "lat": 42.6874,
+  "lon": -2.94443,
+  "tipo": "portal"
+ },
+ "Calle Arenal 93, Miranda de Ebro": {
+  "lat": 42.68763,
+  "lon": -2.94145,
+  "tipo": "portal"
+ },
+ "Calle La Estacion 24, Miranda de Ebro": {
+  "lat": 42.68668,
+  "lon": -2.94568,
+  "tipo": "portal"
+ },
+ "Calle Ramon, Miranda de Ebro": {
+  "lat": 42.68704,
+  "lon": -2.94374,
+  "tipo": "callejero"
+ },
+ "Avenida República Argentina 75, Miranda de Ebro": {
+  "lat": 42.68758,
+  "lon": -2.93768,
+  "tipo": "portal"
+ },
+ "Calle Riberas del Ebro (Pol. Industrial las Californias), Miranda de Ebro": null,
+ "Calle Colon 1, Miranda de Ebro": {
+  "lat": 42.68649,
+  "lon": -2.94808,
+  "tipo": "portal"
+ },
+ "Calle Dionisio Camarero 28, Moradillo de Roa": {
+  "lat": 41.55272,
+  "lon": -3.79088,
+  "tipo": "portal"
+ },
+ "Calle Mayor 4, Pradoluengo": {
+  "lat": 42.32681,
+  "lon": -3.22496,
+  "tipo": "portal"
+ },
+ "Calle San Roque 1, Pradoluengo": {
+  "lat": 42.32499,
+  "lon": -3.20197,
+  "tipo": "portal"
+ },
+ "Avenida Alfoz de Quintanadueñas 4, Quintanadueñas": {
+  "lat": 42.38467,
+  "lon": -3.73447,
+  "tipo": "portal"
+ },
+ "Calle Ernesto Sanz 8, Quintanar de la Sierra": {
+  "lat": 41.9814,
+  "lon": -3.04057,
+  "tipo": "portal"
+ },
+ "Calle Empecinado 2, Roa": {
+  "lat": 41.69656,
+  "lon": -3.92799,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 5, Roa": {
+  "lat": 41.68842,
+  "lon": -3.87304,
+  "tipo": "portal"
+ },
+ "Calle Juan Yagüe 8, Salas de los Infantes": null,
+ "Calle Juan Yagüe, Salas de los Infantes": null,
+ "Avenida De la Estacion 6, Salas de los Infantes": {
+  "lat": 42.02126,
+  "lon": -3.28802,
+  "tipo": "portal"
+ },
+ "Calle Castillo 21 21B, Salas de los Infantes": {
+  "lat": 42.02035,
+  "lon": -3.27877,
+  "tipo": "portal"
+ },
+ "Avenida Puente de la Magdalena 18, Condado de Treviño": {
+  "lat": 42.7341,
+  "lon": -2.7491,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 23, Villadiego": {
+  "lat": 42.51547,
+  "lon": -4.01039,
+  "tipo": "portal"
+ },
+ "Avenida Enida Pedernales 28, Villagonzalo Pedernales": {
+  "lat": 42.3019,
+  "lon": -3.70399,
+  "tipo": "portal"
+ },
+ "Calle Jardines 1, Villalba de Duero": {
+  "lat": 41.68185,
+  "lon": -3.74324,
+  "tipo": "portal"
+ },
+ "Calle Real 14, Villalbilla de Burgos": {
+  "lat": 42.34688,
+  "lon": -3.7799,
+  "tipo": "portal"
+ },
+ "Calle Mayor 34, Villamayor de los Montes": {
+  "lat": 42.10681,
+  "lon": -3.76484,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 8, Villarcayo de Merindad de Castilla la Vieja": {
+  "lat": 42.99052,
+  "lon": -3.56419,
+  "tipo": "portal"
+ },
+ "Calle Eliseo Cuadrado García., Villarcayo de Merindad de Castilla la Vieja": {
+  "lat": 42.93283,
+  "lon": -3.57906,
+  "tipo": "callejero"
+ },
+ "Calle General Sanz Pastor 43, Zazuar": {
+  "lat": 41.69706,
+  "lon": -3.55348,
+  "tipo": "portal"
+ },
+ "Calle Ordoño II 27, León": {
+  "lat": 42.59681,
+  "lon": -5.57652,
+  "tipo": "toponimo"
+ },
+ "Calle Fray Luis de Leon 17, León": {
+  "lat": 42.58848,
+  "lon": -5.56851,
+  "tipo": "portal"
+ },
+ "Calle Anunciata 6, León": {
+  "lat": 42.60173,
+  "lon": -5.59181,
+  "tipo": "portal"
+ },
+ "Calle Pasaje Republica Argentina 32, León": null,
+ "Calle Pasaje Republica Argentina, León": null,
+ "Calle C Espacio Leon, León": {
+  "lat": 42.49954,
+  "lon": -5.58853,
+  "tipo": "callejero"
+ },
+ "Plaza San Marcos 2, León": {
+  "lat": 42.60106,
+  "lon": -5.58129,
+  "tipo": "portal"
+ },
+ "Calle San Glorio 9, León": {
+  "lat": 42.60603,
+  "lon": -5.56991,
+  "tipo": "portal"
+ },
+ "Calle Fray Luis de Leon 29, León": {
+  "lat": 42.59104,
+  "lon": -5.56867,
+  "tipo": "portal"
+ },
+ "Calle Velazquez 19, León": {
+  "lat": 42.59032,
+  "lon": -5.56605,
+  "tipo": "portal"
+ },
+ "Avenida Suero de Quiñones 22, León": {
+  "lat": 42.60178,
+  "lon": -5.57873,
+  "tipo": "portal"
+ },
+ "Calle El Hayedo 6, León": {
+  "lat": 42.60544,
+  "lon": -5.56221,
+  "tipo": "portal"
+ },
+ "Avenida Republica Argentina, León": {
+  "lat": 42.59538,
+  "lon": -5.57491,
+  "tipo": "callejero"
+ },
+ "Avenida Mariano Andres 97, León": {
+  "lat": 42.6124,
+  "lon": -5.57044,
+  "tipo": "portal"
+ },
+ "Paseo Condesa de Sagasta 32, León": {
+  "lat": 42.59945,
+  "lon": -5.58041,
+  "tipo": "portal"
+ },
+ "Calle Santa Ana 22, León": {
+  "lat": 42.59414,
+  "lon": -5.56583,
+  "tipo": "portal"
+ },
+ "Avenida San Mames 26, León": {
+  "lat": 42.60545,
+  "lon": -5.57094,
+  "tipo": "portal"
+ },
+ "Calle La Torre 3, León": {
+  "lat": 42.60037,
+  "lon": -5.57298,
+  "tipo": "portal"
+ },
+ "Calle Relojero Losada 16, León": {
+  "lat": 42.6004,
+  "lon": -5.58914,
+  "tipo": "portal"
+ },
+ "Calle Santo Toribio de Mogrovejo 74, León": {
+  "lat": 42.59245,
+  "lon": -5.56353,
+  "tipo": "portal"
+ },
+ "Calle Burgo Nuevo 13, León": {
+  "lat": 42.59672,
+  "lon": -5.57247,
+  "tipo": "portal"
+ },
+ "Calle Sancho Ordoñez 18, León": {
+  "lat": 42.60845,
+  "lon": -5.56918,
+  "tipo": "portal"
+ },
+ "Avenida San Andres 9, León": {
+  "lat": 42.60185,
+  "lon": -5.58964,
+  "tipo": "portal"
+ },
+ "Calle Antonio Gamoneda 3, León": {
+  "lat": 42.60235,
+  "lon": -5.55884,
+  "tipo": "portal"
+ },
+ "Avenida Antibioticos 86, León": {
+  "lat": 42.58268,
+  "lon": -5.58414,
+  "tipo": "portal"
+ },
+ "Avenida Reyes Leoneses 13, León": {
+  "lat": 42.60404,
+  "lon": -5.57979,
+  "tipo": "portal"
+ },
+ "Avenida Reyes Leoneses 23, León": {
+  "lat": 42.60638,
+  "lon": -5.58321,
+  "tipo": "portal"
+ },
+ "Calle Daoiz, León": {
+  "lat": 42.59529,
+  "lon": -5.56197,
+  "tipo": "callejero"
+ },
+ "Calle Gran Vía de San Marcos 43, León": {
+  "lat": 42.60117,
+  "lon": -5.58043,
+  "tipo": "portal"
+ },
+ "Calle Ordoño II 8, León": {
+  "lat": 42.60526,
+  "lon": -5.56674,
+  "tipo": "portal"
+ },
+ "Avenida Reyes Leoneses 46, León": {
+  "lat": 42.61276,
+  "lon": -5.58796,
+  "tipo": "portal"
+ },
+ "Avenida Fernandez Ladreda 52, León": {
+  "lat": 42.58655,
+  "lon": -5.56817,
+  "tipo": "portal"
+ },
+ "Plaza Del Espolon 1, León": {
+  "lat": 42.60287,
+  "lon": -5.57043,
+  "tipo": "portal"
+ },
+ "Calle Rúa 35, León": {
+  "lat": 42.59634,
+  "lon": -5.56978,
+  "tipo": "portal"
+ },
+ "Calle Platerias 5, León": {
+  "lat": 42.59739,
+  "lon": -5.56758,
+  "tipo": "portal"
+ },
+ "Avenida Republica Argentina 1, León": null,
+ "Calle Fray Luis de Leon 24, León": {
+  "lat": 42.58996,
+  "lon": -5.56837,
+  "tipo": "portal"
+ },
+ "Calle Dr. Fleming 8, León": {
+  "lat": 41.78752,
+  "lon": 0.8104,
+  "tipo": "portal"
+ },
+ "Calle Dr. Fleming, León": {
+  "lat": 42.59535,
+  "lon": -5.58522,
+  "tipo": "callejero"
+ },
+ "Avenida Jose Maria Fernandez 38, León": {
+  "lat": 37.02375,
+  "lon": -4.57359,
+  "tipo": "portal"
+ },
+ "Avenida Jose Maria Fernandez, León": {
+  "lat": 42.59882,
+  "lon": -5.56221,
+  "tipo": "callejero"
+ },
+ "Calle Ancha 3, León": {
+  "lat": 42.59859,
+  "lon": -5.56799,
+  "tipo": "portal"
+ },
+ "Calle San Francisco 15, León": {
+  "lat": 37.34879,
+  "lon": -2.13751,
+  "tipo": "portal"
+ },
+ "Calle San Francisco, León": {
+  "lat": 42.59447,
+  "lon": -5.57013,
+  "tipo": "callejero"
+ },
+ "Calle Padre Isla 116, León": {
+  "lat": 42.60724,
+  "lon": -5.5801,
+  "tipo": "portal"
+ },
+ "Calle Marqueses de San Isdro 12, León": {
+  "lat": 42.58998,
+  "lon": -5.57253,
+  "tipo": "portal"
+ },
+ "Avenida Padre Isla 4, León": {
+  "lat": 42.59876,
+  "lon": -5.57226,
+  "tipo": "portal"
+ },
+ "Avenida Fernandez Ladreda 11, León": {
+  "lat": 42.58742,
+  "lon": -5.56245,
+  "tipo": "portal"
+ },
+ "Calle San Juan Bosco 15, León": {
+  "lat": 39.49177,
+  "lon": -0.37243,
+  "tipo": "portal"
+ },
+ "Calle San Juan Bosco, León": {
+  "lat": 42.57894,
+  "lon": -5.5875,
+  "tipo": "callejero"
+ },
+ "Calle Astorga 6, León": {
+  "lat": 42.59639,
+  "lon": -5.58215,
+  "tipo": "portal"
+ },
+ "Calle Ancha 23, León": {
+  "lat": 42.5981,
+  "lon": -5.57005,
+  "tipo": "portal"
+ },
+ "Avenida Doctor Fleming 44, León": {
+  "lat": 42.59604,
+  "lon": -5.58546,
+  "tipo": "portal"
+ },
+ "Avenida De Roma 4, León": {
+  "lat": 42.59883,
+  "lon": -5.57638,
+  "tipo": "portal"
+ },
+ "Calle Villa Benavente 25, León": {
+  "lat": 42.12823,
+  "lon": -5.72915,
+  "tipo": "portal"
+ },
+ "Calle Villa Benavente, León": {
+  "lat": 42.59521,
+  "lon": -5.57333,
+  "tipo": "callejero"
+ },
+ "Avenida De Cedo 20, León": {
+  "lat": 40.997,
+  "lon": -5.3707,
+  "tipo": "portal"
+ },
+ "Avenida De Cedo, León": null,
+ "Calle Barahona 3, León": {
+  "lat": 42.59361,
+  "lon": -5.56775,
+  "tipo": "portal"
+ },
+ "Plaza Doce Martires, León": {
+  "lat": 42.59222,
+  "lon": -5.57279,
+  "tipo": "callejero"
+ },
+ "Avenida De Quevedo 4, León": {
+  "lat": 42.59994,
+  "lon": -5.58679,
+  "tipo": "portal"
+ },
+ "Avenida Enida Reyes Leoneses 14, León": {
+  "lat": 42.60404,
+  "lon": -5.57979,
+  "tipo": "portal"
+ },
+ "Avenida Peregrino 8, León": {
+  "lat": 42.60433,
+  "lon": -5.583,
+  "tipo": "portal"
+ },
+ "Avenida Republica Argentina 41, León": {
+  "lat": 38.59362,
+  "lon": -0.66834,
+  "tipo": "portal"
+ },
+ "Calle Relojero Losada 33, León": {
+  "lat": 42.60162,
+  "lon": -5.59062,
+  "tipo": "portal"
+ },
+ "Calle Gran Via de San Marcos 3, León": null,
+ "Calle Gran Via de San Marcos, León": {
+  "lat": 42.59968,
+  "lon": -5.57645,
+  "tipo": "callejero"
+ },
+ "Calle Carmen 3, León": {
+  "lat": 42.58813,
+  "lon": -5.58813,
+  "tipo": "portal"
+ },
+ "Calle Granados 20, León": {
+  "lat": 42.59284,
+  "lon": -5.56051,
+  "tipo": "portal"
+ },
+ "Calle Vazquez de Mella 12, León": {
+  "lat": 42.60539,
+  "lon": -5.5674,
+  "tipo": "portal"
+ },
+ "Calle Lancia 15, León": {
+  "lat": 42.59367,
+  "lon": -5.57447,
+  "tipo": "portal"
+ },
+ "Calle Demetrio Monteserin 8, León": {
+  "lat": 42.59669,
+  "lon": -5.58653,
+  "tipo": "portal"
+ },
+ "Avenida Del Alcalde Miguel Carcaño 95, León": null,
+ "Avenida Del Alcalde Miguel Carcaño, León": null,
+ "Calle La Granja 19, León": {
+  "lat": 38.02483,
+  "lon": -6.42213,
+  "tipo": "portal"
+ },
+ "Avenida Alvaro Lopez Nuñez 18, León": null,
+ "Avenida Alvaro Lopez Nuñez, León": {
+  "lat": 42.60365,
+  "lon": -5.57339,
+  "tipo": "callejero"
+ },
+ "Calle Colón 7, León": {
+  "lat": 42.59881,
+  "lon": -5.57769,
+  "tipo": "portal"
+ },
+ "Avenida Pais Leonés 12, León": {
+  "lat": 42.61134,
+  "lon": -5.59412,
+  "tipo": "portal"
+ },
+ "Avenida San Andres 1, León": {
+  "lat": 42.60189,
+  "lon": -5.5884,
+  "tipo": "portal"
+ },
+ "Avenida Reino de Leon 11, León": {
+  "lat": 42.59277,
+  "lon": -5.5645,
+  "tipo": "portal"
+ },
+ "Calle Moises Leon (, León": {
+  "lat": 42.59138,
+  "lon": -5.55877,
+  "tipo": "callejero"
+ },
+ "Avenida Roma 4, León": {
+  "lat": 42.59883,
+  "lon": -5.57638,
+  "tipo": "portal"
+ },
+ "Avenida Reyes Leoneses 26, León": {
+  "lat": 42.60732,
+  "lon": -5.58395,
+  "tipo": "portal"
+ },
+ "Calle Fray Luis de Leon 21, León": {
+  "lat": 42.58939,
+  "lon": -5.56857,
+  "tipo": "portal"
+ },
+ "Calle Las Medulas 1, León": {
+  "lat": 42.61179,
+  "lon": -5.58659,
+  "tipo": "portal"
+ },
+ "Calle Baldomero Lozano 14, León": {
+  "lat": 42.61035,
+  "lon": -5.56662,
+  "tipo": "portal"
+ },
+ "Avenida Cedo 6, León": null,
+ "Avenida De Leon(C.C Reino de Leo, León": null,
+ "Calle Colon 19, León": {
+  "lat": 42.59917,
+  "lon": -5.57872,
+  "tipo": "portal"
+ },
+ "Avenida Padre Isla 10, León": {
+  "lat": 42.59915,
+  "lon": -5.57261,
+  "tipo": "portal"
+ },
+ "Calle Fray Luis de Leon, León": {
+  "lat": 42.58948,
+  "lon": -5.56847,
+  "tipo": "callejero"
+ },
+ "Avenida Jose Maria Fernandez 54, León": {
+  "lat": 37.02421,
+  "lon": -4.57376,
+  "tipo": "portal"
+ },
+ "Avenida Mariano Andres 24008, León": {
+  "lat": 42.60409,
+  "lon": -5.57408,
+  "tipo": "portal"
+ },
+ "Avenida Fernandez Ladreda 46, León": {
+  "lat": 42.58664,
+  "lon": -5.5672,
+  "tipo": "portal"
+ },
+ "Calle Posadera Aldonza 1, León": {
+  "lat": 42.60925,
+  "lon": -5.56774,
+  "tipo": "portal"
+ },
+ "Calle Conde Peña Ramiro 2, León": null,
+ "Calle Conde Peña Ramiro, León": {
+  "lat": 42.6051,
+  "lon": -5.57306,
+  "tipo": "callejero"
+ },
+ "Carretera Vilecha 21, León": {
+  "lat": 42.58041,
+  "lon": -5.57386,
+  "tipo": "portal"
+ },
+ "Avenida República Argentina 37, León": {
+  "lat": 37.88184,
+  "lon": -4.7867,
+  "tipo": "portal"
+ },
+ "Avenida República Argentina, León": {
+  "lat": 42.59538,
+  "lon": -5.57491,
+  "tipo": "callejero"
+ },
+ "Avenida Alcalde Miguel Castaño 32, León": null,
+ "Avenida Alcalde Miguel Castaño, León": {
+  "lat": 42.58785,
+  "lon": -5.56139,
+  "tipo": "callejero"
+ },
+ "Avenida Padre Isla 23, León": {
+  "lat": 42.60058,
+  "lon": -5.57409,
+  "tipo": "portal"
+ },
+ "Avenida Reyes Leoneses / Av. Peregrinos 8 10, León": null,
+ "Avenida Reyes Leoneses / Av. Peregrinos 8, León": null,
+ "Calle Alcalde Miguel Castaño 121, León": null,
+ "Calle Alcalde Miguel Castaño, León": {
+  "lat": 42.58785,
+  "lon": -5.56139,
+  "tipo": "callejero"
+ },
+ "Avenida De la Oza, León": null,
+ "Avenida Antibioticos 41, León": {
+  "lat": 42.58564,
+  "lon": -5.58413,
+  "tipo": "portal"
+ },
+ "Calle Pio Gullon 1, Astorga": {
+  "lat": 42.45484,
+  "lon": -6.05349,
+  "tipo": "portal"
+ },
+ "Calle Pio Gullon 11, Astorga": {
+  "lat": 42.45524,
+  "lon": -6.05376,
+  "tipo": "portal"
+ },
+ "Carretera Las Murallas 62, Astorga": {
+  "lat": 42.45893,
+  "lon": -6.05674,
+  "tipo": "portal"
+ },
+ "Avenida Ponferrada 45, Astorga": {
+  "lat": 42.45956,
+  "lon": -6.06135,
+  "tipo": "portal"
+ },
+ "Calle Garcia Prieto 2, Astorga": {
+  "lat": 42.45609,
+  "lon": -6.05445,
+  "tipo": "portal"
+ },
+ "Calle Lorenzo Segura 2, Astorga": {
+  "lat": 42.45592,
+  "lon": -6.05318,
+  "tipo": "portal"
+ },
+ "Calle Prieto de Castro 1, Astorga": {
+  "lat": 42.45469,
+  "lon": -6.05348,
+  "tipo": "portal"
+ },
+ "Calle Alonso Garrote 10, Astorga": {
+  "lat": 42.45549,
+  "lon": -6.05423,
+  "tipo": "portal"
+ },
+ "Calle Garcia Prieto 9, Astorga": {
+  "lat": 42.4557,
+  "lon": -6.0549,
+  "tipo": "portal"
+ },
+ "Calle Doctor Cortes Rivas, Astorga": {
+  "lat": 42.45244,
+  "lon": -6.0594,
+  "tipo": "callejero"
+ },
+ "Plaza Santocildes 5, Astorga": {
+  "lat": 42.45544,
+  "lon": -6.05319,
+  "tipo": "portal"
+ },
+ "Avenida Madrid-A Coruña 248, Astorga": {
+  "lat": 40.49388,
+  "lon": -3.86881,
+  "tipo": "portal"
+ },
+ "Avenida Madrid-A Coruña, Astorga": null,
+ "Calle Doctoral 3, Astorga": {
+  "lat": 42.4613,
+  "lon": -6.06127,
+  "tipo": "portal"
+ },
+ "Plaza Santocildes 4, Astorga": {
+  "lat": 42.45532,
+  "lon": -6.05315,
+  "tipo": "portal"
+ },
+ "Calle Los Sitios 1, Astorga": {
+  "lat": 42.45687,
+  "lon": -6.05449,
+  "tipo": "portal"
+ },
+ "Calle Sr. Ovalle 7, Astorga": {
+  "lat": 42.45481,
+  "lon": -6.05237,
+  "tipo": "portal"
+ },
+ "Calle La Era 7, Barrientos de la Vega": null,
+ "Calle La Era, Barrientos de la Vega": {
+  "lat": 42.0217,
+  "lon": -6.2025,
+  "tipo": "callejero"
+ },
+ "Avenida Villafranca 30, Bembibre": {
+  "lat": 42.61608,
+  "lon": -6.4182,
+  "tipo": "portal"
+ },
+ "Calle Castilla 5, Bembibre": {
+  "lat": 41.01256,
+  "lon": 0.92742,
+  "tipo": "portal"
+ },
+ "Calle Castilla, Bembibre": null,
+ "Paseo Veremundo Nuñez 21, Bembibre": {
+  "lat": 42.6182,
+  "lon": -6.42211,
+  "tipo": "portal"
+ },
+ "Calle Susana Gonzalez 41, Bembibre": {
+  "lat": 42.61127,
+  "lon": -6.42112,
+  "tipo": "portal"
+ },
+ "Avenida Villafranca 35, Bembibre": {
+  "lat": 42.61621,
+  "lon": -6.4185,
+  "tipo": "portal"
+ },
+ "Calle José Antonio del Barrio 27, Bembibre": {
+  "lat": 42.63582,
+  "lon": -6.42231,
+  "tipo": "portal"
+ },
+ "Calle Manuel Nuñez Perez 9, Benavides": null,
+ "Calle Manuel Nuñez Perez, Benavides": {
+  "lat": 42.50369,
+  "lon": -5.90034,
+  "tipo": "callejero"
+ },
+ "Avenida De la Plaza 1, Berlanga del Bierzo": null,
+ "Avenida De la Plaza, Berlanga del Bierzo": null,
+ "Calle Corredera 4, Boñar": {
+  "lat": 42.8684,
+  "lon": -5.32301,
+  "tipo": "portal"
+ },
+ "Calle Las Escuelas 8, Boñar": {
+  "lat": 42.86769,
+  "lon": -5.32188,
+  "tipo": "portal"
+ },
+ "Plaza Del Ayuntamiento, Bustillo del Páramo": {
+  "lat": 42.35499,
+  "lon": -4.73971,
+  "tipo": "callejero"
+ },
+ "Carretera De Degaña 36, Caboalles de Abajo": {
+  "lat": 42.95147,
+  "lon": -6.37697,
+  "tipo": "portal"
+ },
+ "Avenida Enida de la Constitución 23, Cacabelos": {
+  "lat": 42.59753,
+  "lon": -6.72481,
+  "tipo": "portal"
+ },
+ "Avenida Camino de Santiago 65, Camponaraya": {
+  "lat": 43.18393,
+  "lon": -5.81362,
+  "tipo": "portal"
+ },
+ "Avenida Camino de Santiago, Camponaraya": {
+  "lat": 42.58039,
+  "lon": -6.66966,
+  "tipo": "callejero"
+ },
+ "Calle San Roque 23, Carracedelo": {
+  "lat": 36.27081,
+  "lon": -5.34214,
+  "tipo": "portal"
+ },
+ "Calle San Roque, Carracedelo": {
+  "lat": 28.39493,
+  "lon": -14.01683,
+  "tipo": "callejero"
+ },
+ "Calle Puente de Hierro 62, Carrizo de la Ribera": {
+  "lat": 42.58465,
+  "lon": -5.8276,
+  "tipo": "portal"
+ },
+ "Avenida Puente de Hierro 37, Carrizo de la Ribera": {
+  "lat": 42.5847,
+  "lon": -5.82575,
+  "tipo": "portal"
+ },
+ "Avenida De Asturias 4, Carrizo de la Ribera": null,
+ "Avenida De Asturias, Carrizo de la Ribera": null,
+ "Carretera Médulas 1, Carucedo": {
+  "lat": 42.49107,
+  "lon": -6.76045,
+  "tipo": "portal"
+ },
+ "Avenida Enida Rey Gunderico 37, Castrocontrigo": {
+  "lat": 42.18278,
+  "lon": -6.19092,
+  "tipo": "portal"
+ },
+ "Calle Amadeo Laran 6, Ciñera": null,
+ "Calle Amadeo Laran, Ciñera": null,
+ "Plaza Severo Gomez Nuñez, Cubillos del Sil": {
+  "lat": 42.6221,
+  "lon": -6.56748,
+  "tipo": "callejero"
+ },
+ "Calle Real 29, Fabero": {
+  "lat": 42.78498,
+  "lon": -6.61216,
+  "tipo": "portal"
+ },
+ "Calle Gil, Fabero": {
+  "lat": 42.76566,
+  "lon": -6.62646,
+  "tipo": "callejero"
+ },
+ "Calle Doctores Terron 11, Fabero": {
+  "lat": 42.76861,
+  "lon": -6.62433,
+  "tipo": "portal"
+ },
+ "Calle Los Templarios 3, Fabero": {
+  "lat": 42.76765,
+  "lon": -6.62805,
+  "tipo": "portal"
+ },
+ "Avenida Doctores Terron, Fabero": {
+  "lat": 42.77192,
+  "lon": -6.62105,
+  "tipo": "callejero"
+ },
+ "Calle San Roque 3, Gordoncillo": {
+  "lat": 42.13583,
+  "lon": -5.40177,
+  "tipo": "portal"
+ },
+ "Calle Carretera 11, Gradefes": {
+  "lat": 41.09194,
+  "lon": 0.31529,
+  "tipo": "portal"
+ },
+ "Calle Carretera, Gradefes": {
+  "lat": 42.5978,
+  "lon": -5.27498,
+  "tipo": "callejero"
+ },
+ "Calle Dr. Santos Olivera 3, Hospital de Órbigo": null,
+ "Calle Dr. Santos Olivera, Hospital de Órbigo": {
+  "lat": 42.46286,
+  "lon": -5.88092,
+  "tipo": "callejero"
+ },
+ "Carretera Leon-Astorga 24, Hospital de Órbigo": {
+  "lat": 42.45859,
+  "lon": -5.88404,
+  "tipo": "portal"
+ },
+ "Calle Carro Pinillas 42, Jiménez de Jamuz": {
+  "lat": 42.26341,
+  "lon": -5.92929,
+  "tipo": "portal"
+ },
+ "Calle La Carcava 11, Joarilla de las Matas": {
+  "lat": 42.28816,
+  "lon": -5.17644,
+  "tipo": "portal"
+ },
+ "Calle General Benavides 13, La Bañeza": {
+  "lat": 42.30998,
+  "lon": -5.99793,
+  "tipo": "portal"
+ },
+ "Calle Juan Carlos I 34, La Bañeza": {
+  "lat": 41.29943,
+  "lon": 2.00167,
+  "tipo": "portal"
+ },
+ "Calle Juan Carlos I, La Bañeza": {
+  "lat": 42.29745,
+  "lon": -5.89852,
+  "tipo": "callejero"
+ },
+ "Calle Del Reloj 16, La Bañeza": {
+  "lat": 42.29925,
+  "lon": -5.89857,
+  "tipo": "portal"
+ },
+ "Calle General Benavides 3, La Bañeza": null,
+ "Calle General Benavides, La Bañeza": {
+  "lat": 42.30634,
+  "lon": -5.90569,
+  "tipo": "callejero"
+ },
+ "Calle Via de la Plata 51, La Bañeza": {
+  "lat": 42.29991,
+  "lon": -5.90221,
+  "tipo": "portal"
+ },
+ "Calle Escultor Fco. Rivera 22, La Bañeza": {
+  "lat": 42.29821,
+  "lon": -5.89981,
+  "tipo": "portal"
+ },
+ "Calle Tr Madrid-Coruña Km 302, La Bañeza": null,
+ "Calle Tr Madrid-Coruña Km, La Bañeza": null,
+ "Calle General Benavides – C/ la Veguilla, La Bañeza": null,
+ "Avenida La Magdalena 2, La Magdalena": {
+  "lat": 43.41607,
+  "lon": -8.16815,
+  "tipo": "portal"
+ },
+ "Avenida La Magdalena, La Magdalena": {
+  "lat": 43.46848,
+  "lon": -3.77494,
+  "tipo": "callejero"
+ },
+ "Calle Amadeo Laran, La Pola de Gordón": {
+  "lat": 42.8839,
+  "lon": -5.63686,
+  "tipo": "callejero"
+ },
+ "Calle Ramon, La Robla": {
+  "lat": 37.56748,
+  "lon": -1.80516,
+  "tipo": "callejero"
+ },
+ "Calle Mayor 8, La Robla": {
+  "lat": 42.81897,
+  "lon": -5.62679,
+  "tipo": "portal"
+ },
+ "Calle Barrio la Paz Bloque 1, La Robla": null,
+ "Calle Barrio la Paz Bloque, La Robla": null,
+ "Calle Cervantes 3, La Virgen del Camino": {
+  "lat": 40.17623,
+  "lon": -3.67377,
+  "tipo": "portal"
+ },
+ "Calle Cervantes, La Virgen del Camino": {
+  "lat": 42.38382,
+  "lon": -5.33212,
+  "tipo": "callejero"
+ },
+ "Calle Cervantes 8, La Virgen del Camino": {
+  "lat": 43.46865,
+  "lon": -3.79955,
+  "tipo": "portal"
+ },
+ "Calle Honda 75, Laguna de Negrillos": {
+  "lat": 42.23479,
+  "lon": -5.66538,
+  "tipo": "portal"
+ },
+ "Carretera Caboalles 35, Lorenzana": {
+  "lat": 42.78653,
+  "lon": -5.76981,
+  "tipo": "portal"
+ },
+ "Calle Leiro 14, Lucillo": {
+  "lat": 42.40771,
+  "lon": -6.30435,
+  "tipo": "portal"
+ },
+ "Avenida Constitucion 50, Matallana de Torío": {
+  "lat": 42.84422,
+  "lon": -5.52163,
+  "tipo": "portal"
+ },
+ "Paseo De las Damas 18, Miñambres de la Valduerna": {
+  "lat": 42.30743,
+  "lon": -5.97686,
+  "tipo": "portal"
+ },
+ "Calle Manuel Fraga 76, Molinaseca": {
+  "lat": 42.5397,
+  "lon": -6.52382,
+  "tipo": "portal"
+ },
+ "Avenida La Libertad 65, Navatejera": {
+  "lat": 37.30168,
+  "lon": -5.95145,
+  "tipo": "portal"
+ },
+ "Avenida La Libertad, Navatejera": null,
+ "Avenida La Libertad 73, Navatejera": {
+  "lat": 42.4811,
+  "lon": -2.64671,
+  "tipo": "portal"
+ },
+ "Calle Los Arcos 14, Noceda del Bierzo": {
+  "lat": 42.71177,
+  "lon": -6.3984,
+  "tipo": "portal"
+ },
+ "Calle Real 3, Ponferrada": {
+  "lat": 42.44654,
+  "lon": -6.57119,
+  "tipo": "portal"
+ },
+ "Calle La Paz 6, Ponferrada": {
+  "lat": 42.54855,
+  "lon": -6.59964,
+  "tipo": "portal"
+ },
+ "Calle La Paz 7, Ponferrada": {
+  "lat": 42.54865,
+  "lon": -6.59938,
+  "tipo": "portal"
+ },
+ "Calle Los Almendros 7, Ponferrada": {
+  "lat": 42.54749,
+  "lon": -6.58651,
+  "tipo": "portal"
+ },
+ "Avenida De Asturias 110, Ponferrada": {
+  "lat": 42.79725,
+  "lon": -4.8474,
+  "tipo": "portal"
+ },
+ "Avenida De Asturias, Ponferrada": {
+  "lat": 42.56022,
+  "lon": -6.60304,
+  "tipo": "callejero"
+ },
+ "Avenida Del Bierzo (Dehesas) 314, Ponferrada": {
+  "lat": 42.55264,
+  "lon": -6.58473,
+  "tipo": "portal"
+ },
+ "Camino De Santiago 29, Ponferrada": {
+  "lat": 42.54954,
+  "lon": -6.60264,
+  "tipo": "portal"
+ },
+ "Avenida De la Puebla 6, Ponferrada": {
+  "lat": 42.54716,
+  "lon": -6.59364,
+  "tipo": "portal"
+ },
+ "Avenida De Portugal 87, Ponferrada": {
+  "lat": 42.54441,
+  "lon": -6.61851,
+  "tipo": "portal"
+ },
+ "Calle B.Antonio Cortes (Fuentesnuevas) 8, Ponferrada": null,
+ "Calle B.Antonio Cortes (Fuentesnuevas), Ponferrada": null,
+ "Calle Via Pico Tuerto 5, Ponferrada": null,
+ "Calle Via Pico Tuerto, Ponferrada": null,
+ "Carretera Puebla de Sanabria 36, Ponferrada": {
+  "lat": 42.53839,
+  "lon": -6.58966,
+  "tipo": "portal"
+ },
+ "Avenida Galicia (Cuatrovientos) 66, Ponferrada": {
+  "lat": 42.55904,
+  "lon": -6.62269,
+  "tipo": "portal"
+ },
+ "Calle General Vives 31, Ponferrada": {
+  "lat": 42.54826,
+  "lon": -6.58918,
+  "tipo": "portal"
+ },
+ "Avenida Astorga 7, Ponferrada": {
+  "lat": 42.54976,
+  "lon": -6.58267,
+  "tipo": "portal"
+ },
+ "Calle Antolin Lopez Pelaez 31, Ponferrada": {
+  "lat": 42.54687,
+  "lon": -6.60151,
+  "tipo": "portal"
+ },
+ "Calle C. el Rosal AVDA. Constitución 2, Ponferrada": null,
+ "Calle C. el Rosal AVDA. Constitución, Ponferrada": null,
+ "Avenida Perez Colino 17, Ponferrada": {
+  "lat": 42.54597,
+  "lon": -6.59718,
+  "tipo": "portal"
+ },
+ "Avenida De los Escritores 3, Ponferrada": {
+  "lat": 42.54874,
+  "lon": -6.60739,
+  "tipo": "portal"
+ },
+ "Calle Dos de Mayo 15, Ponferrada": {
+  "lat": 42.54673,
+  "lon": -6.59942,
+  "tipo": "portal"
+ },
+ "Avenida De Compostilla 36, Ponferrada": {
+  "lat": 42.55166,
+  "lon": -6.59746,
+  "tipo": "portal"
+ },
+ "Avenida Martina, Ponferrada": {
+  "lat": 42.54706,
+  "lon": -6.61954,
+  "tipo": "callejero"
+ },
+ "Calle AVDA de Galicia 89, Ponferrada": {
+  "lat": 42.57143,
+  "lon": -6.65122,
+  "tipo": "portal"
+ },
+ "Avenida De Asturias 112, Ponferrada": {
+  "lat": 42.79725,
+  "lon": -4.8474,
+  "tipo": "portal"
+ },
+ "Plaza Fernando Miranda 9, Ponferrada": null,
+ "Plaza Fernando Miranda, Ponferrada": {
+  "lat": 42.54688,
+  "lon": -6.60177,
+  "tipo": "callejero"
+ },
+ "Calle Luciana Fernández 13, Ponferrada": {
+  "lat": 37.30789,
+  "lon": -3.14341,
+  "tipo": "portal"
+ },
+ "Calle Luciana Fernández, Ponferrada": {
+  "lat": 42.5461,
+  "lon": -6.59822,
+  "tipo": "callejero"
+ },
+ "Calle Ancha 14, Ponferrada": {
+  "lat": 42.54637,
+  "lon": -6.58812,
+  "tipo": "portal"
+ },
+ "Avenida Galicia 345, Ponferrada": {
+  "lat": 42.56896,
+  "lon": -6.64523,
+  "tipo": "portal"
+ },
+ "Calle Doctor Fleming 20, Ponferrada": {
+  "lat": 41.78754,
+  "lon": 0.81009,
+  "tipo": "portal"
+ },
+ "Calle Doctor Fleming, Ponferrada": {
+  "lat": 42.54943,
+  "lon": -6.60092,
+  "tipo": "callejero"
+ },
+ "Avenida De los Escritores 11, Ponferrada": {
+  "lat": 42.54969,
+  "lon": -6.60778,
+  "tipo": "portal"
+ },
+ "Avenida Montearenas 29, Ponferrada": {
+  "lat": 42.55121,
+  "lon": -6.5772,
+  "tipo": "portal"
+ },
+ "Avenida Huertas del Sacramento 4, Ponferrada": null,
+ "Avenida Huertas del Sacramento, Ponferrada": {
+  "lat": 42.55182,
+  "lon": -6.59493,
+  "tipo": "callejero"
+ },
+ "Avenida Constitucion 3, Ponferrada": {
+  "lat": 42.5573,
+  "lon": -6.60422,
+  "tipo": "portal"
+ },
+ "Plaza Cortina Concejo 4, Posada de Valdeón": null,
+ "Plaza Cortina Concejo, Posada de Valdeón": null,
+ "Calle Juan Ferrero 60, Puente Almuhey": null,
+ "Calle Juan Ferrero, Puente Almuhey": null,
+ "Plaza Alacio 31, Riego de la Vega": {
+  "lat": 42.38642,
+  "lon": -5.9852,
+  "tipo": "portal"
+ },
+ "Calle Flora Florez 8, Sahagún": {
+  "lat": 42.37131,
+  "lon": -5.0315,
+  "tipo": "portal"
+ },
+ "Avenida De la Constitucion 83, Sahagún": {
+  "lat": 42.37083,
+  "lon": -5.02781,
+  "tipo": "portal"
+ },
+ "Avenida Constitucion 24, Sahagún": {
+  "lat": 42.37182,
+  "lon": -5.03027,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 2, Sahagún": {
+  "lat": 42.27796,
+  "lon": -5.05975,
+  "tipo": "portal"
+ },
+ "Calle La Vega, Sahagún": {
+  "lat": 42.36994,
+  "lon": -5.03027,
+  "tipo": "callejero"
+ },
+ "Calle Alhóndiga 13, Sahagún": {
+  "lat": 42.37243,
+  "lon": -5.02997,
+  "tipo": "portal"
+ },
+ "Avenida San Ignacio de Loyola 58, San Andrés del Rabanedo": {
+  "lat": 42.60744,
+  "lon": -5.593,
+  "tipo": "portal"
+ },
+ "Calle Patera, San Miguel de las Dueñas": null,
+ "Calle Real 97, Sancedo": {
+  "lat": 42.66766,
+  "lon": -6.63449,
+  "tipo": "portal"
+ },
+ "Avenida Párroco Pablo Díez N. 69 C/ el Sol N. 33, San Andrés del Rabanedo": null,
+ "Avenida Párroco Pablo Díez N. 69 C/ el Sol N., San Andrés del Rabanedo": null,
+ "Calle Real 59, San Justo de la Vega": {
+  "lat": 42.4544,
+  "lon": -6.01659,
+  "tipo": "portal"
+ },
+ "Calle La Bañeza 121, Santa María de la Isla": {
+  "lat": 42.35488,
+  "lon": -5.92919,
+  "tipo": "portal"
+ },
+ "Calle Cervantes 3, Santa María del Páramo": {
+  "lat": 42.35293,
+  "lon": -5.74899,
+  "tipo": "portal"
+ },
+ "Plaza Plaza Mayor 2, Santa María del Páramo": {
+  "lat": 42.3535,
+  "lon": -5.74897,
+  "tipo": "portal"
+ },
+ "Calle Cervantes 1, Santa María del Páramo": {
+  "lat": 42.35305,
+  "lon": -5.74905,
+  "tipo": "portal"
+ },
+ "Avenida Reino de Leon 7, Santa María del Páramo": {
+  "lat": 42.3564,
+  "lon": -5.74782,
+  "tipo": "portal"
+ },
+ "Carretera De Leon 1, Santa María del Páramo": {
+  "lat": 42.35331,
+  "lon": -5.74821,
+  "tipo": "portal"
+ },
+ "Calle Doctor Velez 15, Santa Marina del Rey": {
+  "lat": 42.51238,
+  "lon": -5.86259,
+  "tipo": "portal"
+ },
+ "Avenida De Leon 276, Sariegos": {
+  "lat": 42.64269,
+  "lon": -5.60361,
+  "tipo": "portal"
+ },
+ "Calle Maestro Prudencio Bermejo, Sariegos": null,
+ "Calle Lidia Rodríguez 9, Soto de la Vega": null,
+ "Calle Lidia Rodríguez, Soto de la Vega": null,
+ "Calle Santalla Oscos 20, Toral de los Vados": {
+  "lat": 42.54316,
+  "lon": -6.77651,
+  "tipo": "portal"
+ },
+ "Avenida Ponferrada 15, Toreno": {
+  "lat": 42.69643,
+  "lon": -6.51619,
+  "tipo": "portal"
+ },
+ "Avenida Párroco Pablo Diez San Andres de Rabane, Trobajo del Camino": null,
+ "Calle Azorin 85, Trobajo del Camino": {
+  "lat": 37.99759,
+  "lon": -4.77221,
+  "tipo": "portal"
+ },
+ "Calle Azorin, Trobajo del Camino": null,
+ "Calle Parroco Pablo Diez 238, Trobajo del Camino": null,
+ "Calle Parroco Pablo Diez, Trobajo del Camino": null,
+ "Calle Antonio Vazquez Fernandez 3, Trobajo del Camino": null,
+ "Calle Antonio Vazquez Fernandez, Trobajo del Camino": null,
+ "Calle Teresa Monje, Trobajo del Camino": null,
+ "Plaza La Huerta 5, Trobajo del Camino": null,
+ "Plaza La Huerta, Trobajo del Camino": {
+  "lat": 37.55897,
+  "lon": -1.74079,
+  "tipo": "callejero"
+ },
+ "Carretera General 34, Turcia": {
+  "lat": 43.40304,
+  "lon": -2.95642,
+  "tipo": "portal"
+ },
+ "Carretera General, Turcia": null,
+ "Calle Las Cruces 9, Val de San Lorenzo": {
+  "lat": 42.41877,
+  "lon": -6.12456,
+  "tipo": "portal"
+ },
+ "Paseo Nuevo 1, Valderas": {
+  "lat": 42.07773,
+  "lon": -5.44148,
+  "tipo": "portal"
+ },
+ "AVDA. OBISPO PANDURO Y VILLAFAÑE, 39, 24220 Valderas": null,
+ "Avenida Obispo Panduro, Valderas": null,
+ "Calle Calvo Sotelo 10, Valdevimbre": {
+  "lat": 42.41983,
+  "lon": -5.61807,
+  "tipo": "portal"
+ },
+ "Calle Virgen del Castillo 9, Valencia de Don Juan": {
+  "lat": 42.29246,
+  "lon": -5.52063,
+  "tipo": "portal"
+ },
+ "Avenida Matallana 1, Valencia de Don Juan": null,
+ "Avenida Matallana, Valencia de Don Juan": {
+  "lat": 42.29313,
+  "lon": -5.51192,
+  "tipo": "callejero"
+ },
+ "Calle Isaac Garcia de Quiros 22, Valencia de Don Juan": {
+  "lat": 42.29314,
+  "lon": -5.51885,
+  "tipo": "portal"
+ },
+ "Carretera Pajares de los Oteros, Valencia de Don Juan": {
+  "lat": 42.29086,
+  "lon": -5.51421,
+  "tipo": "callejero"
+ },
+ "Calle Isaac Garcia de Quiros 8, Valencia de Don Juan": null,
+ "Calle Isaac Garcia de Quiros, Valencia de Don Juan": {
+  "lat": 42.29282,
+  "lon": -5.51938,
+  "tipo": "callejero"
+ },
+ "Avenida Rey Juan Carlos I, Valencia de Don Juan": {
+  "lat": 42.29338,
+  "lon": -5.51508,
+  "tipo": "callejero"
+ },
+ "Avenida Carlos Pinilla 14, Valencia de Don Juan": {
+  "lat": 42.29249,
+  "lon": -5.51804,
+  "tipo": "portal"
+ },
+ "Avenida Mayorga 5, Valencia de Don Juan": null,
+ "Avenida Mayorga, Valencia de Don Juan": {
+  "lat": 42.23593,
+  "lon": -5.39998,
+  "tipo": "callejero"
+ },
+ "Avenida Enida Ancares 14, Vega de Espinareda": {
+  "lat": 42.73224,
+  "lon": -6.6574,
+  "tipo": "portal"
+ },
+ "Carretera Madrid-Coruña, Vega de Valcarce": null,
+ "Calle Pio Cela 17, Veguellina de Órbigo": {
+  "lat": 42.43574,
+  "lon": -5.88556,
+  "tipo": "portal"
+ },
+ "Avenida La Bañeza 8, Veguellina de Órbigo": null,
+ "Avenida La Bañeza, Veguellina de Órbigo": null,
+ "Avenida La Bañeza 23, Veguellina de Órbigo": null,
+ "Calle La Brañina 22, Villablino": {
+  "lat": 42.93901,
+  "lon": -6.31418,
+  "tipo": "portal"
+ },
+ "Avenida Asturias 75, Villablino": {
+  "lat": 42.94121,
+  "lon": -6.32639,
+  "tipo": "portal"
+ },
+ "Calle Ada. Laciana 24, Villablino": {
+  "lat": 42.96242,
+  "lon": -6.3543,
+  "tipo": "portal"
+ },
+ "Avenida Bierzo, Villablino": {
+  "lat": 42.93633,
+  "lon": -6.32402,
+  "tipo": "callejero"
+ },
+ "Calle Padre Angel Mtnez. Fuertes 37, Villadangos del Páramo": null,
+ "Calle Padre Angel Mtnez. Fuertes, Villadangos del Páramo": null,
+ "Calle San Antonio 4, Villafañe": {
+  "lat": 39.55755,
+  "lon": -0.50276,
+  "tipo": "portal"
+ },
+ "Calle San Antonio, Villafañe": {
+  "lat": 28.32889,
+  "lon": -14.04959,
+  "tipo": "callejero"
+ },
+ "Calle Jesus Adran 3, Villafranca del Bierzo": {
+  "lat": 42.60778,
+  "lon": -6.80908,
+  "tipo": "portal"
+ },
+ "Avenida Reino de Leon 32, Villamanín": {
+  "lat": 42.93682,
+  "lon": -5.65693,
+  "tipo": "portal"
+ },
+ "Calle Del Molino, Villamartín de Don Sancho": {
+  "lat": 42.56882,
+  "lon": -5.05923,
+  "tipo": "callejero"
+ },
+ "Carretera Santander 42, Villaobispo de las Regueras": {
+  "lat": 43.46478,
+  "lon": -3.81215,
+  "tipo": "portal"
+ },
+ "Carretera Santander, Villaobispo de las Regueras": {
+  "lat": 43.46483,
+  "lon": -3.81191,
+  "tipo": "callejero"
+ },
+ "Calle Leon-Collanzo 7, Villaquilambre": null,
+ "Calle Leon-Collanzo, Villaquilambre": null,
+ "Avenida De la Libertad 97, Villaquilambre": {
+  "lat": 42.62881,
+  "lon": -5.56191,
+  "tipo": "portal"
+ },
+ "Avenida Libertad 42, Villaquilambre": {
+  "lat": 42.62297,
+  "lon": -5.56386,
+  "tipo": "portal"
+ },
+ "Travesía Esía de Babia 1, Villaseca de Laciana": null,
+ "Travesía Esía de Babia, Villaseca de Laciana": null,
+ "Avenida De Astorga 22, La Virgen del Camino": {
+  "lat": 42.58366,
+  "lon": -5.63509,
+  "tipo": "portal"
+ },
+ "Calle Doctor Pajin Allende 4, Zotes del Páramo": null,
+ "Calle Doctor Pajin Allende, Zotes del Páramo": {
+  "lat": 42.27244,
+  "lon": -5.73608,
+  "tipo": "callejero"
+ },
+ "Calle Mayor 106, Palencia": {
+  "lat": 42.00811,
+  "lon": -4.53277,
+  "tipo": "portal"
+ },
+ "Calle Mayor 18, Palencia": {
+  "lat": 42.01325,
+  "lon": -4.53971,
+  "tipo": "portal"
+ },
+ "Avenida Madrid 37, Palencia": {
+  "lat": 42.45283,
+  "lon": -2.44841,
+  "tipo": "portal"
+ },
+ "Avenida De Santander 14, Palencia": {
+  "lat": 42.01613,
+  "lon": -4.53213,
+  "tipo": "portal"
+ },
+ "Avenida De Valladolid 21, Palencia": {
+  "lat": 42.00096,
+  "lon": -4.52634,
+  "tipo": "portal"
+ },
+ "Calle Mayor 140, Palencia": {
+  "lat": 42.00671,
+  "lon": -4.53148,
+  "tipo": "portal"
+ },
+ "Avenida Derechos Humanos 11, Palencia": {
+  "lat": 42.02015,
+  "lon": -4.53168,
+  "tipo": "portal"
+ },
+ "Calle Mayor 21, Palencia": {
+  "lat": 42.0128,
+  "lon": -4.53903,
+  "tipo": "portal"
+ },
+ "Calle Burgos 4, Palencia": {
+  "lat": 42.00969,
+  "lon": -4.53109,
+  "tipo": "portal"
+ },
+ "Avenida Modesto Lafuente 2, Palencia": {
+  "lat": 42.00609,
+  "lon": -4.52632,
+  "tipo": "portal"
+ },
+ "Plaza De León 4, Palencia": {
+  "lat": 42.01377,
+  "lon": -4.53471,
+  "tipo": "portal"
+ },
+ "Calle Don Pelayo 11, Palencia": {
+  "lat": 42.01844,
+  "lon": -4.53299,
+  "tipo": "portal"
+ },
+ "Calle Mayor 66, Palencia": {
+  "lat": 42.00817,
+  "lon": -4.53533,
+  "tipo": "portal"
+ },
+ "Avenida Republica Argentina 11, Palencia": {
+  "lat": 42.00376,
+  "lon": -4.52876,
+  "tipo": "portal"
+ },
+ "Avenida Cardenal Cisneros 29, Palencia": {
+  "lat": 42.00452,
+  "lon": -4.52455,
+  "tipo": "portal"
+ },
+ "Avenida De San Telmo 31, Palencia": {
+  "lat": 41.99498,
+  "lon": -4.517,
+  "tipo": "portal"
+ },
+ "Calle Mayor 26, Palencia": {
+  "lat": 42.37383,
+  "lon": -2.88673,
+  "tipo": "portal"
+ },
+ "Calle San Juan de Dios 1, Palencia": {
+  "lat": 42.00886,
+  "lon": -4.52952,
+  "tipo": "portal"
+ },
+ "Calle Los Trigales 1, Palencia": {
+  "lat": 42.01243,
+  "lon": -4.52767,
+  "tipo": "portal"
+ },
+ "Plaza Rabi Sem Tob N.4, Palencia": null,
+ "Calle La Puebla 15, Palencia": {
+  "lat": 42.00736,
+  "lon": -4.5276,
+  "tipo": "portal"
+ },
+ "Avenida Valladolid 4, Palencia": {
+  "lat": 42.0025,
+  "lon": -4.52812,
+  "tipo": "portal"
+ },
+ "Calle Doctor Fleming 12, Palencia": {
+  "lat": 42.00069,
+  "lon": -4.52278,
+  "tipo": "portal"
+ },
+ "Calle Colon 16, Palencia": {
+  "lat": 42.00746,
+  "lon": -4.53114,
+  "tipo": "portal"
+ },
+ "Avenida Manuel Rivera 19, Palencia": {
+  "lat": 42.00793,
+  "lon": -4.52615,
+  "tipo": "portal"
+ },
+ "Calle Mayor 104, Palencia": {
+  "lat": 42.00818,
+  "lon": -4.5329,
+  "tipo": "portal"
+ },
+ "Plaza San Pablo 6, Palencia": {
+  "lat": 42.01403,
+  "lon": -4.53737,
+  "tipo": "portal"
+ },
+ "Calle Lope de Vega 7, Palencia": {
+  "lat": 42.01218,
+  "lon": -4.53094,
+  "tipo": "portal"
+ },
+ "Calle Honduras 1, Palencia": {
+  "lat": 42.01023,
+  "lon": -4.5207,
+  "tipo": "portal"
+ },
+ "Paseo Del Otero 65, Palencia": {
+  "lat": 42.02198,
+  "lon": -4.53297,
+  "tipo": "portal"
+ },
+ "Calle Maldonado 16, Palencia": {
+  "lat": 42.01061,
+  "lon": -4.52321,
+  "tipo": "portal"
+ },
+ "Calle Don Miro 1, Palencia": {
+  "lat": 42.0075,
+  "lon": -4.53499,
+  "tipo": "portal"
+ },
+ "Calle Gil de Fuentes 6, Palencia": {
+  "lat": 42.01006,
+  "lon": -4.53481,
+  "tipo": "portal"
+ },
+ "Calle Empedrada 8, Palencia": {
+  "lat": 42.00826,
+  "lon": -4.53005,
+  "tipo": "portal"
+ },
+ "Avenida Santander 44, Palencia": {
+  "lat": 42.0181,
+  "lon": -4.53067,
+  "tipo": "portal"
+ },
+ "Calle Modesto Lafuente 29, Palencia": {
+  "lat": 40.43883,
+  "lon": -3.69612,
+  "tipo": "portal"
+ },
+ "Calle Managua 23, Palencia": {
+  "lat": 42.00983,
+  "lon": -4.52005,
+  "tipo": "portal"
+ },
+ "Calle Villacasares, Palencia": {
+  "lat": 42.01678,
+  "lon": -4.53271,
+  "tipo": "callejero"
+ },
+ "Calle Francia 52, Palencia": {
+  "lat": 42.00292,
+  "lon": -4.51037,
+  "tipo": "portal"
+ },
+ "Calle Pintor Oliva 16, Palencia": {
+  "lat": 42.00004,
+  "lon": -4.52416,
+  "tipo": "portal"
+ },
+ "Avenida De Asturias 18, Palencia": {
+  "lat": 42.02016,
+  "lon": -4.54317,
+  "tipo": "portal"
+ },
+ "Calle Doña Urraca 5, Palencia": {
+  "lat": 42.01224,
+  "lon": -4.53521,
+  "tipo": "portal"
+ },
+ "Avenida Santander 53, Palencia": {
+  "lat": 42.019,
+  "lon": -4.53017,
+  "tipo": "portal"
+ },
+ "Avenida Madrid 2, Palencia": {
+  "lat": 42.44009,
+  "lon": -2.45118,
+  "tipo": "portal"
+ },
+ "Avenida Madrid, Palencia": {
+  "lat": 41.99264,
+  "lon": -4.51975,
+  "tipo": "toponimo"
+ },
+ "Calle Diagonal 5, Palencia": {
+  "lat": 42.01676,
+  "lon": -4.54205,
+  "tipo": "portal"
+ },
+ "Calle German Calvo 5, Palencia": {
+  "lat": 42.00046,
+  "lon": -4.52344,
+  "tipo": "portal"
+ },
+ "Avenida De Manuel Rivera 8, Palencia": {
+  "lat": 42.00867,
+  "lon": -4.52788,
+  "tipo": "portal"
+ },
+ "Calle Empedrada 2, Palencia": {
+  "lat": 42.00788,
+  "lon": -4.53085,
+  "tipo": "portal"
+ },
+ "Calle Simón Nieto 33, Palencia": {
+  "lat": 42.01586,
+  "lon": -4.54018,
+  "tipo": "portal"
+ },
+ "Calle Del Tomillo 5, Palencia": {
+  "lat": 42.01688,
+  "lon": -4.53108,
+  "tipo": "portal"
+ },
+ "Avenida Cardenal Cisneros 1, Palencia": {
+  "lat": 42.00161,
+  "lon": -4.52669,
+  "tipo": "portal"
+ },
+ "Calle Casado del Alisal 49, Palencia": {
+  "lat": 38.0996,
+  "lon": -3.77796,
+  "tipo": "portal"
+ },
+ "Calle Cruz Roja 1, Palencia": {
+  "lat": 42.01941,
+  "lon": -4.52813,
+  "tipo": "portal"
+ },
+ "Avenida Modesto la Fuente 8, Palencia": null,
+ "Avenida Modesto la Fuente, Palencia": null,
+ "Avenida De Madrid 24, Palencia": {
+  "lat": 41.98983,
+  "lon": -4.51796,
+  "tipo": "portal"
+ },
+ "Avenida Brasilia, Palencia": {
+  "lat": 42.01134,
+  "lon": -4.51932,
+  "tipo": "callejero"
+ },
+ "Avenida Brasilia 5, Palencia": {
+  "lat": 42.01132,
+  "lon": -4.51875,
+  "tipo": "portal"
+ },
+ "Calle Mayor 94, Palencia": {
+  "lat": 42.00864,
+  "lon": -4.53277,
+  "tipo": "portal"
+ },
+ "Calle Colón 38, Palencia": {
+  "lat": 42.00678,
+  "lon": -4.53066,
+  "tipo": "portal"
+ },
+ "Calle Matias Barrio, Aguilar de Campoo": {
+  "lat": 42.79302,
+  "lon": -4.25848,
+  "tipo": "callejero"
+ },
+ "Calle La Calleja 23, Aguilar de Campoo": {
+  "lat": 42.79329,
+  "lon": -4.26149,
+  "tipo": "portal"
+ },
+ "Calle La Tobalina 10, Aguilar de Campoo": {
+  "lat": 42.79235,
+  "lon": -4.25806,
+  "tipo": "portal"
+ },
+ "Calle Santiago Amon. 12, Aguilar de Campoo": {
+  "lat": 42.79483,
+  "lon": -4.26502,
+  "tipo": "portal"
+ },
+ "Plaza España 13, Aguilar de Campoo": {
+  "lat": 42.79301,
+  "lon": -4.26155,
+  "tipo": "portal"
+ },
+ "Avenida Enida Palencia 25, Aguilar de Campoo": {
+  "lat": 42.78918,
+  "lon": -4.26596,
+  "tipo": "portal"
+ },
+ "Calle San Miguel 4, Aguilar de Campoo": {
+  "lat": 42.79374,
+  "lon": -4.26328,
+  "tipo": "portal"
+ },
+ "Calle Comercio 5, Aguilar de Campoo": {
+  "lat": 42.79327,
+  "lon": -4.26276,
+  "tipo": "portal"
+ },
+ "Calle P.I. Aguilar II, Aguilar de Campoo": null,
+ "Plaza España 29, Aguilar de Campoo": {
+  "lat": 42.79301,
+  "lon": -4.26083,
+  "tipo": "portal"
+ },
+ "Avenida Palencia, Aguilar de Campoo": {
+  "lat": 42.78826,
+  "lon": -4.26616,
+  "tipo": "callejero"
+ },
+ "Calle General Franco 12, Alar del Rey": null,
+ "Calle General Franco, Alar del Rey": {
+  "lat": 42.6606,
+  "lon": -4.31123,
+  "tipo": "callejero"
+ },
+ "Calle Pedro Cabezudo, Baltanás": {
+  "lat": 41.93939,
+  "lon": -4.24843,
+  "tipo": "callejero"
+ },
+ "Calle Natalio Redondo 8, Becerril de Campos": {
+  "lat": 42.10913,
+  "lon": -4.63995,
+  "tipo": "portal"
+ },
+ "Calle Anselmo Polanco 10, Buenavista de Valdavia": {
+  "lat": 42.6375,
+  "lon": -4.6139,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 14, Carrión de los Condes": {
+  "lat": 42.33769,
+  "lon": -4.60399,
+  "tipo": "portal"
+ },
+ "Calle La Rúa 4, Carrión de los Condes": {
+  "lat": 42.33828,
+  "lon": -4.60367,
+  "tipo": "portal"
+ },
+ "Calle Eras de Santamaria 4, Carrión de los Condes": null,
+ "Calle Eras de Santamaria, Carrión de los Condes": null,
+ "Calle Fray Piña Blasco 3, Carrión de los Condes": null,
+ "Calle Fray Piña Blasco, Carrión de los Condes": null,
+ "Calle Fuentes Quintana 4, Carrión de los Condes": {
+  "lat": 42.33782,
+  "lon": -4.60481,
+  "tipo": "portal"
+ },
+ "Plaza España 3, Cascon de la Nava": null,
+ "Plaza España, Cascon de la Nava": null,
+ "Plaza Mayor 2, Cervera de Pisuerga": {
+  "lat": 42.85668,
+  "lon": -4.45955,
+  "tipo": "portal"
+ },
+ "Avenida De Aguilar 38, Cervera de Pisuerga": {
+  "lat": 42.79575,
+  "lon": -4.26783,
+  "tipo": "portal"
+ },
+ "Avenida De Aguilar, Cervera de Pisuerga": {
+  "lat": 42.85692,
+  "lon": -4.42239,
+  "tipo": "callejero"
+ },
+ "Calle El Cuérnago 3, Cervera de Pisuerga": {
+  "lat": 42.86389,
+  "lon": -4.4969,
+  "tipo": "portal"
+ },
+ "Calle Mayor 4, Cisneros": {
+  "lat": 42.22126,
+  "lon": -4.85857,
+  "tipo": "portal"
+ },
+ "Calle Vda. del Paseo 23, Dueñas": {
+  "lat": 40.51872,
+  "lon": -3.61448,
+  "tipo": "portal"
+ },
+ "Calle Vda. del Paseo, Dueñas": null,
+ "Calle Del Cerrato 10, Dueñas": {
+  "lat": 41.94714,
+  "lon": -4.51439,
+  "tipo": "portal"
+ },
+ "Avenida Enida del Paseo 24, Dueñas": {
+  "lat": 41.87368,
+  "lon": -4.54441,
+  "tipo": "portal"
+ },
+ "Plaza Dªmª Rodriguez Diez 7, Fuentes de Nava": null,
+ "Plaza Dªmª Rodriguez Diez, Fuentes de Nava": null,
+ "Calle Mayor 20, Grijota": {
+  "lat": 42.42215,
+  "lon": -2.79919,
+  "tipo": "portal"
+ },
+ "Avenida De Asturias 28, Guardo": {
+  "lat": 42.79116,
+  "lon": -4.84417,
+  "tipo": "portal"
+ },
+ "Calle Santa Bárbara 5, Guardo": {
+  "lat": 42.78884,
+  "lon": -4.84471,
+  "tipo": "portal"
+ },
+ "Calle San Luis 10, Guardo": {
+  "lat": 42.79014,
+  "lon": -4.85929,
+  "tipo": "portal"
+ },
+ "Calle La Herradura N 2, Guardo": null,
+ "Calle La Herradura N, Guardo": null,
+ "Avenida Enida Asturias 14, Guardo": {
+  "lat": 42.79108,
+  "lon": -4.84435,
+  "tipo": "portal"
+ },
+ "Paseo Ayuntamiento 7, Guardo": {
+  "lat": 42.78959,
+  "lon": -4.84423,
+  "tipo": "portal"
+ },
+ "Avenida Cervera 1, Herrera de Pisuerga": {
+  "lat": 42.59667,
+  "lon": -4.33237,
+  "tipo": "portal"
+ },
+ "Carretera Istobal Colón 15, Herrera de Pisuerga": {
+  "lat": 42.59546,
+  "lon": -4.33029,
+  "tipo": "portal"
+ },
+ "Calle Conde Garay 65, Osorno la Mayor": {
+  "lat": 42.40837,
+  "lon": -4.36273,
+  "tipo": "portal"
+ },
+ "Calle Arrabal del Carmen 14, Paredes de Nava": {
+  "lat": 42.15401,
+  "lon": -4.69554,
+  "tipo": "portal"
+ },
+ "Calle La Iglesia 5, Quintanilla del Puente": null,
+ "Calle La Iglesia, Quintanilla del Puente": null,
+ "Plaza Duque de Ahumada 7, Saldaña": {
+  "lat": 42.5223,
+  "lon": -4.73865,
+  "tipo": "portal"
+ },
+ "Calle Historiador Julio Gonzalez 6, Saldaña": {
+  "lat": 42.52301,
+  "lon": -4.73881,
+  "tipo": "portal"
+ },
+ "Calle Villa, Saldaña": {
+  "lat": 42.52172,
+  "lon": -4.73761,
+  "tipo": "callejero"
+ },
+ "Calle 2ª Travesía Huertas 2 3 4, Saldaña": null,
+ "Calle 2ª Travesía Huertas 2 3, Saldaña": null,
+ "Calle Mayor 28, Velilla del Río Carrión": {
+  "lat": 42.82689,
+  "lon": -4.84605,
+  "tipo": "portal"
+ },
+ "Avenida Primero de Junio 56, Venta de Baños": {
+  "lat": 41.91933,
+  "lon": -4.49713,
+  "tipo": "portal"
+ },
+ "Avenida La Estación 36, Venta de Baños": {
+  "lat": 41.91965,
+  "lon": -4.49239,
+  "tipo": "portal"
+ },
+ "Calle Zinc, Venta de Baños": {
+  "lat": 41.92778,
+  "lon": -4.4903,
+  "tipo": "callejero"
+ },
+ "Avenida Pablo Picasso 4, Venta de Baños": null,
+ "Avenida Pablo Picasso, Venta de Baños": {
+  "lat": 41.91904,
+  "lon": -4.49031,
+  "tipo": "callejero"
+ },
+ "Avenida De Burgos 27, Venta de Baños": {
+  "lat": 41.92659,
+  "lon": -4.48972,
+  "tipo": "portal"
+ },
+ "Avenida Comuneros 9, Salamanca": {
+  "lat": 40.96907,
+  "lon": -5.65633,
+  "tipo": "portal"
+ },
+ "Calle Maria Auxiliadora 91, Salamanca": {
+  "lat": 40.97463,
+  "lon": -5.65633,
+  "tipo": "portal"
+ },
+ "Calle Rua Mayor 3, Salamanca": {
+  "lat": 40.96388,
+  "lon": -5.66476,
+  "tipo": "portal"
+ },
+ "Avenida Agustinos Recoletos 1, Salamanca": {
+  "lat": 40.98099,
+  "lon": -5.66394,
+  "tipo": "portal"
+ },
+ "Calle San Buenaventura 2, Salamanca": {
+  "lat": 40.9602,
+  "lon": -5.66413,
+  "tipo": "portal"
+ },
+ "Paseo De la Estacion 19, Salamanca": {
+  "lat": 40.90624,
+  "lon": -3.01251,
+  "tipo": "portal"
+ },
+ "Paseo De la Estacion, Salamanca": {
+  "lat": 40.97033,
+  "lon": -5.65342,
+  "tipo": "callejero"
+ },
+ "Paseo San Vicente 46, Salamanca": {
+  "lat": 40.96536,
+  "lon": -5.67205,
+  "tipo": "portal"
+ },
+ "Calle De Maria Auxiliadora 71, Salamanca": {
+  "lat": 40.97341,
+  "lon": -5.65729,
+  "tipo": "portal"
+ },
+ "Calle Arias Pinel 62, Salamanca": {
+  "lat": 40.95984,
+  "lon": -5.65138,
+  "tipo": "portal"
+ },
+ "Paseo San Vicente 8, Salamanca": {
+  "lat": 40.96677,
+  "lon": -5.66958,
+  "tipo": "portal"
+ },
+ "Plaza Barrio Vidal 15, Salamanca": {
+  "lat": 40.9738,
+  "lon": -5.66651,
+  "tipo": "portal"
+ },
+ "Calle Wences Moreno 10, Salamanca": {
+  "lat": 40.97033,
+  "lon": -5.66612,
+  "tipo": "portal"
+ },
+ "Calle Sumatra 1, Salamanca": {
+  "lat": 40.97163,
+  "lon": -5.64191,
+  "tipo": "portal"
+ },
+ "Paseo Canalejas 55, Salamanca": {
+  "lat": 40.96577,
+  "lon": -5.65799,
+  "tipo": "portal"
+ },
+ "Calle Gil de Ontañon 1, Salamanca": {
+  "lat": 40.97165,
+  "lon": -5.662,
+  "tipo": "portal"
+ },
+ "Calle Maria Auxiliadora 21, Salamanca": {
+  "lat": 40.96985,
+  "lon": -5.6591,
+  "tipo": "portal"
+ },
+ "Avenida Comuneros 20, Salamanca": {
+  "lat": 40.96846,
+  "lon": -5.65116,
+  "tipo": "portal"
+ },
+ "Calle Guerrilleros 9, Salamanca": {
+  "lat": 40.97155,
+  "lon": -5.65561,
+  "tipo": "portal"
+ },
+ "Calle Maria Auxiliadora 20, Salamanca": {
+  "lat": 40.96987,
+  "lon": -5.6588,
+  "tipo": "portal"
+ },
+ "Paseo San Antonio 5, Salamanca": {
+  "lat": 40.96478,
+  "lon": -5.65763,
+  "tipo": "portal"
+ },
+ "Calle Wences Moreno 2, Salamanca": {
+  "lat": 40.96997,
+  "lon": -5.66523,
+  "tipo": "portal"
+ },
+ "Paseo Del Rollo 62, Salamanca": {
+  "lat": 40.96687,
+  "lon": -5.65006,
+  "tipo": "portal"
+ },
+ "Calle Hoces del Duraton 78, Salamanca": {
+  "lat": 40.94022,
+  "lon": -5.66577,
+  "tipo": "portal"
+ },
+ "Calle Gran Capitan 27, Salamanca": {
+  "lat": 40.97418,
+  "lon": -5.66467,
+  "tipo": "portal"
+ },
+ "Calle Bientocadas 12, Salamanca": {
+  "lat": 40.96964,
+  "lon": -5.66235,
+  "tipo": "portal"
+ },
+ "Calle Papin 1, Salamanca": {
+  "lat": 40.97021,
+  "lon": -5.66768,
+  "tipo": "portal"
+ },
+ "Calle Olmedo 6, Salamanca": {
+  "lat": 41.00506,
+  "lon": 0.92853,
+  "tipo": "portal"
+ },
+ "Calle Olmedo, Salamanca": {
+  "lat": 40.9676,
+  "lon": -5.64808,
+  "tipo": "callejero"
+ },
+ "Camino Estrecho de la Aldehuela 6, Salamanca": {
+  "lat": 40.96403,
+  "lon": -5.65227,
+  "tipo": "portal"
+ },
+ "Avenida Portugal Sn, Salamanca": null,
+ "Calle El Greco (Calle Agricultura 2) 7, Salamanca": null,
+ "Calle El Greco (Calle Agricultura 2), Salamanca": null,
+ "Plaza De Barcelona, Salamanca": {
+  "lat": 40.97361,
+  "lon": -5.64986,
+  "tipo": "callejero"
+ },
+ "Calle Valencia (Mercado de San Juan) 19, Salamanca": null,
+ "Calle Valencia (Mercado de San Juan), Salamanca": null,
+ "Calle Islas Canarias 13, Salamanca": {
+  "lat": 39.46688,
+  "lon": -0.35771,
+  "tipo": "portal"
+ },
+ "Calle Arapiles 9, Salamanca": {
+  "lat": 40.97071,
+  "lon": -5.67159,
+  "tipo": "portal"
+ },
+ "Carretera De Ledesma 110, Salamanca": {
+  "lat": 40.97726,
+  "lon": -5.67586,
+  "tipo": "portal"
+ },
+ "Calle La Velles 21, Salamanca": {
+  "lat": 40.96678,
+  "lon": -5.67168,
+  "tipo": "portal"
+ },
+ "Plaza Barrio Vidal 8, Salamanca": {
+  "lat": 40.97382,
+  "lon": -5.66752,
+  "tipo": "portal"
+ },
+ "Avenida Portugal 7, Salamanca": {
+  "lat": 40.97033,
+  "lon": -5.65436,
+  "tipo": "portal"
+ },
+ "Calle Cuesta del Carmen 11, Salamanca": {
+  "lat": 40.96644,
+  "lon": -5.66584,
+  "tipo": "portal"
+ },
+ "Avenida De los Cipreses 27, Salamanca": {
+  "lat": 40.97783,
+  "lon": -5.64915,
+  "tipo": "portal"
+ },
+ "Calle María Auxiliadora 49, Salamanca": {
+  "lat": 40.97167,
+  "lon": -5.65806,
+  "tipo": "portal"
+ },
+ "Calle Federico Anaya 60, Salamanca": {
+  "lat": 40.97838,
+  "lon": -5.65234,
+  "tipo": "portal"
+ },
+ "Paseo De Canalejas 138, Salamanca": {
+  "lat": 40.95999,
+  "lon": -5.65837,
+  "tipo": "portal"
+ },
+ "Calle Iscar Peyra 7, Salamanca": {
+  "lat": 40.96547,
+  "lon": -5.66609,
+  "tipo": "portal"
+ },
+ "Calle Santiago Madrigal, Salamanca": {
+  "lat": 40.97092,
+  "lon": -5.63775,
+  "tipo": "callejero"
+ },
+ "Calle Principe de Vergara, Salamanca": {
+  "lat": 40.96156,
+  "lon": -5.6533,
+  "tipo": "callejero"
+ },
+ "Calle Saavedra, Salamanca": {
+  "lat": 40.948,
+  "lon": -5.66977,
+  "tipo": "callejero"
+ },
+ "Avenida Villamayor C/V C/ Alarcón, Salamanca": null,
+ "Avenida De los Cipreses 51, Salamanca": {
+  "lat": 40.97608,
+  "lon": -5.64836,
+  "tipo": "portal"
+ },
+ "Paseo Cesar Real de la Riva C-V Sanchez Roja C-V Avda.Padre I, Salamanca": null,
+ "Calle Benito Perez Galdos 12, Salamanca": {
+  "lat": 36.67143,
+  "lon": -6.14043,
+  "tipo": "portal"
+ },
+ "Calle Benito Perez Galdos, Salamanca": {
+  "lat": 40.96905,
+  "lon": -5.65546,
+  "tipo": "callejero"
+ },
+ "Avenida Federico Anaya 84, Salamanca": {
+  "lat": 40.97883,
+  "lon": -5.65183,
+  "tipo": "portal"
+ },
+ "Avenida Portugal 171, Salamanca": {
+  "lat": 40.97268,
+  "lon": -5.66856,
+  "tipo": "portal"
+ },
+ "Calle Barco 5, Alba de Tormes": {
+  "lat": 40.826,
+  "lon": -5.51361,
+  "tipo": "portal"
+ },
+ "Calle Sanchez Llevot 8, Alba de Tormes": {
+  "lat": 40.82703,
+  "lon": -5.51361,
+  "tipo": "portal"
+ },
+ "Calle Antonio Alamo Salazar 17, Alba de Tormes": {
+  "lat": 40.82616,
+  "lon": -5.5125,
+  "tipo": "portal"
+ },
+ "Carretera De Peñaranda 14, Alba de Tormes": {
+  "lat": 40.82534,
+  "lon": -5.50925,
+  "tipo": "portal"
+ },
+ "Calle Sanchez Llevot 17/19, Alba de Tormes": {
+  "lat": 40.82705,
+  "lon": -5.51308,
+  "tipo": "portal"
+ },
+ "Calle Libertad 63, Béjar": {
+  "lat": 40.38623,
+  "lon": -5.76134,
+  "tipo": "portal"
+ },
+ "Carretera Salamanca 21, Béjar": {
+  "lat": 40.38448,
+  "lon": -5.7588,
+  "tipo": "portal"
+ },
+ "Calle Recreo, Béjar": {
+  "lat": 40.38784,
+  "lon": -5.75534,
+  "tipo": "callejero"
+ },
+ "Calle Zúñiga Rodriguez 15, Béjar": {
+  "lat": 40.38525,
+  "lon": -5.76277,
+  "tipo": "portal"
+ },
+ "Carretera De Salamanca 7, Béjar": {
+  "lat": 40.38449,
+  "lon": -5.76021,
+  "tipo": "portal"
+ },
+ "Calle Camino de Salamanca 9, Cabrerizos": {
+  "lat": 40.9777,
+  "lon": -5.61272,
+  "tipo": "portal"
+ },
+ "Carretera Salamanca 21, Calvarrasa de Arriba": {
+  "lat": 40.90664,
+  "lon": -5.59355,
+  "tipo": "portal"
+ },
+ "Calle Enrique Fraile 6, Candelario": {
+  "lat": 40.36608,
+  "lon": -5.74156,
+  "tipo": "portal"
+ },
+ "Avenida Salamanca 35, Carbajosa de la Sagrada": {
+  "lat": 40.94731,
+  "lon": -5.65629,
+  "tipo": "portal"
+ },
+ "Avenida E.Leclerc 1, Carbajosa de la Sagrada": {
+  "lat": 40.94626,
+  "lon": -5.63897,
+  "tipo": "portal"
+ },
+ "Avenida E.Leclerc, Carbajosa de la Sagrada": {
+  "lat": 40.94633,
+  "lon": -5.64008,
+  "tipo": "callejero"
+ },
+ "Calle Primera 16, Carbajosa de la Sagrada": {
+  "lat": 40.94142,
+  "lon": -5.65447,
+  "tipo": "portal"
+ },
+ "Avenida De Béjar 54, Ciudad Rodrigo": {
+  "lat": 40.59885,
+  "lon": -6.52619,
+  "tipo": "portal"
+ },
+ "Calle San Fernando 8, Ciudad Rodrigo": {
+  "lat": 40.60073,
+  "lon": -6.52946,
+  "tipo": "portal"
+ },
+ "Calle Laguna 5, Ciudad Rodrigo": {
+  "lat": 40.60015,
+  "lon": -6.52867,
+  "tipo": "portal"
+ },
+ "Avenida Salamanca 59, Ciudad Rodrigo": {
+  "lat": 40.60604,
+  "lon": -6.52573,
+  "tipo": "portal"
+ },
+ "Avenida Bejar 48, Ciudad Rodrigo": {
+  "lat": 40.59893,
+  "lon": -6.52749,
+  "tipo": "portal"
+ },
+ "Calle San Cristobal 10, Ciudad Rodrigo": {
+  "lat": 40.60036,
+  "lon": -6.52679,
+  "tipo": "portal"
+ },
+ "Calle Lorenza Iglesias 5, Ciudad Rodrigo": {
+  "lat": 40.60014,
+  "lon": -6.52824,
+  "tipo": "portal"
+ },
+ "Avenida España 60, Ciudad Rodrigo": {
+  "lat": 40.60521,
+  "lon": -6.53172,
+  "tipo": "portal"
+ },
+ "Calle Lorenza Iglesias 22, Ciudad Rodrigo": {
+  "lat": 40.60029,
+  "lon": -6.52747,
+  "tipo": "portal"
+ },
+ "Calle Madrid 11, Ciudad Rodrigo": {
+  "lat": 40.5982,
+  "lon": -6.53327,
+  "tipo": "portal"
+ },
+ "Avenida De Salamanca 137, Ciudad Rodrigo": {
+  "lat": 40.60811,
+  "lon": -6.52389,
+  "tipo": "portal"
+ },
+ "Avenida De España 73, Ciudad Rodrigo": {
+  "lat": 40.60413,
+  "lon": -6.53187,
+  "tipo": "portal"
+ },
+ "Calle Santiago Vegas Arranz 8, Ciudad Rodrigo": null,
+ "Calle Santiago Vegas Arranz, Ciudad Rodrigo": {
+  "lat": 40.60104,
+  "lon": -6.53359,
+  "tipo": "callejero"
+ },
+ "Calle Rastrillo 11, Fuenteguinaldo": {
+  "lat": 40.42836,
+  "lon": -6.67715,
+  "tipo": "portal"
+ },
+ "Plaza De la Constitucion 7, Fuenteguinaldo": {
+  "lat": 40.42858,
+  "lon": -6.67558,
+  "tipo": "portal"
+ },
+ "Plaza De España 10, Fuentes de Oñoro": {
+  "lat": 37.46157,
+  "lon": -5.34761,
+  "tipo": "portal"
+ },
+ "Plaza De España, Fuentes de Oñoro": {
+  "lat": 37.11679,
+  "lon": -3.58967,
+  "tipo": "callejero"
+ },
+ "Calle Barreros 1, Gomecello": {
+  "lat": 38.82997,
+  "lon": -3.56558,
+  "tipo": "portal"
+ },
+ "Calle Barreros, Gomecello": {
+  "lat": 41.043,
+  "lon": -5.54125,
+  "tipo": "callejero"
+ },
+ "Calle Principe Felipe 9, Guijuelo": {
+  "lat": 40.55491,
+  "lon": -5.67205,
+  "tipo": "portal"
+ },
+ "Calle Alfonso XIII 15, Guijuelo": {
+  "lat": 40.55646,
+  "lon": -5.67161,
+  "tipo": "portal"
+ },
+ "Calle Filiberto Villalobos 97, Guijuelo": {
+  "lat": 40.5577,
+  "lon": -5.67319,
+  "tipo": "portal"
+ },
+ "Calle Filiberto Villalobos 185, Guijuelo": {
+  "lat": 40.56251,
+  "lon": -5.67133,
+  "tipo": "portal"
+ },
+ "Calle Filiberto Villalobos 152, Guijuelo": {
+  "lat": 40.56079,
+  "lon": -5.67229,
+  "tipo": "portal"
+ },
+ "Calle Ancha 48, Lumbrales": {
+  "lat": 28.21195,
+  "lon": -14.21157,
+  "tipo": "portal"
+ },
+ "Carretera Estacion 38, Lumbrales": {
+  "lat": 42.40662,
+  "lon": -2.12135,
+  "tipo": "portal"
+ },
+ "Carretera Estacion 71, Lumbrales": {
+  "lat": 40.93617,
+  "lon": -6.71766,
+  "tipo": "portal"
+ },
+ "Carretera Estacion 78, Lumbrales": {
+  "lat": 40.93613,
+  "lon": -6.71536,
+  "tipo": "portal"
+ },
+ "Calle Nueva 2, Lumbrales": {
+  "lat": 40.93645,
+  "lon": -6.71953,
+  "tipo": "portal"
+ },
+ "Carretera De la Estación 55, Lumbrales": {
+  "lat": 40.93615,
+  "lon": -6.71911,
+  "tipo": "portal"
+ },
+ "Calle Nueva 5, Lumbrales": {
+  "lat": 40.93654,
+  "lon": -6.71958,
+  "tipo": "portal"
+ },
+ "Carretera De la Estacion 53, Lumbrales": {
+  "lat": 40.93619,
+  "lon": -6.71923,
+  "tipo": "portal"
+ },
+ "Plaza España 11, Peñaranda de Bracamonte": {
+  "lat": 40.90099,
+  "lon": -5.20075,
+  "tipo": "portal"
+ },
+ "Calle Ricardo Soriano 13, Peñaranda de Bracamonte": {
+  "lat": 40.9022,
+  "lon": -5.19979,
+  "tipo": "portal"
+ },
+ "Calle Elisa Muñoz 3, Peñaranda de Bracamonte": {
+  "lat": 40.9023,
+  "lon": -5.20127,
+  "tipo": "portal"
+ },
+ "Plaza San Agustín Martínez Soler 10, Peñaranda de Bracamonte": null,
+ "Plaza San Agustín Martínez Soler, Peñaranda de Bracamonte": null,
+ "Carretera De Madrid 4, Peñaranda de Bracamonte": {
+  "lat": 40.9025,
+  "lon": -5.19187,
+  "tipo": "portal"
+ },
+ "Avenida Salamanca 28, Peñaranda de Bracamonte": {
+  "lat": 40.90406,
+  "lon": -5.2066,
+  "tipo": "portal"
+ },
+ "Calle Salamanca 17, Sancti-Spíritus": {
+  "lat": 40.70582,
+  "lon": -6.40274,
+  "tipo": "portal"
+ },
+ "Avenida De Mirat, Santa Marta de Tormes": {
+  "lat": 40.95091,
+  "lon": -5.62815,
+  "tipo": "callejero"
+ },
+ "Carretera De Nuevo Naharros 5, Santa Marta de Tormes": null,
+ "Carretera De Nuevo Naharros, Santa Marta de Tormes": {
+  "lat": 40.95074,
+  "lon": -5.63301,
+  "tipo": "callejero"
+ },
+ "Calle Monseñor Romero 1, Santa Marta de Tormes": {
+  "lat": 40.95042,
+  "lon": -5.62541,
+  "tipo": "portal"
+ },
+ "Avenida Enrique de Sena 6, Santa Marta de Tormes": {
+  "lat": 40.94943,
+  "lon": -5.6317,
+  "tipo": "portal"
+ },
+ "Carretera Madrid 103, Santa Marta de Tormes": {
+  "lat": 40.95014,
+  "lon": -5.62341,
+  "tipo": "portal"
+ },
+ "Calle Pavos 30, Santa Marta de Tormes": {
+  "lat": 40.93629,
+  "lon": -5.62338,
+  "tipo": "portal"
+ },
+ "Carretera De Madrid 76, Santa Marta de Tormes": {
+  "lat": 40.94991,
+  "lon": -5.62698,
+  "tipo": "portal"
+ },
+ "Calle Pasaje Santiago Mirat, Santa Marta de Tormes": null,
+ "Calle Ministro Fernández, Santa Marta de Tormes": {
+  "lat": 40.94964,
+  "lon": -5.63828,
+  "tipo": "callejero"
+ },
+ "Avenida De Madrid 73, Santa Marta de Tormes": {
+  "lat": 40.94968,
+  "lon": -5.60657,
+  "tipo": "portal"
+ },
+ "Calle Padre Ignacio Ellacuria 6, Santa Marta de Tormes": {
+  "lat": 40.95087,
+  "lon": -5.62887,
+  "tipo": "portal"
+ },
+ "Carretera Madrid 70, Santa Marta de Tormes": {
+  "lat": 40.95005,
+  "lon": -5.62839,
+  "tipo": "portal"
+ },
+ "Avenida De Madrid 62, Santa Marta de Tormes": {
+  "lat": 40.94968,
+  "lon": -5.60657,
+  "tipo": "portal"
+ },
+ "Carretera Madrid 50, Santa Marta de Tormes": {
+  "lat": 40.95005,
+  "lon": -5.63203,
+  "tipo": "portal"
+ },
+ "Avenida Asturias 2, Santa Marta de Tormes": {
+  "lat": 40.95064,
+  "lon": -5.6425,
+  "tipo": "portal"
+ },
+ "Carretera De Madrid 83, Santa Marta de Tormes": {
+  "lat": 40.94988,
+  "lon": -5.6224,
+  "tipo": "portal"
+ },
+ "Calle C. el Tormes. AVDA. Salamanca, Santa Marta de Tormes": null,
+ "Calle Eloy Montero 5, Villar de Ciervo": {
+  "lat": 40.73721,
+  "lon": -6.74009,
+  "tipo": "portal"
+ },
+ "Paseo De las Delicias 85, Villares de la Reina": {
+  "lat": 41.00749,
+  "lon": -5.64666,
+  "tipo": "portal"
+ },
+ "Carretera Valladolid 48, Villares de la Reina": {
+  "lat": 40.98982,
+  "lon": -5.64353,
+  "tipo": "portal"
+ },
+ "Plaza Somorrostro 5, Segovia": {
+  "lat": 40.94515,
+  "lon": -4.1163,
+  "tipo": "portal"
+ },
+ "Calle Jose Zorrilla 65, Segovia": {
+  "lat": 41.47066,
+  "lon": -4.59195,
+  "tipo": "portal"
+ },
+ "Calle Santo Tomas 1, Segovia": {
+  "lat": 40.94393,
+  "lon": -4.11894,
+  "tipo": "portal"
+ },
+ "Avenida Vicente Aleixandre 27, Segovia": {
+  "lat": 40.93161,
+  "lon": -4.10229,
+  "tipo": "portal"
+ },
+ "Calle C*jose Zorrilla 46, Segovia": {
+  "lat": 40.94092,
+  "lon": -4.11595,
+  "tipo": "portal"
+ },
+ "Calle Alfonso VI 43, Segovia": {
+  "lat": 40.94273,
+  "lon": -4.10579,
+  "tipo": "portal"
+ },
+ "Calle Cervantes 27, Segovia": {
+  "lat": 40.94787,
+  "lon": -4.11882,
+  "tipo": "portal"
+ },
+ "Calle Jose Zorrilla 117, Segovia": {
+  "lat": 40.93738,
+  "lon": -4.1135,
+  "tipo": "portal"
+ },
+ "Calle Santa Catalina 20, Segovia": {
+  "lat": 40.95247,
+  "lon": -4.11328,
+  "tipo": "portal"
+ },
+ "Plaza Del Corpus 2, Segovia": null,
+ "Plaza Del Corpus, Segovia": {
+  "lat": 40.94942,
+  "lon": -4.12362,
+  "tipo": "callejero"
+ },
+ "Carretera Villacastin 10, Segovia": {
+  "lat": 40.93353,
+  "lon": -4.11443,
+  "tipo": "portal"
+ },
+ "Calle San Francisco 9, Segovia": {
+  "lat": 40.94731,
+  "lon": -4.11803,
+  "tipo": "portal"
+ },
+ "Plaza Espronceda 18, Segovia": {
+  "lat": 40.93056,
+  "lon": -4.09897,
+  "tipo": "portal"
+ },
+ "Calle José Zorrilla 41, Segovia": {
+  "lat": 40.94225,
+  "lon": -4.11559,
+  "tipo": "portal"
+ },
+ "Avenida Via Roma 30, Segovia": {
+  "lat": 40.95314,
+  "lon": -4.10898,
+  "tipo": "portal"
+ },
+ "Paseo Ezequiel Gonzalez 21, Segovia": {
+  "lat": 40.94575,
+  "lon": -4.12237,
+  "tipo": "portal"
+ },
+ "Calle Guadarrama C.C. Luz de Castilla, Segovia": null,
+ "Carretera De Villacastin 12, Segovia": {
+  "lat": 40.93332,
+  "lon": -4.11454,
+  "tipo": "portal"
+ },
+ "Plaza De Somorrostro 7, Segovia": {
+  "lat": 40.94482,
+  "lon": -4.11609,
+  "tipo": "portal"
+ },
+ "Calle Gobernador Fdez. Jimenez 6, Segovia": null,
+ "Calle Gobernador Fdez. Jimenez, Segovia": null,
+ "Calle Jose Zorrilla 5, Segovia": {
+  "lat": 40.9435,
+  "lon": -4.11586,
+  "tipo": "portal"
+ },
+ "Calle José Zorrilla 113, Segovia": {
+  "lat": 40.93812,
+  "lon": -4.11397,
+  "tipo": "portal"
+ },
+ "Calle Puente de Muerte, Segovia": {
+  "lat": 40.9445,
+  "lon": -4.11647,
+  "tipo": "callejero"
+ },
+ "Calle José Zorrilla 22, Segovia": {
+  "lat": 40.94263,
+  "lon": -4.11583,
+  "tipo": "portal"
+ },
+ "Calle Santo Tomas 11, Segovia": {
+  "lat": 40.78664,
+  "lon": -4.90878,
+  "tipo": "portal"
+ },
+ "Calle Jose Zorrilla 47, Segovia": {
+  "lat": 40.94165,
+  "lon": -4.11553,
+  "tipo": "portal"
+ },
+ "Calle Buitrago 2, Segovia": {
+  "lat": 40.94469,
+  "lon": -4.1161,
+  "tipo": "portal"
+ },
+ "Calle La Plata 56, Segovia": {
+  "lat": 40.47182,
+  "lon": 0.45618,
+  "tipo": "portal"
+ },
+ "Calle La Plata, Segovia": {
+  "lat": 40.9424,
+  "lon": -4.11504,
+  "tipo": "callejero"
+ },
+ "Paseo Conde Sepulveda 41, Segovia": {
+  "lat": 40.93864,
+  "lon": -4.11491,
+  "tipo": "portal"
+ },
+ "Calle Jose Zorrilla 6, Segovia": {
+  "lat": 40.94348,
+  "lon": -4.11599,
+  "tipo": "portal"
+ },
+ "Plaza Espronceda 2, Segovia": {
+  "lat": 40.92985,
+  "lon": -4.09986,
+  "tipo": "portal"
+ },
+ "Plaza Somorrostro 10, Segovia": {
+  "lat": 40.94479,
+  "lon": -4.11668,
+  "tipo": "portal"
+ },
+ "Avenida Constitucion 27, Segovia": {
+  "lat": 40.93377,
+  "lon": -5.47097,
+  "tipo": "portal"
+ },
+ "Avenida Juan Carlos I 22, Segovia": {
+  "lat": 40.93689,
+  "lon": -4.11194,
+  "tipo": "portal"
+ },
+ "Carretera De Riaza 6, Segovia": {
+  "lat": 40.95807,
+  "lon": -4.10531,
+  "tipo": "portal"
+ },
+ "Calle Jorge Manrique, Segovia": {
+  "lat": 40.93075,
+  "lon": -4.09693,
+  "tipo": "callejero"
+ },
+ "Calle Jose Zorrilla 30, Segovia": {
+  "lat": 40.94219,
+  "lon": -4.11578,
+  "tipo": "portal"
+ },
+ "Calle Jose Zorrilla 8, Segovia": {
+  "lat": 40.94332,
+  "lon": -4.11595,
+  "tipo": "portal"
+ },
+ "Calle Jose Zorrilla 45, Segovia": {
+  "lat": 40.94185,
+  "lon": -4.11555,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 12, Ayllón": {
+  "lat": 41.41937,
+  "lon": -3.37672,
+  "tipo": "portal"
+ },
+ "Calle Bayona 21, Boceguillas": {
+  "lat": 41.33716,
+  "lon": -3.64083,
+  "tipo": "portal"
+ },
+ "Plaza Pósito Real 2, Carbonero el Mayor": {
+  "lat": 41.12216,
+  "lon": -4.26465,
+  "tipo": "portal"
+ },
+ "Calle Cno. de Fuentes 11, Carbonero el Mayor": null,
+ "Calle Cno. de Fuentes, Carbonero el Mayor": null,
+ "Calle Mesonero Mayor de Castilla 18, Coca": {
+  "lat": 41.21799,
+  "lon": -4.52043,
+  "tipo": "portal"
+ },
+ "Calle Cardenal Bartolomé de la Cueva, Cuéllar": {
+  "lat": 41.39705,
+  "lon": -4.31018,
+  "tipo": "callejero"
+ },
+ "Avenida Camilo Jose Cela 67, Cuéllar": {
+  "lat": 41.39606,
+  "lon": -4.30683,
+  "tipo": "portal"
+ },
+ "Carretera Bahabón 9, Cuéllar": {
+  "lat": 41.4031,
+  "lon": -4.31866,
+  "tipo": "portal"
+ },
+ "Calle Vacas, Cuéllar": {
+  "lat": 41.39849,
+  "lon": -4.31243,
+  "tipo": "callejero"
+ },
+ "Calle Resina 16, Cuéllar": {
+  "lat": 41.39865,
+  "lon": -4.31042,
+  "tipo": "portal"
+ },
+ "Avenida Camilo José Cela 48, Cuéllar": {
+  "lat": 41.39606,
+  "lon": -4.30709,
+  "tipo": "portal"
+ },
+ "Calle Marques de Perales 2, El Espinar": null,
+ "Calle Marques de Perales, El Espinar": {
+  "lat": 40.71992,
+  "lon": -4.2474,
+  "tipo": "callejero"
+ },
+ "Calle Giner de los Ríos 1, El Espinar": {
+  "lat": 40.72221,
+  "lon": -4.23796,
+  "tipo": "portal"
+ },
+ "Calle Villa 14, El Espinar": {
+  "lat": 41.62769,
+  "lon": 2.1891,
+  "tipo": "portal"
+ },
+ "Calle Villa, El Espinar": {
+  "lat": 42.71787,
+  "lon": -6.69299,
+  "tipo": "poblacion"
+ },
+ "Plaza Mayor, Escarabajosa de Cabezas": {
+  "lat": 41.1041,
+  "lon": -4.19442,
+  "tipo": "callejero"
+ },
+ "Calle Pozo Nuevo 8, Escarabajosa de Cabezas": {
+  "lat": 41.1042,
+  "lon": -4.19382,
+  "tipo": "portal"
+ },
+ "Calle Santillana 3, Fuentepelayo": {
+  "lat": 41.22042,
+  "lon": -4.17526,
+  "tipo": "portal"
+ },
+ "Plaza Del Mercado, Fuentesaúco de Fuentidueña": {
+  "lat": 41.42455,
+  "lon": -4.06107,
+  "tipo": "callejero"
+ },
+ "Carretera Nacional 110, La Lastrilla": {
+  "lat": 40.9625,
+  "lon": -4.10023,
+  "tipo": "portal"
+ },
+ "Calle De la Iglesia 16, Muñoveros": {
+  "lat": 42.86343,
+  "lon": -4.27753,
+  "tipo": "portal"
+ },
+ "Calle Inés Lozano 1, Nava de la Asunción": null,
+ "Calle Inés Lozano, Nava de la Asunción": {
+  "lat": 41.15005,
+  "lon": -4.48687,
+  "tipo": "callejero"
+ },
+ "Calle Camino de la Trinidad 3, Nava de la Asunción": null,
+ "Calle Camino de la Trinidad, Nava de la Asunción": null,
+ "Calle Escuelas 1, Navas de San Antonio": {
+  "lat": 40.75867,
+  "lon": -4.32941,
+  "tipo": "portal"
+ },
+ "Calle Rectoral 9, Navalmanzano": {
+  "lat": 41.21451,
+  "lon": -4.2575,
+  "tipo": "portal"
+ },
+ "Calle Libertad 1, Navas de Oro": {
+  "lat": 41.19623,
+  "lon": -4.43833,
+  "tipo": "portal"
+ },
+ "Calle Real 42, Ortigosa del Monte": {
+  "lat": 40.84192,
+  "lon": -4.17705,
+  "tipo": "portal"
+ },
+ "Calle Martires 1, Otero de Herreros": {
+  "lat": 40.81993,
+  "lon": -4.20958,
+  "tipo": "portal"
+ },
+ "Calle Real 53, Palazuelos de Eresma": {
+  "lat": 40.93116,
+  "lon": -4.05976,
+  "tipo": "portal"
+ },
+ "Calle Escuela Vieja 5, Palazuelos de Eresma": {
+  "lat": 40.93148,
+  "lon": -4.05995,
+  "tipo": "portal"
+ },
+ "Calle La Espiga el Carrascalejo II, Palazuelos de Eresma": null,
+ "Calle Cuellar 5, Remondo": {
+  "lat": 41.34141,
+  "lon": -4.48284,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 13, Riaza": {
+  "lat": 41.27917,
+  "lon": -3.47748,
+  "tipo": "portal"
+ },
+ "Travesía Esia el Pegujal, Riaza": null,
+ "Avenida Alto del Leon 19, San Rafael": null,
+ "Avenida Alto del Leon, San Rafael": null,
+ "Plaza Iglesia 5, Santiuste de San Juan Bautista": {
+  "lat": 41.15692,
+  "lon": -4.57183,
+  "tipo": "portal"
+ },
+ "Calle Laurentino Cardiel 18, Valseca": {
+  "lat": 40.99953,
+  "lon": -4.17344,
+  "tipo": "portal"
+ },
+ "Calle C, Soria": {
+  "lat": 41.77437,
+  "lon": -2.48749,
+  "tipo": "callejero"
+ },
+ "Avenida Mariano Vicen 33, Soria": {
+  "lat": 41.75894,
+  "lon": -2.46974,
+  "tipo": "portal"
+ },
+ "Travesía Esia Teatinos 4, Soria": null,
+ "Travesía Esia Teatinos, Soria": null,
+ "Calle Collado 30, Soria": {
+  "lat": 41.76415,
+  "lon": -2.46624,
+  "tipo": "portal"
+ },
+ "Calle Santa Maria 16, Soria": {
+  "lat": 41.76597,
+  "lon": -2.46871,
+  "tipo": "portal"
+ },
+ "Calle Sagunto 4, Soria": {
+  "lat": 41.76511,
+  "lon": -2.46989,
+  "tipo": "portal"
+ },
+ "Calle Collado 50, Soria": {
+  "lat": 41.76425,
+  "lon": -2.46732,
+  "tipo": "portal"
+ },
+ "Calle El Collado 5, Soria": {
+  "lat": 41.76376,
+  "lon": -2.46497,
+  "tipo": "portal"
+ },
+ "Avenida De Valladolid 27, Soria": {
+  "lat": 41.76599,
+  "lon": -2.47719,
+  "tipo": "portal"
+ },
+ "Calle San Juan 1, Soria": {
+  "lat": 41.76373,
+  "lon": -2.46531,
+  "tipo": "portal"
+ },
+ "Calle Collado 44, Soria": {
+  "lat": 41.76421,
+  "lon": -2.46704,
+  "tipo": "portal"
+ },
+ "Calle Las Casas 6, Soria": {
+  "lat": 41.76715,
+  "lon": -2.46776,
+  "tipo": "portal"
+ },
+ "Calle Los Linajes 2, Soria": {
+  "lat": 41.76263,
+  "lon": -2.47037,
+  "tipo": "portal"
+ },
+ "Avenida Valladolid 12, Soria": {
+  "lat": 41.76565,
+  "lon": -2.47549,
+  "tipo": "portal"
+ },
+ "Calle Nicolas Rabal 3, Soria": {
+  "lat": 41.76372,
+  "lon": -2.47,
+  "tipo": "portal"
+ },
+ "Plaza El Salvador 3, Soria": {
+  "lat": 41.76479,
+  "lon": -2.46885,
+  "tipo": "portal"
+ },
+ "Calle Francisco de Agreda 4, Soria": {
+  "lat": 41.76119,
+  "lon": -2.4734,
+  "tipo": "portal"
+ },
+ "Calle El Collado 46, Soria": {
+  "lat": 41.7642,
+  "lon": -2.46719,
+  "tipo": "portal"
+ },
+ "Calle Vicente Tutor 8, Soria": {
+  "lat": 41.76551,
+  "lon": -2.47066,
+  "tipo": "portal"
+ },
+ "Calle José Tudela 1, Soria": {
+  "lat": 41.75781,
+  "lon": -2.47025,
+  "tipo": "portal"
+ },
+ "Calle Jorge Manrique 11, Soria": {
+  "lat": 39.61125,
+  "lon": -3.21974,
+  "tipo": "portal"
+ },
+ "Calle Jorge Manrique, Soria": {
+  "lat": 41.76096,
+  "lon": -2.46768,
+  "tipo": "callejero"
+ },
+ "Calle Marques de Vadillo 3, Soria": {
+  "lat": 41.76414,
+  "lon": -2.4679,
+  "tipo": "portal"
+ },
+ "Avenida Valladolid 18, Soria": {
+  "lat": 41.76584,
+  "lon": -2.47615,
+  "tipo": "portal"
+ },
+ "Calle Teruel 2, Soria": {
+  "lat": 41.76774,
+  "lon": -2.48155,
+  "tipo": "portal"
+ },
+ "Calle Collado 28, Soria": {
+  "lat": 41.76415,
+  "lon": -2.46619,
+  "tipo": "portal"
+ },
+ "Calle Tudela 2, Soria": {
+  "lat": 41.75782,
+  "lon": -2.47049,
+  "tipo": "portal"
+ },
+ "Avenida Mariano Vicen 4, Soria": {
+  "lat": 41.76127,
+  "lon": -2.47031,
+  "tipo": "portal"
+ },
+ "Avenida Navarra 5, Soria": {
+  "lat": 41.76289,
+  "lon": -2.46937,
+  "tipo": "portal"
+ },
+ "Calle Ferial 4, Soria": {
+  "lat": 41.76458,
+  "lon": -2.46915,
+  "tipo": "portal"
+ },
+ "Plaza El Rosel, Soria": {
+  "lat": 41.76421,
+  "lon": -2.46543,
+  "tipo": "callejero"
+ },
+ "Calle Santa Maria 6, Soria": {
+  "lat": 41.76529,
+  "lon": -2.46874,
+  "tipo": "portal"
+ },
+ "Calle Numancia 9, Soria": {
+  "lat": 41.76506,
+  "lon": -2.46826,
+  "tipo": "portal"
+ },
+ "Avenida Valladolid 53, Soria": {
+  "lat": 41.76752,
+  "lon": -2.48287,
+  "tipo": "portal"
+ },
+ "Carretera De Logroño 35, Soria": {
+  "lat": 41.77018,
+  "lon": -2.46464,
+  "tipo": "portal"
+ },
+ "Calle El Collado 31, Soria": {
+  "lat": 41.76413,
+  "lon": -2.46633,
+  "tipo": "portal"
+ },
+ "Plaza La Blanca 2, Soria": {
+  "lat": 41.76627,
+  "lon": -2.46788,
+  "tipo": "portal"
+ },
+ "Avenida Valladolid 8, Soria": {
+  "lat": 41.76545,
+  "lon": -2.4746,
+  "tipo": "portal"
+ },
+ "Plaza De las Mujeres 4, Soria": {
+  "lat": 41.76342,
+  "lon": -2.46702,
+  "tipo": "portal"
+ },
+ "Calle Numancia 8, Soria": {
+  "lat": 41.76493,
+  "lon": -2.46822,
+  "tipo": "portal"
+ },
+ "Calle Puertas de Pró 11, Soria": {
+  "lat": 41.76471,
+  "lon": -2.46777,
+  "tipo": "portal"
+ },
+ "Calle Jose Luis Palomar-C/ la Hermita-Pso de Sta Bárba, Soria": null,
+ "Calle Eduardo Saavedra 54, Soria": {
+  "lat": 41.75779,
+  "lon": -2.47378,
+  "tipo": "portal"
+ },
+ "Calle Santo Tome 1, Soria": {
+  "lat": 41.76677,
+  "lon": -2.46725,
+  "tipo": "portal"
+ },
+ "Calle Mesones 8, Ágreda": {
+  "lat": 41.85536,
+  "lon": -1.92029,
+  "tipo": "portal"
+ },
+ "Calle Venerable 5, Ágreda": {
+  "lat": 41.85483,
+  "lon": -1.92049,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 5, Ágreda": {
+  "lat": 41.85453,
+  "lon": -1.91973,
+  "tipo": "portal"
+ },
+ "Avenida Virgen de los Milagros 9, Ágreda": {
+  "lat": 41.8551,
+  "lon": -1.91954,
+  "tipo": "portal"
+ },
+ "Calle Puerta del Zuro 2, Ágreda": {
+  "lat": 41.85399,
+  "lon": -1.92363,
+  "tipo": "portal"
+ },
+ "Calle Mesones 9, Ágreda": {
+  "lat": 41.85536,
+  "lon": -1.92029,
+  "tipo": "portal"
+ },
+ "Avenida Enida de Soria 7, Ágreda": null,
+ "Avenida Enida de Soria, Ágreda": null,
+ "Calle San Salvador 1, Almazán": {
+  "lat": 41.48563,
+  "lon": -2.53072,
+  "tipo": "portal"
+ },
+ "Ronda San Francisco 3, Almazán": {
+  "lat": 41.48709,
+  "lon": -2.52804,
+  "tipo": "portal"
+ },
+ "Calle Gran Via 12, Almazán": {
+  "lat": 41.48754,
+  "lon": -2.52974,
+  "tipo": "portal"
+ },
+ "Avenida Carretera Soria 40, Almazán": {
+  "lat": 41.50034,
+  "lon": -2.53771,
+  "tipo": "portal"
+ },
+ "Calle Cuatro Calles 6, Almenar de Soria": {
+  "lat": 41.68209,
+  "lon": -2.20073,
+  "tipo": "portal"
+ },
+ "Travesía Esia del Jalon 3, Arcos de Jalón": null,
+ "Travesía Esia del Jalon, Arcos de Jalón": null,
+ "Calle Acosta 13, El Burgo de Osma": {
+  "lat": 41.58855,
+  "lon": -3.06545,
+  "tipo": "portal"
+ },
+ "Calle Acosta 17, El Burgo de Osma": {
+  "lat": 41.58904,
+  "lon": -3.06483,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 9, El Burgo de Osma": {
+  "lat": 41.62717,
+  "lon": -3.05184,
+  "tipo": "portal"
+ },
+ "Calle Real 155, El Burgo de Osma": {
+  "lat": 41.58506,
+  "lon": -3.08133,
+  "tipo": "portal"
+ },
+ "Calle Mayor 24, El Burgo de Osma": {
+  "lat": 41.58635,
+  "lon": -3.06878,
+  "tipo": "portal"
+ },
+ "Calle Acosta 15, El Burgo de Osma": {
+  "lat": 41.58877,
+  "lon": -3.06518,
+  "tipo": "portal"
+ },
+ "Calle Francisco Federico 6, El Burgo de Osma": {
+  "lat": 41.58567,
+  "lon": -3.06692,
+  "tipo": "portal"
+ },
+ "Carretera De la Rasa 6, El Burgo de Osma": {
+  "lat": 41.5856,
+  "lon": -3.07367,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 1, Castilruiz": {
+  "lat": 41.87703,
+  "lon": -2.05899,
+  "tipo": "portal"
+ },
+ "Avenida De las Lagunillas 2, Cidones": {
+  "lat": 41.81486,
+  "lon": -2.64002,
+  "tipo": "portal"
+ },
+ "Calle Centro 11, Covaleda": {
+  "lat": 41.93435,
+  "lon": -2.8819,
+  "tipo": "portal"
+ },
+ "Calle Angel Terrel 25, Covaleda": {
+  "lat": 41.93324,
+  "lon": -2.88384,
+  "tipo": "portal"
+ },
+ "Calle Ramon Benito Aceña 27, Garray": {
+  "lat": 41.81632,
+  "lon": -2.44507,
+  "tipo": "portal"
+ },
+ "Calle , Golmayo": {
+  "lat": 37.80294,
+  "lon": -5.11159,
+  "tipo": "callejero"
+ },
+ "Calle San Isidro 24, Los Rábanos": {
+  "lat": 41.71604,
+  "lon": -2.47789,
+  "tipo": "portal"
+ },
+ "Carretera Madrid Km 220, Los Rábanos": {
+  "lat": 41.56069,
+  "lon": -1.18342,
+  "tipo": "portal"
+ },
+ "Carretera Madrid Km, Los Rábanos": {
+  "lat": 40.38734,
+  "lon": -3.69282,
+  "tipo": "callejero"
+ },
+ "Avenida De la Constitución 46, Navaleno": {
+  "lat": 41.83782,
+  "lon": -3.0122,
+  "tipo": "portal"
+ },
+ "Calle Estocolmo 1, Ólvega": null,
+ "Calle Estocolmo, Ólvega": null,
+ "Calle Concepcion 14, Ólvega": {
+  "lat": 41.77938,
+  "lon": -1.98417,
+  "tipo": "portal"
+ },
+ "Calle Cervantes 5, Ólvega": {
+  "lat": 41.77998,
+  "lon": -1.98575,
+  "tipo": "portal"
+ },
+ "Avenida Enida Valladolid 139, San Esteban de Gormaz": {
+  "lat": 41.57423,
+  "lon": -3.2068,
+  "tipo": "portal"
+ },
+ "Calle Mayor 7, San Esteban de Gormaz": {
+  "lat": 41.50765,
+  "lon": -3.25743,
+  "tipo": "portal"
+ },
+ "Calle Escuelas 5, San Esteban de Gormaz": {
+  "lat": 41.57332,
+  "lon": -3.20178,
+  "tipo": "portal"
+ },
+ "Calle Mayor 11, San Esteban de Gormaz": {
+  "lat": 41.50764,
+  "lon": -3.25724,
+  "tipo": "portal"
+ },
+ "Calle Concepción 24, San Leonardo de Yagüe": {
+  "lat": 41.82997,
+  "lon": -3.06696,
+  "tipo": "portal"
+ },
+ "Calle San Pedor 6, San Leonardo de Yagüe": {
+  "lat": 41.82909,
+  "lon": -3.06558,
+  "tipo": "portal"
+ },
+ "Calle Mariscal de Gante 10, San Pedro Manrique": {
+  "lat": 42.02958,
+  "lon": -2.23086,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 12, Serón de Nágima": {
+  "lat": 41.49613,
+  "lon": -2.20163,
+  "tipo": "portal"
+ },
+ "Calle Hierbabuena 4, Valladolid": {
+  "lat": 41.66913,
+  "lon": -4.73123,
+  "tipo": "portal"
+ },
+ "Calle Yunta 3 3J, Valladolid": {
+  "lat": 41.64411,
+  "lon": -4.70176,
+  "tipo": "portal"
+ },
+ "Calle Neptuno 2, Valladolid": {
+  "lat": 41.66162,
+  "lon": -4.73465,
+  "tipo": "portal"
+ },
+ "Calle Santuario 25 L3, Valladolid": {
+  "lat": 41.64961,
+  "lon": -4.7215,
+  "tipo": "portal"
+ },
+ "Calle Especeria 5, Valladolid": {
+  "lat": 41.65269,
+  "lon": -4.7275,
+  "tipo": "portal"
+ },
+ "Calle Maria de Molina 2, Valladolid": {
+  "lat": 41.65079,
+  "lon": -4.73099,
+  "tipo": "portal"
+ },
+ "Calle San Felipe Neri 1, Valladolid": null,
+ "Calle San Felipe Neri, Valladolid": null,
+ "Paseo San Vicente 49, Valladolid": {
+  "lat": 41.64275,
+  "lon": -4.71878,
+  "tipo": "portal"
+ },
+ "Calle Costa Brava 2, Valladolid": {
+  "lat": 41.66897,
+  "lon": -4.7102,
+  "tipo": "portal"
+ },
+ "Camino Viejo de Simancas, Valladolid": {
+  "lat": 41.61531,
+  "lon": -4.76817,
+  "tipo": "callejero"
+ },
+ "Calle Teresa Gil 15, Valladolid": {
+  "lat": 41.65064,
+  "lon": -4.72572,
+  "tipo": "portal"
+ },
+ "Calle Bajada de la Libertad 7, Valladolid": {
+  "lat": 41.65241,
+  "lon": -4.72552,
+  "tipo": "portal"
+ },
+ "Calle Villanueva 3, Valladolid": {
+  "lat": 41.66113,
+  "lon": -4.73551,
+  "tipo": "portal"
+ },
+ "Carretera De Rueda 29, Valladolid": {
+  "lat": 41.62704,
+  "lon": -4.74187,
+  "tipo": "portal"
+ },
+ "Calle Marques del Duero 3, Valladolid": {
+  "lat": 41.65478,
+  "lon": -4.72185,
+  "tipo": "portal"
+ },
+ "Calle Juan Garcia Hortelano 31/33, Valladolid": {
+  "lat": 41.63677,
+  "lon": -4.76457,
+  "tipo": "portal"
+ },
+ "Calle Veinte de Febrero 5, Valladolid": {
+  "lat": 41.65015,
+  "lon": -4.73169,
+  "tipo": "portal"
+ },
+ "Calle Alcaparra 27, Valladolid": {
+  "lat": 41.61398,
+  "lon": -4.76063,
+  "tipo": "portal"
+ },
+ "Paseo De Zorrilla 130, Valladolid": {
+  "lat": 41.63715,
+  "lon": -4.73958,
+  "tipo": "portal"
+ },
+ "Calle Tarragona 1, Valladolid": {
+  "lat": 41.63092,
+  "lon": -4.72395,
+  "tipo": "portal"
+ },
+ "Calle Gamazo 30, Valladolid": {
+  "lat": 41.64504,
+  "lon": -4.72653,
+  "tipo": "portal"
+ },
+ "Calle Joaquin Maria Jalon 31, Valladolid": {
+  "lat": 41.62621,
+  "lon": -4.74143,
+  "tipo": "portal"
+ },
+ "Calle Labradores 17, Valladolid": {
+  "lat": 41.64717,
+  "lon": -4.72055,
+  "tipo": "portal"
+ },
+ "Calle Manteria 33, Valladolid": {
+  "lat": 41.64836,
+  "lon": -4.7213,
+  "tipo": "portal"
+ },
+ "Calle Santuario 17, Valladolid": {
+  "lat": 41.64966,
+  "lon": -4.72203,
+  "tipo": "portal"
+ },
+ "Calle Villanubla 30, Valladolid": {
+  "lat": 41.66284,
+  "lon": -4.73497,
+  "tipo": "portal"
+ },
+ "Calle Cigüeña 29, Valladolid": {
+  "lat": 41.64726,
+  "lon": -4.70973,
+  "tipo": "portal"
+ },
+ "Calle Rastrojo 3, Valladolid": {
+  "lat": 41.65072,
+  "lon": -4.7448,
+  "tipo": "portal"
+ },
+ "Calle Teresa Gil 24, Valladolid": {
+  "lat": 41.64967,
+  "lon": -4.72519,
+  "tipo": "portal"
+ },
+ "Calle Duque de la Victoria 3, Valladolid": {
+  "lat": 41.65152,
+  "lon": -4.72695,
+  "tipo": "portal"
+ },
+ "Paseo De Zorrilla 90, Valladolid": {
+  "lat": 41.64021,
+  "lon": -4.73846,
+  "tipo": "portal"
+ },
+ "Calle Mantería 28, Valladolid": {
+  "lat": 41.64849,
+  "lon": -4.7224,
+  "tipo": "portal"
+ },
+ "Calle Santa María 13, Valladolid": {
+  "lat": 41.64944,
+  "lon": -4.72766,
+  "tipo": "portal"
+ },
+ "Calle , Valladolid": {
+  "lat": 41.67578,
+  "lon": -5.08477,
+  "tipo": "Municipio"
+ },
+ "Calle Juan Martinez Villergas 8, Valladolid": {
+  "lat": 41.63623,
+  "lon": -4.75761,
+  "tipo": "portal"
+ },
+ "Calle Rastrojo 9, Valladolid": {
+  "lat": 41.65264,
+  "lon": -4.74357,
+  "tipo": "portal"
+ },
+ "Avenida Segovia 93, Valladolid": {
+  "lat": 41.63959,
+  "lon": -4.72077,
+  "tipo": "portal"
+ },
+ "Calle Ferrari 2, Valladolid": {
+  "lat": 41.65171,
+  "lon": -4.72765,
+  "tipo": "portal"
+ },
+ "Calle Manteria 23, Valladolid": {
+  "lat": 41.64855,
+  "lon": -4.72228,
+  "tipo": "portal"
+ },
+ "Calle Portillo de Balboa 16, Valladolid": {
+  "lat": 41.65972,
+  "lon": -4.72141,
+  "tipo": "portal"
+ },
+ "Calle Castelar 4, Valladolid": {
+  "lat": 41.6514,
+  "lon": -4.72501,
+  "tipo": "portal"
+ },
+ "Calle Torrecilla 13, Valladolid": {
+  "lat": 41.6568,
+  "lon": -4.72286,
+  "tipo": "portal"
+ },
+ "Calle Morena 19, Valladolid": {
+  "lat": 41.65949,
+  "lon": -4.74297,
+  "tipo": "portal"
+ },
+ "Calle Jose Maria Lacort 6, Valladolid": {
+  "lat": 41.64911,
+  "lon": -4.72384,
+  "tipo": "portal"
+ },
+ "Calle Adolfo Miaja de la Muela 17, Valladolid": {
+  "lat": 41.6344,
+  "lon": -4.75562,
+  "tipo": "portal"
+ },
+ "Calle Abedul 7, Valladolid": {
+  "lat": 41.66961,
+  "lon": -4.73097,
+  "tipo": "portal"
+ },
+ "Calle Adolfo Miaja de la Muela 10, Valladolid": {
+  "lat": 41.63673,
+  "lon": -4.75451,
+  "tipo": "portal"
+ },
+ "Calle Aguilera 2, Valladolid": {
+  "lat": 41.66538,
+  "lon": -4.70588,
+  "tipo": "portal"
+ },
+ "Calle Alamillos 2, Valladolid": {
+  "lat": 41.65395,
+  "lon": -4.71565,
+  "tipo": "portal"
+ },
+ "Calle Alcaparra 1, Valladolid": {
+  "lat": 41.61662,
+  "lon": -4.76213,
+  "tipo": "portal"
+ },
+ "Calle Alonso Pesquera 1, Valladolid": {
+  "lat": 41.65068,
+  "lon": -4.72076,
+  "tipo": "portal"
+ },
+ "Calle Andalucia 9, Valladolid": {
+  "lat": 41.64281,
+  "lon": -4.71678,
+  "tipo": "portal"
+ },
+ "Calle Angustias 26, Valladolid": {
+  "lat": 41.65474,
+  "lon": -4.7235,
+  "tipo": "portal"
+ },
+ "Calle Arca Real 83, Valladolid": {
+  "lat": 41.63421,
+  "lon": -4.72505,
+  "tipo": "portal"
+ },
+ "Calle Argales 3, Valladolid": {
+  "lat": 41.63835,
+  "lon": -4.72634,
+  "tipo": "portal"
+ },
+ "Avenida De Burgos 6, Valladolid": {
+  "lat": 41.66108,
+  "lon": -4.73321,
+  "tipo": "portal"
+ },
+ "Avenida De Gijon 16, Valladolid": {
+  "lat": 41.66088,
+  "lon": -4.73682,
+  "tipo": "portal"
+ },
+ "Avenida De Medina del Campo 15, Valladolid": {
+  "lat": 41.63343,
+  "lon": -4.74752,
+  "tipo": "portal"
+ },
+ "Avenida De Palencia 37, Valladolid": {
+  "lat": 41.66125,
+  "lon": -4.71709,
+  "tipo": "portal"
+ },
+ "Avenida De Santander 93, Valladolid": {
+  "lat": 41.66761,
+  "lon": -4.70924,
+  "tipo": "portal"
+ },
+ "Avenida De Segovia 6, Valladolid": {
+  "lat": 41.64017,
+  "lon": -4.72061,
+  "tipo": "portal"
+ },
+ "Avenida Gloria Fuertes 4, Valladolid": {
+  "lat": 41.65363,
+  "lon": -4.7363,
+  "tipo": "portal"
+ },
+ "Avenida Miguel Angel Blanco 3, Valladolid": {
+  "lat": 41.65006,
+  "lon": -4.7371,
+  "tipo": "portal"
+ },
+ "Avenida Miguel Angel Blanco 5, Valladolid": {
+  "lat": 41.65115,
+  "lon": -4.74033,
+  "tipo": "portal"
+ },
+ "Avenida Ramon Pradera 12, Valladolid": {
+  "lat": 41.65732,
+  "lon": -4.73685,
+  "tipo": "portal"
+ },
+ "Avenida Santa Teresa 24, Valladolid": {
+  "lat": 40.52342,
+  "lon": -5.35007,
+  "tipo": "portal"
+ },
+ "Avenida Santa Teresa, Valladolid": {
+  "lat": 41.66817,
+  "lon": -4.71964,
+  "tipo": "callejero"
+ },
+ "Avenida Enida de los Cerros 2, Valladolid": null,
+ "Avenida Enida de los Cerros, Valladolid": null,
+ "Avenida Enida de Segovia 137, Valladolid": {
+  "lat": 41.63627,
+  "lon": -4.72141,
+  "tipo": "portal"
+ },
+ "Calle Bajada de la Libertad 6, Valladolid": {
+  "lat": 41.65276,
+  "lon": -4.72505,
+  "tipo": "portal"
+ },
+ "Calle Barbecho 31, Valladolid": {
+  "lat": 41.65,
+  "lon": -4.74706,
+  "tipo": "portal"
+ },
+ "Calle Caamaño 35, Valladolid": {
+  "lat": 41.63536,
+  "lon": -4.72331,
+  "tipo": "portal"
+ },
+ "Calle Arca Real 44, Valladolid": {
+  "lat": 41.63114,
+  "lon": -4.7266,
+  "tipo": "portal"
+ },
+ "Calle Bolivia 3, Valladolid": {
+  "lat": 41.63177,
+  "lon": -4.75013,
+  "tipo": "portal"
+ },
+ "Calle Ferrari 34, Valladolid": {
+  "lat": 41.65198,
+  "lon": -4.72664,
+  "tipo": "portal"
+ },
+ "Calle Linares 16, Valladolid": {
+  "lat": 41.66104,
+  "lon": -4.7197,
+  "tipo": "portal"
+ },
+ "Camino De la Esperanza 87, Valladolid": {
+  "lat": 41.63262,
+  "lon": -4.73887,
+  "tipo": "portal"
+ },
+ "Camino Viejo de Simancas 46, Valladolid": {
+  "lat": 41.62184,
+  "lon": -4.75546,
+  "tipo": "portal"
+ },
+ "Calle Canovas del Castillo 35, Valladolid": {
+  "lat": 39.18517,
+  "lon": -0.43423,
+  "tipo": "portal"
+ },
+ "Calle Canovas del Castillo, Valladolid": {
+  "lat": 41.65208,
+  "lon": -4.72523,
+  "tipo": "callejero"
+ },
+ "Calle Canterac 51, Valladolid": {
+  "lat": 41.64018,
+  "lon": -4.7163,
+  "tipo": "portal"
+ },
+ "Calle Cardenal Cisneros 16, Valladolid": {
+  "lat": 41.66167,
+  "lon": -4.72247,
+  "tipo": "portal"
+ },
+ "Calle Cartagena 2, Valladolid": {
+  "lat": 41.6326,
+  "lon": -4.72416,
+  "tipo": "portal"
+ },
+ "Calle Castañuelas 1, Valladolid": {
+  "lat": 41.63356,
+  "lon": -4.71396,
+  "tipo": "portal"
+ },
+ "Calle Cebaderia 3, Valladolid": {
+  "lat": 41.65296,
+  "lon": -4.72835,
+  "tipo": "portal"
+ },
+ "Calle Cigüeña 12, Valladolid": {
+  "lat": 41.64466,
+  "lon": -4.71255,
+  "tipo": "portal"
+ },
+ "Calle Ciudad de la Habana 5, Valladolid": {
+  "lat": 41.63672,
+  "lon": -4.76029,
+  "tipo": "portal"
+ },
+ "Calle Conde de Benavente 6, Valladolid": {
+  "lat": 41.6582,
+  "lon": -4.73083,
+  "tipo": "portal"
+ },
+ "Carretera De Rueda 43, Valladolid": {
+  "lat": 41.62368,
+  "lon": -4.74165,
+  "tipo": "portal"
+ },
+ "Calle Darsena 7, Valladolid": {
+  "lat": 41.66315,
+  "lon": -4.73453,
+  "tipo": "portal"
+ },
+ "Calle Doce de Octubre 2, Valladolid": {
+  "lat": 41.65351,
+  "lon": -4.7111,
+  "tipo": "portal"
+ },
+ "Calle Doctor Esquerdo 12, Valladolid": {
+  "lat": 41.65948,
+  "lon": -4.71667,
+  "tipo": "portal"
+ },
+ "Calle Doctor Morales, Valladolid": {
+  "lat": 41.65962,
+  "lon": -4.71497,
+  "tipo": "callejero"
+ },
+ "Calle Dos de Mayo 10, Valladolid": {
+  "lat": 41.64649,
+  "lon": -4.72382,
+  "tipo": "portal"
+ },
+ "Calle Duque de la Victoria 17, Valladolid": {
+  "lat": 41.65001,
+  "lon": -4.72632,
+  "tipo": "portal"
+ },
+ "Calle Duque de la Victoria 18, Valladolid": {
+  "lat": 41.65001,
+  "lon": -4.72632,
+  "tipo": "portal"
+ },
+ "Calle Duque de la Victoria 20, Valladolid": {
+  "lat": 41.64925,
+  "lon": -4.72624,
+  "tipo": "portal"
+ },
+ "Calle Embajadores 20, Valladolid": {
+  "lat": 41.63794,
+  "lon": -4.72207,
+  "tipo": "portal"
+ },
+ "Calle Embajadores 92, Valladolid": {
+  "lat": 41.63107,
+  "lon": -4.72324,
+  "tipo": "portal"
+ },
+ "Calle Esperanto 7, Valladolid": {
+  "lat": 41.63479,
+  "lon": -4.73655,
+  "tipo": "portal"
+ },
+ "Calle Faisan 19, Valladolid": {
+  "lat": 41.64748,
+  "lon": -4.70783,
+  "tipo": "portal"
+ },
+ "Calle Ferrocarrill 33, Valladolid": {
+  "lat": 41.64416,
+  "lon": -4.72373,
+  "tipo": "portal"
+ },
+ "Calle Fuente el Sol 61, Valladolid": {
+  "lat": 41.66658,
+  "lon": -4.73566,
+  "tipo": "portal"
+ },
+ "Calle Gabilondo 14, Valladolid": {
+  "lat": 41.64193,
+  "lon": -4.7347,
+  "tipo": "portal"
+ },
+ "Calle Gabilondo 26, Valladolid": {
+  "lat": 41.63952,
+  "lon": -4.7344,
+  "tipo": "portal"
+ },
+ "Calle Gamazo 8, Valladolid": {
+  "lat": 41.64716,
+  "lon": -4.7261,
+  "tipo": "portal"
+ },
+ "Calle Gavilla 4, Valladolid": {
+  "lat": 41.65333,
+  "lon": -4.74212,
+  "tipo": "portal"
+ },
+ "Calle General Shewlly 28, Valladolid": {
+  "lat": 41.63572,
+  "lon": -4.71922,
+  "tipo": "portal"
+ },
+ "Calle Hernando de Acuña 1, Valladolid": {
+  "lat": 41.63797,
+  "lon": -4.75574,
+  "tipo": "portal"
+ },
+ "Calle Hernando de Acuña 55, Valladolid": {
+  "lat": 41.63779,
+  "lon": -4.76276,
+  "tipo": "portal"
+ },
+ "Calle Hornija 2, Valladolid": {
+  "lat": 41.63338,
+  "lon": -4.7213,
+  "tipo": "portal"
+ },
+ "Calle Huelva 16, Valladolid": {
+  "lat": 41.64219,
+  "lon": -4.71439,
+  "tipo": "portal"
+ },
+ "Calle Imperial 5, Valladolid": {
+  "lat": 41.6577,
+  "lon": -4.72796,
+  "tipo": "portal"
+ },
+ "Calle Industrias 32, Valladolid": {
+  "lat": 41.64836,
+  "lon": -4.71394,
+  "tipo": "portal"
+ },
+ "Calle Joaquin Mª Jalon 5, Valladolid": null,
+ "Calle Joaquin Mª Jalon, Valladolid": null,
+ "Calle Joaquin Velasco Martin 15, Valladolid": {
+  "lat": 41.64602,
+  "lon": -4.74001,
+  "tipo": "portal"
+ },
+ "Calle Jose Garrote Tovar 14, Valladolid": {
+  "lat": 41.63386,
+  "lon": -4.7577,
+  "tipo": "portal"
+ },
+ "Calle Labradores 49, Valladolid": {
+  "lat": 41.64507,
+  "lon": -4.72072,
+  "tipo": "portal"
+ },
+ "Calle Linares 31, Valladolid": {
+  "lat": 41.66227,
+  "lon": -4.72191,
+  "tipo": "portal"
+ },
+ "Calle Lopez Gomez 5, Valladolid": {
+  "lat": 41.64992,
+  "lon": -4.724,
+  "tipo": "portal"
+ },
+ "Calle Madreselva, Valladolid": {
+  "lat": 41.66795,
+  "lon": -4.73203,
+  "tipo": "callejero"
+ },
+ "Calle Magallanes 25, Valladolid": {
+  "lat": 41.65812,
+  "lon": -4.70238,
+  "tipo": "portal"
+ },
+ "Calle Manuel Azaña 22, Valladolid": {
+  "lat": 41.63696,
+  "lon": -4.7683,
+  "tipo": "portal"
+ },
+ "Calle Manuel Azaña 27, Valladolid": {
+  "lat": 41.63635,
+  "lon": -4.764,
+  "tipo": "portal"
+ },
+ "Calle Maria de Molina 14, Valladolid": {
+  "lat": 41.65002,
+  "lon": -4.7307,
+  "tipo": "portal"
+ },
+ "Calle Marina Escobar 7, Valladolid": {
+  "lat": 41.64768,
+  "lon": -4.72712,
+  "tipo": "portal"
+ },
+ "Calle Mateo Seoane Sobral 32, Valladolid": {
+  "lat": 41.63641,
+  "lon": -4.75647,
+  "tipo": "portal"
+ },
+ "Calle Mieses 24, Valladolid": {
+  "lat": 41.65813,
+  "lon": -4.74152,
+  "tipo": "portal"
+ },
+ "Calle Miguel Delibes 44, Valladolid": {
+  "lat": 41.61036,
+  "lon": -4.75342,
+  "tipo": "portal"
+ },
+ "Calle Mirabel 28, Valladolid": {
+  "lat": 41.67959,
+  "lon": -4.74599,
+  "tipo": "portal"
+ },
+ "Calle Mirabel 56, Valladolid": {
+  "lat": 41.66305,
+  "lon": -4.7242,
+  "tipo": "portal"
+ },
+ "Calle Montes de Oca 4, Valladolid": {
+  "lat": 41.61524,
+  "lon": -4.74922,
+  "tipo": "portal"
+ },
+ "Calle Muro 8, Valladolid": {
+  "lat": 41.64672,
+  "lon": -4.72527,
+  "tipo": "portal"
+ },
+ "Calle Narciso Alonso Cortes 12, Valladolid": {
+  "lat": 41.63259,
+  "lon": -4.74226,
+  "tipo": "portal"
+ },
+ "Calle Nicolas Salmeron 30, Valladolid": {
+  "lat": 41.6463,
+  "lon": -4.71913,
+  "tipo": "portal"
+ },
+ "Calle Nueva del Carmen 34., Valladolid": {
+  "lat": 41.6554,
+  "lon": -4.70825,
+  "tipo": "portal"
+ },
+ "Calle Padre Francisco Suarez 10, Valladolid": {
+  "lat": 41.64392,
+  "lon": -4.73711,
+  "tipo": "portal"
+ },
+ "Calle Padre Manjon 54, Valladolid": {
+  "lat": 41.63848,
+  "lon": -4.71986,
+  "tipo": "portal"
+ },
+ "Calle Palacio Valdes 7, Valladolid": {
+  "lat": 41.65218,
+  "lon": -4.71226,
+  "tipo": "portal"
+ },
+ "Calle Panaderos 39, Valladolid": {
+  "lat": 41.64656,
+  "lon": -4.72266,
+  "tipo": "portal"
+ },
+ "Calle Paraiso 7, Valladolid": {
+  "lat": 41.65447,
+  "lon": -4.72091,
+  "tipo": "portal"
+ },
+ "Paseo De Farnesio 29, Valladolid": {
+  "lat": 41.63938,
+  "lon": -4.72385,
+  "tipo": "portal"
+ },
+ "Paseo De San Vicente 11, Valladolid": {
+  "lat": 41.64421,
+  "lon": -4.71642,
+  "tipo": "portal"
+ },
+ "Paseo De San Vicente 22, Valladolid": {
+  "lat": 41.6432,
+  "lon": -4.71834,
+  "tipo": "portal"
+ },
+ "Paseo De Zorrilla 127, Valladolid": {
+  "lat": 41.62797,
+  "lon": -4.74303,
+  "tipo": "portal"
+ },
+ "Paseo De Zorrilla 153, Valladolid": {
+  "lat": 41.62369,
+  "lon": -4.74693,
+  "tipo": "portal"
+ },
+ "Paseo De Zorrilla 205, Valladolid": {
+  "lat": 41.61663,
+  "lon": -4.74803,
+  "tipo": "portal"
+ },
+ "Paseo De Zorrilla 5, Valladolid": {
+  "lat": 41.64354,
+  "lon": -4.73526,
+  "tipo": "portal"
+ },
+ "Paseo De Zorrilla 53, Valladolid": {
+  "lat": 41.63823,
+  "lon": -4.7384,
+  "tipo": "portal"
+ },
+ "Paseo De Zorrilla 85, Valladolid": {
+  "lat": 41.63473,
+  "lon": -4.73963,
+  "tipo": "portal"
+ },
+ "Paseo De Zorrilla 96, Valladolid": {
+  "lat": 41.63987,
+  "lon": -4.73859,
+  "tipo": "portal"
+ },
+ "Paseo Del Arco Ladrillo 67, Valladolid": {
+  "lat": 41.62898,
+  "lon": -4.72701,
+  "tipo": "portal"
+ },
+ "Paseo Del Cauce 59, Valladolid": {
+  "lat": 41.65359,
+  "lon": -4.71184,
+  "tipo": "portal"
+ },
+ "Paseo Del Hospital Militar 14, Valladolid": {
+  "lat": 41.64238,
+  "lon": -4.73044,
+  "tipo": "portal"
+ },
+ "Paseo Del Hospital Militar 40, Valladolid": {
+  "lat": 41.64518,
+  "lon": -4.73649,
+  "tipo": "portal"
+ },
+ "Paseo Juan Carlos I 11, Valladolid": {
+  "lat": 41.63762,
+  "lon": -4.71779,
+  "tipo": "portal"
+ },
+ "Calle Pingüino 9, Valladolid": {
+  "lat": 41.64974,
+  "lon": -4.70733,
+  "tipo": "portal"
+ },
+ "Plaza Del Ejercito 1, Valladolid": {
+  "lat": 41.63656,
+  "lon": -4.73614,
+  "tipo": "portal"
+ },
+ "Plaza Circular 2, Valladolid": {
+  "lat": 41.64784,
+  "lon": -4.71717,
+  "tipo": "portal"
+ },
+ "Plaza Cruz Verde 3, Valladolid": {
+  "lat": 41.64822,
+  "lon": -4.72003,
+  "tipo": "portal"
+ },
+ "Plaza De la Universidad 8, Valladolid": {
+  "lat": 41.65293,
+  "lon": -4.72137,
+  "tipo": "portal"
+ },
+ "Plaza De las Batallas 1, Valladolid": {
+  "lat": 41.65424,
+  "lon": -4.71368,
+  "tipo": "portal"
+ },
+ "Plaza De los Arces 2, Valladolid": {
+  "lat": 41.65438,
+  "lon": -4.72731,
+  "tipo": "portal"
+ },
+ "Plaza Dr. Marañon 1, Valladolid": {
+  "lat": 41.65838,
+  "lon": -4.71608,
+  "tipo": "portal"
+ },
+ "Plaza España 11, Valladolid": {
+  "lat": 41.6487,
+  "lon": -4.72462,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 15, Valladolid": {
+  "lat": 41.65155,
+  "lon": -4.72913,
+  "tipo": "portal"
+ },
+ "Plaza Millan Santos, Valladolid": {
+  "lat": 41.63884,
+  "lon": -4.71809,
+  "tipo": "callejero"
+ },
+ "Plaza San Juan 5, Valladolid": {
+  "lat": 41.65109,
+  "lon": -4.71754,
+  "tipo": "portal"
+ },
+ "Plaza San Pablo, Valladolid": {
+  "lat": 41.65696,
+  "lon": -4.72538,
+  "tipo": "callejero"
+ },
+ "Calle Pº Arco de Ladrillo 29, Valladolid": {
+  "lat": 41.63916,
+  "lon": -4.73076,
+  "tipo": "portal"
+ },
+ "Calle Pº de Zorrilla 179, Valladolid": {
+  "lat": 41.63022,
+  "lon": -4.74206,
+  "tipo": "portal"
+ },
+ "Calle Pº Juan Carlos I 138, Valladolid": {
+  "lat": 41.65254,
+  "lon": -4.70385,
+  "tipo": "portal"
+ },
+ "Calle Pº Zorrilla 14, Valladolid": {
+  "lat": 41.64301,
+  "lon": -4.73591,
+  "tipo": "portal"
+ },
+ "Calle Portillo de Balboa 56, Valladolid": {
+  "lat": 41.6633,
+  "lon": -4.71832,
+  "tipo": "portal"
+ },
+ "Calle Puente Colgante 11, Valladolid": {
+  "lat": 41.64098,
+  "lon": -4.73258,
+  "tipo": "portal"
+ },
+ "Calle Puente Colgante 41, Valladolid": {
+  "lat": 41.64085,
+  "lon": -4.73841,
+  "tipo": "portal"
+ },
+ "Calle Real de Burgos 15, Valladolid": {
+  "lat": 41.65878,
+  "lon": -4.71915,
+  "tipo": "portal"
+ },
+ "Calle Regalado 3, Valladolid": {
+  "lat": 41.65135,
+  "lon": -4.72659,
+  "tipo": "portal"
+ },
+ "Calle Rondilla Santa Teresa 34, Valladolid": {
+  "lat": 41.66079,
+  "lon": -4.73048,
+  "tipo": "portal"
+ },
+ "Calle Salud 12, Valladolid": {
+  "lat": 41.64764,
+  "lon": -4.71213,
+  "tipo": "portal"
+ },
+ "Calle Salud 31, Valladolid": {
+  "lat": 41.65227,
+  "lon": -4.70935,
+  "tipo": "portal"
+ },
+ "Calle San Ignacio 4, Valladolid": {
+  "lat": 41.65536,
+  "lon": -4.72894,
+  "tipo": "portal"
+ },
+ "Calle San Isidro 45, Valladolid": {
+  "lat": 41.64435,
+  "lon": -4.71423,
+  "tipo": "portal"
+ },
+ "Calle San Isidro 9, Valladolid": {
+  "lat": 41.64619,
+  "lon": -4.71593,
+  "tipo": "portal"
+ },
+ "Calle San Lorenzo 5, Valladolid": {
+  "lat": 41.65209,
+  "lon": -4.73136,
+  "tipo": "portal"
+ },
+ "Calle Santa Lucia 19, Valladolid": {
+  "lat": 41.65199,
+  "lon": -4.71484,
+  "tipo": "portal"
+ },
+ "Calle Santa Maria de la Cabeza, Valladolid": {
+  "lat": 41.64383,
+  "lon": -4.70255,
+  "tipo": "callejero"
+ },
+ "Calle Santiago 19, Valladolid": {
+  "lat": 41.64958,
+  "lon": -4.72904,
+  "tipo": "portal"
+ },
+ "Calle Santiago 5, Valladolid": {
+  "lat": 41.65115,
+  "lon": -4.72858,
+  "tipo": "portal"
+ },
+ "Calle Santo Domingo de Silos 8, Valladolid": null,
+ "Calle Santo Domingo de Silos, Valladolid": {
+  "lat": 41.64525,
+  "lon": -4.74528,
+  "tipo": "callejero"
+ },
+ "Calle Silió 6, Valladolid": {
+  "lat": 41.65002,
+  "lon": -4.71373,
+  "tipo": "portal"
+ },
+ "Calle Teofilo Villamañan 1, Valladolid": {
+  "lat": 41.64806,
+  "lon": -4.70603,
+  "tipo": "portal"
+ },
+ "Calle Tirso de Molina 23, Valladolid": {
+  "lat": 41.66008,
+  "lon": -4.72381,
+  "tipo": "portal"
+ },
+ "Calle Torrecilla 30, Valladolid": {
+  "lat": 41.65741,
+  "lon": -4.72222,
+  "tipo": "portal"
+ },
+ "Calle Tortola 15, Valladolid": {
+  "lat": 41.64537,
+  "lon": -4.71027,
+  "tipo": "portal"
+ },
+ "Calle Trabajo 8, Valladolid": {
+  "lat": 41.64231,
+  "lon": -4.7203,
+  "tipo": "portal"
+ },
+ "Calle Turina 10, Valladolid": {
+  "lat": 41.6368,
+  "lon": -4.74094,
+  "tipo": "portal"
+ },
+ "Calle Villabañez 3, Valladolid": {
+  "lat": 41.64988,
+  "lon": -4.71041,
+  "tipo": "portal"
+ },
+ "Calle Villanubla 7, Valladolid": {
+  "lat": 41.66145,
+  "lon": -4.7354,
+  "tipo": "portal"
+ },
+ "Calle Teresa Gil 20, Valladolid": {
+  "lat": 41.6504,
+  "lon": -4.72563,
+  "tipo": "portal"
+ },
+ "Calle Colon 4, Valladolid": {
+  "lat": 41.65239,
+  "lon": -4.7181,
+  "tipo": "portal"
+ },
+ "Avenida Medina del Campo 19, Valladolid": {
+  "lat": 41.63352,
+  "lon": -4.74835,
+  "tipo": "portal"
+ },
+ "Calle Fuente el Sol 11, Valladolid": {
+  "lat": 41.66246,
+  "lon": -4.73411,
+  "tipo": "portal"
+ },
+ "Paseo De Zorrilla 54, Valladolid": {
+  "lat": 41.64354,
+  "lon": -4.73611,
+  "tipo": "portal"
+ },
+ "Calle Duque de la Victoria 15, Valladolid": {
+  "lat": 41.65025,
+  "lon": -4.72647,
+  "tipo": "portal"
+ },
+ "Paseo Zorrilla 213, Valladolid": {
+  "lat": 41.61571,
+  "lon": -4.74812,
+  "tipo": "portal"
+ },
+ "Avenida Del Real Valladolid 5, Valladolid": {
+  "lat": 41.64262,
+  "lon": -4.75964,
+  "tipo": "portal"
+ },
+ "Paseo De Zorrilla 55, Valladolid": {
+  "lat": 41.63787,
+  "lon": -4.73855,
+  "tipo": "portal"
+ },
+ "Calle Del Puente Colgante 33, Valladolid": {
+  "lat": 41.64087,
+  "lon": -4.73481,
+  "tipo": "portal"
+ },
+ "Calle General Shelly 4, Valladolid": {
+  "lat": 41.63562,
+  "lon": -4.72413,
+  "tipo": "portal"
+ },
+ "Calle Gabilondo 24, Valladolid": {
+  "lat": 41.63969,
+  "lon": -4.73442,
+  "tipo": "portal"
+ },
+ "Paseo Del Jardín Botánico 11, Valladolid": {
+  "lat": 41.66737,
+  "lon": -4.7352,
+  "tipo": "portal"
+ },
+ "Calle Monasterio S.M.C. 18, Valladolid": {
+  "lat": 41.64505,
+  "lon": -4.74807,
+  "tipo": "portal"
+ },
+ "Calle Daniel del Olmo Gonzalez 24, Valladolid": {
+  "lat": 41.62719,
+  "lon": -4.73055,
+  "tipo": "portal"
+ },
+ "Calle Imperial 4, Valladolid": {
+  "lat": 41.65797,
+  "lon": -4.72803,
+  "tipo": "portal"
+ },
+ "Calle Del Leon 6, Valladolid": {
+  "lat": 41.65575,
+  "lon": -4.72618,
+  "tipo": "portal"
+ },
+ "Calle Silio, Valladolid": {
+  "lat": 41.6501,
+  "lon": -4.71398,
+  "tipo": "callejero"
+ },
+ "Calle Gabilondo 3, Valladolid": {
+  "lat": 41.6432,
+  "lon": -4.73462,
+  "tipo": "portal"
+ },
+ "Calle Cerrada 4, Valladolid": {
+  "lat": 41.65975,
+  "lon": -4.72005,
+  "tipo": "portal"
+ },
+ "Calle Doctor Esquerdo 1, Valladolid": {
+  "lat": 41.6601,
+  "lon": -4.71701,
+  "tipo": "portal"
+ },
+ "Calle Aguila 13, Valladolid": {
+  "lat": 41.64768,
+  "lon": -4.71011,
+  "tipo": "portal"
+ },
+ "Calle De la Cigüeña 3 5, Valladolid": null,
+ "Paseo De Farnesio 43, Valladolid": {
+  "lat": 41.63864,
+  "lon": -4.72601,
+  "tipo": "portal"
+ },
+ "Calle Pio del Rio Hortega 8, Valladolid": {
+  "lat": 41.65178,
+  "lon": -4.74092,
+  "tipo": "portal"
+ },
+ "Calle Juan Martinez Villergas 4, Valladolid": {
+  "lat": 41.63588,
+  "lon": -4.75691,
+  "tipo": "portal"
+ },
+ "Calle Manuel Azaña 58, Valladolid": {
+  "lat": 41.63611,
+  "lon": -4.76248,
+  "tipo": "portal"
+ },
+ "Calle Rigoberto Cortejoso 16, Valladolid": {
+  "lat": 41.65411,
+  "lon": -4.74173,
+  "tipo": "portal"
+ },
+ "Calle Marques del Duero 6, Valladolid": {
+  "lat": 41.65494,
+  "lon": -4.72145,
+  "tipo": "portal"
+ },
+ "Avenida Ciudad de la Habana 2, Valladolid": null,
+ "Avenida Ciudad de la Habana, Valladolid": {
+  "lat": 41.63485,
+  "lon": -4.7632,
+  "tipo": "callejero"
+ },
+ "Paseo De Zorrilla 348, Valladolid": {
+  "lat": 41.61875,
+  "lon": -4.74847,
+  "tipo": "portal"
+ },
+ "Calle Cigüeña 16, Valladolid": {
+  "lat": 41.64573,
+  "lon": -4.71052,
+  "tipo": "portal"
+ },
+ "Calle Esgueva 15, Valladolid": {
+  "lat": 41.65467,
+  "lon": -4.72259,
+  "tipo": "portal"
+ },
+ "Calle Nueva del Carmen 2, Valladolid": {
+  "lat": 41.65317,
+  "lon": -4.70972,
+  "tipo": "portal"
+ },
+ "Calle Adolfo Miaja de la Muela 30, Valladolid": {
+  "lat": 41.63581,
+  "lon": -4.75529,
+  "tipo": "portal"
+ },
+ "Calle Hernando de Acuña 27, Valladolid": {
+  "lat": 41.63784,
+  "lon": -4.76079,
+  "tipo": "portal"
+ },
+ "Calle General Ruiz 1, Valladolid": {
+  "lat": 41.64665,
+  "lon": -4.72467,
+  "tipo": "portal"
+ },
+ "Calle Doctor Moreno 16, Valladolid": {
+  "lat": 41.62696,
+  "lon": -4.74047,
+  "tipo": "portal"
+ },
+ "Calle Fuente el Sol 8, Valladolid": {
+  "lat": 41.66189,
+  "lon": -4.73387,
+  "tipo": "portal"
+ },
+ "Calle San Quirce 3, Valladolid": {
+  "lat": 41.65707,
+  "lon": -4.72809,
+  "tipo": "portal"
+ },
+ "Avenida Segovia 44, Valladolid": {
+  "lat": 41.63671,
+  "lon": -4.72172,
+  "tipo": "portal"
+ },
+ "Calle Fidel Recio 4, Valladolid": {
+  "lat": 41.64957,
+  "lon": -4.72013,
+  "tipo": "portal"
+ },
+ "Calle Vázquez de Menchaca 38, Valladolid": {
+  "lat": 41.61882,
+  "lon": -4.73568,
+  "tipo": "portal"
+ },
+ "Calle Canterac 26, Valladolid": {
+  "lat": 41.64098,
+  "lon": -4.7188,
+  "tipo": "portal"
+ },
+ "Avenida De Burgos 78, Valladolid": {
+  "lat": 41.67075,
+  "lon": -4.72562,
+  "tipo": "portal"
+ },
+ "Paseo De Zorrilla 51, Valladolid": {
+  "lat": 41.63846,
+  "lon": -4.7383,
+  "tipo": "portal"
+ },
+ "Calle General Shelly 29, Valladolid": {
+  "lat": 41.63585,
+  "lon": -4.71993,
+  "tipo": "portal"
+ },
+ "Calle Celtas Cortos 18, Valladolid": {
+  "lat": 41.63653,
+  "lon": -4.71957,
+  "tipo": "portal"
+ },
+ "Carretera Rueda 21, Valladolid": {
+  "lat": 41.62788,
+  "lon": -4.74179,
+  "tipo": "portal"
+ },
+ "Calle Alamillos 6, Valladolid": {
+  "lat": 41.65417,
+  "lon": -4.7158,
+  "tipo": "portal"
+ },
+ "Calle Cigüeña 19, Valladolid": {
+  "lat": 41.64545,
+  "lon": -4.71141,
+  "tipo": "portal"
+ },
+ "Calle Santa Clara 26, Valladolid": {
+  "lat": 41.65867,
+  "lon": -4.72007,
+  "tipo": "portal"
+ },
+ "Calle Perez Galdos 11, Valladolid": {
+  "lat": 41.64885,
+  "lon": -4.71658,
+  "tipo": "portal"
+ },
+ "Calle Duque de la Victoria 13, Valladolid": {
+  "lat": 41.65047,
+  "lon": -4.72656,
+  "tipo": "portal"
+ },
+ "Calle Teresa Gil 16, Valladolid": {
+  "lat": 41.65082,
+  "lon": -4.72588,
+  "tipo": "portal"
+ },
+ "Calle Tudela 8, Valladolid": {
+  "lat": 41.64773,
+  "lon": -4.7189,
+  "tipo": "portal"
+ },
+ "Calle Frambuesa 10, Valladolid": {
+  "lat": 41.67273,
+  "lon": -4.7271,
+  "tipo": "portal"
+ },
+ "Calle Neptuno 15, Valladolid": {
+  "lat": 41.66215,
+  "lon": -4.73715,
+  "tipo": "portal"
+ },
+ "Avenida De Burgos 23 Paseo del Rio Obregón, Valladolid": null,
+ "Calle Ciruelo, Valladolid": {
+  "lat": 41.61482,
+  "lon": -4.75967,
+  "tipo": "callejero"
+ },
+ "Calle Manuel Azaña 60, Valladolid": {
+  "lat": 41.63608,
+  "lon": -4.76226,
+  "tipo": "portal"
+ },
+ "Calle Don Sancho 7, Valladolid": {
+  "lat": 41.64852,
+  "lon": -4.71936,
+  "tipo": "portal"
+ },
+ "Calle Gabilondo 29 31 33, Valladolid": null,
+ "Calle Gabilondo 29 31, Valladolid": {
+  "lat": 41.64039,
+  "lon": -4.73432,
+  "tipo": "portal"
+ },
+ "Calle Guardería, Valladolid": {
+  "lat": 41.63954,
+  "lon": -4.73369,
+  "tipo": "callejero"
+ },
+ "Calle Independencia 1 5, Valladolid": null,
+ "Calle Independencia 1, Valladolid": {
+  "lat": 41.64516,
+  "lon": -4.72503,
+  "tipo": "portal"
+ },
+ "Calle Miriam Blasco C/ V Padre Llanos, Valladolid": null,
+ "Calle Recoletas 6 8, Valladolid": null,
+ "Calle Recoletas 6, Valladolid": {
+  "lat": 41.64733,
+  "lon": -4.73307,
+  "tipo": "portal"
+ },
+ "Calle Curtidores 1, Valladolid": {
+  "lat": 41.64748,
+  "lon": -4.73397,
+  "tipo": "portal"
+ },
+ "Calle Arca Real, Valladolid": {
+  "lat": 41.59663,
+  "lon": -4.74686,
+  "tipo": "callejero"
+ },
+ "Calle Cº del Cementerio 9, Valladolid": null,
+ "Calle Cº del Cementerio, Valladolid": null,
+ "Carretera De Rueda, Valladolid": {
+  "lat": 41.61579,
+  "lon": -4.7473,
+  "tipo": "callejero"
+ },
+ "Carretera Villabañez, Valladolid": {
+  "lat": 41.64526,
+  "lon": -4.67722,
+  "tipo": "callejero"
+ },
+ "Paseo Del Renacimiento 1, Valladolid": {
+  "lat": 41.65987,
+  "lon": -4.73119,
+  "tipo": "portal"
+ },
+ "Paseo Juan Carlos I 77, Valladolid": {
+  "lat": 41.64526,
+  "lon": -4.70795,
+  "tipo": "portal"
+ },
+ "Avenida De Salamanca 112, Valladolid": {
+  "lat": 41.62574,
+  "lon": -4.76477,
+  "tipo": "portal"
+ },
+ "Calle Santiago López González 2, Valladolid": {
+  "lat": 41.62606,
+  "lon": -4.76572,
+  "tipo": "portal"
+ },
+ "Calle Huelgas 12, Valladolid": {
+  "lat": 41.65232,
+  "lon": -4.71657,
+  "tipo": "portal"
+ },
+ "Calle Zarza 13, Aguilar de Campos": {
+  "lat": 41.98244,
+  "lon": -5.17961,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 13, Alaejos": {
+  "lat": 41.30743,
+  "lon": -5.2157,
+  "tipo": "portal"
+ },
+ "Calle Fortaleza, Alaejos": {
+  "lat": 41.30677,
+  "lon": -5.21735,
+  "tipo": "callejero"
+ },
+ "Calle Hontanilla 1, Alcazarén": {
+  "lat": 41.37062,
+  "lon": -4.67183,
+  "tipo": "portal"
+ },
+ "Calle Constitución 59, Aldeamayor de San Martín": {
+  "lat": 41.51304,
+  "lon": -4.63866,
+  "tipo": "portal"
+ },
+ "Calle Manuel de Falla, Aldeamayor de San Martín": {
+  "lat": 41.51089,
+  "lon": -4.63953,
+  "tipo": "callejero"
+ },
+ "Avenida Del Castillo 10, Arrabal de Portillo": {
+  "lat": 41.47923,
+  "lon": -4.58614,
+  "tipo": "portal"
+ },
+ "Calle Me Falta Un Tornillo 3 C.C. Rio Shopping, Arroyo de la Encomienda": null,
+ "Avenida De Salamanca 21, Arroyo de la Encomienda": {
+  "lat": 41.62311,
+  "lon": -4.77114,
+  "tipo": "portal"
+ },
+ "Calle Indutrias 19, Arroyo de la Encomienda": {
+  "lat": 41.62501,
+  "lon": -4.77395,
+  "tipo": "portal"
+ },
+ "Calle Carromajada 9, Arroyo de la Encomienda": {
+  "lat": 41.62522,
+  "lon": -4.77667,
+  "tipo": "portal"
+ },
+ "Calle Hernando de Soto 1, Arroyo de la Encomienda": {
+  "lat": 41.62019,
+  "lon": -4.77745,
+  "tipo": "portal"
+ },
+ "Calle Me Falta Un Tornillo B21 3, Arroyo de la Encomienda": null,
+ "Calle Me Falta Un Tornillo B21, Arroyo de la Encomienda": null,
+ "Calle Torrentera 4, Arroyo de la Encomienda": {
+  "lat": 41.6115,
+  "lon": -4.79362,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 16, Ataquines": {
+  "lat": 38.54085,
+  "lon": -1.95437,
+  "tipo": "portal"
+ },
+ "Plaza Mayor, Ataquines": {
+  "lat": 41.18182,
+  "lon": -4.8058,
+  "tipo": "callejero"
+ },
+ "Calle Agustin Velasco 14, Bobadilla del Campo": {
+  "lat": 41.20603,
+  "lon": -5.02299,
+  "tipo": "portal"
+ },
+ "Calle Matas Altas 2, Boecillo": {
+  "lat": 42.63411,
+  "lon": 1.10834,
+  "tipo": "portal"
+ },
+ "Calle Matas Altas, Boecillo": {
+  "lat": 41.5443,
+  "lon": -4.70201,
+  "tipo": "callejero"
+ },
+ "Calle Derecha 3, Bolaños de Campos": {
+  "lat": 42.00649,
+  "lon": -5.28389,
+  "tipo": "portal"
+ },
+ "Calle Santa Maria 1, Cabezón de Pisuerga": {
+  "lat": 41.7339,
+  "lon": -4.64757,
+  "tipo": "portal"
+ },
+ "Calle Carlos V, Cabezón de Pisuerga": {
+  "lat": 41.72887,
+  "lon": -4.64705,
+  "tipo": "callejero"
+ },
+ "Calle España 14, Campaspero": {
+  "lat": 41.49265,
+  "lon": -4.19625,
+  "tipo": "portal"
+ },
+ "Calle Pozo Abajo 6, Campaspero": {
+  "lat": 41.49129,
+  "lon": -4.19603,
+  "tipo": "portal"
+ },
+ "Plaza Calvo Sotelo 14, Casasola de Arión": null,
+ "Plaza Calvo Sotelo, Casasola de Arión": null,
+ "Avenida Enida de Tordesillas 6, Castromonte": null,
+ "Avenida Enida de Tordesillas, Castromonte": null,
+ "Calle Eras 1, Castronuevo de Esgueva": {
+  "lat": 41.65163,
+  "lon": -4.62048,
+  "tipo": "portal"
+ },
+ "Calle Real 87, Castronuño": {
+  "lat": 41.38947,
+  "lon": -5.26385,
+  "tipo": "portal"
+ },
+ "Avenida De Valladolid 2, Cigales": {
+  "lat": 41.7568,
+  "lon": -4.69642,
+  "tipo": "portal"
+ },
+ "Avenida De los Cortijos 1, Cigales": {
+  "lat": 41.7577,
+  "lon": -4.69613,
+  "tipo": "portal"
+ },
+ "Calle Corro de la Fuente 4, Ciguñuela": {
+  "lat": 41.64182,
+  "lon": -4.85897,
+  "tipo": "portal"
+ },
+ "Avenida Soria 21, La Cistérniga": {
+  "lat": 41.61324,
+  "lon": -4.68929,
+  "tipo": "portal"
+ },
+ "Calle Mayor 10, Cogeces del Monte": {
+  "lat": 41.5111,
+  "lon": -4.31702,
+  "tipo": "portal"
+ },
+ "Calle Rodrigo Vazquez de Arce 6, Carpio": {
+  "lat": 41.21292,
+  "lon": -5.11244,
+  "tipo": "portal"
+ },
+ "Calle Molino 2, Esguevillas de Esgueva": {
+  "lat": 41.74961,
+  "lon": -4.38048,
+  "tipo": "portal"
+ },
+ "Plaza Mayor, Fombellida": {
+  "lat": 41.76783,
+  "lon": -4.18506,
+  "tipo": "callejero"
+ },
+ "Calle Peñaranda 15, Fresno el Viejo": {
+  "lat": 41.19532,
+  "lon": -5.14414,
+  "tipo": "portal"
+ },
+ "Calle Nueva 9, Fuensaldaña": {
+  "lat": 41.7055,
+  "lon": -4.76434,
+  "tipo": "portal"
+ },
+ "Carretera Peñaranda 20, Fuente el Sol": {
+  "lat": 38.93993,
+  "lon": -3.23846,
+  "tipo": "portal"
+ },
+ "Carretera Peñaranda, Fuente el Sol": {
+  "lat": 40.31936,
+  "lon": -6.67092,
+  "tipo": "callejero"
+ },
+ "Calle Ceniceros 11, Geria": {
+  "lat": 41.57811,
+  "lon": -4.87581,
+  "tipo": "portal"
+ },
+ "Calle Mesones 7, Íscar": {
+  "lat": 41.36099,
+  "lon": -4.53346,
+  "tipo": "portal"
+ },
+ "Calle Santibañez 20, Íscar": {
+  "lat": 41.36164,
+  "lon": -4.53081,
+  "tipo": "portal"
+ },
+ "Ronda  55, Íscar": {
+  "lat": 41.36235,
+  "lon": -4.53089,
+  "tipo": "portal"
+ },
+ "Calle Real 5, Íscar": {
+  "lat": 41.3616,
+  "lon": -4.53312,
+  "tipo": "portal"
+ },
+ "Calle Mesones 31, Íscar": {
+  "lat": 41.35967,
+  "lon": -4.53457,
+  "tipo": "portal"
+ },
+ "Calle Eras 10, Íscar": {
+  "lat": 41.36138,
+  "lon": -4.53032,
+  "tipo": "portal"
+ },
+ "Calle Portugal 14, Íscar": {
+  "lat": 41.36427,
+  "lon": -4.52974,
+  "tipo": "portal"
+ },
+ "Ronda , Íscar": {
+  "lat": 41.36161,
+  "lon": -4.5319,
+  "tipo": "callejero"
+ },
+ "Calle Pilar del Amo 7, Íscar": {
+  "lat": 41.3598,
+  "lon": -4.53332,
+  "tipo": "portal"
+ },
+ "Calle Eras 20, Íscar": {
+  "lat": 41.36048,
+  "lon": -4.53485,
+  "tipo": "expendeduria"
+ },
+ "Calle Eras, Íscar": {
+  "lat": 41.3074,
+  "lon": -4.52605,
+  "tipo": "callejero"
+ },
+ "Calle Pilarica, Íscar": {
+  "lat": 41.36197,
+  "lon": -4.53403,
+  "tipo": "callejero"
+ },
+ "Plaza Barrioncillo 12, La Cistérniga": {
+  "lat": 41.61321,
+  "lon": -4.68689,
+  "tipo": "portal"
+ },
+ "Calle Bodegas 7, La Cistérniga": {
+  "lat": 41.61245,
+  "lon": -4.68484,
+  "tipo": "portal"
+ },
+ "Calle Cañada Real de Soria 2, La Cistérniga": null,
+ "Calle Cañada Real de Soria, La Cistérniga": {
+  "lat": 41.60878,
+  "lon": -4.68265,
+  "tipo": "callejero"
+ },
+ "Calle La Fragua 22, La Cistérniga": {
+  "lat": 41.61188,
+  "lon": -4.68379,
+  "tipo": "portal"
+ },
+ "Avenida Rafael Cavestany 15, La Mudarra": {
+  "lat": 41.78301,
+  "lon": -4.94424,
+  "tipo": "portal"
+ },
+ "Calle Pozo 3, La Parrilla": {
+  "lat": 41.5372,
+  "lon": -4.53398,
+  "tipo": "portal"
+ },
+ "Calle Tudela 12, La Pedraja de Portillo": {
+  "lat": 41.47187,
+  "lon": -4.64618,
+  "tipo": "portal"
+ },
+ "Calle Tomas Bayon 20, La Seca": {
+  "lat": 41.41329,
+  "lon": -4.90584,
+  "tipo": "portal"
+ },
+ "Carretera Uz 17, La Unión de Campos": {
+  "lat": 42.28367,
+  "lon": -4.48367,
+  "tipo": "portal"
+ },
+ "Carretera Uz, La Unión de Campos": {
+  "lat": 41.24989,
+  "lon": -4.84314,
+  "tipo": "callejero"
+ },
+ "Avenida Madrid 9, Laguna de Duero": {
+  "lat": 41.585,
+  "lon": -4.71889,
+  "tipo": "portal"
+ },
+ "Avenida De Madrid 24, Laguna de Duero": {
+  "lat": 41.58286,
+  "lon": -4.71956,
+  "tipo": "portal"
+ },
+ "Avenida De Laguna 13, Laguna de Duero": {
+  "lat": 41.58402,
+  "lon": -4.72175,
+  "tipo": "portal"
+ },
+ "Avenida De la Libertad 31, Laguna de Duero": {
+  "lat": 41.58918,
+  "lon": -4.72422,
+  "tipo": "portal"
+ },
+ "Avenida Juan de Austria 12, Laguna de Duero": {
+  "lat": 41.58793,
+  "lon": -4.72645,
+  "tipo": "portal"
+ },
+ "Avenida De la Estacion, Laguna de Duero": {
+  "lat": 41.58094,
+  "lon": -4.71513,
+  "tipo": "callejero"
+ },
+ "Calle Arrabal 39, Laguna de Duero": {
+  "lat": 41.58122,
+  "lon": -4.72328,
+  "tipo": "portal"
+ },
+ "Calle Pensamiento 40, Laguna de Duero": {
+  "lat": 41.57804,
+  "lon": -4.72264,
+  "tipo": "portal"
+ },
+ "Calle Comunidad de Canarias 3, Laguna de Duero": {
+  "lat": 41.57698,
+  "lon": -4.71776,
+  "tipo": "portal"
+ },
+ "Avenida Enida de las Salinas 2, Laguna de Duero": null,
+ "Avenida Enida de las Salinas, Laguna de Duero": null,
+ "Calle Camilo José Cela 4, Laguna de Duero": {
+  "lat": 41.58117,
+  "lon": -4.7242,
+  "tipo": "portal"
+ },
+ "Avenida De Madrid 5, Laguna de Duero": {
+  "lat": 41.5859,
+  "lon": -4.71886,
+  "tipo": "portal"
+ },
+ "Calle La Esgueva 4, Laguna de Duero": {
+  "lat": 41.58633,
+  "lon": -4.7272,
+  "tipo": "portal"
+ },
+ "Calle Comercial Parque Laguna, Laguna de Duero": null,
+ "Plaza De la Hospederia 2, Laguna de Duero": {
+  "lat": 41.5808,
+  "lon": -4.71985,
+  "tipo": "portal"
+ },
+ "Avenida De la Libertad 7, Laguna de Duero": {
+  "lat": 41.58934,
+  "lon": -4.72339,
+  "tipo": "portal"
+ },
+ "Avenida Del Moral-C/ del Gal., Laguna de Duero": null,
+ "Calle Calvo Sotelo 10, Langayo": {
+  "lat": 41.57001,
+  "lon": -4.19785,
+  "tipo": "portal"
+ },
+ "Calle Valentin Arevalo 4, Matapozuelos": {
+  "lat": 41.41405,
+  "lon": -4.79142,
+  "tipo": "portal"
+ },
+ "Plaza De España 3, Mayorga": {
+  "lat": 42.16681,
+  "lon": -5.26221,
+  "tipo": "portal"
+ },
+ "Plaza De Santiago 2, Mayorga": {
+  "lat": 42.16714,
+  "lon": -5.26129,
+  "tipo": "portal"
+ },
+ "Calle Lazaro Alonso 3, Medina de Rioseco": {
+  "lat": 41.88182,
+  "lon": -5.04228,
+  "tipo": "portal"
+ },
+ "Calle Lázaro Alonso 25, Medina de Rioseco": {
+  "lat": 41.88251,
+  "lon": -5.04374,
+  "tipo": "portal"
+ },
+ "Calle Lazaro Alonso 26, Medina de Rioseco": {
+  "lat": 41.88264,
+  "lon": -5.04387,
+  "tipo": "portal"
+ },
+ "Calle San Juan 2, Medina de Rioseco": {
+  "lat": 41.88352,
+  "lon": -5.04541,
+  "tipo": "portal"
+ },
+ "Calle Cantareros 12, Medina de Rioseco": {
+  "lat": 41.884,
+  "lon": -5.04432,
+  "tipo": "portal"
+ },
+ "Calle San Juan 5, Medina de Rioseco": {
+  "lat": 41.88368,
+  "lon": -5.04565,
+  "tipo": "portal"
+ },
+ "Avenida Juan Carlos I 5, Medina de Rioseco": {
+  "lat": 41.88227,
+  "lon": -5.04505,
+  "tipo": "portal"
+ },
+ "Calle Gamazo 7, Medina del Campo": {
+  "lat": 41.30745,
+  "lon": -4.91629,
+  "tipo": "portal"
+ },
+ "Avenida De Lope de Vega C/V CL Maldonado 20, Medina del Campo": null,
+ "Avenida De Lope de Vega C/V CL Maldonado, Medina del Campo": null,
+ "Calle Bravo 21, Medina del Campo": {
+  "lat": 41.30672,
+  "lon": -4.91562,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 42, Medina del Campo": {
+  "lat": 41.30816,
+  "lon": -4.91473,
+  "tipo": "portal"
+ },
+ "Calle Valladolid 20, Medina del Campo": {
+  "lat": 41.31406,
+  "lon": -4.9132,
+  "tipo": "portal"
+ },
+ "Calle Padilla 7, Medina del Campo": {
+  "lat": 41.30957,
+  "lon": -4.91498,
+  "tipo": "portal"
+ },
+ "Calle Audio Moyano 1, Medina del Campo": null,
+ "Calle Audio Moyano, Medina del Campo": null,
+ "Calle Gamazo 8, Medina del Campo": {
+  "lat": 41.3076,
+  "lon": -4.91638,
+  "tipo": "portal"
+ },
+ "Calle De las Farolas 4, Medina del Campo": {
+  "lat": 41.3066,
+  "lon": -4.91279,
+  "tipo": "portal"
+ },
+ "Calle Artilleria 22, Medina del Campo": {
+  "lat": 41.30584,
+  "lon": -4.9162,
+  "tipo": "portal"
+ },
+ "Calle Carreras 43, Medina del Campo": {
+  "lat": 41.30334,
+  "lon": -4.91719,
+  "tipo": "portal"
+ },
+ "Plaza Mercado 12, Medina del Campo": {
+  "lat": 41.30807,
+  "lon": -4.9134,
+  "tipo": "portal"
+ },
+ "Carretera Peñaranda 3, Medina del Campo": {
+  "lat": 41.29996,
+  "lon": -4.90884,
+  "tipo": "portal"
+ },
+ "Avenida De Valladolid 20, Medina del Campo": {
+  "lat": 41.63359,
+  "lon": -4.74872,
+  "tipo": "portal"
+ },
+ "Avenida De Valladolid, Medina del Campo": {
+  "lat": 41.3147,
+  "lon": -4.91331,
+  "tipo": "callejero"
+ },
+ "Ronda De las Flores 3, Medina del Campo": {
+  "lat": 41.3071,
+  "lon": -4.91278,
+  "tipo": "portal"
+ },
+ "Plaza Segovia 6, Medina del Campo": {
+  "lat": 41.30621,
+  "lon": -4.91513,
+  "tipo": "portal"
+ },
+ "Calle Padilla 23, Medina del Campo": {
+  "lat": 41.30987,
+  "lon": -4.91458,
+  "tipo": "portal"
+ },
+ "Avenida De la Constitucion 82, Medina del Campo": {
+  "lat": 41.32132,
+  "lon": -4.92027,
+  "tipo": "portal"
+ },
+ "Calle José Zorrilla C/ María Montalvo C/ de las Eras, Medina del Campo": null,
+ "Calle Real 1, Megeces": {
+  "lat": 41.40743,
+  "lon": -4.56533,
+  "tipo": "portal"
+ },
+ "Calle Carcava 1, Mojados": {
+  "lat": 41.43146,
+  "lon": -4.66367,
+  "tipo": "portal"
+ },
+ "Plaza San Juan 12, Mojados": {
+  "lat": 41.43253,
+  "lon": -4.66452,
+  "tipo": "portal"
+ },
+ "Calle Pio Basanta 11, Mojados": {
+  "lat": 41.43063,
+  "lon": -4.66533,
+  "tipo": "portal"
+ },
+ "Calle Revilla 1, Montemayor de Pililla": {
+  "lat": 41.50864,
+  "lon": -4.45983,
+  "tipo": "portal"
+ },
+ "Calle Nueva, Montemayor de Pililla": {
+  "lat": 41.50938,
+  "lon": -4.45634,
+  "tipo": "callejero"
+ },
+ "Calle Fray Juan de la Mota 11, Mota del Marqués": {
+  "lat": 41.63262,
+  "lon": -5.17584,
+  "tipo": "portal"
+ },
+ "Ronda De las Huertas 1, Mucientes": {
+  "lat": 41.74259,
+  "lon": -4.7619,
+  "tipo": "portal"
+ },
+ "Plaza De España 15, Nava del Rey": {
+  "lat": 40.38441,
+  "lon": -4.25147,
+  "tipo": "portal"
+ },
+ "Plaza De España, Nava del Rey": {
+  "lat": 41.33024,
+  "lon": -5.08063,
+  "tipo": "callejero"
+ },
+ "Calle Vivaque 2, Nueva Villa de las Torres": {
+  "lat": 41.26805,
+  "lon": -5.05594,
+  "tipo": "portal"
+ },
+ "Avenida 10 de Octubre 13, Olmedo": {
+  "lat": 38.11783,
+  "lon": -1.31067,
+  "tipo": "portal"
+ },
+ "Avenida 10 de Octubre, Olmedo": {
+  "lat": 41.28723,
+  "lon": -4.68497,
+  "tipo": "portal"
+ },
+ "Avenida Nicolás Rodríguez 45, Olmedo": {
+  "lat": 37.96081,
+  "lon": -5.62057,
+  "tipo": "portal"
+ },
+ "Avenida Nicolás Rodríguez, Olmedo": {
+  "lat": 41.28426,
+  "lon": -4.68288,
+  "tipo": "callejero"
+ },
+ "Carretera Medina del Campo 1, Olmedo": {
+  "lat": 41.286,
+  "lon": -4.68486,
+  "tipo": "portal"
+ },
+ "Plaza De la Iglesia 5, La Pedraja de Portillo": {
+  "lat": 41.47249,
+  "lon": -4.64781,
+  "tipo": "portal"
+ },
+ "Calle Real Vieja, Pedrajas de San Esteban": {
+  "lat": 41.34175,
+  "lon": -4.5826,
+  "tipo": "callejero"
+ },
+ "Calle Onésimo Redondo 1, Pedrajas de San Esteban": null,
+ "Calle Onésimo Redondo, Pedrajas de San Esteban": null,
+ "Paseo Las Farolas 1, Pedrajas de San Esteban": {
+  "lat": 41.34109,
+  "lon": -4.58149,
+  "tipo": "portal"
+ },
+ "Travesía Esia del Calvario, Peñafiel": null,
+ "Calle Mercado Viejo 27, Peñafiel": {
+  "lat": 41.59677,
+  "lon": -4.12521,
+  "tipo": "portal"
+ },
+ "Calle Capitan Rojas 9, Peñafiel": {
+  "lat": 41.59696,
+  "lon": -4.11923,
+  "tipo": "portal"
+ },
+ "Carretera De Pesquera 34, Peñafiel": {
+  "lat": 41.6027,
+  "lon": -4.117,
+  "tipo": "portal"
+ },
+ "Carretera Valladolid_soria 15, Peñafiel": {
+  "lat": 41.47256,
+  "lon": -4.05592,
+  "tipo": "portal"
+ },
+ "Avenida Soria 32, Peñafiel": {
+  "lat": 41.59961,
+  "lon": -4.12293,
+  "tipo": "portal"
+ },
+ "Calle Hospital 6, Peñaflor de Hornija": {
+  "lat": 41.71106,
+  "lon": -4.98321,
+  "tipo": "portal"
+ },
+ "Calle Onesimo Redondo 12, Pesquera de Duero": {
+  "lat": 41.64251,
+  "lon": -4.15601,
+  "tipo": "portal"
+ },
+ "Calle Nueva 2, Piña de Esgueva": {
+  "lat": 41.72838,
+  "lon": -4.42825,
+  "tipo": "portal"
+ },
+ "Avenida De Segovia 18, Portillo": {
+  "lat": 41.47456,
+  "lon": -4.59153,
+  "tipo": "portal"
+ },
+ "Calle Luis del Valle, Portillo": {
+  "lat": 41.47233,
+  "lon": -4.58946,
+  "tipo": "callejero"
+ },
+ "Calle Mauro Garcia, Pozaldez": {
+  "lat": 41.37107,
+  "lon": -4.8438,
+  "tipo": "callejero"
+ },
+ "Calle Real 81, Puente Duero": {
+  "lat": 37.67668,
+  "lon": -6.65691,
+  "tipo": "portal"
+ },
+ "Calle Real, Puente Duero": {
+  "lat": 41.55874,
+  "lon": -4.70536,
+  "tipo": "callejero"
+ },
+ "Calle Alonso Pesquera 58, Quintanilla de Onésimo": {
+  "lat": 41.62608,
+  "lon": -4.36283,
+  "tipo": "portal"
+ },
+ "Calle Santa Isabel 3, Renedo de Esgueva": {
+  "lat": 41.65559,
+  "lon": -4.62707,
+  "tipo": "portal"
+ },
+ "Travesía Esia de Bracamonte 1, Rubí de Bracamonte": null,
+ "Travesía Esia de Bracamonte, Rubí de Bracamonte": null,
+ "Calle Eugenio Velasco 1, Rueda": {
+  "lat": 41.41389,
+  "lon": -4.95986,
+  "tipo": "portal"
+ },
+ "Calle Real 1, Rueda": {
+  "lat": 41.41417,
+  "lon": -4.96043,
+  "tipo": "portal"
+ },
+ "Travesía Esia de la Parra, San Cebrián de Mazote": null,
+ "Carretera De Valladolid 12, San Miguel del Arroyo": {
+  "lat": 41.44243,
+  "lon": -4.4617,
+  "tipo": "portal"
+ },
+ "Calle Concepcion 8, San Pedro de Latarce": {
+  "lat": 41.73536,
+  "lon": -5.32731,
+  "tipo": "portal"
+ },
+ "Calle Juan de Mora 32, San Román de Hornija": {
+  "lat": 41.48146,
+  "lon": -5.28304,
+  "tipo": "portal"
+ },
+ "Calle Jesus 44, Santovenia de Pisuerga": {
+  "lat": 41.69283,
+  "lon": -4.6886,
+  "tipo": "portal"
+ },
+ "Calle Real 36, Santovenia de Pisuerga": {
+  "lat": 41.69384,
+  "lon": -4.68852,
+  "tipo": "portal"
+ },
+ "Calle Real 48, Santovenia de Pisuerga": {
+  "lat": 41.69207,
+  "lon": -4.68859,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 5, Sardón de Duero": {
+  "lat": 41.60833,
+  "lon": -4.43375,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 10, Serrada": {
+  "lat": 41.45699,
+  "lon": -4.86236,
+  "tipo": "portal"
+ },
+ "Calle Barrio Nuevo 14, Siete Iglesias de Trabancos": {
+  "lat": 41.3533,
+  "lon": -5.18643,
+  "tipo": "portal"
+ },
+ "Calle Atrio de L a Iglesia 5, Simancas": null,
+ "Calle Atrio de L a Iglesia, Simancas": null,
+ "Calle Cno. de Geria 33, Simancas": {
+  "lat": 38.51225,
+  "lon": -6.56664,
+  "tipo": "portal"
+ },
+ "Calle Cno. de Geria, Simancas": null,
+ "Calle Olmas 18, Simancas": {
+  "lat": 41.5912,
+  "lon": -4.82634,
+  "tipo": "portal"
+ },
+ "Urbanización Anizacion Entrepinos, Simancas": null,
+ "Plaza Mayor 10, Tiedra": {
+  "lat": 41.65199,
+  "lon": -5.26652,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 2, Tordehumos": {
+  "lat": 41.81472,
+  "lon": -5.15921,
+  "tipo": "portal"
+ },
+ "Calle Dimas Rodriguez, Tordesillas": {
+  "lat": 41.50283,
+  "lon": -5.00242,
+  "tipo": "callejero"
+ },
+ "Avenida De Leon 18, Tordesillas": {
+  "lat": 41.50485,
+  "lon": -4.99927,
+  "tipo": "portal"
+ },
+ "Avenida De Leon 10, Tordesillas": {
+  "lat": 41.50405,
+  "lon": -4.99959,
+  "tipo": "portal"
+ },
+ "Calle Santa Maria 1, Tordesillas": {
+  "lat": 41.50116,
+  "lon": -5.00053,
+  "tipo": "portal"
+ },
+ "Calle Santa Maria 27, Tordesillas": {
+  "lat": 41.50199,
+  "lon": -5.00062,
+  "tipo": "portal"
+ },
+ "Carretera Madrid-Coruña 7, Tordesillas": null,
+ "Carretera Madrid-Coruña, Tordesillas": {
+  "lat": 41.50169,
+  "lon": -5.00539,
+  "tipo": "callejero"
+ },
+ "Calle Los Castillos 10, Tordesillas": {
+  "lat": 41.50323,
+  "lon": -4.99817,
+  "tipo": "portal"
+ },
+ "Avenida Valladolid 3, Tordesillas": {
+  "lat": 41.50309,
+  "lon": -4.99946,
+  "tipo": "portal"
+ },
+ "Avenida Portugal 13, Tordesillas": {
+  "lat": 42.23287,
+  "lon": -8.45343,
+  "tipo": "portal"
+ },
+ "Avenida Portugal, Tordesillas": null,
+ "Avenida De Valladolid 33, Tordesillas": {
+  "lat": 41.50278,
+  "lon": -4.99703,
+  "tipo": "portal"
+ },
+ "Plaza Real 2, Torrecilla de la Abadesa": {
+  "lat": 41.48393,
+  "lon": -5.08651,
+  "tipo": "portal"
+ },
+ "Calle Santiago 28, Torrelobatón": {
+  "lat": 41.64839,
+  "lon": -5.02303,
+  "tipo": "portal"
+ },
+ "Calle Santibañez 2D, Traspinedo": {
+  "lat": 41.5754,
+  "lon": -4.4732,
+  "tipo": "portal"
+ },
+ "Calle Del Val, Traspinedo": {
+  "lat": 41.57649,
+  "lon": -4.47516,
+  "tipo": "callejero"
+ },
+ "Calle Carrera 5, Trigueros del Valle": {
+  "lat": 41.83143,
+  "lon": -4.65311,
+  "tipo": "portal"
+ },
+ "Avenida De Valladolid 11, Tudela de Duero": {
+  "lat": 41.5869,
+  "lon": -4.58257,
+  "tipo": "portal"
+ },
+ "Carretera Vieja de Soria 5, Tudela de Duero": {
+  "lat": 41.58126,
+  "lon": -4.57575,
+  "tipo": "portal"
+ },
+ "Calle San Roque 16, Tudela de Duero": {
+  "lat": 41.58642,
+  "lon": -4.58627,
+  "tipo": "portal"
+ },
+ "Calle 1 de Mayo 6, Tudela de Duero": {
+  "lat": 41.58803,
+  "lon": -4.58412,
+  "tipo": "portal"
+ },
+ "Calle Santo Cristo 5, Tudela de Duero": {
+  "lat": 41.58713,
+  "lon": -4.58451,
+  "tipo": "portal"
+ },
+ "Carretera Valladolid-Soria Km 13, Tudela de Duero": null,
+ "Carretera Valladolid-Soria Km, Tudela de Duero": null,
+ "Paseo De la Ribera 2, Valdestillas": {
+  "lat": 41.47499,
+  "lon": -4.77,
+  "tipo": "portal"
+ },
+ "Calle Boleo Viejo 5, Valdestillas": {
+  "lat": 41.47749,
+  "lon": -4.76994,
+  "tipo": "portal"
+ },
+ "Calle Ramon, Valoria la Buena": {
+  "lat": 41.79781,
+  "lon": -4.53436,
+  "tipo": "callejero"
+ },
+ "Calle Cardiel 44, Viana de Cega": {
+  "lat": 41.52709,
+  "lon": -4.75013,
+  "tipo": "portal"
+ },
+ "Calle Corrales 4, Viana de Cega": {
+  "lat": 41.52787,
+  "lon": -4.75313,
+  "tipo": "portal"
+ },
+ "Calle Olivares, Villabáñez": {
+  "lat": 41.63065,
+  "lon": -4.52175,
+  "tipo": "callejero"
+ },
+ "Calle Palacio 3, Villabrágima": {
+  "lat": 41.82156,
+  "lon": -5.11655,
+  "tipo": "portal"
+ },
+ "Calle Alajandro Najera 16, Villafrechós": {
+  "lat": 41.8932,
+  "lon": -5.21648,
+  "tipo": "portal"
+ },
+ "Calle Eduardo Callejo 12, Villagarcía de Campos": null,
+ "Calle Eduardo Callejo, Villagarcía de Campos": null,
+ "Calle Joseph Perez 1, Villalar de los Comuneros": {
+  "lat": 41.54767,
+  "lon": -5.13917,
+  "tipo": "portal"
+ },
+ "Calle Rua 56, Villalón de Campos": {
+  "lat": 42.09738,
+  "lon": -5.03675,
+  "tipo": "portal"
+ },
+ "Calle La Rua 33, Villalón de Campos": {
+  "lat": 42.09782,
+  "lon": -5.03604,
+  "tipo": "portal"
+ },
+ "Avenida Tres Cruces 13, Zamora": {
+  "lat": 41.51029,
+  "lon": -5.74173,
+  "tipo": "portal"
+ },
+ "Avenida Victor Gallego 24, Zamora": {
+  "lat": 41.51089,
+  "lon": -5.74284,
+  "tipo": "portal"
+ },
+ "Calle Victor Gallego 2, Zamora": null,
+ "Calle Victor Gallego, Zamora": {
+  "lat": 41.50978,
+  "lon": -5.74283,
+  "tipo": "callejero"
+ },
+ "Avenida Cardenal Cisneros, Zamora": {
+  "lat": 41.51451,
+  "lon": -5.74527,
+  "tipo": "callejero"
+ },
+ "Calle La Brasa 13, Zamora": {
+  "lat": 41.50479,
+  "lon": -5.74233,
+  "tipo": "portal"
+ },
+ "Calle Villalpando 11A, Zamora": {
+  "lat": 41.51012,
+  "lon": -5.74912,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 3, Zamora": {
+  "lat": 41.50357,
+  "lon": -5.74648,
+  "tipo": "portal"
+ },
+ "Avenida Tres Cruces 25, Zamora": {
+  "lat": 41.51122,
+  "lon": -5.74128,
+  "tipo": "portal"
+ },
+ "Avenida / Victor Gallego 26, Zamora": {
+  "lat": 41.51111,
+  "lon": -5.74285,
+  "tipo": "portal"
+ },
+ "Calle Amargura 8, Zamora": {
+  "lat": 41.50916,
+  "lon": -5.7402,
+  "tipo": "portal"
+ },
+ "Calle Maestro Anton 1, Zamora": {
+  "lat": 41.50758,
+  "lon": -5.74849,
+  "tipo": "portal"
+ },
+ "Avenida Galicia 63, Zamora": {
+  "lat": 41.51082,
+  "lon": -5.75208,
+  "tipo": "portal"
+ },
+ "Calle Nuñez de Balboa 46, Zamora": {
+  "lat": 41.51289,
+  "lon": -5.73076,
+  "tipo": "portal"
+ },
+ "Calle La Vega 1, Zamora": {
+  "lat": 41.50225,
+  "lon": -5.7525,
+  "tipo": "portal"
+ },
+ "Calle Amargura 2, Zamora": {
+  "lat": 41.50876,
+  "lon": -5.73916,
+  "tipo": "portal"
+ },
+ "Calle Santa Clara 27, Zamora": {
+  "lat": 41.50677,
+  "lon": -5.74205,
+  "tipo": "portal"
+ },
+ "Calle San Blas 13, Zamora": {
+  "lat": 41.51809,
+  "lon": -5.74724,
+  "tipo": "portal"
+ },
+ "Calle Argentina 32, Zamora": {
+  "lat": 41.5096,
+  "lon": -5.73194,
+  "tipo": "portal"
+ },
+ "Calle Salamanca 44, Zamora": {
+  "lat": 41.4954,
+  "lon": -5.74112,
+  "tipo": "portal"
+ },
+ "Calle Ramos Carrión 2, Zamora": {
+  "lat": 41.50299,
+  "lon": -5.74692,
+  "tipo": "portal"
+ },
+ "Calle Polvorin 12, Zamora": {
+  "lat": 41.51082,
+  "lon": -5.73511,
+  "tipo": "portal"
+ },
+ "Calle Feria 16, Zamora": {
+  "lat": 41.50501,
+  "lon": -5.74863,
+  "tipo": "portal"
+ },
+ "Calle Obispo Nieto 27, Zamora": {
+  "lat": 41.50504,
+  "lon": -5.75212,
+  "tipo": "portal"
+ },
+ "Calle Renova 19, Zamora": {
+  "lat": 41.50373,
+  "lon": -5.74594,
+  "tipo": "portal"
+ },
+ "Calle Santa Clara 6, Zamora": {
+  "lat": 41.50446,
+  "lon": -5.74479,
+  "tipo": "portal"
+ },
+ "Calle C. Vista Alegre, Zamora": null,
+ "Calle Tordesillas 4, Zamora": {
+  "lat": 41.52708,
+  "lon": -5.70005,
+  "tipo": "portal"
+ },
+ "Calle San Andres 19, Zamora": {
+  "lat": 41.50365,
+  "lon": -5.74433,
+  "tipo": "portal"
+ },
+ "Calle Riego 34, Zamora": {
+  "lat": 41.50495,
+  "lon": -5.74763,
+  "tipo": "portal"
+ },
+ "Calle Pablo Morillo 17, Zamora": {
+  "lat": 41.50934,
+  "lon": -5.74059,
+  "tipo": "portal"
+ },
+ "Calle Amargura 11, Zamora": {
+  "lat": 41.50936,
+  "lon": -5.74123,
+  "tipo": "portal"
+ },
+ "Calle Cardenal Mella 11, Zamora": {
+  "lat": 41.51137,
+  "lon": -5.74274,
+  "tipo": "portal"
+ },
+ "Plaza Del Mercado 1, Zamora": {
+  "lat": 41.5048,
+  "lon": -5.74362,
+  "tipo": "portal"
+ },
+ "Calle Pablo Morillo 22, Zamora": {
+  "lat": 41.50966,
+  "lon": -5.74012,
+  "tipo": "portal"
+ },
+ "Calle Santa Clara 14, Zamora": {
+  "lat": 41.50533,
+  "lon": -5.74367,
+  "tipo": "portal"
+ },
+ "Calle Santa Teresa 4, Zamora": {
+  "lat": 41.50868,
+  "lon": -5.74182,
+  "tipo": "portal"
+ },
+ "Avenida Principe de Asturias 13, Zamora": {
+  "lat": 41.50859,
+  "lon": -5.73998,
+  "tipo": "portal"
+ },
+ "Calle Riego 28, Zamora": {
+  "lat": 41.50501,
+  "lon": -5.74701,
+  "tipo": "portal"
+ },
+ "Carretera Tordesillas 62 3, Zamora": {
+  "lat": 41.52606,
+  "lon": -5.66793,
+  "tipo": "portal"
+ },
+ "Calle Fray Toribilio de Motolinía 22, Zamora": {
+  "lat": 41.51069,
+  "lon": -5.74368,
+  "tipo": "portal"
+ },
+ "Calle Doctor Fleming 1, Zamora": {
+  "lat": 41.50276,
+  "lon": -5.753,
+  "tipo": "portal"
+ },
+ "Calle Fray Toribio de Motolinia 4, Zamora": {
+  "lat": 41.50875,
+  "lon": -5.74407,
+  "tipo": "portal"
+ },
+ "Carretera Villalpando 15, Zamora": {
+  "lat": 41.51844,
+  "lon": -5.7396,
+  "tipo": "portal"
+ },
+ "Calle Corbeta 6, Zamora": {
+  "lat": 41.50612,
+  "lon": -5.73106,
+  "tipo": "portal"
+ },
+ "Calle San Pablo 8, Zamora": {
+  "lat": 41.50432,
+  "lon": -5.74056,
+  "tipo": "portal"
+ },
+ "Avenida Principe de Asturias 22, Zamora": {
+  "lat": 41.51102,
+  "lon": -5.73731,
+  "tipo": "portal"
+ },
+ "Calle Candelaria Ruiz del Arbol 16, Zamora": {
+  "lat": 41.50461,
+  "lon": -5.73608,
+  "tipo": "portal"
+ },
+ "Avenida Feria 2, Zamora": {
+  "lat": 41.5051,
+  "lon": -5.74949,
+  "tipo": "portal"
+ },
+ "Calle Argentina 13, Zamora": {
+  "lat": 41.51016,
+  "lon": -5.73242,
+  "tipo": "portal"
+ },
+ "Avenida De las Tres Cruces 38, Zamora": {
+  "lat": 41.51213,
+  "lon": -5.74045,
+  "tipo": "portal"
+ },
+ "Avenida De Victor Gallego 13, Zamora": {
+  "lat": 41.50942,
+  "lon": -5.74287,
+  "tipo": "portal"
+ },
+ "Avenida Portugal 12, Zamora": {
+  "lat": 41.5063,
+  "lon": -5.74042,
+  "tipo": "portal"
+ },
+ "Calle Luis Ulloa Pereira 6, Zamora": {
+  "lat": 41.50558,
+  "lon": -5.74089,
+  "tipo": "portal"
+ },
+ "Calle Obispo Nieto 5, Zamora": {
+  "lat": 41.50563,
+  "lon": -5.75075,
+  "tipo": "portal"
+ },
+ "Carretera Tordesillas 22, Zamora": {
+  "lat": 41.52203,
+  "lon": -5.71906,
+  "tipo": "portal"
+ },
+ "Calle Fray Toribio de Matolinia 12, Zamora": {
+  "lat": 41.50996,
+  "lon": -5.74382,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 16, Alcañices": {
+  "lat": 41.69865,
+  "lon": -6.34812,
+  "tipo": "portal"
+ },
+ "Calle Fragua 1, Andavías": {
+  "lat": 41.59661,
+  "lon": -5.85803,
+  "tipo": "portal"
+ },
+ "Calle Costureras, Arrabalde": {
+  "lat": 42.10731,
+  "lon": -5.89415,
+  "tipo": "callejero"
+ },
+ "Avenida Federico Silva 16, Benavente": {
+  "lat": 42.00248,
+  "lon": -5.67238,
+  "tipo": "portal"
+ },
+ "Calle Santa Cruz 46, Benavente": {
+  "lat": 43.4366,
+  "lon": -3.90551,
+  "tipo": "portal"
+ },
+ "Plaza Virgen de la Vega 6, Benavente": null,
+ "Plaza Virgen de la Vega, Benavente": {
+  "lat": 42.00537,
+  "lon": -5.67723,
+  "tipo": "callejero"
+ },
+ "Avenida Galicia 10, Benavente": {
+  "lat": 42.80936,
+  "lon": -1.64215,
+  "tipo": "portal"
+ },
+ "Avenida Galicia, Benavente": {
+  "lat": 42.00776,
+  "lon": -5.68589,
+  "tipo": "callejero"
+ },
+ "Calle Cañada de la Vizana 90, Benavente": {
+  "lat": 42.00738,
+  "lon": -5.68328,
+  "tipo": "portal"
+ },
+ "Calle Vda Maragatos 19, Benavente": null,
+ "Calle Vda Maragatos, Benavente": null,
+ "Avenida El Ferial 84, Benavente": {
+  "lat": 41.99786,
+  "lon": -5.67722,
+  "tipo": "portal"
+ },
+ "Calle Herreros 55, Benavente": {
+  "lat": 42.00431,
+  "lon": -5.67813,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 4, Benavente": {
+  "lat": 42.00323,
+  "lon": -5.67822,
+  "tipo": "portal"
+ },
+ "Calle Herreros 39, Benavente": {
+  "lat": 42.0033,
+  "lon": -5.67874,
+  "tipo": "portal"
+ },
+ "Calle Ecuador 5, Benavente": {
+  "lat": 42.00179,
+  "lon": -5.68132,
+  "tipo": "portal"
+ },
+ "Calle Cañada de la Vizana 10, Benavente": {
+  "lat": 42.00582,
+  "lon": -5.67924,
+  "tipo": "portal"
+ },
+ "Avenida El Ferial 97, Benavente": {
+  "lat": 41.99696,
+  "lon": -5.67728,
+  "tipo": "portal"
+ },
+ "Avenida Federico Silva, Benavente": {
+  "lat": 41.99896,
+  "lon": -5.6635,
+  "tipo": "callejero"
+ },
+ "Avenida Del Ferial 73, Benavente": {
+  "lat": 41.99876,
+  "lon": -5.67605,
+  "tipo": "portal"
+ },
+ "Avenida Vía del Canal, Benavente": {
+  "lat": 41.99883,
+  "lon": -5.67511,
+  "tipo": "callejero"
+ },
+ "Avenida El Ferial 99, Benavente": {
+  "lat": 41.99657,
+  "lon": -5.67748,
+  "tipo": "portal"
+ },
+ "Calle Macha Paralela 7, Cañizal": {
+  "lat": 41.16689,
+  "lon": -5.36786,
+  "tipo": "portal"
+ },
+ "Calle Diego de Ordax 1, Castroverde de Campos": {
+  "lat": 41.97061,
+  "lon": -5.31397,
+  "tipo": "portal"
+ },
+ "Plaza Mayor 12, Corrales del Vino": {
+  "lat": 41.35741,
+  "lon": -5.72446,
+  "tipo": "portal"
+ },
+ "Calle Costanilla 6, Fuentelapeña": {
+  "lat": 41.25202,
+  "lon": -5.3831,
+  "tipo": "portal"
+ },
+ "Calle La Iglesia 7, Fuentesaúco": {
+  "lat": 41.23164,
+  "lon": -5.49697,
+  "tipo": "portal"
+ },
+ "Calle Villar 8, La Hiniesta": {
+  "lat": 41.55235,
+  "lon": -5.79956,
+  "tipo": "portal"
+ },
+ "Plaza Iglesia 1A, Manganeses de la Polvorosa": {
+  "lat": 42.03509,
+  "lon": -5.74606,
+  "tipo": "portal"
+ },
+ "Avenida /Villacastín-Vigo, Mombuey": null,
+ "Calle Solana 6, Morales del Vino": {
+  "lat": 41.44557,
+  "lon": -5.73527,
+  "tipo": "portal"
+ },
+ "Calle La Solana 18, Morales del Vino": {
+  "lat": 41.44395,
+  "lon": -5.73316,
+  "tipo": "portal"
+ },
+ "Plaza Humilladero, Muga de Sayago": {
+  "lat": 41.3859,
+  "lon": -6.19829,
+  "tipo": "callejero"
+ },
+ "Calle Barrio Tranvaseves 19, Palacios de Sanabria": {
+  "lat": 42.0587,
+  "lon": -6.52352,
+  "tipo": "portal"
+ },
+ "Calle Padre Vicente Salgado 1, Puebla de Sanabria": null,
+ "Calle Padre Vicente Salgado, Puebla de Sanabria": {
+  "lat": 42.05427,
+  "lon": -6.62763,
+  "tipo": "callejero"
+ },
+ "Calle Pi Puebla de Sanabria 27, Puebla de Sanabria": {
+  "lat": 37.25737,
+  "lon": -6.93078,
+  "tipo": "portal"
+ },
+ "Calle Pi Puebla de Sanabria, Puebla de Sanabria": null,
+ "Carretera De Bercianos 1, Rabanales": {
+  "lat": 41.74177,
+  "lon": -6.27543,
+  "tipo": "portal"
+ },
+ "Plaza Mayor de Arriba 24, Santibáñez de Vidriales": {
+  "lat": 42.07216,
+  "lon": -6.01402,
+  "tipo": "portal"
+ },
+ "Calle Dominicos 57, Toro": {
+  "lat": 41.52614,
+  "lon": -5.39593,
+  "tipo": "portal"
+ },
+ "Calle Corredera 59, Toro": {
+  "lat": 39.47846,
+  "lon": -0.37982,
+  "tipo": "portal"
+ },
+ "Calle Puerta del Mercado 31, Toro": {
+  "lat": 41.52202,
+  "lon": -5.39329,
+  "tipo": "portal"
+ },
+ "Calle Trascampanas de Santo Tomas 1, Toro": null,
+ "Calle Trascampanas de Santo Tomas, Toro": {
+  "lat": 41.52461,
+  "lon": -5.39221,
+  "tipo": "callejero"
+ },
+ "Plaza Santa Marina 20, Toro": {
+  "lat": 41.5222,
+  "lon": -5.39222,
+  "tipo": "portal"
+ },
+ "Calle Zamora 9, Valdeperdices": {
+  "lat": 41.58413,
+  "lon": -5.90229,
+  "tipo": "portal"
+ },
+ "Avenida Villalobos 1, Villalpando": {
+  "lat": 41.8664,
+  "lon": -5.41642,
+  "tipo": "portal"
+ },
+ "Calle Felix Rodriguez de la Fuente 18, Villaralbo": {
+  "lat": 37.38776,
+  "lon": -4.76161,
+  "tipo": "portal"
+ },
+ "Calle Felix Rodriguez de la Fuente, Villaralbo": {
+  "lat": 41.4914,
+  "lon": -5.69102,
+  "tipo": "callejero"
+ },
+ "La Cañada, Herradón de Pinares, Ávila": {
+  "lat": 40.5999,
+  "lon": -4.49602,
+  "tipo": "callejero"
+ },
+ "La Parra, Arenas de San Pedro, Ávila": {
+  "lat": 40.63957,
+  "lon": -4.70318,
+  "tipo": "callejero"
+ },
+ "Trobajo del Camino, San Andrés del Rabanedo, León": {
+  "lat": 42.59745,
+  "lon": -5.59948,
+  "tipo": "callejero"
+ },
+ "Villaseca de Laciana, Villablino, León": {
+  "lat": 42.94626,
+  "lon": -6.2455,
+  "tipo": "callejero"
+ },
+ "Villafañe, Villasabariego, León": null,
+ "Navatejera, Villaquilambre, León": null,
+ "La Virgen del Camino, Valverde de la Virgen, León": {
+  "lat": 42.57962,
+  "lon": -5.64319,
+  "tipo": "callejero"
+ },
+ "San Miguel de Las Dueñas, Congosto, León": {
+  "lat": 42.58647,
+  "lon": -6.52886,
+  "tipo": "callejero"
+ },
+ "Ciñera, La Pola de Gordón, León": {
+  "lat": 42.88423,
+  "lon": -5.63151,
+  "tipo": "callejero"
+ },
+ "Puente Almuhey, Valderrueda, León": null,
+ "San Rafael, El Espinar, Segovia": {
+  "lat": 37.25861,
+  "lon": -3.80806,
+  "tipo": "callejero"
  }
 }
