@@ -21,13 +21,17 @@ python3 -m http.server 8080   # y abre http://localhost:8080
 
 ## Publicarlo en GitHub Pages
 
-Es una web estática: no necesita servidor, base de datos ni compilación en GitHub.
+Es una web estática: no necesita servidor, base de datos ni compilación.
+
+**Web publicada:** https://jamm87.github.io/tarjeta-familia-cyl/
+
+La publica el flujo de trabajo `.github/workflows/pages.yml` en cada `git push` a `main`. Para que funcione hay que hacer **una sola vez**:
 
 1. En GitHub: **Settings → Pages**.
-2. En **Source**, elige **Deploy from a branch**, la rama con el código y la carpeta **/ (root)**, y pulsa **Save**.
-3. En uno o dos minutos estará en `https://<usuario>.github.io/tarjeta-familia-cyl/`. Cada `git push` la actualiza sola.
+2. En **Build and deployment → Source**, elige **GitHub Actions**.
+3. Ve a la pestaña **Actions**, abre «Publicar en GitHub Pages» y pulsa **Run workflow** (o haz cualquier push a `main`).
 
-El fichero `.nojekyll` hace que GitHub sirva los ficheros tal cual. Con el plan gratuito de GitHub, el repositorio tiene que ser público.
+En uno o dos minutos la web estará en la dirección de arriba. Con el plan gratuito de GitHub, el repositorio tiene que ser público.
 
 ### Cómo se gestionan los datos
 
