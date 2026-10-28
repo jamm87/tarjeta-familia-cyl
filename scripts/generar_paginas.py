@@ -12,7 +12,7 @@ y se envuelve en la plantilla común (cabecera, navegación, migas y pie). Las r
 internas se escriben con el marcador {{raiz}}, que se sustituye por la ruta relativa
 a la raíz ("" o "../"), así el sitio funciona abierto desde cualquier carpeta.
 
-Otros marcadores: {{contactos}}, {{sectores}}, {{total_establecimientos}},
+Otros marcadores: {{contactos}}, {{sin_pin}}, {{sectores}}, {{total_establecimientos}},
 {{fecha_listado}}, {{total_sectores}} y {{propuesta_md}} (docs/propuesta.md en HTML).
 """
 import html
@@ -89,10 +89,12 @@ def migas(lista, titulo, raiz):
 def main():
     plantilla = (PARCIALES / "plantilla.html").read_text(encoding="utf-8")
     contactos = (PARCIALES / "contactos.html").read_text(encoding="utf-8")
+    sin_pin = (PARCIALES / "sin-pin.html").read_text(encoding="utf-8").strip()
     est = json.loads((RAIZ / "data" / "establecimientos.json").read_text(encoding="utf-8"))
     sectores = json.loads((RAIZ / "data" / "sectores.json").read_text(encoding="utf-8"))
     sustituciones = {
         "{{contactos}}": contactos,
+        "{{sin_pin}}": sin_pin,
         "{{sectores}}": bloque_sectores(sectores),
         "{{total_sectores}}": str(sectores["total"]),
         "{{total_establecimientos}}": f'{est["total"]:,}'.replace(",", "."),

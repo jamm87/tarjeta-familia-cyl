@@ -28,6 +28,7 @@ El prototipo que acompaña a esta propuesta ya funciona con los datos reales del
 | Buscar un comercio cercano es inviable | Hay que recorrer 41 páginas ordenadas por provincia y localidad, sin buscador ni distancias. | Listado de 1.628 filas |
 | El mensaje más útil está escondido | La tarjeta **también funciona en comercios no adheridos** de un sector autorizado, pero solo se dice en un párrafo del bloque para comercios. Muchas familias creen que solo pueden usarla en el listado. | Página actual, apartado «¿En qué tipo de establecimientos…?» |
 | Las instrucciones clave están repartidas | Sin PIN (se pulsa la tecla verde), sin pago sin contacto, sin compras online, guardar los tiques 6 meses, avisar de un robo antes de 24 h… Cada dato está en un documento distinto. | Condiciones de uso y guías de MoneyToPay |
+| La información no llega a todos los canales de atención | Una beneficiaria llamó a CaixaBank y la teleoperadora **no sabía que la tarjeta no tiene PIN**, aunque las condiciones oficiales lo dicen expresamente. Si quien atiende el teléfono no lo sabe, tampoco lo sabrán muchas cajas, y la familia se queda sin poder pagar. | Caso real comunicado en octubre de 2026 |
 | Nombres confusos | Las guías de MoneyToPay hablan de «Tarjeta Regalo» y «Tarjeta Empresa». La familia no sabe si es su tarjeta. | Guías de registro y de saldo |
 | El aviso «puede que desde el móvil no pueda completar toda la operativa» solo aparece al final de un PDF | Quien lo intenta desde el móvil se atasca sin saber por qué. | «Compruebe que ha vinculado…» |
 | El formulario para comercios exige Acrobat | El PDF rellenable no se puede completar en el móvil ni en muchos navegadores, y hay que guardarlo y adjuntarlo a mano. | Aviso en la página actual |
@@ -182,6 +183,8 @@ Objetivo: **WCAG 2.2 nivel AA** (EN 301 549, RD 1112/2018).
 | 5. Mejora continua | Pruebas con usuarios, analítica respetuosa con la privacidad y revisión del contenido con MoneyToPay y CaixaBank | Menos llamadas y menos incidencias |
 
 ### Cosas que conviene confirmar con MoneyToPay y CaixaBank
+
+- **Un argumentario común para la atención telefónica.** La Consejería debería enviar a CaixaBank (900 40 40 90) y a MoneyToPay (900 300 300) una ficha breve con las reglas de uso: **sin PIN** (tecla verde y firma), solo banda magnética, sin pago sin contacto, sin compras online y sin efectivo. Así no se repetirá que el servicio de atención contradiga las condiciones oficiales. Mientras tanto, la web muestra la cita literal de las condiciones, con enlace a la fuente, para que la familia pueda enseñarla en la tienda o al teléfono.
 
 - **Horario de MoneyToPay.** El mismo documento dice «24 h al día, 365 días» y «de lunes a viernes de 8 a 17 horas».
 - **Si la familia puede ver o cambiar en la web de MoneyToPay el nombre «Tarjeta Regalo/Empresa».** Si no, si se puede pedir que aparezca como «Tarjeta Familia».

@@ -207,7 +207,20 @@ console.log("\nFormulario de colaborador");
   await pagina.context().close();
 }
 
-// ---- 5. Sectores ---------------------------------------------------------------------------
+// ---- 5. Aviso «sin PIN» con la cita oficial ------------------------------------------------
+console.log("\nAviso «sin PIN»");
+{
+  const pagina = await nuevaPagina(1280);
+  for (const ruta of ["familias/pagar.html", "familias/problemas.html", "comercios/como-cobrar.html"]) {
+    await pagina.goto(BASE + ruta);
+    const cita = await pagina.$$eval(".sin-pin blockquote", (els) => els.map((e) => e.textContent));
+    const fuente = await pagina.$$eval(".sin-pin a[href$='condiciones-de-uso-2026-10-16.pdf']", (els) => els.length);
+    ok(cita.length === 1 && /no requiere PIN/.test(cita[0]) && fuente === 1, `${ruta} muestra la cita oficial sobre el PIN con su fuente`);
+  }
+  await pagina.context().close();
+}
+
+// ---- 6. Sectores ---------------------------------------------------------------------------
 console.log("\nSectores");
 {
   const pagina = await nuevaPagina(1280);
