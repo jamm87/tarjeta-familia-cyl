@@ -72,11 +72,14 @@ Para cambiar textos, edita `src/paginas/` o `docs/propuesta.md` y ejecuta `pytho
 
 ### Coordenadas
 
-Por ahora las coordenadas son **por localidad**:
+Cada comercio se sitúa con la mejor fuente disponible, por este orden (el campo `precision` de `data/establecimientos.json` indica cuál):
 
-- 1.550 comercios, con el punto del núcleo urbano (GeoNames);
-- 68, con el centroide del municipio del IGN;
-- 5, con el municipio de su código postal, según la relación oficial del CNIG (`fuentes/codigos-postales-municipios-cnig.csv`).
+1. `direccion`: su dirección, geocodificada con CartoCiudad (IGN);
+2. `localidad`: el punto de su localidad o pedanía (GeoNames o CartoCiudad);
+3. `municipio`: el centro de su municipio (IGN);
+4. `codigo-postal`: el municipio de su código postal, según la relación oficial del CNIG (`fuentes/codigos-postales-municipios-cnig.csv`).
+
+Las aldeas y pedanías del nomenclátor del INE sin punto propio se sitúan en su municipio.
 
 El modo `--cartociudad` sitúa cada comercio en su dirección y cada aldea en su sitio con el servicio oficial del IGN, y guarda una caché en `data/cache-cartociudad.json` para no repetir consultas. Lo ejecuta el flujo de GitHub Actions `.github/workflows/coordenadas.yml` («Actualizar coordenadas»), en los servidores de GitHub. Se lanza solo al cambiar el script o las fuentes, o a mano desde la pestaña **Actions → Actualizar coordenadas → Run workflow**. Guarda los datos en `main` y pide a Pages que publique.
 

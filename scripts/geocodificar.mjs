@@ -210,6 +210,8 @@ function localiza(localidadPdf, provincia) {
   if (directa && !(directa.nombre in PEDANIAS && PEDANIAS[directa.nombre] !== directa.nombre)) return directa;
   const nombre = directa?.nombre ?? Object.keys(PEDANIAS).find((p) => clave(p) === clave(corregida)) ?? corregida;
   const padre = PEDANIAS[nombre] && busca(PEDANIAS[nombre], provincia);
+  // Si la pedanía tiene punto propio (GeoNames), se usa ese; el municipio es el del padre.
+  if (padre && directa?.precision === "localidad") return { ...directa, nombre, ine: padre.ine };
   if (padre) return { nombre, lat: padre.lat, lon: padre.lon, precision: "municipio", ine: padre.ine };
   return directa;
 }
@@ -244,9 +246,35 @@ const TIPO_LOCALIDAD = new Set(["poblacion", "toponimo", "Codpost", "codpost", "
 let fallosSeguidos = 0;
 let consultasNuevas = 0;
 
-// Devuelve { lat, lon, precision } o null. "sin-conexion" si el servicio no responde.
+// "C/ DUQUE DE ALBA 8, LOCAL BAJO" -> { conNumero: "Calle Duque de Alba 8", sinNumero: "Calle Duque de Alba" }
+const TIPOS_VIA = [
+  [/^(C\/\.?|CL\.?|CALLE|C\.)\s*/, "Calle "], [/^(AVDA\.?|AVD\.?|AV\.?|AVENIDA)\s*/, "Avenida "],
+  [/^(PZA\.?|PZ\.?|PLZA\.?|PLAZA)\s*/, "Plaza "], [/^(PS\.?|PSO\.?|PASEO)\s*/, "Paseo "],
+  [/^(CTRA\.?|CRTA\.?|CR\.?|CARRETERA)\s*/, "Carretera "], [/^(TRAV\.?|TRAVESIA|TRAVESÍA)\s*/, "Travesía "],
+  [/^(RDA\.?|RONDA)\s*/, "Ronda "], [/^(CMNO\.?|CAMINO)\s*/, "Camino "], [/^(URB\.?|URBANIZACION|URBANIZACIÓN)\s*/, "Urbanización "],
+];
+function direccionNormalizada(direccion) {
+  let d = direccion.toUpperCase()
+    .replace(/\b(LOCAL|BAJO|BJ|ESQ\.?|ESQUINA|PARCELA|NAVE|P\d|PORTAL|C\.C\.|CENTRO COMERCIAL)\b.*$/, "")
+    .replace(/\bN[º°O]\.?\s*/g, " ").replace(/\bN(\d)/g, "$1").replace(/\bS\/N\b/g, "").replace(/\s+/g, " ").replace(/[,\s-]+$/, "").trim();
+  d = d.split(" - ")[0].split(" Y ")[0];
+  let via = "Calle ";
+  for (const [patron, nombre] of TIPOS_VIA) {
+    if (patron.test(d)) { via = nombre; d = d.replace(patron, ""); break; }
+  }
+  d = d.replace(/^CALLE\s+/, "");
+  const m = d.match(/^(.*?)[,\s]+(\d+[A-Z]?)(?:[-\s].*)?$/);
+  const calle = legible((m ? m[1] : d).replace(/,/g, " ").replace(/\s+/g, " ").trim());
+  return { conNumero: m ? `${via}${calle} ${m[2]}` : null, sinNumero: `${via}${calle}` };
+}
+
+// Devuelve { lat, lon, precision } o null. Las respuestas ya guardadas en la caché se usan
+// siempre; el servicio solo se consulta con --cartociudad (y se deja de consultar si falla
+// cinco veces seguidas).
+let redDisponible = process.argv.includes("--cartociudad");
 async function cartociudad(consulta, referencia, radioKm = 20) {
   if (!(consulta in cache)) {
+    if (!redDisponible) return null;
     const url = `https://www.cartociudad.es/geocoder/api/geocoder/find?q=${encodeURIComponent(consulta)}`;
     try {
       const r = await fetch(url, { headers: { "User-Agent": "tarjeta-familia-cyl (https://github.com/jamm87/tarjeta-familia-cyl)" } });
@@ -257,7 +285,7 @@ async function cartociudad(consulta, referencia, radioKm = 20) {
     } catch (err) {
       if (++fallosSeguidos >= 5) {
         console.warn(`  CartoCiudad no responde (${err.message}). Se sigue sin conexión.`);
-        return "sin-conexion";
+        redDisponible = false;
       }
       return null;
     }
@@ -287,7 +315,6 @@ function distanciaKm(a, b) {
 const base = leer("data/establecimientos-base.json");
 const incidencias = { duplicados: [], provinciaDistintaDelCP: [], sinCoordenadas: [], nombresCorregidos: {} };
 const usarCartociudad = process.argv.includes("--cartociudad");
-let conexion = usarCartociudad;
 const vistos = new Map();
 const salida = [];
 
@@ -326,11 +353,15 @@ for (const e of base.establecimientos) {
     precision: lugar?.precision ?? null,
     municipio: lugar?.ine ?? null,
   };
-  if (conexion) {
-    const punto = await cartociudad(`${e.direccion}, ${e.cp} ${localidad}`, lugar);
-    if (punto === "sin-conexion") conexion = false;
+  {
+    const { conNumero, sinNumero } = direccionNormalizada(e.direccion);
+    // 1) dirección normalizada con número; 2) dirección tal cual viene en el PDF (consultas
+    // ya guardadas en la caché); 3) solo la calle.
+    const punto = (conNumero && await cartociudad(`${conNumero}, ${localidad}`, lugar))
+      || await cartociudad(`${e.direccion}, ${e.cp} ${localidad}`, lugar)
+      || await cartociudad(`${sinNumero}, ${localidad}`, lugar);
     // Solo se usa si mejora la precisión que ya había.
-    else if (punto && (punto.precision === "direccion" || registro.precision !== "localidad")) Object.assign(registro, punto);
+    if (punto && (punto.precision === "direccion" || registro.precision !== "localidad")) Object.assign(registro, punto);
   }
   if (registro.lat == null) incidencias.sinCoordenadas.push({ id: e.id, nombre: e.nombre, localidad: e.localidad, cp: e.cp, provincia });
   vistos.set(firma, { registro, secciones: [e.provincia] });
@@ -374,16 +405,6 @@ const categorias = Object.entries(CATEGORIAS)
   .map(([id, nombre]) => ({ id, nombre, total: salida.filter((e) => e.categoria === id).length }))
   .sort((a, b) => (a.id === "otros") - (b.id === "otros") || b.total - a.total);
 
-const datosEstablecimientos = {
-  fuente: base.fuente,
-  fechaListado: base.fechaListado,
-  total: salida.length,
-  categorias,
-  establecimientos: salida,
-};
-escribir("data/establecimientos.json", datosEstablecimientos);
-escribirJs("data/establecimientos.js", "DATOS_ESTABLECIMIENTOS", datosEstablecimientos);
-
 // Todas las localidades de CyL (aunque no tengan comercios colaboradores), para poder
 // buscar "cerca de mi pueblo", con el municipio al que pertenecen.
 const localidades = new Map();
@@ -397,7 +418,10 @@ for (const n of nucleos) {
 for (const e of salida) {
   const k = `${e.provincia}|${clave(e.localidad)}`;
   if (!localidades.has(k) && e.lat != null) {
-    localidades.set(k, { nombre: e.localidad, provincia: e.provincia, lat: e.lat, lon: e.lon, ine: e.municipio });
+    // Si el comercio solo está situado en su municipio, la localidad queda sin punto propio
+    // (se intentará situar como entidad de población más abajo).
+    const propia = e.precision === "localidad" || e.precision === "direccion";
+    localidades.set(k, { nombre: e.localidad, provincia: e.provincia, lat: propia ? e.lat : null, lon: propia ? e.lon : null, ine: e.municipio });
   }
 }
 // Número de comercios por localidad, municipio y código postal, para las sugerencias
@@ -423,20 +447,42 @@ for (const linea of readFileSync(new URL("fuentes/entidades-poblacion-ine.csv", 
   for (const nombre of new Set([entidad, nucleo].filter((n) => n && !n.startsWith("*")).map(conArticulo))) {
     const k = `${municipio.provincia}|${clave(nombre)}`;
     const previa = localidades.get(k);
-    if (previa && (previa.ine === ine || !previa.ine)) continue;
+    if (previa && (previa.ine === ine || !previa.ine)) {
+      if (previa.lat == null) {
+        const punto = await cartociudad(`${nombre}, ${municipio.nombre}, ${municipio.provincia}`, municipio.punto, 25);
+        if (punto) Object.assign(previa, { lat: punto.lat, lon: punto.lon });
+      }
+      continue;
+    }
     const kMunicipio = `${k}|${ine}`;
     if (localidades.has(kMunicipio)) continue;
     const entrada = { nombre, provincia: municipio.provincia, lat: null, lon: null, ine };
     // Con CartoCiudad, la aldea se sitúa en su sitio y no en el centro de su municipio.
-    if (conexion) {
-      const punto = await cartociudad(`${nombre}, ${municipio.nombre}, ${municipio.provincia}`, municipio.punto, 25);
-      if (punto === "sin-conexion") conexion = false;
-      else if (punto) Object.assign(entrada, { lat: punto.lat, lon: punto.lon });
-    }
+    const punto = await cartociudad(`${nombre}, ${municipio.nombre}, ${municipio.provincia}`, municipio.punto, 25);
+    if (punto) Object.assign(entrada, { lat: punto.lat, lon: punto.lon });
     localidades.set(previa ? kMunicipio : k, entrada);
     entidadesNuevas++;
   }
 }
+
+// Los comercios situados solo en su municipio (pedanías) pasan al punto de su localidad,
+// si ahora se conoce.
+for (const e of salida) {
+  if (e.precision !== "municipio" && e.precision !== "codigo-postal") continue;
+  const l = localidades.get(`${e.provincia}|${clave(e.localidad)}`) ?? localidades.get(`${e.provincia}|${clave(e.localidad)}|${e.municipio}`);
+  if (l?.lat != null) Object.assign(e, { lat: l.lat, lon: l.lon, precision: "localidad" });
+}
+// Las localidades que siguen sin punto propio usan el de su municipio en el navegador.
+
+const datosEstablecimientos = {
+  fuente: base.fuente,
+  fechaListado: base.fechaListado,
+  total: salida.length,
+  categorias,
+  establecimientos: salida,
+};
+escribir("data/establecimientos.json", datosEstablecimientos);
+escribirJs("data/establecimientos.js", "DATOS_ESTABLECIMIENTOS", datosEstablecimientos);
 
 const listaLocalidades = [...localidades.values()]
   .map((l) => [l.nombre, codigoProvincia[l.provincia], c4(l.lat), c4(l.lon), l.ine ?? null, porLocalidad[`${l.provincia}|${clave(l.nombre)}`] ?? 0])
