@@ -1,4 +1,4 @@
-<!-- {"titulo": "Tarjeta Familia · Castilla y León", "portada": true, "descripcion": "Cómo activar y usar la Tarjeta Familia del Bono Nacimiento, dónde pagar con ella y cómo hacerse comercio colaborador en Castilla y León."} -->
+<!-- {"titulo": "Tarjeta Familia · Castilla y León", "portada": true, "scripts": ["assets/js/sugerencias.js", "assets/js/portada.js"], "descripcion": "Cómo activar y usar la Tarjeta Familia del Bono Nacimiento, dónde pagar con ella y cómo hacerse comercio colaborador en Castilla y León."} -->
 <section class="portada" aria-labelledby="titulo-portada">
       <div class="contenedor">
         <div>
@@ -8,9 +8,13 @@
 
           <form class="buscador-rapido" action="buscar/index.html" method="get" role="search" aria-labelledby="titulo-buscador-rapido">
             <h2 id="titulo-buscador-rapido">¿Dónde puedo usar mi tarjeta?</h2>
-            <div class="campo">
+            <div class="campo combo">
               <label for="q-portada">Tu localidad, municipio o código postal</label>
-              <input type="text" id="q-portada" name="q" autocomplete="address-level2" placeholder="Por ejemplo: Arévalo o 05200">
+              <input type="text" id="q-portada" name="q" autocomplete="off" spellcheck="false"
+                     role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerencias-portada"
+                     aria-describedby="ayuda-q-portada" placeholder="Por ejemplo: Arévalo o 05200">
+              <ul id="sugerencias-portada" role="listbox" aria-label="Localidades" hidden></ul>
+              <span class="visualmente-oculto" id="ayuda-q-portada">Al escribir aparecerán sugerencias. Usa las flechas para elegir una.</span>
             </div>
             <div class="acciones">
               <button class="boton" type="submit">Buscar comercios</button>
@@ -57,5 +61,6 @@
           <li>Guarda los tiques <strong>6 meses</strong>.</li>
           <li>Si la pierdes o te la roban, llama al <a href="tel:900404090">900 40 40 90</a> antes de 24 horas.</li>
         </ul>
+        <p class="aproximada">Información sacada de los documentos oficiales de la Junta de Castilla y León (listado de comercios del {{fecha_listado}}). Esta web es independiente: <a href="sobre.html">por qué existe</a>.</p>
       </section>
     </div>

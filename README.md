@@ -1,4 +1,4 @@
-# Tarjeta Familia · Castilla y León — propuesta y prototipo
+# Tarjeta Familia · Castilla y León — web independiente y accesible
 
 Propuesta para que toda la información de la **Tarjeta Familia** (Bono Nacimiento) pase de PDF a web, con:
 
@@ -9,7 +9,7 @@ Propuesta para que toda la información de la **Tarjeta Familia** (Bono Nacimien
 
 📄 **Documento de la propuesta:** [`docs/propuesta.md`](docs/propuesta.md) (también se ve como página en `propuesta.html`).
 
-> Es un prototipo, **no una web oficial** de la Junta de Castilla y León. Todo el contenido sale de los documentos públicos guardados en [`fuentes/`](fuentes/).
+> **Web independiente y no oficial**, hecha por una familia usuaria de la Tarjeta Familia porque la información oficial de la Junta de Castilla y León está repartida en 7 PDF poco usables y no accesibles. Todo el contenido sale de los documentos públicos guardados en [`fuentes/`](fuentes/). ¿Ves un error? [Abre una incidencia](https://github.com/jamm87/tarjeta-familia-cyl/issues).
 
 ## Verlo
 
@@ -78,13 +78,13 @@ Para cambiar textos, edita `src/paginas/` o `docs/propuesta.md` y ejecuta `pytho
 
 ### Coordenadas
 
-En este prototipo las coordenadas son **por localidad**:
+Por ahora las coordenadas son **por localidad**:
 
 - 1.550 comercios, con el punto del núcleo urbano (GeoNames);
 - 68, con el centroide del municipio del IGN;
 - 5, con el municipio de su código postal, según la relación oficial del CNIG (`fuentes/codigos-postales-municipios-cnig.csv`).
 
-El modo `--cartociudad` geocodifica cada dirección con el servicio oficial del IGN y guarda una caché en `data/cache-cartociudad.json`. No se ha podido probar contra el servicio real, porque la red del entorno donde se preparó el prototipo no permitía acceder a `www.cartociudad.es`. Revisa el resultado la primera vez que lo ejecutes.
+El modo `--cartociudad` geocodifica cada dirección con el servicio oficial del IGN y guarda una caché en `data/cache-cartociudad.json`. No se ha podido probar contra el servicio real, porque la red del entorno donde se preparó la web no permitía acceder a `www.cartociudad.es`. Revisa el resultado la primera vez que lo ejecutes.
 
 ## Pruebas
 

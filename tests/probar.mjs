@@ -1,4 +1,4 @@
-// Pruebas del prototipo: accesibilidad automática (axe-core), diseño a 320 px y
+// Pruebas de la web: accesibilidad automática (axe-core), diseño a 320 px y
 // funcionamiento del buscador y del formulario con teclado.
 //
 //   npm test            (necesita Playwright con Chromium instalado)
@@ -20,7 +20,7 @@ const PAGINAS = [
   "familias/que-comprar.html", "familias/saldo.html", "familias/problemas.html", "familias/que-es.html",
   "familias/preguntas-frecuentes.html", "comercios/index.html", "comercios/sectores.html",
   "comercios/como-cobrar.html", "comercios/hazte-colaborador.html", "buscar/index.html",
-  "buscar/index.html?q=Ar%C3%A9valo", "ayuda.html", "accesibilidad.html", "fuentes/index.html", "propuesta.html",
+  "buscar/index.html?q=Ar%C3%A9valo", "ayuda.html", "accesibilidad.html", "fuentes/index.html", "propuesta.html", "sobre.html",
 ];
 
 const TIPOS = { ".html": "text/html; charset=utf-8", ".css": "text/css", ".js": "text/javascript", ".json": "application/json", ".jpg": "image/jpeg", ".png": "image/png", ".svg": "image/svg+xml", ".pdf": "application/pdf" };
@@ -74,6 +74,7 @@ for (const ancho of [320, 1280]) {
     await pagina.waitForLoadState("networkidle");
     const violaciones = await axe(pagina);
     ok(violaciones.length === 0, `${ruta} @${ancho}px: ${violaciones.length ? violaciones.join("; ") : "sin violaciones"}`);
+    if (ancho === 320) ok(/no oficial/.test(await pagina.textContent(".no-oficial")), `${ruta} indica que la web no es oficial`);
     const desborda = await pagina.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     if (ancho === 320) ok(desborda <= 0, `${ruta} @320px sin desplazamiento horizontal (${desborda}px de más)`);
     if (CAPTURAS) await pagina.screenshot({ path: fileURLToPath(new URL(`capturas/${ruta.replace(/[/?=%]/g, "_")}-${ancho}.png`, import.meta.url)), fullPage: true });
@@ -93,7 +94,27 @@ console.log("\nTeclado");
   await pagina.context().close();
 }
 
-// ---- 3. Buscador ---------------------------------------------------------------------------
+// ---- 3. Sugerencias en la portada ----------------------------------------------------------
+console.log("\nPortada");
+{
+  const pagina = await nuevaPagina(390);
+  await pagina.goto(BASE + "index.html");
+  await pagina.focus("#q-portada");
+  await pagina.keyboard.type("villafr");
+  await pagina.waitForSelector("#sugerencias-portada:not([hidden]) [role=option]");
+  ok(await pagina.getAttribute("#q-portada", "aria-expanded") === "true", "La portada muestra sugerencias al escribir");
+  const opciones = await pagina.$$eval("#sugerencias-portada [role=option]", (els) => els.map((e) => e.textContent));
+  ok(opciones.some((t) => /Villafranca del Bierzo/.test(t)), `Sugiere «Villafranca del Bierzo» (${opciones.length} sugerencias)`);
+  const indice = opciones.findIndex((t) => /Villafranca del Bierzo/.test(t));
+  for (let i = 0; i <= indice; i++) await pagina.keyboard.press("ArrowDown");
+  ok(await pagina.getAttribute("#q-portada", "aria-activedescendant") === `sugerencias-portada-${indice}`, "Las flechas recorren las sugerencias");
+  await Promise.all([pagina.waitForURL(/buscar\/index\.html\?q=Villafranca/), pagina.keyboard.press("Enter")]);
+  await pagina.waitForFunction(() => /Villafranca del Bierzo/.test(document.querySelector("#titulo-resultados").textContent));
+  ok(true, `Enter lleva al buscador con los resultados: «${await pagina.textContent("#titulo-resultados")}»`);
+  await pagina.context().close();
+}
+
+// ---- 3b. Buscador ---------------------------------------------------------------------------
 console.log("\nBuscador");
 {
   const pagina = await nuevaPagina(1280);
@@ -110,7 +131,7 @@ console.log("\nBuscador");
   await pagina.waitForSelector("#sugerencias:not([hidden]) [role=option]");
   ok(await pagina.getAttribute("#q", "aria-expanded") === "true", "El combobox indica que la lista está abierta");
   await pagina.keyboard.press("ArrowDown");
-  ok(await pagina.getAttribute("#q", "aria-activedescendant") === "sug-0", "La flecha abajo activa la primera sugerencia");
+  ok(await pagina.getAttribute("#q", "aria-activedescendant") === "sugerencias-0", "La flecha abajo activa la primera sugerencia");
   await pagina.keyboard.press("Enter");
   await pagina.waitForFunction(() => /Medina del Campo/.test(document.querySelector("#titulo-resultados").textContent));
   ok(await pagina.evaluate(() => document.activeElement.id === "titulo-resultados"), "Tras buscar, el foco pasa al título de resultados");

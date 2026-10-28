@@ -1,4 +1,4 @@
-/* Tarjeta Familia CyL — prototipo accesible (WCAG 2.2 AA)
+/* Tarjeta Familia CyL — web independiente y accesible (WCAG 2.2 AA)
    Contrastes comprobados sobre blanco y sobre --fondo-suave:
    --rojo 6,9:1 · --familia 6,1:1 · --comercio 6,4:1 · --texto-suave 8,6:1 · --borde-control 4,5:1 */
 
@@ -82,11 +82,11 @@ strong { font-weight: 700; }
 .contenedor { width: min(100% - 2rem, var(--ancho)); margin-inline: auto; }
 .lectura { max-width: var(--lectura); }
 
-/* ---------- Franja de prototipo ---------- */
-.prototipo { margin: 0;
+/* ---------- Franja «web no oficial» ---------- */
+.no-oficial { margin: 0;
   background: #1d1d1f; color: #fff; font-size: 0.9rem; padding: 0.4rem 0; text-align: center;
 }
-.prototipo a { color: #fff; }
+.no-oficial a { color: #fff; }
 
 /* ---------- Cabecera ---------- */
 .cabecera { background: var(--rojo); color: #fff; }
@@ -390,10 +390,11 @@ thead th { background: var(--fondo-suave); }
 }
 
 @media print {
-  .prototipo, .cabecera nav, .migas, .pie, .saltar, .no-imprimir, .acciones { display: none !important; }
+  .no-oficial a, .cabecera nav, .migas, .pie, .saltar, .no-imprimir, .acciones { display: none !important; }
   .solo-impresion { display: block; }
   body { font-size: 12pt; }
   .cabecera { background: none; color: #000; border-bottom: 2px solid #000; }
+  .no-oficial { background: none; color: #000; text-align: left; padding: 0 0 0.5rem; }
   .cabecera a { color: #000; }
   a[href^="tel:"]::after, a[href^="mailto:"]::after { content: ""; }
   .claves li, .aviso { break-inside: avoid; }

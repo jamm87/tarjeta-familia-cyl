@@ -30,8 +30,7 @@
   const zona = $("zona-resultados");
   const estadoUbicacion = $("estado-ubicacion");
 
-  const normaliza = (t) => t.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[-']/g, " ").replace(/\s+/g, " ").trim();
-  const sinArticulo = (t) => t.replace(/^(el|la|los|las) /, "");
+  const { normaliza } = Sugerencias;
   const formatoKm = (km) => (km < 1 ? "menos de 1 km" : `${km.toLocaleString("es-ES", { maximumFractionDigits: km < 10 ? 1 : 0 })} km`);
   const nombreCategoria = Object.fromEntries(DATOS.categorias.map((c) => [c.id, c.nombre]));
 
@@ -43,39 +42,9 @@
     claveLocalidad: `${e.provincia}|${normaliza(e.localidad)}`,
     buscable: normaliza(`${e.nombre} ${e.direccion} ${nombreCategoria[e.categoria]}`),
   }));
-  const cuenta = (lista, clave) => {
-    const c = {};
-    for (const e of lista) c[clave(e)] = (c[clave(e)] ?? 0) + 1;
-    return c;
-  };
-  const comerciosPorLocalidad = cuenta(establecimientos, (e) => e.claveLocalidad);
-  const comerciosPorMunicipio = cuenta(establecimientos, (e) => e.municipio);
-  const comerciosPorCP = cuenta(establecimientos, (e) => e.cp);
-
-  // Municipios (código INE) y códigos postales oficiales (CNIG) de toda Castilla y León.
-  const municipios = Object.fromEntries(Object.entries(LOC.municipios).map(([ine, [nombre, lat, lon]]) =>
-    [ine, { ine, nombre, lat, lon, provincia: LOC.provincias[ine.slice(0, 2)] }]));
-
-  // Una localidad que es cabecera de su municipio busca en todo el municipio (con sus pedanías).
-  const localidades = LOC.localidades.map(([nombre, prov, lat, lon, ine]) => {
-    const provincia = LOC.provincias[prov];
-    const n = normaliza(nombre);
-    const esMunicipio = Boolean(ine && normaliza(municipios[ine]?.nombre ?? "") === n);
-    const comercios = esMunicipio ? comerciosPorMunicipio[ine] ?? 0 : comerciosPorLocalidad[`${provincia}|${n}`] ?? 0;
-    return { tipo: "localidad", nombre, provincia, lat, lon, ine, esMunicipio, n, sin: sinArticulo(n), comercios };
-  });
-
-  const codigosPostales = Object.fromEntries(Object.entries(LOC.codigosPostales).map(([cp, ines]) => {
-    const ms = ines.map((i) => municipios[i]);
-    return [cp, {
-      tipo: "cp", nombre: cp, cp, ines,
-      provincia: LOC.provincias[cp.slice(0, 2)],
-      descripcion: ms.map((m) => m.nombre).join(", "),
-      lat: ms.reduce((t, m) => t + m.lat, 0) / ms.length,
-      lon: ms.reduce((t, m) => t + m.lon, 0) / ms.length,
-      comercios: comerciosPorCP[cp] ?? 0,
-    }];
-  }));
+  // Localidades, municipios y códigos postales, y las sugerencias: assets/js/sugerencias.js
+  const lugares = Sugerencias.indices(LOC);
+  const { localidades } = lugares;
 
   function distanciaKm(a, b) {
     const rad = Math.PI / 180;
@@ -87,131 +56,17 @@
 
   // ---- Sugerencias (combobox ARIA 1.2) ---------------------------------------------------
 
-  let sugerencias = [];
-  let activa = -1;
-  let seleccion = null; // lugar elegido de la lista de sugerencias
-
-  function buscaLugares(consulta, max = 8) {
-    const c = normaliza(consulta);
-    if (!c) return [];
-    if (/^\d{1,5}$/.test(c)) {
-      return Object.values(codigosPostales).filter((cp) => cp.cp.startsWith(c)).sort((a, b) => a.cp.localeCompare(b.cp)).slice(0, max);
-    }
-    const sinArt = sinArticulo(c);
-    const puntua = (l) => (l.n === c || l.sin === sinArt ? 0 : l.n.startsWith(c) || l.sin.startsWith(sinArt) ? 1 : l.n.includes(c) ? 2 : 9);
-    return localidades
-      .map((l) => ({ l, p: puntua(l) }))
-      .filter((x) => x.p < 9)
-      .sort((a, b) => a.p - b.p || b.l.comercios - a.l.comercios || a.l.nombre.localeCompare(b.l.nombre, "es"))
-      .slice(0, max)
-      .map((x) => x.l);
-  }
-
-  function describeLugar(l) {
-    const comercios = l.comercios ? ` · ${l.comercios} ${l.comercios === 1 ? "comercio" : "comercios"}` : "";
-    if (l.tipo === "cp") return { principal: l.cp, extra: `${l.descripcion} · ${l.provincia}${comercios}` };
-    const municipio = !l.esMunicipio && l.ine && municipios[l.ine] ? ` (municipio de ${municipios[l.ine].nombre})` : "";
-    return { principal: l.nombre, extra: `${l.provincia}${municipio}${comercios}` };
-  }
-
-  function pintaSugerencias() {
-    listbox.replaceChildren(...sugerencias.map((l, i) => {
-      const { principal, extra } = describeLugar(l);
-      const li = document.createElement("li");
-      li.id = `sug-${i}`;
-      li.setAttribute("role", "option");
-      li.setAttribute("aria-selected", String(i === activa));
-      li.append(principal, " ");
-      const small = document.createElement("small");
-      small.textContent = `· ${extra}`;
-      li.append(small);
-      li.addEventListener("mousedown", (ev) => ev.preventDefault());
-      li.addEventListener("click", () => elige(i));
-      return li;
-    }));
-    const abierta = sugerencias.length > 0;
-    listbox.hidden = !abierta;
-    q.setAttribute("aria-expanded", String(abierta));
-    if (activa >= 0) {
-      q.setAttribute("aria-activedescendant", `sug-${activa}`);
-      $(`sug-${activa}`).scrollIntoView({ block: "nearest" });
-    } else {
-      q.removeAttribute("aria-activedescendant");
-    }
-  }
-
-  function cierraSugerencias() {
-    sugerencias = [];
-    activa = -1;
-    pintaSugerencias();
-  }
-
-  function elige(i) {
-    const l = sugerencias[i];
-    seleccion = l;
-    q.value = l.tipo === "cp" ? l.cp : l.nombre;
-    cierraSugerencias();
-    buscar({ lugar: l });
-  }
-
-  let esperaSug;
-  q.addEventListener("input", () => {
-    seleccion = null;
-    clearTimeout(esperaSug);
-    esperaSug = setTimeout(() => {
-      sugerencias = buscaLugares(q.value);
-      activa = -1;
-      pintaSugerencias();
-    }, 120);
-  });
-
-  q.addEventListener("keydown", (ev) => {
-    const abierta = sugerencias.length > 0;
-    if (ev.key === "ArrowDown") {
-      ev.preventDefault();
-      if (!abierta) sugerencias = buscaLugares(q.value);
-      activa = sugerencias.length ? (activa + 1) % sugerencias.length : -1;
-      pintaSugerencias();
-    } else if (ev.key === "ArrowUp" && abierta) {
-      ev.preventDefault();
-      activa = activa <= 0 ? sugerencias.length - 1 : activa - 1;
-      pintaSugerencias();
-    } else if (ev.key === "Enter" && abierta && activa >= 0) {
-      ev.preventDefault();
-      elige(activa);
-    } else if (ev.key === "Escape") {
-      if (abierta) {
-        ev.preventDefault();
-        cierraSugerencias();
-      } else {
-        q.value = "";
-      }
-    } else if (ev.key === "Tab") {
-      cierraSugerencias();
-    }
-  });
-  q.addEventListener("blur", () => setTimeout(cierraSugerencias, 150));
+  const combo = Sugerencias.crear({ input: q, listbox, indices: lugares, alElegir: (lugar) => buscar({ lugar }) });
 
   // ---- Origen de la búsqueda -------------------------------------------------------------
 
   let origen = null; // { tipo, nombre, provincia?, lat, lon }
 
-  function resuelveTexto(valor) {
-    const c = normaliza(valor);
-    if (!c) return null;
-    if (/^\d{5}$/.test(c)) return codigosPostales[c] ?? { tipo: "cp-desconocido", nombre: c };
-    if (/^\d+$/.test(c)) return { tipo: "cp-incompleto", nombre: c };
-    const exactas = localidades.filter((l) => l.n === c || l.sin === sinArticulo(c));
-    if (exactas.length) return exactas.sort((a, b) => b.comercios - a.comercios)[0];
-    const parecidas = buscaLugares(valor, 1);
-    return parecidas[0] ?? { tipo: "desconocido", nombre: valor.trim() };
-  }
-
   function buscar({ lugar, provincia, foco = true } = {}) {
     if (provincia) {
       origen = { tipo: "provincia", nombre: provincia, provincia };
     } else {
-      const l = lugar ?? seleccion ?? resuelveTexto(q.value);
+      const l = lugar ?? combo.seleccion() ?? lugares.resuelve(q.value);
       if (!l) {
         anunciar("Escribe una localidad o un código postal, o usa tu ubicación.");
         q.focus();
@@ -225,7 +80,7 @@
 
   form.addEventListener("submit", (ev) => {
     ev.preventDefault();
-    cierraSugerencias();
+    combo.cerrar();
     buscar();
   });
 
@@ -271,7 +126,7 @@
           ? "Parece que estás fuera de Castilla y León. Te mostramos los comercios más cercanos."
           : `Ubicación encontrada, cerca de ${cercana.l.nombre}.`;
         q.value = "";
-        seleccion = null;
+        combo.olvidar();
         origen = { tipo: "ubicacion", nombre: "tu ubicación", ...punto, cercaDe: cercana.l };
         if (fuera && selRadio.value !== "0") selRadio.value = "0";
         pagina = 1;
@@ -694,7 +549,11 @@
     buscar({ provincia: params.get("provincia"), foco: false });
   } else if (params.get("q")) {
     q.value = params.get("q");
-    buscar({ foco: false });
+    // «en» indica la provincia cuando se eligió una sugerencia en la portada (hay
+    // localidades con el mismo nombre en varias provincias).
+    const n = normaliza(q.value);
+    const lugar = localidades.find((l) => l.n === n && l.provincia === params.get("en"));
+    buscar({ lugar, foco: false });
   } else if (params.get("cerca") === "1") {
     // Viene del botón «Usar mi ubicación» de la portada: la persona ya lo ha pedido.
     usarUbicacion();

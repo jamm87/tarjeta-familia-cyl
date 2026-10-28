@@ -15,7 +15,7 @@
 <body>
   <a class="saltar" href="#contenido">Saltar al contenido</a>
 
-  <p class="prototipo">Prototipo de propuesta. <strong>No es una web oficial</strong> de la Junta de Castilla y León.</p>
+  <p class="no-oficial">Web independiente y <strong>no oficial</strong>, hecha por una familia usuaria de la Tarjeta Familia. <a href="sobre.html">Por qué existe</a></p>
 
   <header class="cabecera">
     <div class="contenedor">
@@ -44,7 +44,7 @@
     <div class="contenedor lectura propuesta">
 <h1>Propuesta: la información de la Tarjeta Familia, en la web y no en PDF</h1>
 <p><strong>Para:</strong> Consejería de Desregulación, Familia y Ayudas Sociales, Junta de Castilla y León
-<strong>Qué incluye:</strong> diagnóstico, arquitectura de la información, diseño del buscador de comercios, criterios de accesibilidad y usabilidad, y un prototipo navegable con el contenido real.
+<strong>Qué incluye:</strong> diagnóstico, arquitectura de la información, diseño del buscador de comercios, criterios de accesibilidad y usabilidad, y una web funcionando con el contenido real: https://jamm87.github.io/tarjeta-familia-cyl/
 <strong>Fecha:</strong> octubre de 2026</p>
 <hr />
 <h2>1. Resumen</h2>
@@ -57,7 +57,7 @@
 <li><strong>Un formulario web accesible para que los comercios se den de alta</strong>, en lugar del PDF que hay que abrir con Acrobat.</li>
 <li><strong>Cumplir WCAG 2.2 AA</strong>, obligatorio para el sector público (RD 1112/2018, norma EN 301 549).</li>
 </ol>
-<p>El prototipo que acompaña a esta propuesta ya funciona con los datos reales del listado del 21 de octubre de 2026.</p>
+<p>La web que acompaña a esta propuesta, publicada como iniciativa ciudadana independiente, ya funciona con los datos reales del listado del 21 de octubre de 2026.</p>
 <h2>2. Diagnóstico de la página actual</h2>
 <div class="tabla-scroll" tabindex="0" role="region" aria-label="Tabla (se puede desplazar)"><table>
 <thead>
@@ -199,14 +199,14 @@
 <ul>
 <li>El listado se convierte automáticamente del PDF a datos con <code>scripts/extraer_establecimientos.py</code>, que comprueba los totales por provincia.</li>
 <li>Cada comercio se clasifica por su nombre con reglas revisables. Así se hicieron las 11 categorías; 88 quedan como «Otros comercios».</li>
-<li><strong>Coordenadas</strong>: en este prototipo son <strong>por localidad</strong>:</li>
+<li><strong>Coordenadas</strong>: por ahora son <strong>por localidad</strong>:</li>
 <li>1.550 comercios, con el punto del núcleo urbano (GeoNames);</li>
 <li>68, con el centroide del municipio del IGN (pedanías y núcleos pequeños);</li>
 <li>5, con el municipio que corresponde a su código postal según el CNIG.</li>
 </ul>
 <p>Cada comercio lleva además el código INE de su municipio, para poder buscar por municipio.</p>
 <p>Por eso las distancias son aproximadas y en las ciudades todos los comercios aparecen «en esta localidad».
-- <strong>Siguiente paso</strong>: geocodificar cada dirección con <strong>CartoCiudad</strong>, el geocodificador oficial y gratuito del IGN. El script <code>scripts/geocodificar.mjs --cartociudad</code> ya lo hace y guarda una caché. No se pudo ejecutar desde el entorno donde se preparó el prototipo porque su red no permitía acceder a ese servicio.</p>
+- <strong>Siguiente paso</strong>: geocodificar cada dirección con <strong>CartoCiudad</strong>, el geocodificador oficial y gratuito del IGN. El script <code>scripts/geocodificar.mjs --cartociudad</code> ya lo hace y guarda una caché. No se pudo ejecutar desde el entorno donde se preparó la web porque su red no permitía acceder a ese servicio.</p>
 <h2>6. Formulario para comercios</h2>
 <p>Sustituye al PDF rellenable:</p>
 <ul>
@@ -214,7 +214,7 @@
 <li><strong>Etiquetas visibles, ayudas con ejemplos</strong> («12345678Z», «C/ Mayor, 12») y autocompletado del navegador.</li>
 <li><strong>Comprobación al enviar</strong>: letra del DNI/NIE, dígito de control del CIF, móvil, código postal de Castilla y León y que este coincida con la provincia elegida. Los errores aparecen junto a cada campo y en un <strong>resumen con enlaces</strong> que recibe el foco.</li>
 <li><strong>La autorización para publicar los datos es una casilla aparte y sin marcar</strong>: el consentimiento debe ser activo. Se explica que sin ella el comercio no aparecerá en el buscador.</li>
-<li>En el prototipo, al enviar <strong>se abre el correo ya rellenado</strong> para conciliacion.gss@jcyl.es, igual que el proceso actual. También se pueden copiar los datos.</li>
+<li>En la web actual, al enviar <strong>se abre el correo ya rellenado</strong> para conciliacion.gss@jcyl.es, igual que el proceso actual. También se pueden copiar los datos.</li>
 <li><strong>Para la versión definitiva</strong> recomendamos tramitarlo en la <strong>Sede Electrónica</strong> con identificación (Cl@ve o certificado). Así se sustituye la firma del PDF, el comercio recibe acuse de recibo y el alta se incorpora directamente a los datos del listado.</li>
 </ul>
 <h2>7. Accesibilidad y usabilidad</h2>
@@ -223,7 +223,7 @@
 <thead>
 <tr>
 <th>Criterio</th>
-<th>Cómo se aplica en el prototipo</th>
+<th>Cómo se aplica en la web</th>
 </tr>
 </thead>
 <tbody>
@@ -277,7 +277,7 @@
 </tr>
 <tr>
 <td>Privacidad</td>
-<td>Sin cookies ni analítica de terceros en el prototipo. La ubicación no se guarda.</td>
+<td>Sin cookies ni analítica de terceros. La ubicación no se guarda.</td>
 </tr>
 <tr>
 <td>Rendimiento</td>
@@ -343,7 +343,7 @@
 <li><strong>Altas de comercios colaboradores</strong> por el formulario web.</li>
 <li><strong>Tasa de éxito en pruebas con usuarios</strong>: «encuentra una farmacia colaboradora cerca de tu casa», «activa la tarjeta», «¿qué haces si te piden el PIN?».</li>
 </ul>
-<h2>10. Contenido del prototipo</h2>
+<h2>10. Contenido de la web</h2>
 <div class="tabla-scroll" tabindex="0" role="region" aria-label="Tabla (se puede desplazar)"><table>
 <thead>
 <tr>
@@ -428,10 +428,12 @@
         </section>
       </div>
       <p class="nota">
-        Contenido elaborado a partir de los documentos públicos de la Consejería de Desregulación, Familia y Ayudas Sociales
-        (<a href="fuentes/index.html">ver documentos originales</a>).
+        Web independiente, no vinculada a la Junta de Castilla y León, CaixaBank ni MoneyToPay. Contenido elaborado a partir de los documentos públicos de la Consejería de Desregulación, Familia y Ayudas Sociales
+        (<a href="fuentes/index.html">ver documentos originales</a>). Ante cualquier duda, prevalece la información oficial.
+        <a href="sobre.html">Por qué existe esta web</a> ·
         <a href="accesibilidad.html">Accesibilidad</a> ·
-        <a href="propuesta.html">Sobre esta propuesta</a>
+        <a href="propuesta.html">Propuesta para la Junta</a> ·
+        <a href="https://github.com/jamm87/tarjeta-familia-cyl/issues">Avisar de un error</a>
       </p>
     </div>
   </footer>

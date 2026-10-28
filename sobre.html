@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Por qué existe esta web · Tarjeta Familia Castilla y León</title>
+  <meta name="description" content="Web independiente y no oficial sobre la Tarjeta Familia de Castilla y León, hecha porque la información oficial está repartida en PDF poco usables y no accesibles.">
+  <meta name="theme-color" content="#b0141d">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/estilos.css">
+  <script src="assets/js/comun.js" defer></script>
+  
+  
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <p class="no-oficial">Web independiente y <strong>no oficial</strong>, hecha por una familia usuaria de la Tarjeta Familia. <a href="sobre.html">Por qué existe</a></p>
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="index.html">
+        <img src="assets/img/tarjeta-familia.jpg" alt="" width="56" height="44">
+        <span>Tarjeta Familia <small>Castilla y León</small></span>
+      </a>
+      <nav class="nav-principal" aria-label="Principal">
+        <ul>
+          <li><a href="familias/">Familias</a></li>
+          <li><a href="comercios/">Comercios</a></li>
+          <li><a href="buscar/">Dónde usarla</a></li>
+          <li><a href="ayuda.html">Ayuda</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+    <nav class="migas contenedor" aria-label="Estás aquí">
+      <ol>
+        <li><a href="index.html">Inicio</a></li>
+        <li aria-current="page">Por qué existe esta web</li>
+      </ol>
+    </nav>
+    <div class="contenedor lectura">
+      <h1>Por qué existe esta web</h1>
+      <p class="entradilla">La hace una familia que usa la Tarjeta Familia. Existe porque la información oficial de la Junta de Castilla y León sobre la tarjeta es difícil de encontrar, de entender y de usar, sobre todo desde el móvil.</p>
+
+      <div class="aviso aviso--importante">
+        <p><strong>No es una web oficial.</strong> No está vinculada a la Junta de Castilla y León, a CaixaBank ni a MoneyToPay, y no gestiona la ayuda. Todo el contenido sale de los documentos públicos de la Junta. Ante cualquier duda, prevalece la información oficial.</p>
+      </div>
+
+      <h2>Qué problemas tiene la información oficial</h2>
+      <ul>
+        <li><strong>Está repartida en 7 documentos PDF.</strong> La página de la Junta sobre la Tarjeta Familia apenas tiene texto: para saber cómo activarla, cómo pagar, consultar el saldo o dónde usarla hay que descargar y leer PDF.</li>
+        <li><strong>El listado de comercios es un PDF de 41 páginas</strong>, ordenado por provincia y localidad, sin buscador ni distancias. Para encontrar una farmacia cerca de casa hay que recorrerlo a mano.</li>
+        <li><strong>Lo más útil está escondido.</strong> La tarjeta también funciona en comercios que no están en el listado, si su datáfono es de un sector autorizado. Eso solo aparece en el apartado para comercios.</li>
+        <li><strong>Los PDF no son accesibles</strong>: no están preparados para lectores de pantalla ni se adaptan al móvil. Las webs del sector público deben cumplir el Real Decreto 1112/2018 y la norma EN 301 549 (WCAG 2.1 AA).</li>
+        <li><strong>Los datos tienen errores</strong>: el total del resumen del listado no cuadra con sus filas (1.644 frente a 1.628), hay comercios repetidos y localidades mal escritas. <a href="fuentes/index.html">Ver documentos originales</a>.</li>
+        <li><strong>La información no llega a todos los canales.</strong> Cuando llamamos al servicio de atención telefónica de CaixaBank, la persona que nos atendió no sabía que la tarjeta no tiene PIN, aunque las condiciones oficiales lo dicen expresamente.</li>
+        <li><strong>Nombres que confunden.</strong> Las guías de MoneyToPay, la entidad que emite la tarjeta, la llaman «Tarjeta Regalo» y «Tarjeta Empresa».</li>
+      </ul>
+
+      <h2>Qué hace esta web</h2>
+      <ul>
+        <li>Pone todo en páginas web, ordenado por lo que necesitas hacer: <a href="familias/index.html">familias</a> y <a href="comercios/index.html">comercios</a>.</li>
+        <li>Tiene un <a href="buscar/index.html">buscador de comercios</a> por localidad, municipio, código postal o ubicación, que siempre muestra los más cercanos.</li>
+        <li>Está diseñada para el móvil y para cumplir las pautas de <a href="accesibilidad.html">accesibilidad</a> WCAG 2.2 AA.</li>
+        <li>No usa cookies ni guarda tu ubicación.</li>
+      </ul>
+
+      <h2>De dónde salen los datos</h2>
+      <ul>
+        <li>Comercios colaboradores: listado oficial de la Junta del 21 de octubre de 2026 (1.623 comercios, sin duplicados).</li>
+        <li>Condiciones de uso: documento oficial de 16 de octubre de 2026. Guías de MoneyToPay para activar la tarjeta y consultar el saldo.</li>
+        <li>Sectores autorizados: documento oficial de 25 de junio de 2024.</li>
+        <li>Municipios y códigos postales: Instituto Geográfico Nacional y Centro Nacional de Información Geográfica. Coordenadas de localidades: GeoNames.</li>
+      </ul>
+      <p>Cuando la Junta publica un listado nuevo, se vuelve a procesar y se actualiza la web. Las distancias son aproximadas: se calculan desde el centro de cada localidad, porque el listado oficial no incluye la ubicación exacta de cada comercio.</p>
+
+      <h2>¿Has encontrado un error?</h2>
+      <p>Si un comercio ya no acepta la tarjeta, falta alguno o ves algo incorrecto, avísanos en <a href="https://github.com/jamm87/tarjeta-familia-cyl/issues">GitHub</a>. El código de la web es abierto.</p>
+
+      <h2>Propuesta para la Junta</h2>
+      <p>Hemos preparado una <a href="propuesta.html">propuesta</a> con el diagnóstico, la organización de la información y los criterios de accesibilidad, para que la Junta pueda incorporarlo a su propia web.</p>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="columnas">
+        <section aria-labelledby="pie-familias">
+          <h2 id="pie-familias">Para familias</h2>
+          <ul>
+            <li><a href="familias/activar.html">Activar la tarjeta</a></li>
+            <li><a href="familias/pagar.html">Cómo pagar</a></li>
+            <li><a href="buscar/index.html">Dónde usarla</a></li>
+            <li><a href="familias/saldo.html">Consultar el saldo</a></li>
+            <li><a href="familias/problemas.html">Pérdida, robo y problemas</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="pie-comercios">
+          <h2 id="pie-comercios">Para comercios</h2>
+          <ul>
+            <li><a href="comercios/index.html">¿Puedo cobrar con la tarjeta?</a></li>
+            <li><a href="comercios/sectores.html">Sectores autorizados</a></li>
+            <li><a href="comercios/como-cobrar.html">Guía para la caja</a></li>
+            <li><a href="comercios/hazte-colaborador.html">Hazte colaborador</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="pie-ayuda">
+          <h2 id="pie-ayuda">Ayuda</h2>
+          <ul>
+            <li>Robo o pérdida: <a href="tel:900404090">900 40 40 90</a> (CaixaBank, gratuito)</li>
+            <li>Activación y saldo: <a href="tel:900300300">900 300 300</a> (MoneyToPay, gratuito)</li>
+            <li>Información general: <a href="tel:012">012</a></li>
+            <li><a href="mailto:conciliacion.gss@jcyl.es">conciliacion.gss@jcyl.es</a></li>
+            <li><a href="ayuda.html">Todos los contactos</a></li>
+          </ul>
+        </section>
+      </div>
+      <p class="nota">
+        Web independiente, no vinculada a la Junta de Castilla y León, CaixaBank ni MoneyToPay. Contenido elaborado a partir de los documentos públicos de la Consejería de Desregulación, Familia y Ayudas Sociales
+        (<a href="fuentes/index.html">ver documentos originales</a>). Ante cualquier duda, prevalece la información oficial.
+        <a href="sobre.html">Por qué existe esta web</a> ·
+        <a href="accesibilidad.html">Accesibilidad</a> ·
+        <a href="propuesta.html">Propuesta para la Junta</a> ·
+        <a href="https://github.com/jamm87/tarjeta-familia-cyl/issues">Avisar de un error</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

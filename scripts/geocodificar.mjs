@@ -238,7 +238,7 @@ async function cartociudad(e, aprox) {
   if (!(consulta in cache)) {
     const url = `https://www.cartociudad.es/geocoder/api/geocoder/find?q=${encodeURIComponent(consulta)}`;
     try {
-      const r = await fetch(url, { headers: { "User-Agent": "tarjeta-familia-cyl (prototipo)" } });
+      const r = await fetch(url, { headers: { "User-Agent": "tarjeta-familia-cyl (https://github.com/jamm87/tarjeta-familia-cyl)" } });
       const texto = await r.text();
       const json = JSON.parse(texto.replace(/^[^(]*\(|\)\s*;?\s*$/g, ""));
       cache[consulta] = json && json.lat ? { lat: redondea(+json.lat), lon: redondea(+json.lng), tipo: json.type } : null;
@@ -378,17 +378,27 @@ for (const e of salida) {
     localidades.set(k, { nombre: e.localidad, provincia: e.provincia, lat: e.lat, lon: e.lon, ine: e.municipio });
   }
 }
+// Número de comercios por localidad, municipio y código postal, para las sugerencias
+// (así la portada no necesita cargar el listado completo).
+const recuento = (clave) => {
+  const r = {};
+  for (const e of salida) r[clave(e)] = (r[clave(e)] ?? 0) + 1;
+  return r;
+};
+const porLocalidad = recuento((e) => `${e.provincia}|${clave(e.localidad)}`);
 const listaLocalidades = [...localidades.values()]
-  .map((l) => [l.nombre, codigoProvincia[l.provincia], l.lat, l.lon, l.ine ?? null])
+  .map((l) => [l.nombre, codigoProvincia[l.provincia], l.lat, l.lon, l.ine ?? null, porLocalidad[`${l.provincia}|${clave(l.nombre)}`] ?? 0])
   .sort((a, b) => a[0].localeCompare(b[0], "es"));
 const datosLocalidades = {
-  campos: ["nombre", "provincia", "lat", "lon", "municipio"],
+  campos: ["nombre", "provincia", "lat", "lon", "municipio", "comercios"],
   provincias: Object.fromEntries(Object.entries(PROVINCIAS).map(([c, p]) => [c, p.nombre])),
   localidades: listaLocalidades,
   // Código INE -> [nombre, lat, lon] del municipio
   municipios: Object.fromEntries(municipios.map((m) => [m.ine, [m.nombre, m.punto.lat, m.punto.lon]])),
   // Código postal -> códigos INE de los municipios que abarca (CNIG)
   codigosPostales: Object.fromEntries([...municipiosPorCP].sort()),
+  comerciosPorMunicipio: recuento((e) => e.municipio),
+  comerciosPorCP: recuento((e) => e.cp),
 };
 escribir("data/localidades.json", datosLocalidades);
 escribirJs("data/localidades.js", "DATOS_LOCALIDADES", datosLocalidades);

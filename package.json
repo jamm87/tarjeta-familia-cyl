@@ -2,7 +2,7 @@
   "name": "tarjeta-familia-cyl",
   "version": "0.1.0",
   "private": true,
-  "description": "Propuesta y prototipo web accesible de la Tarjeta Familia de Castilla y León",
+  "description": "Web independiente y accesible sobre la Tarjeta Familia de Castilla y León",
   "type": "module",
   "scripts": {
     "datos": "python3 scripts/extraer_establecimientos.py fuentes/establecimientos-colaboradores-2026-10-21.pdf && python3 scripts/extraer_sectores.py fuentes/ramos-autorizados-2024-06-25.pdf && node scripts/geocodificar.mjs && python3 scripts/generar_paginas.py",

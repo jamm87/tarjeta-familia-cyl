@@ -1,7 +1,7 @@
 # Propuesta: la información de la Tarjeta Familia, en la web y no en PDF
 
 **Para:** Consejería de Desregulación, Familia y Ayudas Sociales, Junta de Castilla y León
-**Qué incluye:** diagnóstico, arquitectura de la información, diseño del buscador de comercios, criterios de accesibilidad y usabilidad, y un prototipo navegable con el contenido real.
+**Qué incluye:** diagnóstico, arquitectura de la información, diseño del buscador de comercios, criterios de accesibilidad y usabilidad, y una web funcionando con el contenido real: https://jamm87.github.io/tarjeta-familia-cyl/
 **Fecha:** octubre de 2026
 
 ---
@@ -18,7 +18,7 @@ Proponemos:
 4. **Un formulario web accesible para que los comercios se den de alta**, en lugar del PDF que hay que abrir con Acrobat.
 5. **Cumplir WCAG 2.2 AA**, obligatorio para el sector público (RD 1112/2018, norma EN 301 549).
 
-El prototipo que acompaña a esta propuesta ya funciona con los datos reales del listado del 21 de octubre de 2026.
+La web que acompaña a esta propuesta, publicada como iniciativa ciudadana independiente, ya funciona con los datos reales del listado del 21 de octubre de 2026.
 
 ## 2. Diagnóstico de la página actual
 
@@ -130,7 +130,7 @@ Un mapa no es accesible por sí solo con lector de pantalla y en el móvil ocupa
 
 - El listado se convierte automáticamente del PDF a datos con `scripts/extraer_establecimientos.py`, que comprueba los totales por provincia.
 - Cada comercio se clasifica por su nombre con reglas revisables. Así se hicieron las 11 categorías; 88 quedan como «Otros comercios».
-- **Coordenadas**: en este prototipo son **por localidad**:
+- **Coordenadas**: por ahora son **por localidad**:
   - 1.550 comercios, con el punto del núcleo urbano (GeoNames);
   - 68, con el centroide del municipio del IGN (pedanías y núcleos pequeños);
   - 5, con el municipio que corresponde a su código postal según el CNIG.
@@ -138,7 +138,7 @@ Un mapa no es accesible por sí solo con lector de pantalla y en el móvil ocupa
   Cada comercio lleva además el código INE de su municipio, para poder buscar por municipio.
 
   Por eso las distancias son aproximadas y en las ciudades todos los comercios aparecen «en esta localidad».
-- **Siguiente paso**: geocodificar cada dirección con **CartoCiudad**, el geocodificador oficial y gratuito del IGN. El script `scripts/geocodificar.mjs --cartociudad` ya lo hace y guarda una caché. No se pudo ejecutar desde el entorno donde se preparó el prototipo porque su red no permitía acceder a ese servicio.
+- **Siguiente paso**: geocodificar cada dirección con **CartoCiudad**, el geocodificador oficial y gratuito del IGN. El script `scripts/geocodificar.mjs --cartociudad` ya lo hace y guarda una caché. No se pudo ejecutar desde el entorno donde se preparó la web porque su red no permitía acceder a ese servicio.
 
 ## 6. Formulario para comercios
 
@@ -148,14 +148,14 @@ Sustituye al PDF rellenable:
 - **Etiquetas visibles, ayudas con ejemplos** («12345678Z», «C/ Mayor, 12») y autocompletado del navegador.
 - **Comprobación al enviar**: letra del DNI/NIE, dígito de control del CIF, móvil, código postal de Castilla y León y que este coincida con la provincia elegida. Los errores aparecen junto a cada campo y en un **resumen con enlaces** que recibe el foco.
 - **La autorización para publicar los datos es una casilla aparte y sin marcar**: el consentimiento debe ser activo. Se explica que sin ella el comercio no aparecerá en el buscador.
-- En el prototipo, al enviar **se abre el correo ya rellenado** para conciliacion.gss@jcyl.es, igual que el proceso actual. También se pueden copiar los datos.
+- En la web actual, al enviar **se abre el correo ya rellenado** para conciliacion.gss@jcyl.es, igual que el proceso actual. También se pueden copiar los datos.
 - **Para la versión definitiva** recomendamos tramitarlo en la **Sede Electrónica** con identificación (Cl@ve o certificado). Así se sustituye la firma del PDF, el comercio recibe acuse de recibo y el alta se incorpora directamente a los datos del listado.
 
 ## 7. Accesibilidad y usabilidad
 
 Objetivo: **WCAG 2.2 nivel AA** (EN 301 549, RD 1112/2018).
 
-| Criterio | Cómo se aplica en el prototipo |
+| Criterio | Cómo se aplica en la web |
 |---|---|
 | Contenido en HTML, no en PDF | Todo el contenido de los PDF está en páginas web. Los PDF solo se enlazan como referencia. |
 | Lenguaje claro | Frases cortas, segunda persona, pasos numerados, un único nombre, palabras de uso común («datáfono», «tecla verde»). |
@@ -169,7 +169,7 @@ Objetivo: **WCAG 2.2 nivel AA** (EN 301 549, RD 1112/2018).
 | Sin dependencia del mapa | La lista contiene toda la información del mapa. |
 | Funciona sin JavaScript | Todo el contenido informativo se lee sin JavaScript. Sin él, el buscador remite al PDF y el formulario se envía por correo. |
 | Imprimible | Las guías «Cómo pagar» y «Para la caja» tienen estilos de impresión. |
-| Privacidad | Sin cookies ni analítica de terceros en el prototipo. La ubicación no se guarda. |
+| Privacidad | Sin cookies ni analítica de terceros. La ubicación no se guarda. |
 | Rendimiento | Sin frameworks ni compilación. La página más pesada (el buscador) carga unos 450 KB de datos sin comprimir (unos 80 KB con gzip). El mapa solo se descarga si se pide. |
 
 **Comprobación**: `npm test` revisa cada página con axe-core (WCAG 2.0, 2.1 y 2.2, niveles A y AA) a 320 px y en escritorio, y prueba el buscador y el formulario con el teclado. **Antes de publicar** hace falta una auditoría manual y pruebas con familias y comercios reales, incluidas personas que usan lectores de pantalla.
@@ -201,7 +201,7 @@ Objetivo: **WCAG 2.2 nivel AA** (EN 301 549, RD 1112/2018).
 - **Altas de comercios colaboradores** por el formulario web.
 - **Tasa de éxito en pruebas con usuarios**: «encuentra una farmacia colaboradora cerca de tu casa», «activa la tarjeta», «¿qué haces si te piden el PIN?».
 
-## 10. Contenido del prototipo
+## 10. Contenido de la web
 
 | Ruta | Qué es |
 |---|---|
