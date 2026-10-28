@@ -429,7 +429,9 @@
       return;
     }
     if (!mapa) {
-      mapa = L.map(mapaEl, { scrollWheelZoom: false }).setView([41.65, -4.72], 7);
+      mapa = L.map(mapaEl).setView([41.65, -4.72], 7);
+      // El nivel de zoom queda en el HTML para poder comprobarlo en las pruebas.
+      mapa.on("zoomend", () => { mapaEl.dataset.zoom = mapa.getZoom(); });
       L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 18,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">colaboradores de OpenStreetMap</a>',

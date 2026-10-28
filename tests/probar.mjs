@@ -192,6 +192,15 @@ console.log("\nBuscador");
   const marcadores = await pagina.$$eval("#mapa .leaflet-marker-icon", (els) => els.length);
   ok(marcadores > 0, `El mapa se carga bajo demanda y muestra ${marcadores} marcadores`);
   ok(await pagina.isVisible("text=Ver en el mapa"), "Con el mapa activo, cada resultado ofrece «Ver en el mapa»");
+  await pagina.waitForSelector("#mapa[data-zoom]");
+  const zoomAntes = Number(await pagina.getAttribute("#mapa", "data-zoom"));
+  await pagina.locator("#mapa").scrollIntoViewIfNeeded();
+  const caja = await pagina.locator("#mapa").boundingBox();
+  await pagina.mouse.move(caja.x + caja.width / 2, caja.y + caja.height / 2);
+  await pagina.mouse.wheel(0, -400);
+  await pagina.waitForFunction((z) => Number(document.querySelector("#mapa").dataset.zoom) > z, zoomAntes, { timeout: 5000 }).catch(() => {});
+  const zoomDespues = Number(await pagina.getAttribute("#mapa", "data-zoom"));
+  ok(zoomDespues > zoomAntes, `La rueda del ratón hace zoom en el mapa (${zoomAntes} → ${zoomDespues})`);
   await pagina.context().close();
 
   // Geolocalización simulada en Valladolid (Plaza Mayor).
