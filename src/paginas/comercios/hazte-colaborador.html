@@ -1,0 +1,199 @@
+<!-- {"titulo": "Hazte colaborador", "descripcion": "Formulario para que un comercio de Castilla y León se haga establecimiento colaborador con la Tarjeta Familia.", "seccion": "comercios", "migas": [["Comercios", "comercios/index.html"]], "scripts": ["assets/js/formulario.js"]} -->
+<div class="contenedor">
+      <h1>Hazte comercio colaborador</h1>
+      <p class="entradilla">Es gratis y voluntario. Tu comercio aparecerá en el buscador de la Tarjeta Familia y en el listado de la Junta de Castilla y León.</p>
+
+      <div class="dos-columnas">
+        <div>
+          <div class="aviso aviso--info">
+            <p><strong>No necesitas ser colaborador para cobrar con la tarjeta.</strong> Basta con que tu datáfono esté en un <a href="sectores.html">sector autorizado</a>. Ser colaborador sirve para que las familias te encuentren.</p>
+            <p>Si tienes varios establecimientos, rellena un formulario por cada uno.</p>
+          </div>
+
+          <div class="resumen-errores" id="resumen-errores" tabindex="-1" hidden>
+            <h2>Revisa estos datos antes de enviar</h2>
+            <ul></ul>
+          </div>
+
+          <form id="form-colaborador" action="mailto:conciliacion.gss@jcyl.es?subject=Alta%20establecimiento%20colaborador%20Tarjeta%20Familia" method="post" enctype="text/plain" novalidate>
+            <p>Los campos marcados con <span class="obligatorio" aria-hidden="true">*</span><span class="visualmente-oculto">asterisco</span> son obligatorios.</p>
+
+            <fieldset>
+              <legend>1. Persona que representa al comercio</legend>
+              <div class="fila-campos">
+                <div class="campo">
+                  <label for="nombre">Nombre <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <input type="text" id="nombre" name="Nombre" autocomplete="given-name" required aria-describedby="error-nombre">
+                  <p class="error-campo" id="error-nombre"></p>
+                </div>
+                <div class="campo">
+                  <label for="apellido1">Primer apellido <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <input type="text" id="apellido1" name="Primer apellido" autocomplete="family-name" required aria-describedby="error-apellido1">
+                  <p class="error-campo" id="error-apellido1"></p>
+                </div>
+                <div class="campo">
+                  <label for="apellido2">Segundo apellido</label>
+                  <input type="text" id="apellido2" name="Segundo apellido" autocomplete="additional-name">
+                </div>
+              </div>
+              <div class="campo">
+                <label for="dni">DNI o NIE <span class="obligatorio" aria-hidden="true">*</span></label>
+                <span class="ayuda-campo" id="ayuda-dni">Con la letra. Por ejemplo: 12345678Z o X1234567L</span>
+                <input type="text" id="dni" name="DNI/NIE" required autocomplete="off" spellcheck="false" aria-describedby="ayuda-dni error-dni" data-validar="dni">
+                <p class="error-campo" id="error-dni"></p>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>2. Empresa</legend>
+              <div class="campo">
+                <label for="razon">Razón social <span class="obligatorio" aria-hidden="true">*</span></label>
+                <span class="ayuda-campo" id="ayuda-razon">El nombre legal de la empresa o, si eres autónomo, tu nombre completo.</span>
+                <input type="text" id="razon" name="Razón social" autocomplete="organization" required aria-describedby="ayuda-razon error-razon">
+                <p class="error-campo" id="error-razon"></p>
+              </div>
+              <div class="campo">
+                <label for="cif">CIF o NIF <span class="obligatorio" aria-hidden="true">*</span></label>
+                <span class="ayuda-campo" id="ayuda-cif">Por ejemplo: B12345678. Si eres autónomo, tu NIF.</span>
+                <input type="text" id="cif" name="CIF" required autocomplete="off" spellcheck="false" aria-describedby="ayuda-cif error-cif" data-validar="cif">
+                <p class="error-campo" id="error-cif"></p>
+              </div>
+              <div class="fila-campos">
+                <div class="campo">
+                  <label for="sector">Sector o actividad <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <select id="sector" name="Sector/Actividad" required aria-describedby="error-sector">
+                    <option value="">Elige uno</option>
+                    <option>Farmacia, parafarmacia u ortopedia</option>
+                    <option>Óptica o audición</option>
+                    <option>Supermercado o alimentación</option>
+                    <option>Droguería o perfumería</option>
+                    <option>Ropa o moda infantil</option>
+                    <option>Calzado</option>
+                    <option>Puericultura</option>
+                    <option>Juguetes, librería o papelería</option>
+                    <option>Salud (clínica, fisioterapia, dentista…)</option>
+                    <option>Hogar o muebles</option>
+                    <option>Educación o cuidado infantil</option>
+                    <option>Otro</option>
+                  </select>
+                  <p class="error-campo" id="error-sector"></p>
+                </div>
+                <div class="campo">
+                  <label for="cnae">Epígrafe CNAE</label>
+                  <span class="ayuda-campo" id="ayuda-cnae">Si lo conoces. Está en tu alta de actividad.</span>
+                  <input type="text" id="cnae" name="Epígrafe CNAE" inputmode="numeric" autocomplete="off" aria-describedby="ayuda-cnae">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>3. Contacto</legend>
+              <div class="campo">
+                <label for="email">Correo electrónico <span class="obligatorio" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="Correo electrónico" autocomplete="email" required aria-describedby="error-email" data-validar="email">
+                <p class="error-campo" id="error-email"></p>
+              </div>
+              <div class="fila-campos">
+                <div class="campo">
+                  <label for="movil">Móvil <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <input type="tel" id="movil" name="Móvil" autocomplete="tel-national" inputmode="tel" required aria-describedby="error-movil" data-validar="movil">
+                  <p class="error-campo" id="error-movil"></p>
+                </div>
+                <div class="campo">
+                  <label for="telefono">Otro teléfono</label>
+                  <input type="tel" id="telefono" name="Teléfono" inputmode="tel" aria-describedby="error-telefono" data-validar="telefono">
+                  <p class="error-campo" id="error-telefono"></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>4. Establecimiento</legend>
+              <p class="ayuda-campo">Estos datos son los que verán las familias en el buscador.</p>
+              <div class="campo">
+                <label for="comercial">Nombre del establecimiento <span class="obligatorio" aria-hidden="true">*</span></label>
+                <span class="ayuda-campo" id="ayuda-comercial">El que aparece en tu rótulo, por ejemplo: Farmacia del Carmen</span>
+                <input type="text" id="comercial" name="Nombre del establecimiento" required aria-describedby="ayuda-comercial error-comercial">
+                <p class="error-campo" id="error-comercial"></p>
+              </div>
+              <div class="campo">
+                <label for="direccion">Dirección <span class="obligatorio" aria-hidden="true">*</span></label>
+                <span class="ayuda-campo" id="ayuda-direccion">Calle y número, por ejemplo: C/ Mayor, 12</span>
+                <input type="text" id="direccion" name="Dirección" autocomplete="street-address" required aria-describedby="ayuda-direccion error-direccion">
+                <p class="error-campo" id="error-direccion"></p>
+              </div>
+              <div class="fila-campos">
+                <div class="campo">
+                  <label for="provincia">Provincia <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <select id="provincia" name="Provincia" required aria-describedby="error-provincia">
+                    <option value="">Elige una</option>
+                    <option value="05">Ávila</option>
+                    <option value="09">Burgos</option>
+                    <option value="24">León</option>
+                    <option value="34">Palencia</option>
+                    <option value="37">Salamanca</option>
+                    <option value="40">Segovia</option>
+                    <option value="42">Soria</option>
+                    <option value="47">Valladolid</option>
+                    <option value="49">Zamora</option>
+                  </select>
+                  <p class="error-campo" id="error-provincia"></p>
+                </div>
+                <div class="campo">
+                  <label for="localidad">Localidad <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <input type="text" id="localidad" name="Localidad" autocomplete="address-level2" required aria-describedby="error-localidad">
+                  <p class="error-campo" id="error-localidad"></p>
+                </div>
+                <div class="campo">
+                  <label for="cp">Código postal <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <input type="text" id="cp" name="C.P." autocomplete="postal-code" inputmode="numeric" maxlength="5" required aria-describedby="error-cp" data-validar="cp">
+                  <p class="error-campo" id="error-cp"></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>5. Declaración y autorización</legend>
+              <div class="campo casilla">
+                <input type="checkbox" id="declaracion" name="Declaración" value="Sí" required aria-describedby="error-declaracion">
+                <label for="declaracion">Declaro que en este establecimiento se cumplen las condiciones de uso de la Tarjeta Familia y se garantiza el consumo responsable según la normativa del Bono Nacimiento, y formalizo su condición de establecimiento colaborador. <span class="obligatorio" aria-hidden="true">*</span></label>
+              </div>
+              <p class="error-campo" id="error-declaracion"></p>
+              <div class="campo casilla">
+                <input type="checkbox" id="publicar" name="Autorizo la publicación" value="Sí">
+                <label for="publicar">Autorizo que se publique en la web de la Junta de Castilla y León (jcyl.es) que soy colaborador, junto con los datos del apartado 4 (establecimiento). <strong>Sin esta autorización tu comercio no aparecerá en el buscador.</strong></label>
+              </div>
+            </fieldset>
+
+            <div class="acciones">
+              <button class="boton boton--comercio" type="submit">Revisar y enviar</button>
+            </div>
+          </form>
+
+          <section id="confirmacion" class="aviso aviso--ok" tabindex="-1" hidden aria-labelledby="titulo-confirmacion">
+            <h2 id="titulo-confirmacion">Ya casi está: envía el correo</h2>
+            <p>Hemos preparado un correo para <strong>conciliacion.gss@jcyl.es</strong> con tus datos. Ábrelo con el botón y pulsa «Enviar» en tu programa de correo.</p>
+            <div class="acciones">
+              <a class="boton boton--comercio" id="enlace-correo" href="mailto:conciliacion.gss@jcyl.es">Abrir mi correo</a>
+              <button class="boton boton--secundario" type="button" id="copiar-datos">Copiar los datos</button>
+              <button class="boton boton--secundario" type="button" id="volver-formulario">Corregir los datos</button>
+            </div>
+            <p role="status" aria-live="polite" id="estado-copia"></p>
+            <h3>Resumen de lo que vas a enviar</h3>
+            <pre class="resumen-envio" id="resumen-envio"></pre>
+          </section>
+        </div>
+
+        <aside class="lateral" aria-labelledby="lateral-colaborador">
+          <h2 id="lateral-colaborador">Qué pasa después</h2>
+          <p>La solicitud llega a la Consejería de Desregulación, Familia y Ayudas Sociales. Si autorizas la publicación, tu comercio se incluirá en el listado de establecimientos colaboradores y en este buscador.</p>
+          <p>Para cualquier duda, escribe a <a href="mailto:conciliacion.gss@jcyl.es">conciliacion.gss@jcyl.es</a>.</p>
+          <figure>
+            <img src="{{raiz}}assets/img/distintivo-aqui.jpg" width="288" height="291" alt="Distintivo: «Establecimiento colaborador. AQUÍ puedes utilizar la Tarjeta Familia»">
+            <figcaption>Distintivo para el escaparate.</figcaption>
+          </figure>
+          <h2>¿Prefieres el formulario en PDF?</h2>
+          <p><a href="../fuentes/formulario-establecimiento-colaborador-2026.pdf">Descargar el formulario original (PDF)</a>. Guárdalo con tus datos y envíalo a <a href="mailto:conciliacion.gss@jcyl.es">conciliacion.gss@jcyl.es</a>.</p>
+        </aside>
+      </div>
+    </div>

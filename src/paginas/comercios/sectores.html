@@ -1,0 +1,25 @@
+<!-- {"titulo": "Sectores autorizados", "descripcion": "Lista de los sectores de actividad en los que se puede pagar con la Tarjeta Familia, con buscador.", "seccion": "comercios", "migas": [["Comercios", "comercios/index.html"]], "scripts": ["assets/js/sectores.js"]} -->
+<div class="contenedor">
+      <h1>Sectores autorizados</h1>
+      <p class="entradilla">La Tarjeta Familia funciona en los comercios cuyo datáfono está registrado en uno de estos {{total_sectores}} sectores, sean o no colaboradores.</p>
+
+      <div class="aviso aviso--info">
+        <p><strong>¿No sabes en qué sector está tu datáfono?</strong> Pregunta a tu banco: puede confirmarte el sector con el que procesa tus cobros.</p>
+        <p>Los códigos son los de la red de pagos: <abbr title="Sector de la red de pagos española">ES</abbr> es el código nacional e <abbr title="Código internacional de categoría de comercio (MCC)">IN</abbr> el internacional (MCC).</p>
+      </div>
+
+      <form class="panel-busqueda no-imprimir" role="search" aria-label="Filtrar sectores" data-filtro-sectores hidden>
+        <div class="campo">
+          <label for="filtro-sector">Busca tu tipo de negocio o tu código</label>
+          <span class="ayuda-campo" id="ayuda-filtro">Por ejemplo: farmacia, juguetes, zapatería o 5912</span>
+          <input type="search" id="filtro-sector" aria-describedby="ayuda-filtro" autocomplete="off">
+        </div>
+        <p role="status" aria-live="polite" data-recuento></p>
+      </form>
+
+      <div data-sectores>
+{{sectores}}
+      </div>
+
+      <p class="aproximada">Fuente: <a href="../fuentes/ramos-autorizados-2024-06-25.pdf">Ramos o sectores de actividad en los que puede operar la Tarjeta Familia (PDF, 25 de junio de 2024)</a>. Algunas descripciones aparecen cortadas en el documento original.</p>
+    </div>

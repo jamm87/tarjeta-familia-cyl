@@ -1,0 +1,125 @@
+{
+ "duplicados": [
+  {
+   "nombre": "Farmacia Maria Mellado Alcedo",
+   "direccion": "Plaza de la Rinconada 2",
+   "seccionesDelPdf": [
+    "Ávila",
+    "León",
+    "Salamanca",
+    "Valladolid"
+   ]
+  },
+  {
+   "nombre": "Supermercados Lupa",
+   "direccion": "C/ Luis Ulloa Pereira, Nº 6-8",
+   "seccionesDelPdf": [
+    "Zamora",
+    "Zamora"
+   ]
+  },
+  {
+   "nombre": "Supermercados Lupa",
+   "direccion": "C/Obispo Nieto, 5-7",
+   "seccionesDelPdf": [
+    "Zamora",
+    "Zamora"
+   ]
+  }
+ ],
+ "provinciaDistintaDelCP": [
+  {
+   "nombre": "NAVARRO MODA INFANTIL Y MERCERIA",
+   "localidad": "Segovia",
+   "seccion": "Segovia",
+   "cp": "42005"
+  }
+ ],
+ "sinCoordenadas": [
+  {
+   "id": 474,
+   "nombre": "FARMACIA AMOR MARIA LOPEZ GONZALEZ",
+   "localidad": "Barrientos de la Vega",
+   "cp": "24394",
+   "provincia": "León"
+  },
+  {
+   "id": 527,
+   "nombre": "FARMACIA JOSE LUIS MORENO CARRILLO",
+   "localidad": "Miñambres de la Valduerna",
+   "cp": "24765",
+   "provincia": "León"
+  },
+  {
+   "id": 716,
+   "nombre": "FARMACIA RAFAEL LUCAS SÁNCHEZ",
+   "localidad": "Cascon de la Nava",
+   "cp": "34170",
+   "provincia": "Palencia"
+  },
+  {
+   "id": 737,
+   "nombre": "FARMACIA AUREA SALVADOR",
+   "localidad": "Quintanilla del Puente",
+   "cp": "34250",
+   "provincia": "Palencia"
+  }
+ ],
+ "nombresCorregidos": {
+  "Avila": "Ávila",
+  "Villaverde de Iscar": "Villaverde de Íscar",
+  "El Barco de Avila": "El Barco de Ávila",
+  "Lanzahita": "Lanzahíta",
+  "Las Navas del Marques": "Las Navas del Marqués",
+  "Mombeltran": "Mombeltrán",
+  "Pedro Rodriguez": "Pedro-Rodríguez",
+  "Piedrahita": "Piedrahíta",
+  "Santa Mª del Berrocal": "Santa María del Berrocal",
+  "Bugos": "Burgos",
+  "Arcos de la Llana": "Arcos",
+  "La Puebla de Arganzon": "La Puebla de Arganzón",
+  "Roa de Duero": "Roa",
+  "Treviño": "Condado de Treviño",
+  "Villalvilla de Burgos": "Villalbilla de Burgos",
+  "Villarcayo de M. C.v.": "Villarcayo de Merindad de Castilla la Vieja",
+  "Villarcayo": "Villarcayo de Merindad de Castilla la Vieja",
+  "Leon": "León",
+  "Benavides de Orbigo": "Benavides",
+  "Carrizo": "Carrizo de la Ribera",
+  "San Justo de L A Vega": "San Justo de la Vega",
+  "Valencia Don Juan": "Valencia de Don Juan",
+  "Villamanin": "Villamanín",
+  "Virgen del Camino": "La Virgen del Camino",
+  "Aguilar de Campoó": "Aguilar de Campoo",
+  "Alar de Lrey": "Alar del Rey",
+  "Carrion de los Condes": "Carrión de los Condes",
+  "Osorno": "Osorno la Mayor",
+  "Velilla del Rio Carrion": "Velilla del Río Carrión",
+  "Sancti-Spiritus": "Sancti-Spíritus",
+  "Cuellar": "Cuéllar",
+  "Fuentesauco de Fuentidueña": "Fuentesaúco de Fuentidueña",
+  "Agreda": "Ágreda",
+  "Arcos de Jalon": "Arcos de Jalón",
+  "Burgo de Osma": "El Burgo de Osma",
+  "Los Rabanos": "Los Rábanos",
+  "Olvega": "Ólvega",
+  "San Leonardo de Yague": "San Leonardo de Yagüe",
+  "Seron de Nagima": "Serón de Nágima",
+  "Casasola de Arion": "Casasola de Arión",
+  "Cistérniga": "La Cistérniga",
+  "El Carpio del Campo": "Carpio",
+  "Iscar": "Íscar",
+  "La Cistérnica": "La Cistérniga",
+  "Mayorga de Campos": "Mayorga",
+  "Mota del Marques": "Mota del Marqués",
+  "Pedraja de Portillo (la)": "La Pedraja de Portillo",
+  "Torrelobaton": "Torrelobatón",
+  "Villabañez": "Villabáñez",
+  "Villabragima": "Villabrágima",
+  "Villafrechos": "Villafrechós",
+  "Villalon de Campos": "Villalón de Campos",
+  "Corrales del Viuno": "Corrales del Vino",
+  "Fuentesauco": "Fuentesaúco",
+  "Santibañez de Vidriales": "Santibáñez de Vidriales"
+ }
+}

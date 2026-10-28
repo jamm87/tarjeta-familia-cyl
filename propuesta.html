@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre esta propuesta · Tarjeta Familia Castilla y León</title>
+  <meta name="description" content="Propuesta de arquitectura de la información, buscador de comercios y criterios de accesibilidad para la web de la Tarjeta Familia.">
+  <meta name="theme-color" content="#b0141d">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/estilos.css">
+  <script src="assets/js/comun.js" defer></script>
+  
+  
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <p class="prototipo">Prototipo de propuesta. <strong>No es una web oficial</strong> de la Junta de Castilla y León.</p>
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="index.html">
+        <img src="assets/img/tarjeta-familia.jpg" alt="" width="56" height="44">
+        <span>Tarjeta Familia <small>Castilla y León</small></span>
+      </a>
+      <nav class="nav-principal" aria-label="Principal">
+        <ul>
+          <li><a href="familias/">Familias</a></li>
+          <li><a href="comercios/">Comercios</a></li>
+          <li><a href="buscar/">Dónde usarla</a></li>
+          <li><a href="ayuda.html">Ayuda</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+    <nav class="migas contenedor" aria-label="Estás aquí">
+      <ol>
+        <li><a href="index.html">Inicio</a></li>
+        <li aria-current="page">Sobre esta propuesta</li>
+      </ol>
+    </nav>
+    <div class="contenedor lectura propuesta">
+<h1>Propuesta: la información de la Tarjeta Familia, en la web y no en PDF</h1>
+<p><strong>Para:</strong> Consejería de Desregulación, Familia y Ayudas Sociales, Junta de Castilla y León
+<strong>Qué incluye:</strong> diagnóstico, arquitectura de la información, diseño del buscador de comercios, criterios de accesibilidad y usabilidad, y un prototipo navegable con el contenido real.
+<strong>Fecha:</strong> octubre de 2026</p>
+<hr />
+<h2>1. Resumen</h2>
+<p>La página actual de la Tarjeta Familia en jcyl.es explica qué es la tarjeta en unos pocos párrafos, pero <strong>todo lo que una familia o un comercio necesita hacer está en 7 PDF</strong>: activar la tarjeta, comprobar la activación, consultar el saldo, las condiciones de uso, los sectores autorizados, el formulario para comercios y el listado de 1.628 establecimientos en 41 páginas.</p>
+<p>Proponemos:</p>
+<ol>
+<li><strong>Volcar todo el contenido en páginas web</strong>, organizadas por lo que cada persona quiere hacer y no por documentos.</li>
+<li><strong>Dos itinerarios claros desde la portada</strong>: «Tengo la Tarjeta Familia» (familias) y «Tengo un comercio» (establecimientos).</li>
+<li><strong>Un buscador de comercios cercanos</strong>, por localidad, código postal o ubicación, con lista accesible y mapa opcional. Sustituye al PDF de 41 páginas.</li>
+<li><strong>Un formulario web accesible para que los comercios se den de alta</strong>, en lugar del PDF que hay que abrir con Acrobat.</li>
+<li><strong>Cumplir WCAG 2.2 AA</strong>, obligatorio para el sector público (RD 1112/2018, norma EN 301 549).</li>
+</ol>
+<p>El prototipo que acompaña a esta propuesta ya funciona con los datos reales del listado del 21 de octubre de 2026.</p>
+<h2>2. Diagnóstico de la página actual</h2>
+<div class="tabla-scroll" tabindex="0" role="region" aria-label="Tabla (se puede desplazar)"><table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>Por qué importa</th>
+<th>Evidencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>La información está en PDF</td>
+<td>En el móvil hay que descargar, ampliar y desplazarse. Los PDF no están etiquetados, así que los lectores de pantalla no los leen bien.</td>
+<td>7 PDF enlazados desde la página</td>
+</tr>
+<tr>
+<td>Buscar un comercio cercano es inviable</td>
+<td>Hay que recorrer 41 páginas ordenadas por provincia y localidad, sin buscador ni distancias.</td>
+<td>Listado de 1.628 filas</td>
+</tr>
+<tr>
+<td>El mensaje más útil está escondido</td>
+<td>La tarjeta <strong>también funciona en comercios no adheridos</strong> de un sector autorizado, pero solo se dice en un párrafo del bloque para comercios. Muchas familias creen que solo pueden usarla en el listado.</td>
+<td>Página actual, apartado «¿En qué tipo de establecimientos…?»</td>
+</tr>
+<tr>
+<td>Las instrucciones clave están repartidas</td>
+<td>Sin PIN (se pulsa la tecla verde), sin pago sin contacto, sin compras online, guardar los tiques 6 meses, avisar de un robo antes de 24 h… Cada dato está en un documento distinto.</td>
+<td>Condiciones de uso y guías de MoneyToPay</td>
+</tr>
+<tr>
+<td>Nombres confusos</td>
+<td>Las guías de MoneyToPay hablan de «Tarjeta Regalo» y «Tarjeta Empresa». La familia no sabe si es su tarjeta.</td>
+<td>Guías de registro y de saldo</td>
+</tr>
+<tr>
+<td>El aviso «puede que desde el móvil no pueda completar toda la operativa» solo aparece al final de un PDF</td>
+<td>Quien lo intenta desde el móvil se atasca sin saber por qué.</td>
+<td>«Compruebe que ha vinculado…»</td>
+</tr>
+<tr>
+<td>El formulario para comercios exige Acrobat</td>
+<td>El PDF rellenable no se puede completar en el móvil ni en muchos navegadores, y hay que guardarlo y adjuntarlo a mano.</td>
+<td>Aviso en la página actual</td>
+</tr>
+<tr>
+<td>Los sectores están en códigos</td>
+<td>«5912-ES», «8351-IN»… Un comerciante no sabe si su negocio está incluido.</td>
+<td>PDF de ramos autorizados</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Calidad de los datos del listado</h3>
+<p>Al convertir el listado a datos hemos encontrado estos problemas (detalle en <code>data/incidencias-listado.json</code>):</p>
+<ul>
+<li><strong>El resumen por provincias no cuadra con el listado.</strong> La última página suma 1.644 establecimientos, pero el listado tiene 1.628 filas (Palencia 115 frente a 119; Salamanca 129 frente a 131; Segovia 78 frente a 80; Valladolid 478 frente a 486).</li>
+<li><strong>Duplicados.</strong> Una farmacia de Villaverde de Íscar (Segovia) aparece en las secciones de Ávila, León, Salamanca y Valladolid. Hay dos supermercados repetidos en Zamora. Quedan 1.623 establecimientos únicos.</li>
+<li><strong>Localidades escritas de varias formas</strong>: «Avila» y «Ávila», «Leon» y «León», «Bugos», «La Cistérnica», «Corrales del Viuno», «Villarcayo de M. C.v.»… Hemos normalizado 47 nombres con el nomenclátor del IGN.</li>
+<li><strong>Un código postal que no corresponde a su provincia</strong> (un comercio de Segovia con CP 42005, que es de Soria).</li>
+<li><strong>Textos cortados por el ancho de la celda</strong>: localidades, nombres y direcciones que no caben y se solapan con la columna siguiente.</li>
+<li><strong>Sin coordenadas ni categoría</strong>: el listado no permite buscar por cercanía ni por tipo de comercio.</li>
+</ul>
+<p><strong>Recomendación:</strong> que el listado se mantenga como <strong>datos</strong> (una hoja de cálculo o base de datos con campos normalizados) y que el PDF, si se mantiene, se genere a partir de ellos. Se puede publicar además como <strong>datos abiertos</strong> en el portal de la Junta.</p>
+<h2>3. Quién usa la información y para qué</h2>
+<h3>Familias (beneficiarias del Bono Nacimiento)</h3>
+<p>Suelen consultar desde el <strong>móvil</strong>, con prisa y a menudo con un bebé en brazos. Sus tareas, por orden de frecuencia:</p>
+<ol>
+<li><strong>¿Dónde puedo usarla cerca de mí?</strong> Es la más frecuente y hoy la peor resuelta.</li>
+<li><strong>Acabo de recibirla, ¿qué hago?</strong> (activar).</li>
+<li><strong>Estoy en la caja y no funciona / me pide el PIN.</strong></li>
+<li><strong>¿Cuánto saldo me queda?</strong></li>
+<li><strong>¿Qué puedo comprar?</strong> ¿Y los tiques?</li>
+<li><strong>La he perdido / me la han robado.</strong></li>
+</ol>
+<h3>Comercios</h3>
+<p>Normalmente el titular o el personal de caja. Sus tareas:</p>
+<ol>
+<li><strong>Una familia quiere pagar con la tarjeta: ¿puedo cobrarla?</strong> (depende del sector del datáfono, no de estar adherido).</li>
+<li><strong>¿Cómo se cobra?</strong> (banda, tecla verde, firma).</li>
+<li><strong>Quiero aparecer en el listado</strong>: darse de alta como colaborador.</li>
+</ol>
+<h2>4. Arquitectura de la información</h2>
+<pre tabindex="0" role="region" aria-label="Esquema (se puede desplazar)"><code>Inicio
+├── Buscador destacado: «¿Dónde puedo usar mi tarjeta?» (localidad, CP o ubicación)
+├── Lo esencial en 30 segundos (5 reglas de uso)
+│
+├── TENGO LA TARJETA FAMILIA (familias/)
+│   ├── 1. Activa tu tarjeta ............ registro → vincular → comprobar (3 partes, 11 pasos)
+│   ├── 2. Cómo pagar ................... en la caja paso a paso + resumen sí/no (imprimible)
+│   ├── 3. Dónde usarla ................. → buscador
+│   ├── Qué puedes comprar y dónde ...... productos, colaboradores frente a sector autorizado, tiques
+│   ├── Consulta tu saldo ............... 3 opciones
+│   ├── Pérdida, robo y otros problemas . robo (destacado) + desplegables por problema
+│   ├── Qué es la Tarjeta Familia ....... Bono Nacimiento, emisor, aviso «Tarjeta Regalo/Empresa», datos
+│   └── Preguntas frecuentes
+│
+├── TENGO UN COMERCIO (comercios/)
+│   ├── ¿Puedo cobrar? .................. sí, si el datáfono está en un sector autorizado (en la portada de la sección)
+│   ├── Sectores autorizados ............ 116 sectores agrupados en 7 grupos legibles, con buscador
+│   ├── Guía para la caja ............... una página imprimible para tener junto al datáfono
+│   └── Hazte colaborador ............... ventajas + formulario web accesible + distintivo
+│
+├── DÓNDE USARLA (buscar/) ............... buscador de comercios (lista + mapa opcional)
+├── AYUDA ............................... tabla «si necesitas… contacta con…» + todos los contactos
+└── Accesibilidad · Documentos originales
+</code></pre>
+<h3>Decisiones clave</h3>
+<ul>
+<li><strong>Por tareas, no por documentos.</strong> Cada página responde a una pregunta («¿Cómo pago?») y no reproduce un documento («Condiciones de uso»). El contenido de las condiciones se reparte entre «Qué es», «Cómo pagar», «Qué comprar» y «Problemas».</li>
+<li><strong>Los pasos de activación, en orden y numerados</strong>, con lo que hay que tener a mano y el aviso «usa un ordenador» <strong>antes</strong> de empezar, no al final.</li>
+<li><strong>Un solo nombre: «Tarjeta Familia».</strong> Se explica una vez que MoneyToPay la llama «Tarjeta Regalo» o «Tarjeta Empresa», justo donde aparece.</li>
+<li><strong>El mensaje «también en comercios no adheridos»</strong> se repite donde hace falta: portada del buscador, «Qué comprar», preguntas frecuentes y sección de comercios.</li>
+<li><strong>Teléfonos según el problema.</strong> Hay tres entidades (CaixaBank, MoneyToPay y la Consejería) y la familia no tiene por qué saber cuál le toca. La página de ayuda empieza por «si necesitas… contacta con…».</li>
+<li><strong>El robo, destacado.</strong> Tiene un plazo legal (24 horas) y por eso va primero y resaltado en «Problemas».</li>
+<li><strong>Los PDF originales pasan a segundo plano</strong>: se enlazan como referencia, nunca como única fuente.</li>
+</ul>
+<h2>5. El buscador de comercios</h2>
+<p>Es la pieza que más mejora la experiencia de las familias.</p>
+<h3>Cómo funciona</h3>
+<ol>
+<li><strong>¿Dónde estás?</strong> Hay tres formas, y todas dan el mismo resultado:</li>
+<li>escribir la <strong>localidad</strong> (con sugerencias al teclear de las 2.285 localidades de Castilla y León, tengan o no comercios);</li>
+<li>escribir el <strong>código postal</strong>;</li>
+<li>pulsar <strong>«Usar mi ubicación»</strong>. Se pide permiso al navegador solo al pulsar, y la ubicación no se guarda ni se envía.</li>
+<li><strong>Filtros</strong>: tipo de comercio (11 categorías: farmacia, supermercado, ropa infantil, óptica…), distancia (5, 10, 25 o 50 km, o toda la comunidad) y nombre o calle.</li>
+<li><strong>Resultados en lista, ordenados por distancia.</strong> Cada comercio muestra el nombre, el tipo, la distancia, la dirección y «Cómo llegar». Se cargan de 20 en 20.</li>
+<li><strong>Mapa opcional</strong> («Lista y mapa»). Agrupa los comercios de cada localidad en un marcador con el número. Si no hay resultados, propone ampliar la distancia y recuerda que hay más comercios en los sectores autorizados.</li>
+<li><strong>La búsqueda queda en la dirección de la página</strong> (<code>?q=Arévalo&amp;cat=farmacia</code>), así que se puede guardar o compartir.</li>
+</ol>
+<h3>Por qué la lista va primero y el mapa es opcional</h3>
+<p>Un mapa no es accesible por sí solo con lector de pantalla y en el móvil ocupa toda la pantalla. La lista contiene <strong>toda</strong> la información y se anuncia («23 comercios de farmacia a menos de 10 km de Arévalo»). El mapa la complementa y no la sustituye.</p>
+<h3>Datos y precisión</h3>
+<ul>
+<li>El listado se convierte automáticamente del PDF a datos con <code>scripts/extraer_establecimientos.py</code>, que comprueba los totales por provincia.</li>
+<li>Cada comercio se clasifica por su nombre con reglas revisables. Así se hicieron las 11 categorías; 88 quedan como «Otros comercios».</li>
+<li><strong>Coordenadas</strong>: en este prototipo son <strong>por localidad</strong>:</li>
+<li>1.550 comercios, con el punto del núcleo urbano (GeoNames);</li>
+<li>68, con el centroide del municipio del IGN (pedanías y núcleos pequeños);</li>
+<li>1, con el de su código postal;</li>
+<li>4 pedanías no se han podido situar con seguridad y no se han inventado.</li>
+</ul>
+<p>Por eso las distancias son aproximadas y en las ciudades todos los comercios aparecen «en esta localidad».
+- <strong>Siguiente paso</strong>: geocodificar cada dirección con <strong>CartoCiudad</strong>, el geocodificador oficial y gratuito del IGN. El script <code>scripts/geocodificar.mjs --cartociudad</code> ya lo hace y guarda una caché. No se pudo ejecutar desde el entorno donde se preparó el prototipo porque su red no permitía acceder a ese servicio.</p>
+<h2>6. Formulario para comercios</h2>
+<p>Sustituye al PDF rellenable:</p>
+<ul>
+<li><strong>Los mismos campos que el PDF</strong>, agrupados en 5 bloques: representante, empresa, contacto, establecimiento y declaración.</li>
+<li><strong>Etiquetas visibles, ayudas con ejemplos</strong> («12345678Z», «C/ Mayor, 12») y autocompletado del navegador.</li>
+<li><strong>Comprobación al enviar</strong>: letra del DNI/NIE, dígito de control del CIF, móvil, código postal de Castilla y León y que este coincida con la provincia elegida. Los errores aparecen junto a cada campo y en un <strong>resumen con enlaces</strong> que recibe el foco.</li>
+<li><strong>La autorización para publicar los datos es una casilla aparte y sin marcar</strong>: el consentimiento debe ser activo. Se explica que sin ella el comercio no aparecerá en el buscador.</li>
+<li>En el prototipo, al enviar <strong>se abre el correo ya rellenado</strong> para conciliacion.gss@jcyl.es, igual que el proceso actual. También se pueden copiar los datos.</li>
+<li><strong>Para la versión definitiva</strong> recomendamos tramitarlo en la <strong>Sede Electrónica</strong> con identificación (Cl@ve o certificado). Así se sustituye la firma del PDF, el comercio recibe acuse de recibo y el alta se incorpora directamente a los datos del listado.</li>
+</ul>
+<h2>7. Accesibilidad y usabilidad</h2>
+<p>Objetivo: <strong>WCAG 2.2 nivel AA</strong> (EN 301 549, RD 1112/2018).</p>
+<div class="tabla-scroll" tabindex="0" role="region" aria-label="Tabla (se puede desplazar)"><table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th>Cómo se aplica en el prototipo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Contenido en HTML, no en PDF</td>
+<td>Todo el contenido de los PDF está en páginas web. Los PDF solo se enlazan como referencia.</td>
+</tr>
+<tr>
+<td>Lenguaje claro</td>
+<td>Frases cortas, segunda persona, pasos numerados, un único nombre, palabras de uso común («datáfono», «tecla verde»).</td>
+</tr>
+<tr>
+<td>Estructura semántica</td>
+<td>Un <code>h1</code> por página, jerarquía de encabezados, regiones (<code>header</code>, <code>nav</code>, <code>main</code>, <code>footer</code>), migas de pan y enlace «Saltar al contenido».</td>
+</tr>
+<tr>
+<td>Teclado</td>
+<td>Todo se puede usar con teclado. El foco es visible (3 px) y se mueve a los resultados o a los errores cuando cambian.</td>
+</tr>
+<tr>
+<td>Lectores de pantalla</td>
+<td>Avisos de estado (<code>role="status"</code>) para los resultados y la ubicación, sugerencias con el patrón <em>combobox</em> de ARIA 1.2 y errores asociados con <code>aria-describedby</code>.</td>
+</tr>
+<tr>
+<td>Contraste y tamaño</td>
+<td>Texto base de 18 px. Contraste de al menos 4,5:1 en texto y 3:1 en bordes de campos. Nada depende solo del color (los iconos ✓ ✕ ! llevan texto).</td>
+</tr>
+<tr>
+<td>Móvil primero</td>
+<td>Diseño a una columna que se amplía. Sin desplazamiento horizontal a 320 px. Zonas táctiles de al menos 44 px.</td>
+</tr>
+<tr>
+<td>Zoom y reflow</td>
+<td>Se puede ampliar al 200 % sin perder contenido. Las unidades son relativas.</td>
+</tr>
+<tr>
+<td>Movimiento</td>
+<td>Respeta <code>prefers-reduced-motion</code>.</td>
+</tr>
+<tr>
+<td>Sin dependencia del mapa</td>
+<td>La lista contiene toda la información del mapa.</td>
+</tr>
+<tr>
+<td>Funciona sin JavaScript</td>
+<td>Todo el contenido informativo se lee sin JavaScript. Sin él, el buscador remite al PDF y el formulario se envía por correo.</td>
+</tr>
+<tr>
+<td>Imprimible</td>
+<td>Las guías «Cómo pagar» y «Para la caja» tienen estilos de impresión.</td>
+</tr>
+<tr>
+<td>Privacidad</td>
+<td>Sin cookies ni analítica de terceros en el prototipo. La ubicación no se guarda.</td>
+</tr>
+<tr>
+<td>Rendimiento</td>
+<td>Sin frameworks ni compilación. La página más pesada (el buscador) carga unos 450 KB de datos sin comprimir (unos 80 KB con gzip). El mapa solo se descarga si se pide.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Comprobación</strong>: <code>npm test</code> revisa cada página con axe-core (WCAG 2.0, 2.1 y 2.2, niveles A y AA) a 320 px y en escritorio, y prueba el buscador y el formulario con el teclado. <strong>Antes de publicar</strong> hace falta una auditoría manual y pruebas con familias y comercios reales, incluidas personas que usan lectores de pantalla.</p>
+<h2>8. Hoja de ruta</h2>
+<div class="tabla-scroll" tabindex="0" role="region" aria-label="Tabla (se puede desplazar)"><table>
+<thead>
+<tr>
+<th>Fase</th>
+<th>Qué</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Contenido (inmediato)</td>
+<td>Publicar en jcyl.es las páginas de familias y comercios con el contenido de esta propuesta</td>
+<td>Fin de la dependencia de los PDF</td>
+</tr>
+<tr>
+<td>2. Buscador</td>
+<td>Geocodificar las direcciones con CartoCiudad, publicar el buscador y mantener el listado como datos (CSV o base de datos)</td>
+<td>Búsqueda por cercanía real</td>
+</tr>
+<tr>
+<td>3. Altas</td>
+<td>Formulario en la Sede Electrónica que alimente directamente el listado</td>
+<td>Altas sin papel, listado siempre al día</td>
+</tr>
+<tr>
+<td>4. Datos abiertos</td>
+<td>Publicar el listado (con coordenadas y categorías) en el portal de datos abiertos</td>
+<td>Reutilización por apps y ayuntamientos</td>
+</tr>
+<tr>
+<td>5. Mejora continua</td>
+<td>Pruebas con usuarios, analítica respetuosa con la privacidad y revisión del contenido con MoneyToPay y CaixaBank</td>
+<td>Menos llamadas y menos incidencias</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Cosas que conviene confirmar con MoneyToPay y CaixaBank</h3>
+<ul>
+<li><strong>Horario de MoneyToPay.</strong> El mismo documento dice «24 h al día, 365 días» y «de lunes a viernes de 8 a 17 horas».</li>
+<li><strong>Si la familia puede ver o cambiar en la web de MoneyToPay el nombre «Tarjeta Regalo/Empresa».</strong> Si no, si se puede pedir que aparezca como «Tarjeta Familia».</li>
+<li><strong>Si, al devolver un producto, el importe vuelve a la tarjeta.</strong> Las condiciones solo dicen que no se devuelve en efectivo.</li>
+<li><strong>Las 4 pedanías que no hemos podido situar en su municipio:</strong> Barrientos de la Vega, Miñambres de la Valduerna, Cascón de la Nava y Quintanilla del Puente.</li>
+</ul>
+<h2>9. Métricas para medir la mejora</h2>
+<ul>
+<li><strong>Llamadas y correos de consulta</strong> sobre activación, sobre dónde usar la tarjeta y sobre el PIN, antes y después.</li>
+<li><strong>Uso del buscador</strong>: búsquedas, búsquedas sin resultados y uso de la ubicación.</li>
+<li><strong>Descargas de los PDF</strong>: deberían caer casi a cero.</li>
+<li><strong>Altas de comercios colaboradores</strong> por el formulario web.</li>
+<li><strong>Tasa de éxito en pruebas con usuarios</strong>: «encuentra una farmacia colaboradora cerca de tu casa», «activa la tarjeta», «¿qué haces si te piden el PIN?».</li>
+</ul>
+<h2>10. Contenido del prototipo</h2>
+<div class="tabla-scroll" tabindex="0" role="region" aria-label="Tabla (se puede desplazar)"><table>
+<thead>
+<tr>
+<th>Ruta</th>
+<th>Qué es</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>index.html</code></td>
+<td>Portada</td>
+</tr>
+<tr>
+<td><code>familias/</code></td>
+<td>8 páginas para familias</td>
+</tr>
+<tr>
+<td><code>comercios/</code></td>
+<td>4 páginas para comercios, con el formulario</td>
+</tr>
+<tr>
+<td><code>buscar/</code></td>
+<td>Buscador de comercios</td>
+</tr>
+<tr>
+<td><code>ayuda.html</code>, <code>accesibilidad.html</code>, <code>fuentes/</code></td>
+<td>Ayuda, declaración de accesibilidad y documentos originales</td>
+</tr>
+<tr>
+<td><code>data/</code></td>
+<td>Datos extraídos: establecimientos, localidades, sectores e incidencias</td>
+</tr>
+<tr>
+<td><code>scripts/</code></td>
+<td>Extracción del PDF, geocodificación y generación de páginas</td>
+</tr>
+<tr>
+<td><code>src/</code></td>
+<td>Contenido de las páginas (se edita aquí y se regenera)</td>
+</tr>
+<tr>
+<td><code>tests/</code></td>
+<td>Pruebas de accesibilidad y funcionamiento</td>
+</tr>
+</tbody>
+</table></div>
+<p>Cómo verlo y cómo actualizar los datos: ver <code>README.md</code>.</p>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="columnas">
+        <section aria-labelledby="pie-familias">
+          <h2 id="pie-familias">Para familias</h2>
+          <ul>
+            <li><a href="familias/activar.html">Activar la tarjeta</a></li>
+            <li><a href="familias/pagar.html">Cómo pagar</a></li>
+            <li><a href="buscar/index.html">Dónde usarla</a></li>
+            <li><a href="familias/saldo.html">Consultar el saldo</a></li>
+            <li><a href="familias/problemas.html">Pérdida, robo y problemas</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="pie-comercios">
+          <h2 id="pie-comercios">Para comercios</h2>
+          <ul>
+            <li><a href="comercios/index.html">¿Puedo cobrar con la tarjeta?</a></li>
+            <li><a href="comercios/sectores.html">Sectores autorizados</a></li>
+            <li><a href="comercios/como-cobrar.html">Guía para la caja</a></li>
+            <li><a href="comercios/hazte-colaborador.html">Hazte colaborador</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="pie-ayuda">
+          <h2 id="pie-ayuda">Ayuda</h2>
+          <ul>
+            <li>Robo o pérdida: <a href="tel:900404090">900 40 40 90</a> (CaixaBank, gratuito)</li>
+            <li>Activación y saldo: <a href="tel:900300300">900 300 300</a> (MoneyToPay, gratuito)</li>
+            <li>Información general: <a href="tel:012">012</a></li>
+            <li><a href="mailto:conciliacion.gss@jcyl.es">conciliacion.gss@jcyl.es</a></li>
+            <li><a href="ayuda.html">Todos los contactos</a></li>
+          </ul>
+        </section>
+      </div>
+      <p class="nota">
+        Contenido elaborado a partir de los documentos públicos de la Consejería de Desregulación, Familia y Ayudas Sociales
+        (<a href="fuentes/index.html">ver documentos originales</a>).
+        <a href="accesibilidad.html">Accesibilidad</a> ·
+        <a href="propuesta.html">Sobre esta propuesta</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

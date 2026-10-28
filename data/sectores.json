@@ -1,0 +1,733 @@
+{
+ "fuente": "ramos-autorizados-2024-06-25.pdf",
+ "fecha": "2024-06-25",
+ "total": 116,
+ "grupos": [
+  {
+   "id": "alimentacion",
+   "nombre": "Supermercados y alimentación"
+  },
+  {
+   "id": "salud",
+   "nombre": "Farmacia, salud y óptica"
+  },
+  {
+   "id": "ropa",
+   "nombre": "Ropa, calzado y textil"
+  },
+  {
+   "id": "juguetes",
+   "nombre": "Juguetes, libros, música y deporte"
+  },
+  {
+   "id": "hogar",
+   "nombre": "Hogar, muebles y electrodomésticos"
+  },
+  {
+   "id": "educacion",
+   "nombre": "Educación y cuidado infantil"
+  },
+  {
+   "id": "grandes",
+   "nombre": "Grandes almacenes y grandes superficies"
+  }
+ ],
+ "sectores": [
+  {
+   "codigo": "1403",
+   "ambito": "ES",
+   "descripcion": "Ahorramás",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "1342",
+   "ambito": "ES",
+   "descripcion": "Ahorramas Franquicias y Distribuidores u",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "5335",
+   "ambito": "ES",
+   "descripcion": "Alcampo",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "1363",
+   "ambito": "ES",
+   "descripcion": "Alcampo Franquicias",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "1370",
+   "ambito": "ES",
+   "descripcion": "ALDI",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "1336",
+   "ambito": "ES",
+   "descripcion": "Alimerka",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "5131",
+   "ambito": "IN",
+   "descripcion": "Artículos de mercería",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "5957",
+   "ambito": "ES",
+   "descripcion": "C&A",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "8351",
+   "ambito": "IN",
+   "descripcion": "Child care services",
+   "grupo": "educacion"
+  },
+  {
+   "codigo": "8244",
+   "ambito": "ES",
+   "descripcion": "Colegios y academias de enseñanza profesional, aut…",
+   "grupo": "educacion"
+  },
+  {
+   "codigo": "8220",
+   "ambito": "IN",
+   "descripcion": "Colegios y centros de enseñanza reglada",
+   "grupo": "educacion"
+  },
+  {
+   "codigo": "5611",
+   "ambito": "ES",
+   "descripcion": "Confección textil en general",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "5611",
+   "ambito": "IN",
+   "descripcion": "Confección textil en general",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "1411",
+   "ambito": "ES",
+   "descripcion": "Consum",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "1366",
+   "ambito": "ES",
+   "descripcion": "Consum Franquicias",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "5952",
+   "ambito": "ES",
+   "descripcion": "Cortefiel (cadena)",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "1493",
+   "ambito": "ES",
+   "descripcion": "Decathlon",
+   "grupo": "juguetes"
+  },
+  {
+   "codigo": "8021",
+   "ambito": "IN",
+   "descripcion": "Dentist, orthodontist",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "8021",
+   "ambito": "ES",
+   "descripcion": "Dentistas y ortodoncistas",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "5047",
+   "ambito": "IN",
+   "descripcion": "Dentistas/laboratorios/medicinas/existencias y equ…",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "1358",
+   "ambito": "ES",
+   "descripcion": "Desigual",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "1353",
+   "ambito": "ES",
+   "descripcion": "DIA",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "1354",
+   "ambito": "ES",
+   "descripcion": "DIA (Franquicias)",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "5911",
+   "ambito": "IN",
+   "descripcion": "Droguerías y perfumerías",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "5912",
+   "ambito": "IN",
+   "descripcion": "Droguerías y farmacias",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "5722",
+   "ambito": "ES",
+   "descripcion": "Electrodomésticos, equipos eléctricos y máquinas e…",
+   "grupo": "hogar"
+  },
+  {
+   "codigo": "5722",
+   "ambito": "IN",
+   "descripcion": "Electrodomésticos, equipos eléctricos y máquinas e…",
+   "grupo": "hogar"
+  },
+  {
+   "codigo": "5310",
+   "ambito": "IN",
+   "descripcion": "Economatos",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "5959",
+   "ambito": "ES",
+   "descripcion": "El Corte Inglés",
+   "grupo": "grandes"
+  },
+  {
+   "codigo": "1415",
+   "ambito": "ES",
+   "descripcion": "Eroski",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "1362",
+   "ambito": "ES",
+   "descripcion": "Eroski Franquicias",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "8211",
+   "ambito": "ES",
+   "descripcion": "Escuela elemental e institutos de bachillerato",
+   "grupo": "educacion"
+  },
+  {
+   "codigo": "8244",
+   "ambito": "IN",
+   "descripcion": "Escuelas de negocios y secretariado",
+   "grupo": "educacion"
+  },
+  {
+   "codigo": "8249",
+   "ambito": "ES",
+   "descripcion": "Escuelas profesionales y de comercio",
+   "grupo": "educacion"
+  },
+  {
+   "codigo": "5699",
+   "ambito": "IN",
+   "descripcion": "Establecimientos de ropa y complementos diversos",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "5719",
+   "ambito": "IN",
+   "descripcion": "Establecimientos especiales de muebles del hogar d…",
+   "grupo": "hogar"
+  },
+  {
+   "codigo": "5912",
+   "ambito": "ES",
+   "descripcion": "Farmacias",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "2912",
+   "ambito": "ES",
+   "descripcion": "Farmacias(TNA)",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "5958",
+   "ambito": "ES",
+   "descripcion": "General Óptica",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "1384",
+   "ambito": "ES",
+   "descripcion": "General Óptica Franquicias",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "5311",
+   "ambito": "ES",
+   "descripcion": "Gran almacén",
+   "grupo": "grandes"
+  },
+  {
+   "codigo": "5311",
+   "ambito": "IN",
+   "descripcion": "Grandes almacenes",
+   "grupo": "grandes"
+  },
+  {
+   "codigo": "1472",
+   "ambito": "ES",
+   "descripcion": "Grandes Superficies (droguería y Perfumería)",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "5313",
+   "ambito": "ES",
+   "descripcion": "Grandes superficies (juguetes y artículos de depor…",
+   "grupo": "juguetes"
+  },
+  {
+   "codigo": "1423",
+   "ambito": "ES",
+   "descripcion": "Grupo Carrefour",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "5441",
+   "ambito": "ES",
+   "descripcion": "Grupo Zara",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "1406",
+   "ambito": "ES",
+   "descripcion": "H&M",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "5913",
+   "ambito": "ES",
+   "descripcion": "Herbolarios, plantas medicinales y parafarmacias",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "5338",
+   "ambito": "ES",
+   "descripcion": "Hipercor/supermercados Corte Inglés",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "5333",
+   "ambito": "ES",
+   "descripcion": "Hipermercados (con tecnología electrónica)",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "8062",
+   "ambito": "IN",
+   "descripcion": "Hospitales",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "8062",
+   "ambito": "ES",
+   "descripcion": "Hospitales, sanatorios y consultas médicas",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "1462",
+   "ambito": "ES",
+   "descripcion": "IKEA",
+   "grupo": "hogar"
+  },
+  {
+   "codigo": "1479",
+   "ambito": "ES",
+   "descripcion": "IKEA",
+   "grupo": "hogar"
+  },
+  {
+   "codigo": "5945",
+   "ambito": "ES",
+   "descripcion": "Juguetes, artículos deportivos",
+   "grupo": "juguetes"
+  },
+  {
+   "codigo": "1436",
+   "ambito": "ES",
+   "descripcion": "Kiabi España",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "8071",
+   "ambito": "ES",
+   "descripcion": "Laboratorios médicos y dentales",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "1410",
+   "ambito": "ES",
+   "descripcion": "Leclerc",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "1480",
+   "ambito": "ES",
+   "descripcion": "Leroy Merlin",
+   "grupo": "hogar"
+  },
+  {
+   "codigo": "5942",
+   "ambito": "IN",
+   "descripcion": "Librerías",
+   "grupo": "juguetes"
+  },
+  {
+   "codigo": "5942",
+   "ambito": "ES",
+   "descripcion": "Librerías, papelerías y discos",
+   "grupo": "juguetes"
+  },
+  {
+   "codigo": "2942",
+   "ambito": "ES",
+   "descripcion": "Libros, discos y cds (TNA)",
+   "grupo": "juguetes"
+  },
+  {
+   "codigo": "5192",
+   "ambito": "IN",
+   "descripcion": "Libros, revistas y periódicos",
+   "grupo": "juguetes"
+  },
+  {
+   "codigo": "1405",
+   "ambito": "ES",
+   "descripcion": "Lidl",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "5422",
+   "ambito": "ES",
+   "descripcion": "Makro",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "1488",
+   "ambito": "ES",
+   "descripcion": "Mango",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "1394",
+   "ambito": "ES",
+   "descripcion": "Mango Franquicias",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "8071",
+   "ambito": "IN",
+   "descripcion": "Medical & dental laboratories",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "8099",
+   "ambito": "IN",
+   "descripcion": "Medical services & health practitioners",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "5122",
+   "ambito": "IN",
+   "descripcion": "Medicamentos, farmacéuticos y gastos de farmacia",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "8031",
+   "ambito": "ES",
+   "descripcion": "Médicos osteópatas",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "8011",
+   "ambito": "ES",
+   "descripcion": "Médicos, sin clasificar en ninguna otra parte",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "1413",
+   "ambito": "ES",
+   "descripcion": "Mercadona",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "5712",
+   "ambito": "ES",
+   "descripcion": "Muebles, antiguedades y galerías de arte",
+   "grupo": "hogar"
+  },
+  {
+   "codigo": "8043",
+   "ambito": "IN",
+   "descripcion": "Optician & dispensing",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "8043",
+   "ambito": "ES",
+   "descripcion": "Ópticos, artículos de óptica y cristales para gafa…",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "8042",
+   "ambito": "IN",
+   "descripcion": "Optometrist, opthamologists",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "8042",
+   "ambito": "ES",
+   "descripcion": "Optometristas y oftalmólogos",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "5976",
+   "ambito": "IN",
+   "descripcion": "Ortopedia y aparatos de prótesis",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "8031",
+   "ambito": "IN",
+   "descripcion": "Osteopathic physicians",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "5462",
+   "ambito": "IN",
+   "descripcion": "Panaderías",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "8049",
+   "ambito": "ES",
+   "descripcion": "Podólogos y pedicuros",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "5955",
+   "ambito": "ES",
+   "descripcion": "Prenatal/ Chicco Española",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "1355",
+   "ambito": "ES",
+   "descripcion": "Primark",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "5451",
+   "ambito": "IN",
+   "descripcion": "Productos lácteos",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "7251",
+   "ambito": "ES",
+   "descripcion": "Reparación del calzado",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "7251",
+   "ambito": "IN",
+   "descripcion": "Reparación del calzado, salones de limpiacalzado y…",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "8299",
+   "ambito": "IN",
+   "descripcion": "Schools & educational services not clas.",
+   "grupo": "educacion"
+  },
+  {
+   "codigo": "8351",
+   "ambito": "ES",
+   "descripcion": "Servicios de cuidados infantiles",
+   "grupo": "educacion"
+  },
+  {
+   "codigo": "8299",
+   "ambito": "ES",
+   "descripcion": "Servicios escolares y educativos sin clasificar en…",
+   "grupo": "educacion"
+  },
+  {
+   "codigo": "1322",
+   "ambito": "ES",
+   "descripcion": "Sprinter",
+   "grupo": "juguetes"
+  },
+  {
+   "codigo": "5499",
+   "ambito": "ES",
+   "descripcion": "Supermercados alimentación en general",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "1397",
+   "ambito": "ES",
+   "descripcion": "Supermercados Condis",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "1390",
+   "ambito": "ES",
+   "descripcion": "Supermercados Condis (franquicias)",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "1373",
+   "ambito": "ES",
+   "descripcion": "Supermercados Froiz",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "1409",
+   "ambito": "ES",
+   "descripcion": "Supermercados Gadisa",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "1350",
+   "ambito": "ES",
+   "descripcion": "Supermercados Lupa",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "1395",
+   "ambito": "ES",
+   "descripcion": "Supermercados M S y M S",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "1418",
+   "ambito": "ES",
+   "descripcion": "Supermercados Sol",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "1434",
+   "ambito": "ES",
+   "descripcion": "Supermercados Uvesco",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "5331",
+   "ambito": "ES",
+   "descripcion": "Supermercados, ultramarinos, economatos laborales",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "5331",
+   "ambito": "IN",
+   "descripcion": "Supermercados, ultramarinos, economatos laborales",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "5499",
+   "ambito": "IN",
+   "descripcion": "Supermercados, ultramarinos, economatos laborales",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "5411",
+   "ambito": "IN",
+   "descripcion": "Tiendas de comestibles y supermercados",
+   "grupo": "alimentacion"
+  },
+  {
+   "codigo": "5949",
+   "ambito": "IN",
+   "descripcion": "Tiendas de confección bordados y tejidos",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "5691",
+   "ambito": "IN",
+   "descripcion": "Tiendas de confección de hombre y mujer",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "5651",
+   "ambito": "IN",
+   "descripcion": "Tiendas de confección familiar",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "5641",
+   "ambito": "IN",
+   "descripcion": "Tiendas de confección infantil",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "5733",
+   "ambito": "IN",
+   "descripcion": "Tiendas de instrumentos musicales, pianos y partit…",
+   "grupo": "juguetes"
+  },
+  {
+   "codigo": "5945",
+   "ambito": "IN",
+   "descripcion": "Tiendas de juguetes, pasatiempos y juegos",
+   "grupo": "juguetes"
+  },
+  {
+   "codigo": "5939",
+   "ambito": "ES",
+   "descripcion": "Toys \"R\" Us",
+   "grupo": "juguetes"
+  },
+  {
+   "codigo": "5975",
+   "ambito": "IN",
+   "descripcion": "Venta y servicio de prótesis auditivas",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "1486",
+   "ambito": "ES",
+   "descripcion": "Visionlab",
+   "grupo": "salud"
+  },
+  {
+   "codigo": "5139",
+   "ambito": "IN",
+   "descripcion": "Zapatería comercial",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "5661",
+   "ambito": "ES",
+   "descripcion": "Zapaterías",
+   "grupo": "ropa"
+  },
+  {
+   "codigo": "5661",
+   "ambito": "IN",
+   "descripcion": "Zapaterías",
+   "grupo": "ropa"
+  }
+ ]
+}

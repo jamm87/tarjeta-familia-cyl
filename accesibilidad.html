@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accesibilidad · Tarjeta Familia Castilla y León</title>
+  <meta name="description" content="Cómo se ha diseñado este prototipo para que lo pueda usar cualquier persona.">
+  <meta name="theme-color" content="#b0141d">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/estilos.css">
+  <script src="assets/js/comun.js" defer></script>
+  
+  
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <p class="prototipo">Prototipo de propuesta. <strong>No es una web oficial</strong> de la Junta de Castilla y León.</p>
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="index.html">
+        <img src="assets/img/tarjeta-familia.jpg" alt="" width="56" height="44">
+        <span>Tarjeta Familia <small>Castilla y León</small></span>
+      </a>
+      <nav class="nav-principal" aria-label="Principal">
+        <ul>
+          <li><a href="familias/">Familias</a></li>
+          <li><a href="comercios/">Comercios</a></li>
+          <li><a href="buscar/">Dónde usarla</a></li>
+          <li><a href="ayuda.html">Ayuda</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+    <nav class="migas contenedor" aria-label="Estás aquí">
+      <ol>
+        <li><a href="index.html">Inicio</a></li>
+        <li aria-current="page">Accesibilidad</li>
+      </ol>
+    </nav>
+    <div class="contenedor lectura">
+      <h1>Accesibilidad</h1>
+      <p class="entradilla">Este prototipo se ha diseñado con el objetivo de cumplir el nivel AA de las Pautas de Accesibilidad para el Contenido Web (WCAG) 2.2, que exige la norma EN 301 549 y el Real Decreto 1112/2018 para las webs del sector público.</p>
+
+      <h2>Qué hemos tenido en cuenta</h2>
+      <ul>
+        <li><strong>Toda la información está en la página</strong>, no en PDF. Los documentos originales solo se enlazan como referencia.</li>
+        <li><strong>Lenguaje claro</strong>: frases cortas, pasos numerados y un nombre único, «Tarjeta Familia».</li>
+        <li>Se puede usar <strong>solo con el teclado</strong> y está marcado para lectores de pantalla (encabezados, regiones, etiquetas y avisos de estado).</li>
+        <li>El <strong>buscador funciona sin mapa</strong>: la lista tiene toda la información y anuncia cuántos resultados hay.</li>
+        <li><strong>Textos grandes y buen contraste</strong> (mínimo 4,5:1), que se pueden ampliar al 200 % sin perder contenido.</li>
+        <li>Pensado <strong>primero para el móvil</strong>, sin desplazamiento horizontal a 320 píxeles de ancho.</li>
+        <li>Botones y enlaces con un <strong>área de pulsación de al menos 44 × 44 píxeles</strong>.</li>
+        <li>Formularios con etiquetas visibles, ayudas y <strong>errores explicados</strong> junto a cada campo y en un resumen.</li>
+        <li>Respeta la preferencia de <strong>reducir el movimiento</strong> del sistema.</li>
+        <li>Las guías prácticas se pueden <strong>imprimir</strong>.</li>
+        <li>No se usan cookies ni se guarda la ubicación. Solo se recuerda en tu navegador si prefieres ver el mapa.</li>
+      </ul>
+
+      <h2>Limitaciones conocidas</h2>
+      <ul>
+        <li>El mapa usa la librería Leaflet y teselas de OpenStreetMap. Es un complemento: todo lo que muestra está también en la lista.</li>
+        <li>Las distancias son aproximadas: se calculan desde el centro de cada localidad porque el listado oficial no incluye coordenadas.</li>
+        <li>Los documentos PDF originales enlazados no son accesibles.</li>
+        <li>Falta una auditoría manual completa y pruebas con personas usuarias y con lectores de pantalla reales antes de publicarlo.</li>
+      </ul>
+
+      <h2>Comprobaciones automáticas</h2>
+      <p>Cada página se revisa con <a href="https://github.com/dequelabs/axe-core">axe-core</a> (reglas WCAG 2.0, 2.1 y 2.2 de nivel A y AA). Ver <code>tests/probar.mjs</code> en el repositorio.</p>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="columnas">
+        <section aria-labelledby="pie-familias">
+          <h2 id="pie-familias">Para familias</h2>
+          <ul>
+            <li><a href="familias/activar.html">Activar la tarjeta</a></li>
+            <li><a href="familias/pagar.html">Cómo pagar</a></li>
+            <li><a href="buscar/index.html">Dónde usarla</a></li>
+            <li><a href="familias/saldo.html">Consultar el saldo</a></li>
+            <li><a href="familias/problemas.html">Pérdida, robo y problemas</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="pie-comercios">
+          <h2 id="pie-comercios">Para comercios</h2>
+          <ul>
+            <li><a href="comercios/index.html">¿Puedo cobrar con la tarjeta?</a></li>
+            <li><a href="comercios/sectores.html">Sectores autorizados</a></li>
+            <li><a href="comercios/como-cobrar.html">Guía para la caja</a></li>
+            <li><a href="comercios/hazte-colaborador.html">Hazte colaborador</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="pie-ayuda">
+          <h2 id="pie-ayuda">Ayuda</h2>
+          <ul>
+            <li>Robo o pérdida: <a href="tel:900404090">900 40 40 90</a> (CaixaBank, gratuito)</li>
+            <li>Activación y saldo: <a href="tel:900300300">900 300 300</a> (MoneyToPay, gratuito)</li>
+            <li>Información general: <a href="tel:012">012</a></li>
+            <li><a href="mailto:conciliacion.gss@jcyl.es">conciliacion.gss@jcyl.es</a></li>
+            <li><a href="ayuda.html">Todos los contactos</a></li>
+          </ul>
+        </section>
+      </div>
+      <p class="nota">
+        Contenido elaborado a partir de los documentos públicos de la Consejería de Desregulación, Familia y Ayudas Sociales
+        (<a href="fuentes/index.html">ver documentos originales</a>).
+        <a href="accesibilidad.html">Accesibilidad</a> ·
+        <a href="propuesta.html">Sobre esta propuesta</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
