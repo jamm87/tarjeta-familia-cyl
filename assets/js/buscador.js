@@ -152,7 +152,7 @@
   function zonaDe(e) {
     if (origen.tipo === "localidad") {
       if (e.claveLocalidad === `${origen.provincia}|${origen.n}`) return "localidad";
-      if (origen.esMunicipio && e.municipio === origen.ine) return "municipio";
+      if (e.municipio === origen.ine) return "municipio";
     }
     if (origen.tipo === "cp") {
       if (e.cp === origen.cp) return "cp";
@@ -278,6 +278,12 @@
         const p = document.createElement("p");
         p.className = "aproximada";
         p.textContent = `Hay ${mismo} comercios en ${origen.tipo === "cp" ? "tu zona" : origen.nombre}. Para encontrar uno concreto, elige el tipo de comercio o escribe el nombre, la calle o lo que necesitas (por ejemplo: farmacia, zapatería).`;
+        nota.append(p);
+      }
+      if (origen.aproximada) {
+        const p = document.createElement("p");
+        p.className = "aproximada";
+        p.textContent = `${origen.nombre} se sitúa en el centro del municipio de ${lugares.municipios[origen.ine].nombre}: las distancias son aproximadas.`;
         nota.append(p);
       }
     }
@@ -460,7 +466,10 @@
         iconSize: [34, 34],
         iconAnchor: [17, 17],
       });
-      const etiqueta = `${comercios[0].localidad}: ${n} ${n === 1 ? "comercio" : "comercios"}`;
+      // Varias localidades pueden compartir punto (pedanías situadas en el centro de su municipio).
+      const nombres = [...new Set(comercios.map((e) => e.localidad))];
+      const lugar = nombres.length > 2 ? `${nombres.slice(0, 2).join(", ")} y otras` : nombres.join(" y ");
+      const etiqueta = `${lugar}: ${n} ${n === 1 ? "comercio" : "comercios"}`;
       const m = L.marker([lat, lon], { icon: icono, title: etiqueta, alt: etiqueta, keyboard: true }).addTo(capa);
       const cont = document.createElement("div");
       const h = document.createElement("strong");
@@ -472,7 +481,7 @@
         const li = document.createElement("li");
         const a = document.createElement("a");
         a.href = `#est-${e.id}`;
-        a.textContent = e.nombre;
+        a.textContent = nombres.length > 1 ? `${e.nombre} (${e.localidad})` : e.nombre;
         a.addEventListener("click", (ev) => {
           ev.preventDefault();
           const art = document.getElementById(`est-${e.id}`);

@@ -25,13 +25,7 @@ Es una web estática: no necesita servidor, base de datos ni compilación.
 
 **Web publicada:** https://jamm87.github.io/tarjeta-familia-cyl/
 
-La publica el flujo de trabajo `.github/workflows/pages.yml` en cada `git push` a `main`. Para que funcione hay que hacer **una sola vez**:
-
-1. En GitHub: **Settings → Pages**.
-2. En **Build and deployment → Source**, elige **GitHub Actions**.
-3. Ve a la pestaña **Actions**, abre «Publicar en GitHub Pages» y pulsa **Run workflow** (o haz cualquier push a `main`).
-
-En uno o dos minutos la web estará en la dirección de arriba. Con el plan gratuito de GitHub, el repositorio tiene que ser público.
+GitHub Pages la publica directamente desde la rama `main` (**Settings → Pages → Source: Deploy from a branch**, rama `main`, carpeta `/ (root)`). Cada `git push` a `main` la actualiza en uno o dos minutos. Con el plan gratuito de GitHub, el repositorio tiene que ser público.
 
 ### Cómo se gestionan los datos
 
@@ -84,7 +78,7 @@ Por ahora las coordenadas son **por localidad**:
 - 68, con el centroide del municipio del IGN;
 - 5, con el municipio de su código postal, según la relación oficial del CNIG (`fuentes/codigos-postales-municipios-cnig.csv`).
 
-El modo `--cartociudad` geocodifica cada dirección con el servicio oficial del IGN y guarda una caché en `data/cache-cartociudad.json`. No se ha podido probar contra el servicio real, porque la red del entorno donde se preparó la web no permitía acceder a `www.cartociudad.es`. Revisa el resultado la primera vez que lo ejecutes.
+El modo `--cartociudad` sitúa cada comercio en su dirección y cada aldea en su sitio con el servicio oficial del IGN, y guarda una caché en `data/cache-cartociudad.json` para no repetir consultas. Lo ejecuta el flujo de GitHub Actions `.github/workflows/coordenadas.yml` («Actualizar coordenadas»), en los servidores de GitHub. Se lanza solo al cambiar el script o las fuentes, o a mano desde la pestaña **Actions → Actualizar coordenadas → Run workflow**. Guarda los datos en `main` y pide a Pages que publique.
 
 ## Pruebas
 

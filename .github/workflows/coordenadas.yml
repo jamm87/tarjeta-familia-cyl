@@ -1,0 +1,62 @@
+# Sitúa cada comercio en su dirección y cada aldea en su sitio con CartoCiudad (IGN).
+# Se ejecuta en los servidores de GitHub, que sí tienen acceso al servicio, y guarda en
+# main los datos actualizados y la caché de consultas (las ya hechas no se repiten).
+# Se lanza a mano (Actions → «Actualizar coordenadas» → Run workflow) o al cambiar el
+# script o las fuentes.
+name: Actualizar coordenadas
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - scripts/geocodificar.mjs
+      - fuentes/**
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: coordenadas
+  cancel-in-progress: false
+
+jobs:
+  geocodificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: npm ci
+      - run: pip install markdown
+      - name: Geocodificar con CartoCiudad
+        run: node scripts/geocodificar.mjs --cartociudad
+      - name: Regenerar páginas
+        run: python3 scripts/generar_paginas.py
+      - name: Guardar cambios
+        id: guardar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ index.html buscar/ sobre.html
+          if git diff --cached --quiet; then
+            echo "Sin cambios en las coordenadas."
+            echo "cambios=no" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Coordenadas actualizadas con CartoCiudad"
+            git push
+            echo "cambios=si" >> "$GITHUB_OUTPUT"
+          fi
+      # Los commits hechos con el token de Actions no siempre lanzan la publicación de Pages.
+      - name: Publicar en Pages
+        if: steps.guardar.outputs.cambios == 'si'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds"

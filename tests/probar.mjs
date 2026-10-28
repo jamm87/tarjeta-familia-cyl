@@ -114,6 +114,21 @@ console.log("\nPortada");
   await pagina.context().close();
 }
 
+// Aldeas y pedanías (nomenclátor del INE): Güimil, en el municipio de Barjas.
+{
+  const pagina = await nuevaPagina(390);
+  await pagina.goto(BASE + "index.html");
+  await pagina.focus("#q-portada");
+  await pagina.keyboard.type("güimil");
+  await pagina.waitForSelector("#sugerencias-portada:not([hidden]) [role=option]");
+  const primera = await pagina.textContent("#sugerencias-portada [role=option]");
+  ok(/Guimil.*León \(municipio de Barjas\)/.test(primera), `Sugiere la aldea con su municipio: «${primera}»`);
+  await Promise.all([pagina.waitForURL(/buscar\//), pagina.keyboard.press("ArrowDown").then(() => pagina.keyboard.press("Enter"))]);
+  await pagina.waitForFunction(() => /Guimil/.test(document.querySelector("#titulo-resultados").textContent));
+  ok(/Guimil/.test(await pagina.textContent("#titulo-resultados")), `Busca desde la aldea: «${await pagina.textContent("#titulo-resultados")}»`);
+  await pagina.context().close();
+}
+
 // ---- 3b. Buscador ---------------------------------------------------------------------------
 console.log("\nBuscador");
 {

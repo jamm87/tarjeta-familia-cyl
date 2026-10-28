@@ -15,12 +15,18 @@ window.Sugerencias = (() => {
       [ine, { ine, nombre, lat, lon, provincia: LOC.provincias[ine.slice(0, 2)] }]));
 
     // Una localidad que es cabecera de su municipio busca en todo el municipio (con sus pedanías).
+    // Las aldeas y pedanías sin coordenadas propias se sitúan en el punto de su municipio.
     const localidades = LOC.localidades.map(([nombre, prov, lat, lon, ine, enLocalidad]) => {
       const n = normaliza(nombre);
-      const esMunicipio = Boolean(ine && normaliza(municipios[ine]?.nombre ?? "") === n);
+      const municipio = municipios[ine];
+      const esMunicipio = Boolean(municipio && normaliza(municipio.nombre) === n);
       const comercios = esMunicipio ? LOC.comerciosPorMunicipio[ine] ?? 0 : enLocalidad;
-      return { tipo: "localidad", nombre, provincia: LOC.provincias[prov], lat, lon, ine, esMunicipio, n, sin: sinArticulo(n), comercios };
-    });
+      const aproximada = lat == null && Boolean(municipio);
+      return {
+        tipo: "localidad", nombre, provincia: LOC.provincias[prov], ine, esMunicipio, n, sin: sinArticulo(n), comercios,
+        lat: lat ?? municipio?.lat, lon: lon ?? municipio?.lon, aproximada,
+      };
+    }).filter((l) => l.lat != null);
 
     const codigosPostales = Object.fromEntries(Object.entries(LOC.codigosPostales).map(([cp, ines]) => {
       const ms = ines.map((i) => municipios[i]);

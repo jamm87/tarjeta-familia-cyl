@@ -6,6 +6,10 @@
 // Entrada:  data/establecimientos-base.json (scripts/extraer_establecimientos.py)
 // Salida:   data/establecimientos.json, data/localidades.json, data/incidencias-listado.json
 //
+// El índice de búsqueda incluye también las entidades y núcleos de población del INE
+// (aldeas y pedanías, como Güimil, en Barjas): fuentes/entidades-poblacion-ine.csv.
+// No traen coordenadas: el navegador las sitúa en el punto de su municipio.
+//
 // Cada comercio lleva además el código INE de su municipio, para poder buscar por
 // municipio (incluye pedanías) y por código postal. La relación código postal → municipio
 // es la del Centro Nacional de Información Geográfica (fuentes/codigos-postales-municipios-cnig.csv).
@@ -233,25 +237,42 @@ function legible(texto) {
 const RUTA_CACHE = "data/cache-cartociudad.json";
 const cache = existsSync(new URL(RUTA_CACHE, raiz)) ? leer(RUTA_CACHE) : {};
 
-async function cartociudad(e, aprox) {
-  const consulta = `${e.direccion}, ${e.cp} ${e.localidad}`;
+// Tipos de resultado de CartoCiudad: un portal o una calle sitúan la dirección; un núcleo
+// o un topónimo, la localidad. Un municipio o una provincia no mejoran lo que ya hay.
+const TIPO_DIRECCION = new Set(["portal", "callejero", "carretera"]);
+const TIPO_LOCALIDAD = new Set(["poblacion", "toponimo", "Codpost", "codpost", "ngbe"]);
+let fallosSeguidos = 0;
+let consultasNuevas = 0;
+
+// Devuelve { lat, lon, precision } o null. "sin-conexion" si el servicio no responde.
+async function cartociudad(consulta, referencia, radioKm = 20) {
   if (!(consulta in cache)) {
     const url = `https://www.cartociudad.es/geocoder/api/geocoder/find?q=${encodeURIComponent(consulta)}`;
     try {
       const r = await fetch(url, { headers: { "User-Agent": "tarjeta-familia-cyl (https://github.com/jamm87/tarjeta-familia-cyl)" } });
       const texto = await r.text();
-      const json = JSON.parse(texto.replace(/^[^(]*\(|\)\s*;?\s*$/g, ""));
+      const json = texto.trim() ? JSON.parse(texto.replace(/^[^({[]*\(|\)\s*;?\s*$/g, "")) : null;
       cache[consulta] = json && json.lat ? { lat: redondea(+json.lat), lon: redondea(+json.lng), tipo: json.type } : null;
+      fallosSeguidos = 0;
     } catch (err) {
-      console.warn(`  CartoCiudad no responde (${err.message}). Se sigue sin conexión.`);
-      return "sin-conexion";
+      if (++fallosSeguidos >= 5) {
+        console.warn(`  CartoCiudad no responde (${err.message}). Se sigue sin conexión.`);
+        return "sin-conexion";
+      }
+      return null;
     }
-    await new Promise((ok) => setTimeout(ok, 150));
+    if (++consultasNuevas % 200 === 0) {
+      escribir(RUTA_CACHE, cache, 1);
+      console.log(`  ${consultasNuevas} consultas a CartoCiudad…`);
+    }
+    await new Promise((ok) => setTimeout(ok, 100));
   }
   const res = cache[consulta];
-  // Se descarta si cae a más de 20 km de la localidad: suele ser un homónimo.
-  if (!res || (aprox && distanciaKm(res, aprox) > 20)) return null;
-  return res;
+  if (!res) return null;
+  const precision = TIPO_DIRECCION.has(res.tipo) ? "direccion" : TIPO_LOCALIDAD.has(res.tipo) ? "localidad" : null;
+  // Se descarta si cae lejos de su municipio: suele ser un homónimo de otra provincia.
+  if (!precision || (referencia && distanciaKm(res, referencia) > radioKm)) return null;
+  return { lat: res.lat, lon: res.lon, precision };
 }
 
 function distanciaKm(a, b) {
@@ -306,9 +327,10 @@ for (const e of base.establecimientos) {
     municipio: lugar?.ine ?? null,
   };
   if (conexion) {
-    const punto = await cartociudad({ ...e, localidad }, lugar);
+    const punto = await cartociudad(`${e.direccion}, ${e.cp} ${localidad}`, lugar);
     if (punto === "sin-conexion") conexion = false;
-    else if (punto) Object.assign(registro, { lat: punto.lat, lon: punto.lon, precision: "direccion" });
+    // Solo se usa si mejora la precisión que ya había.
+    else if (punto && (punto.precision === "direccion" || registro.precision !== "localidad")) Object.assign(registro, punto);
   }
   if (registro.lat == null) incidencias.sinCoordenadas.push({ id: e.id, nombre: e.nombre, localidad: e.localidad, cp: e.cp, provincia });
   vistos.set(firma, { registro, secciones: [e.provincia] });
@@ -386,15 +408,45 @@ const recuento = (clave) => {
   return r;
 };
 const porLocalidad = recuento((e) => `${e.provincia}|${clave(e.localidad)}`);
+// 4 decimales (unos 11 m) bastan para el centro de una localidad y aligeran el fichero.
+const c4 = (n) => (n == null ? null : Math.round(n * 1e4) / 1e4);
+
+// Entidades singulares y núcleos de población del INE (Callejero del Censo Electoral).
+// "Rincon (El)" -> "El Rincon"
+const conArticulo = (n) => n.replace(/^(.*) \(([^)\s]{1,4})\)$/, "$2 $1");
+let entidadesNuevas = 0;
+for (const linea of readFileSync(new URL("fuentes/entidades-poblacion-ine.csv", raiz), "utf8").trim().split("\n").slice(1)) {
+  const [, municipioId, , , entidad, nucleo] = linea.split(",");
+  const ine = municipioId.padStart(5, "0");
+  const municipio = porIne.get(ine);
+  if (!municipio) continue;
+  for (const nombre of new Set([entidad, nucleo].filter((n) => n && !n.startsWith("*")).map(conArticulo))) {
+    const k = `${municipio.provincia}|${clave(nombre)}`;
+    const previa = localidades.get(k);
+    if (previa && (previa.ine === ine || !previa.ine)) continue;
+    const kMunicipio = `${k}|${ine}`;
+    if (localidades.has(kMunicipio)) continue;
+    const entrada = { nombre, provincia: municipio.provincia, lat: null, lon: null, ine };
+    // Con CartoCiudad, la aldea se sitúa en su sitio y no en el centro de su municipio.
+    if (conexion) {
+      const punto = await cartociudad(`${nombre}, ${municipio.nombre}, ${municipio.provincia}`, municipio.punto, 25);
+      if (punto === "sin-conexion") conexion = false;
+      else if (punto) Object.assign(entrada, { lat: punto.lat, lon: punto.lon });
+    }
+    localidades.set(previa ? kMunicipio : k, entrada);
+    entidadesNuevas++;
+  }
+}
+
 const listaLocalidades = [...localidades.values()]
-  .map((l) => [l.nombre, codigoProvincia[l.provincia], l.lat, l.lon, l.ine ?? null, porLocalidad[`${l.provincia}|${clave(l.nombre)}`] ?? 0])
+  .map((l) => [l.nombre, codigoProvincia[l.provincia], c4(l.lat), c4(l.lon), l.ine ?? null, porLocalidad[`${l.provincia}|${clave(l.nombre)}`] ?? 0])
   .sort((a, b) => a[0].localeCompare(b[0], "es"));
 const datosLocalidades = {
   campos: ["nombre", "provincia", "lat", "lon", "municipio", "comercios"],
   provincias: Object.fromEntries(Object.entries(PROVINCIAS).map(([c, p]) => [c, p.nombre])),
   localidades: listaLocalidades,
   // Código INE -> [nombre, lat, lon] del municipio
-  municipios: Object.fromEntries(municipios.map((m) => [m.ine, [m.nombre, m.punto.lat, m.punto.lon]])),
+  municipios: Object.fromEntries(municipios.map((m) => [m.ine, [m.nombre, c4(m.punto.lat), c4(m.punto.lon)]])),
   // Código postal -> códigos INE de los municipios que abarca (CNIG)
   codigosPostales: Object.fromEntries([...municipiosPorCP].sort()),
   comerciosPorMunicipio: recuento((e) => e.municipio),
@@ -410,6 +462,7 @@ const precisiones = {};
 for (const e of salida) precisiones[e.precision] = (precisiones[e.precision] ?? 0) + 1;
 console.log(`${salida.length} establecimientos (de ${base.total} filas del PDF; ${base.total - salida.length} duplicados)`);
 console.log("Precisión de las coordenadas:", precisiones);
+console.log(`${entidadesNuevas} entidades de población del INE añadidas`);
 console.log(`${listaLocalidades.length} localidades y ${municipiosPorCP.size} códigos postales en el índice de búsqueda`);
 console.log(`Sin municipio: ${salida.filter((e) => !e.municipio).length}`);
 console.log(`Incidencias: ${incidencias.duplicados.length} duplicados, ${incidencias.provinciaDistintaDelCP.length} con provincia distinta del CP, ${incidencias.sinCoordenadas.length} sin coordenadas`);
