@@ -26360,5 +26360,10 @@
   "lat": 37.25861,
   "lon": -3.80806,
   "tipo": "callejero"
+ },
+ "Calle Las Cercas 1, Belorado": {
+  "lat": 42.41979,
+  "lon": -3.19106,
+  "tipo": "portal"
  }
 }
