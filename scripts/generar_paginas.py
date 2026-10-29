@@ -1,20 +1,28 @@
-"""Genera las páginas HTML estáticas a partir de src/paginas/.
+"""Genera las páginas HTML estáticas en español, inglés y árabe.
 
 Uso:
     python3 scripts/generar_paginas.py
 
-Cada fichero de src/paginas/ empieza con un comentario JSON con sus metadatos:
+Estructura:
+    src/plantilla.html              plantilla común (cabecera, navegación, migas y pie)
+    src/i18n/<idioma>.json          textos de la plantilla, de los scripts y de los datos
+    src/<idioma>/paginas/**.html    contenido de cada página
+    src/<idioma>/parciales/*.html   bloques reutilizables ({{contactos}}, {{sin_pin}})
 
-    <!-- {"titulo": "Activar tu tarjeta", "descripcion": "...", "seccion": "familias",
-          "migas": [["Familias", "familias/"]], "scripts": ["assets/js/buscador.js"]} -->
+El español se publica en la raíz; el inglés en en/ y el árabe en ar/. Cada página
+empieza con un comentario JSON con sus metadatos:
 
-y se envuelve en la plantilla común (cabecera, navegación, migas y pie). Las rutas
-internas se escriben con el marcador {{raiz}}, que se sustituye por la ruta relativa
-a la raíz ("" o "../"), así el sitio funciona abierto desde cualquier carpeta.
+    <!-- {"titulo": "…", "descripcion": "…", "seccion": "familias",
+          "migas": [["Familias", "familias/index.html"]], "scripts": ["assets/js/buscador.js"]} -->
 
-Otros marcadores: {{contactos}}, {{sin_pin}}, {{sectores}}, {{total_establecimientos}},
-{{fecha_listado}}, {{total_sectores}} y {{propuesta_md}} (docs/propuesta.md en HTML).
+Marcadores:
+    {{raiz}}      ruta relativa a la raíz del sitio (recursos compartidos: assets, data, fuentes)
+    {{inicio}}    ruta relativa a la portada del idioma (páginas del mismo idioma)
+    {{t:clave}}   texto del diccionario del idioma (sección "plantilla")
+    {{contactos}}, {{sin_pin}}, {{sectores}}, {{total_establecimientos}}, {{fecha_listado}},
+    {{total_sectores}}, {{propuesta_md}}
 """
+import hashlib
 import html
 import json
 import re
@@ -24,116 +32,163 @@ from pathlib import Path
 import markdown
 
 RAIZ = Path(__file__).resolve().parent.parent
-SRC = RAIZ / "src" / "paginas"
-PARCIALES = RAIZ / "src" / "parciales"
+SRC = RAIZ / "src"
+IDIOMAS = {
+    "es": {"carpeta": "", "dir": "ltr", "nombre": "Español"},
+    "en": {"carpeta": "en/", "dir": "ltr", "nombre": "English"},
+    "ar": {"carpeta": "ar/", "dir": "rtl", "nombre": "العربية"},
+}
+SECCIONES = {"familias": "familias/index.html", "comercios": "comercios/index.html",
+             "buscar": "buscar/index.html", "ayuda": "ayuda.html"}
 
-SECCIONES = [
-    ("familias", "Familias", "familias/"),
-    ("comercios", "Comercios", "comercios/"),
-    ("buscar", "Dónde usarla", "buscar/"),
-    ("ayuda", "Ayuda", "ayuda.html"),
-]
+
+def version(ruta):
+    """Huella del contenido de un recurso, para que el navegador no use una copia antigua."""
+    return hashlib.sha1((RAIZ / ruta).read_bytes()).hexdigest()[:8]
 
 
-def fecha_larga(iso):
-    meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto",
-             "septiembre", "octubre", "noviembre", "diciembre"]
+def con_version(texto):
+    return re.sub(r'((?:href|src)="(?:\.\./)*((?:assets|data|vendor)/[^"?#]+\.(?:css|js)))"',
+                  lambda m: f'{m.group(1)}?v={version(m.group(2))}"', texto)
+
+
+def fecha_larga(iso, t):
     d = date.fromisoformat(iso)
-    return f"{d.day} de {meses[d.month - 1]} de {d.year}"
+    return t["formato_fecha"].format(dia=d.day, mes=t["meses"][d.month - 1], anio=d.year)
 
 
-def bloque_sectores(datos):
+def bloque_sectores(datos, t):
     partes = []
     for g in datos["grupos"]:
         filas = [s for s in datos["sectores"] if s["grupo"] == g["id"]]
+        nombre = t["grupos_sectores"].get(g["id"], g["nombre"])
         items = "\n".join(
             f'      <li data-texto="{html.escape(s["descripcion"].lower())} {s["codigo"]}">'
-            f'{html.escape(s["descripcion"])} '
+            f'<span lang="es">{html.escape(s["descripcion"])}</span> '
             f'<span class="codigo">({s["codigo"]}-{s["ambito"]})</span></li>'
             for s in filas)
         partes.append(
             f'  <section class="grupo-sectores" aria-labelledby="g-{g["id"]}" data-grupo>\n'
-            f'    <h2 id="g-{g["id"]}">{html.escape(g["nombre"])} '
+            f'    <h2 id="g-{g["id"]}">{html.escape(nombre)} '
             f'<span class="codigo">· {len(filas)}</span></h2>\n'
             f'    <ul class="lista-sectores">\n{items}\n    </ul>\n  </section>')
     return "\n".join(partes)
 
 
-def propuesta():
+def propuesta(t):
     texto = (RAIZ / "docs" / "propuesta.md").read_text(encoding="utf-8")
     cuerpo = markdown.markdown(texto, extensions=["tables", "fenced_code"])
     # Las tablas anchas se desplazan dentro de su caja, no la página entera.
-    cuerpo = cuerpo.replace("<table>", '<div class="tabla-scroll" tabindex="0" role="region" aria-label="Tabla (se puede desplazar)"><table>')
-    cuerpo = cuerpo.replace("</table>", "</table></div>")
-    return cuerpo.replace("<pre>", '<pre tabindex="0" role="region" aria-label="Esquema (se puede desplazar)">')
+    region = f'tabindex="0" role="region" aria-label="{t["plantilla"]["tabla_desplazable"]}"'
+    cuerpo = cuerpo.replace("<table>", f'<div class="tabla-scroll" {region}><table>').replace("</table>", "</table></div>")
+    return cuerpo.replace("<pre>", f'<pre {region}>')
 
 
-def nav(seccion, raiz):
+def navegacion(seccion, inicio, t):
     items = []
-    for clave, texto, ruta in SECCIONES:
+    for clave, ruta in SECCIONES.items():
         actual = ' aria-current="true"' if clave == seccion else ""
-        items.append(f'<li><a href="{raiz}{ruta}"{actual}>{texto}</a></li>')
+        items.append(f'<li><a href="{inicio}{ruta}"{actual}>{t["plantilla"]["nav_" + clave]}</a></li>')
     return "\n          ".join(items)
 
 
-def migas(lista, titulo, raiz):
+def migas(lista, titulo, inicio, t):
     if lista is None:
         return ""
-    items = [f'<li><a href="{raiz}index.html">Inicio</a></li>']
-    items += [f'<li><a href="{raiz}{ruta}">{html.escape(texto)}</a></li>' for texto, ruta in lista]
+    items = [f'<li><a href="{inicio}index.html">{t["plantilla"]["inicio"]}</a></li>']
+    items += [f'<li><a href="{inicio}{ruta}">{html.escape(texto)}</a></li>' for texto, ruta in lista]
     items.append(f'<li aria-current="page">{html.escape(titulo)}</li>')
-    return ('<nav class="migas contenedor" aria-label="Estás aquí">\n      <ol>\n        '
+    return (f'<nav class="migas contenedor" aria-label="{t["plantilla"]["migas"]}">\n      <ol>\n        '
             + "\n        ".join(items) + "\n      </ol>\n    </nav>")
 
 
+def selector_idioma(idioma, relativa, raiz, disponibles):
+    enlaces = []
+    for codigo, datos in IDIOMAS.items():
+        destino = relativa if relativa in disponibles[codigo] else "index.html"
+        actual = ' aria-current="true"' if codigo == idioma else ""
+        enlaces.append(f'<li><a href="{raiz}{datos["carpeta"]}{destino}" hreflang="{codigo}" lang="{codigo}"{actual}>'
+                       f'{datos["nombre"]}</a></li>')
+    return "\n            ".join(enlaces)
+
+
+def alternativos(relativa, raiz, disponibles):
+    return "\n  ".join(
+        f'<link rel="alternate" hreflang="{codigo}" href="{raiz}{datos["carpeta"]}{relativa}">'
+        for codigo, datos in IDIOMAS.items() if relativa in disponibles[codigo])
+
+
+def escribe_textos_js(idioma, t):
+    """Textos que usan los scripts del navegador: assets/i18n/<idioma>.js"""
+    destino = RAIZ / "assets" / "i18n" / f"{idioma}.js"
+    destino.parent.mkdir(parents=True, exist_ok=True)
+    datos = {**t["js"], "categorias": t["categorias"], "locale": t["locale"]}
+    destino.write_text(f"window.TF_TEXTOS = {json.dumps(datos, ensure_ascii=False)};\n", encoding="utf-8")
+
+
 def main():
-    plantilla = (PARCIALES / "plantilla.html").read_text(encoding="utf-8")
-    contactos = (PARCIALES / "contactos.html").read_text(encoding="utf-8")
-    sin_pin = (PARCIALES / "sin-pin.html").read_text(encoding="utf-8").strip()
+    plantilla = (SRC / "plantilla.html").read_text(encoding="utf-8")
     est = json.loads((RAIZ / "data" / "establecimientos.json").read_text(encoding="utf-8"))
     sectores = json.loads((RAIZ / "data" / "sectores.json").read_text(encoding="utf-8"))
-    sustituciones = {
-        "{{contactos}}": contactos,
-        "{{sin_pin}}": sin_pin,
-        "{{sectores}}": bloque_sectores(sectores),
-        "{{total_sectores}}": str(sectores["total"]),
-        "{{total_establecimientos}}": f'{est["total"]:,}'.replace(",", "."),
-        "{{fecha_listado}}": fecha_larga(est["fechaListado"]),
-        "{{propuesta_md}}": propuesta(),
-    }
+    disponibles = {i: {p.relative_to(SRC / i / "paginas").as_posix() for p in (SRC / i / "paginas").rglob("*.html")}
+                   for i in IDIOMAS}
 
-    generadas = []
-    for origen in sorted(SRC.rglob("*.html")):
-        texto = origen.read_text(encoding="utf-8")
-        m = re.match(r"\s*<!--\s*(\{.*?\})\s*-->\s*", texto, re.S)
-        meta = json.loads(m.group(1))
-        cuerpo = texto[m.end():]
-        relativa = origen.relative_to(SRC)
-        raiz = "../" * (len(relativa.parts) - 1)
+    total = 0
+    for idioma, conf in IDIOMAS.items():
+        t = json.loads((SRC / "i18n" / f"{idioma}.json").read_text(encoding="utf-8"))
+        escribe_textos_js(idioma, t)
+        parciales = {p.stem: p.read_text(encoding="utf-8").strip() for p in (SRC / idioma / "parciales").glob("*.html")}
+        sustituciones = {
+            "{{contactos}}": parciales["contactos"],
+            "{{sin_pin}}": parciales["sin-pin"],
+            "{{sectores}}": bloque_sectores(sectores, t),
+            "{{total_sectores}}": str(sectores["total"]),
+            "{{total_establecimientos}}": format(est["total"], ",").replace(",", t["separador_miles"]),
+            "{{fecha_listado}}": fecha_larga(est["fechaListado"], t),
+        }
+        if idioma == "es":
+            sustituciones["{{propuesta_md}}"] = propuesta(t)
 
-        for marcador, valor in sustituciones.items():
-            cuerpo = cuerpo.replace(marcador, valor)
-        scripts = "\n  ".join(f'<script src="{{{{raiz}}}}{s}" defer></script>' for s in meta.get("scripts", []))
-        estilos = "\n  ".join(f'<link rel="stylesheet" href="{{{{raiz}}}}{c}">' for c in meta.get("css", []))
-        titulo = meta["titulo"]
-        pagina = (plantilla
-                  .replace("{{titulo_completo}}", html.escape(
-                      titulo if meta.get("portada") else f"{titulo} · Tarjeta Familia Castilla y León"))
-                  .replace("{{descripcion}}", html.escape(meta["descripcion"]))
-                  .replace("{{estilos}}", estilos)
-                  .replace("{{scripts}}", scripts)
-                  .replace("{{nav}}", nav(meta.get("seccion"), raiz))
-                  .replace("{{migas}}", migas(meta.get("migas"), titulo, raiz))
-                  .replace("{{contenido}}", cuerpo.strip())
-                  .replace("{{raiz}}", raiz))
-        if "{{" in pagina:
-            raise SystemExit(f"Marcador sin sustituir en {relativa}: "
-                             f"{re.search(r'{{[^}]*}}', pagina).group(0)}")
-        destino = RAIZ / relativa
-        destino.parent.mkdir(parents=True, exist_ok=True)
-        destino.write_text(pagina, encoding="utf-8")
-        generadas.append(str(relativa))
-    print(f"{len(generadas)} páginas generadas:", ", ".join(generadas))
+        for origen in sorted((SRC / idioma / "paginas").rglob("*.html")):
+            texto = origen.read_text(encoding="utf-8")
+            m = re.match(r"\s*<!--\s*(\{.*?\})\s*-->\s*", texto, re.S)
+            meta = json.loads(m.group(1))
+            cuerpo = texto[m.end():]
+            relativa = origen.relative_to(SRC / idioma / "paginas").as_posix()
+            inicio = "../" * relativa.count("/")
+            raiz = "../" * (relativa.count("/") + conf["carpeta"].count("/"))
+
+            for marcador, valor in sustituciones.items():
+                cuerpo = cuerpo.replace(marcador, valor)
+            scripts = meta.get("scripts", [])
+            if scripts:
+                scripts = [f"assets/i18n/{idioma}.js", "assets/js/i18n.js"] + scripts
+            scripts = "\n  ".join(f'<script src="{{{{raiz}}}}{s}" defer></script>' for s in scripts)
+            estilos = "\n  ".join(f'<link rel="stylesheet" href="{{{{raiz}}}}{c}">' for c in meta.get("css", []))
+            titulo = meta["titulo"]
+            pagina = (plantilla
+                      .replace("{{titulo_completo}}", html.escape(
+                          titulo if meta.get("portada") else f'{titulo} · {t["plantilla"]["sitio"]}'))
+                      .replace("{{descripcion}}", html.escape(meta["descripcion"]))
+                      .replace("{{lang}}", idioma)
+                      .replace("{{dir}}", conf["dir"])
+                      .replace("{{alternativos}}", alternativos(relativa, raiz, disponibles))
+                      .replace("{{idiomas}}", selector_idioma(idioma, relativa, raiz, disponibles))
+                      .replace("{{estilos}}", estilos)
+                      .replace("{{scripts}}", scripts)
+                      .replace("{{nav}}", navegacion(meta.get("seccion"), inicio, t))
+                      .replace("{{migas}}", migas(meta.get("migas"), titulo, inicio, t))
+                      .replace("{{contenido}}", cuerpo.strip()))
+            pagina = re.sub(r"\{\{t:(\w+)\}\}", lambda x: t["plantilla"][x.group(1)], pagina)
+            pagina = con_version(pagina.replace("{{inicio}}", inicio).replace("{{raiz}}", raiz))
+            if "{{" in pagina:
+                raise SystemExit(f"Marcador sin sustituir en {idioma}/{relativa}: "
+                                 f"{re.search(r'{{[^}]*}}', pagina).group(0)}")
+            destino = RAIZ / conf["carpeta"] / relativa
+            destino.parent.mkdir(parents=True, exist_ok=True)
+            destino.write_text(pagina, encoding="utf-8")
+            total += 1
+    print(f"{total} páginas generadas ({', '.join(IDIOMAS)})")
 
 
 if __name__ == "__main__":

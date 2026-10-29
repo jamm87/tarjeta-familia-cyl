@@ -1,48 +1,51 @@
 // Buscador de comercios colaboradores.
 //
 // Datos: window.DATOS_ESTABLECIMIENTOS y window.DATOS_LOCALIDADES (data/*.js, generados por
-// scripts/geocodificar.mjs). La lista de resultados es la vista principal; el mapa (Leaflet)
-// es opcional, se carga solo si se pide y muestra exactamente lo mismo que la lista.
+// scripts/geocodificar.mjs). Textos: window.TF (assets/js/i18n.js). La lista de resultados es
+// la vista principal; el mapa (Leaflet) es opcional, se carga solo si se pide y muestra
+// exactamente lo mismo que la lista.
 
 (() => {
   const RAIZ = new URL("../../", document.currentScript.src);
   const POR_PAGINA = 20;
+  const MAS_CERCANOS = 10;
   const DATOS = window.DATOS_ESTABLECIMIENTOS;
   const LOC = window.DATOS_LOCALIDADES;
+  const { t, p, num } = TF;
+  const { normaliza } = Sugerencias;
+  const ordenES = (a, b) => a.localeCompare(b, "es");
 
   const $ = (id) => document.getElementById(id);
-  const contenedor = document.querySelector("[data-buscador]");
   const form = $("form-busqueda");
   const q = $("q");
-  const listbox = $("sugerencias");
   const selCategoria = $("categoria");
   const selRadio = $("radio");
   const texto = $("texto");
   const titulo = $("titulo-resultados");
-  const anuncio = $("anuncio");
   const lista = $("lista");
   const nota = $("nota-resultados");
-  const inicio = $("inicio-busqueda");
   const botonMas = $("mas");
-  const zonaMas = botonMas.parentElement;
   const grupoVista = document.querySelector(".vista");
   const mapaEl = $("mapa");
-  const zona = $("zona-resultados");
   const estadoUbicacion = $("estado-ubicacion");
 
-  const { normaliza } = Sugerencias;
-  const formatoKm = (km) => (km < 1 ? "menos de 1 km" : `${km.toLocaleString("es-ES", { maximumFractionDigits: km < 10 ? 1 : 0 })} km`);
-  const nombreCategoria = Object.fromEntries(DATOS.categorias.map((c) => [c.id, c.nombre]));
+  const formatoKm = (km) => (km < 1 ? t("menos_1km") : t("km", { n: num(km, { maximumFractionDigits: km < 10 ? 1 : 0 }) }));
+  const crea = (etiqueta, props = {}, ...hijos) => {
+    const el = Object.assign(document.createElement(etiqueta), props);
+    el.append(...hijos);
+    return el;
+  };
+  const oculto = (textoOculto) => crea("span", { className: "visualmente-oculto", textContent: textoOculto });
 
   // ---- Índices ------------------------------------------------------------------------
 
-  // El texto libre busca en el nombre, la dirección y el tipo de comercio (sector).
+  // El texto libre busca en el nombre, la dirección y el tipo de comercio (en español y
+  // en el idioma de la página).
   const establecimientos = DATOS.establecimientos.map((e) => ({
     ...e,
     claveLocalidad: `${e.provincia}|${normaliza(e.localidad)}`,
-    buscable: normaliza(`${e.nombre} ${e.direccion} ${nombreCategoria[e.categoria]}`),
+    buscable: normaliza(`${e.nombre} ${e.direccion} ${DATOS.categorias.find((c) => c.id === e.categoria)?.nombre ?? ""} ${TF.categoria(e.categoria)}`),
   }));
-  // Localidades, municipios y códigos postales, y las sugerencias: assets/js/sugerencias.js
   const lugares = Sugerencias.indices(LOC);
   const { localidades } = lugares;
 
@@ -54,88 +57,76 @@
     return 12742 * Math.asin(Math.sqrt(h));
   }
 
-  // ---- Sugerencias (combobox ARIA 1.2) ---------------------------------------------------
-
-  const combo = Sugerencias.crear({ input: q, listbox, indices: lugares, alElegir: (lugar) => buscar({ lugar }) });
-
   // ---- Origen de la búsqueda -------------------------------------------------------------
 
-  let origen = null; // { tipo, nombre, provincia?, lat, lon }
+  const combo = Sugerencias.crear({ input: q, listbox: $("sugerencias"), indices: lugares, alElegir: (lugar) => buscar({ lugar }) });
+  let origen = null; // { tipo, nombre, provincia?, lat, lon, … }
+  let pagina = 1;
+  let resultados = [];
+  let soloCercanos = false; // no hay nada en el radio: se muestran los más cercanos
 
   function buscar({ lugar, provincia, foco = true } = {}) {
     if (provincia) {
       origen = { tipo: "provincia", nombre: provincia, provincia };
     } else {
-      const l = lugar ?? combo.seleccion() ?? lugares.resuelve(q.value);
-      if (!l) {
-        anunciar("Escribe una localidad o un código postal, o usa tu ubicación.");
+      origen = lugar ?? combo.seleccion() ?? lugares.resuelve(q.value);
+      if (!origen) {
+        anunciar(t("escribe_lugar"));
         q.focus();
         return;
       }
-      origen = l;
     }
     pagina = 1;
     pinta(foco);
   }
 
+  const repinta = () => {
+    if (!origen) return;
+    pagina = 1;
+    pinta(false);
+  };
   form.addEventListener("submit", (ev) => {
     ev.preventDefault();
     combo.cerrar();
     buscar();
   });
-
-  for (const control of [selCategoria, selRadio]) {
-    control.addEventListener("change", () => {
-      if (origen) {
-        pagina = 1;
-        pinta(false);
-      }
-    });
-  }
+  selCategoria.addEventListener("change", repinta);
+  selRadio.addEventListener("change", repinta);
   let esperaTexto;
   texto.addEventListener("input", () => {
     clearTimeout(esperaTexto);
-    esperaTexto = setTimeout(() => {
-      if (origen) {
-        pagina = 1;
-        pinta(false);
-      }
-    }, 300);
+    esperaTexto = setTimeout(repinta, 300);
   });
 
   // ---- Geolocalización -------------------------------------------------------------------
 
   function usarUbicacion() {
     if (!("geolocation" in navigator)) {
-      estadoUbicacion.textContent = "Tu navegador no permite conocer tu ubicación. Escribe tu localidad.";
+      estadoUbicacion.textContent = t("geo_no_soportado");
       return;
     }
-    estadoUbicacion.textContent = "Buscando tu ubicación… Tu navegador te pedirá permiso. No guardamos tu ubicación.";
+    estadoUbicacion.textContent = t("geo_buscando");
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         const punto = { lat: pos.coords.latitude, lon: pos.coords.longitude };
-        // Si varias localidades están a la misma distancia (pedanías situadas en el centro de
-        // su municipio), se elige la que tiene más comercios.
+        // Si varias localidades están a la misma distancia (pedanías situadas en el centro
+        // de su municipio), se elige la que tiene más comercios.
         const cercana = localidades.reduce((mejor, l) => {
           const d = distanciaKm(punto, l);
           const empate = Math.abs(d - mejor.d) < 0.05;
           return (empate ? l.comercios > mejor.l.comercios : d < mejor.d) ? { l, d } : mejor;
         }, { l: null, d: Infinity });
         const fuera = cercana.d > 30;
-        estadoUbicacion.textContent = fuera
-          ? "Parece que estás fuera de Castilla y León. Te mostramos los comercios más cercanos."
-          : `Ubicación encontrada, cerca de ${cercana.l.nombre}.`;
+        estadoUbicacion.textContent = fuera ? t("geo_fuera") : t("geo_encontrada", { lugar: cercana.l.nombre });
         q.value = "";
         combo.olvidar();
-        origen = { tipo: "ubicacion", nombre: "tu ubicación", ...punto, cercaDe: cercana.l };
-        if (fuera && selRadio.value !== "0") selRadio.value = "0";
+        origen = { tipo: "ubicacion", ...punto };
+        if (fuera) selRadio.value = "0";
         pagina = 1;
         pinta(true);
       },
       (err) => {
-        estadoUbicacion.textContent = err.code === err.PERMISSION_DENIED
-          ? "No has dado permiso para usar tu ubicación. Escribe tu localidad o código postal."
-          : "No hemos podido saber dónde estás. Escribe tu localidad o código postal.";
+        estadoUbicacion.textContent = t(err.code === err.PERMISSION_DENIED ? "geo_denegada" : "geo_error");
         q.focus();
       },
       { enableHighAccuracy: false, timeout: 15000, maximumAge: 300000 },
@@ -143,10 +134,7 @@
   }
   $("ubicacion").addEventListener("click", usarUbicacion);
 
-  // ---- Resultados ------------------------------------------------------------------------
-
-  let pagina = 1;
-  let resultados = [];
+  // ---- Cálculo de resultados ---------------------------------------------------------------
 
   // Zona del propio origen: la misma localidad, el mismo municipio o el mismo código postal.
   function zonaDe(e) {
@@ -161,22 +149,19 @@
     return null;
   }
 
-  const MAS_CERCANOS = 10;
-  let soloCercanos = false; // no hay nada en el radio: se muestran los más cercanos
-
   function calcula() {
     const cat = selCategoria.value;
     const radio = Number(selRadio.value);
     const palabras = normaliza(texto.value).split(" ").filter(Boolean);
     const filtrados = establecimientos.filter((e) =>
-      (!cat || e.categoria === cat) && palabras.every((p) => e.buscable.includes(p)));
+      (!cat || e.categoria === cat) && palabras.every((pal) => e.buscable.includes(pal)));
     soloCercanos = false;
 
     if (origen.tipo === "provincia") {
       return filtrados
         .filter((e) => e.provincia === origen.provincia)
         .map((e) => ({ e, d: null }))
-        .sort((a, b) => a.e.localidad.localeCompare(b.e.localidad, "es") || a.e.nombre.localeCompare(b.e.nombre, "es"));
+        .sort((a, b) => ordenES(a.e.localidad, b.e.localidad) || ordenES(a.e.nombre, b.e.nombre));
     }
     const ordenados = filtrados
       .filter((e) => e.lat != null)
@@ -184,7 +169,7 @@
         const z = zonaDe(e);
         return { e, z, d: z ? 0 : distanciaKm(origen, e) };
       })
-      .sort((a, b) => a.d - b.d || a.e.localidad.localeCompare(b.e.localidad, "es") || a.e.nombre.localeCompare(b.e.nombre, "es"));
+      .sort((a, b) => a.d - b.d || ordenES(a.e.localidad, b.e.localidad) || ordenES(a.e.nombre, b.e.nombre));
     const enRadio = ordenados.filter((r) => !radio || r.d <= radio);
     if (enRadio.length || !ordenados.length) return enRadio;
     // Aunque no haya ninguno en el radio elegido, se muestran los más cercanos.
@@ -192,79 +177,70 @@
     return ordenados.slice(0, MAS_CERCANOS);
   }
 
-  function aLugar() {
-    if (origen.tipo === "ubicacion") return "a tu ubicación";
-    if (origen.tipo === "cp") return `al código postal ${origen.cp} (${origen.descripcion})`;
-    return `a ${origen.nombre} (${origen.provincia})`;
+  function textoOrigen() {
+    const { tipo, nombre: l, provincia: prov } = origen;
+    if (tipo === "provincia") return t("origen_provincia", { p: prov });
+    if (tipo === "ubicacion") return t("origen_ubicacion");
+    if (tipo === "cp") return t("origen_cp", { cp: origen.cp, desc: origen.descripcion });
+    return t(origen.esMunicipio ? "origen_municipio" : "origen_localidad", { l, p: prov });
   }
 
-  function textoOrigen() {
-    if (origen.tipo === "provincia") return `en la provincia de ${origen.nombre}`;
-    if (origen.tipo === "ubicacion") return "cerca de tu ubicación";
-    if (origen.tipo === "cp") return `cerca del código postal ${origen.cp} (${origen.descripcion})`;
-    if (origen.tipo === "localidad" && origen.esMunicipio) return `cerca de ${origen.nombre} y su municipio (${origen.provincia})`;
-    return `cerca de ${origen.nombre} (${origen.provincia})`;
+  function aLugar() {
+    if (origen.tipo === "ubicacion") return t("a_ubicacion");
+    if (origen.tipo === "cp") return t("a_cp", { cp: origen.cp, desc: origen.descripcion });
+    return t("a_localidad", { l: origen.nombre, p: origen.provincia });
+  }
+
+  // ---- Pintado -----------------------------------------------------------------------------
+
+  function pintaNoEncontrado(moverFoco) {
+    resultados = [];
+    const deCyL = Boolean(LOC.provincias[origen.nombre.slice(0, 2)]);
+    const claves = {
+      "cp-desconocido": [deCyL ? "cp_desconocido" : "cp_fuera", deCyL ? "nota_cp_revisa" : "nota_fuera"],
+      "cp-incompleto": ["cp_incompleto", "nota_cp_revisa"],
+      desconocido: ["desconocido", "nota_desconocido"],
+    }[origen.tipo];
+    titulo.textContent = t(claves[0], { cp: origen.nombre, q: origen.nombre });
+    nota.append(crea("p", { textContent: t(claves[1]) }));
+    lista.replaceChildren();
+    botonMas.parentElement.hidden = true;
+    grupoVista.hidden = true;
+    actualizaMapa();
+    anunciar(titulo.textContent);
+    if (moverFoco) q.focus();
   }
 
   function pinta(moverFoco) {
-    inicio.hidden = true;
+    $("inicio-busqueda").hidden = true;
     nota.replaceChildren();
     actualizaUrl();
-
     if (["desconocido", "cp-desconocido", "cp-incompleto"].includes(origen.tipo)) {
-      resultados = [];
-      const deCyL = LOC.provincias[origen.nombre.slice(0, 2)];
-      titulo.textContent = {
-        "cp-desconocido": deCyL ? `No encontramos el código postal ${origen.nombre}` : `El código postal ${origen.nombre} no es de Castilla y León`,
-        "cp-incompleto": "El código postal debe tener 5 cifras",
-        desconocido: `No encontramos «${origen.nombre}»`,
-      }[origen.tipo];
-      const p = document.createElement("p");
-      p.textContent = origen.tipo === "desconocido"
-        ? "Revisa cómo está escrito o elige una de las sugerencias que aparecen al escribir."
-        : deCyL || origen.tipo === "cp-incompleto"
-          ? "Revísalo o escribe el nombre de tu localidad o municipio."
-          : "La Tarjeta Familia solo se puede usar en comercios de Castilla y León.";
-      nota.append(p);
-      lista.replaceChildren();
-      zonaMas.hidden = true;
-      grupoVista.hidden = true;
-      actualizaMapa();
-      anunciar(titulo.textContent);
-      if (moverFoco) q.focus();
+      pintaNoEncontrado(moverFoco);
       return;
     }
 
     resultados = calcula();
     const total = resultados.length;
     const radio = Number(selRadio.value);
-    const filtroCat = selCategoria.value ? ` de ${nombreCategoria[selCategoria.value].toLowerCase()}` : "";
-    const enRadio = origen.tipo !== "provincia" && radio ? ` a menos de ${radio} km` : "";
-    titulo.textContent = soloCercanos
-      ? `${total === 1 ? "El comercio" : `Los ${total} comercios`}${filtroCat} más ${total === 1 ? "cercano" : "cercanos"} ${aLugar()}`
-      : total
-        ? `${total.toLocaleString("es-ES")} ${total === 1 ? "comercio" : "comercios"}${filtroCat}${enRadio} ${textoOrigen()}`
-        : `No hay comercios colaboradores${filtroCat}${enRadio} ${textoOrigen()}`;
+    let nombreCat = selCategoria.value ? TF.categoria(selCategoria.value) : "";
+    if (TF.textos.filtro_cat_minusculas) nombreCat = nombreCat.toLocaleLowerCase(TF.locale);
+    const vars = {
+      cat: nombreCat ? t("filtro_cat", { cat: nombreCat }) : "",
+      radio: origen.tipo !== "provincia" && radio ? t("filtro_radio", { km: radio }) : "",
+      origen: textoOrigen(),
+      km: radio,
+    };
+    if (soloCercanos) titulo.textContent = p("titulo_cercanos", total, { ...vars, a: aLugar() });
+    else titulo.textContent = total ? p("titulo_resultados", total, vars) : t("titulo_ninguno", vars);
 
     if (soloCercanos) {
-      const p = document.createElement("p");
-      p.className = "aviso aviso--info";
-      p.textContent = `No hay comercios colaboradores${filtroCat} a menos de ${radio} km. Te mostramos los más cercanos. Recuerda que también puedes pagar en otras tiendas de un sector autorizado.`;
-      nota.append(p);
+      nota.append(crea("p", { className: "aviso aviso--info", textContent: t("aviso_cercanos", vars) }));
     } else if (!total) {
-      const p = document.createElement("p");
-      p.append("Recuerda que también puedes pagar en otras tiendas de un ");
-      const a = document.createElement("a");
-      a.href = `${RAIZ}comercios/sectores.html`;
-      a.textContent = "sector autorizado";
-      p.append(a, ", aunque no sean colaboradoras.");
-      nota.append(p);
+      nota.append(parrafoSector());
       if (radio && radio < 50 && origen.tipo !== "provincia") {
-        const ampliar = document.createElement("button");
-        ampliar.type = "button";
-        ampliar.className = "boton boton--secundario";
         const siguiente = radio < 10 ? 10 : radio < 25 ? 25 : 50;
-        ampliar.textContent = `Buscar hasta ${siguiente} km`;
+        const ampliar = crea("button", { type: "button", className: "boton boton--secundario", textContent: t("ampliar", { km: siguiente }) });
         ampliar.addEventListener("click", () => {
           selRadio.value = String(siguiente);
           pagina = 1;
@@ -275,16 +251,12 @@
     } else if (origen.tipo !== "provincia") {
       const mismo = resultados.filter((r) => r.d === 0).length;
       if (mismo > POR_PAGINA && !texto.value && !selCategoria.value) {
-        const p = document.createElement("p");
-        p.className = "aproximada";
-        p.textContent = `Hay ${mismo} comercios en ${origen.tipo === "cp" ? "tu zona" : origen.nombre}. Para encontrar uno concreto, elige el tipo de comercio o escribe el nombre, la calle o lo que necesitas (por ejemplo: farmacia, zapatería).`;
-        nota.append(p);
+        const zona = origen.tipo === "cp" ? t("tu_zona") : origen.nombre;
+        nota.append(crea("p", { className: "aproximada", textContent: t("muchos_en_zona", { n: mismo, zona }) }));
       }
       if (origen.aproximada) {
-        const p = document.createElement("p");
-        p.className = "aproximada";
-        p.textContent = `${origen.nombre} se sitúa en el centro del municipio de ${lugares.municipios[origen.ine].nombre}: las distancias son aproximadas.`;
-        nota.append(p);
+        const m = lugares.municipios[origen.ine].nombre;
+        nota.append(crea("p", { className: "aproximada", textContent: t("origen_aproximado", { l: origen.nombre, m }) }));
       }
     }
 
@@ -296,14 +268,21 @@
     if (moverFoco) titulo.focus();
   }
 
+  // «También puedes pagar en otras tiendas de un [sector autorizado]…»
+  function parrafoSector() {
+    const [antes, despues] = t("recuerda_sector").split("{enlace}");
+    const enlace = crea("a", { href: new URL("../comercios/sectores.html", location.href).href, textContent: t("sector_autorizado") });
+    return crea("p", {}, antes, enlace, despues ?? "");
+  }
+
   function pintaPagina(enfocarPrimero) {
     const desde = (pagina - 1) * POR_PAGINA;
     const trozo = resultados.slice(desde, desde + POR_PAGINA);
     const nuevos = trozo.map(({ e, d, z }) => tarjeta(e, d, z));
     lista.append(...nuevos);
     const quedan = resultados.length - desde - trozo.length;
-    zonaMas.hidden = quedan <= 0;
-    botonMas.textContent = `Mostrar ${Math.min(quedan, POR_PAGINA)} más (quedan ${quedan})`;
+    botonMas.parentElement.hidden = quedan <= 0;
+    botonMas.textContent = t("mostrar_mas", { n: Math.min(quedan, POR_PAGINA), q: quedan });
     if (enfocarPrimero && nuevos[0]) nuevos[0].querySelector("article").focus();
   }
 
@@ -311,77 +290,43 @@
     pagina++;
     pintaPagina(true);
     actualizaMapa();
-    anunciar(`Mostrando ${lista.children.length} de ${resultados.length}.`);
+    anunciar(t("mostrando", { n: lista.children.length, t: resultados.length }));
   });
 
-  function enlaceRuta(e) {
-    const destino = `${e.nombre}, ${e.direccion}, ${e.cp} ${e.localidad}`;
-    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(destino)}`;
-  }
-
-  const TEXTO_ZONA = { localidad: "En esta localidad", municipio: "En este municipio", cp: "En este código postal" };
+  // Ruta en Google Maps hasta el comercio (por nombre y dirección, que Google reconoce mejor
+  // que unas coordenadas aproximadas).
+  const enlaceRuta = (e) =>
+    `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${e.nombre}, ${e.direccion}, ${e.cp} ${e.localidad}`)}`;
 
   function tarjeta(e, d, z) {
-    const li = document.createElement("li");
-    const art = document.createElement("article");
-    art.className = "establecimiento";
-    art.tabIndex = -1;
-    art.id = `est-${e.id}`;
-    art.setAttribute("aria-labelledby", `nom-${e.id}`);
-
-    const h3 = document.createElement("h3");
-    h3.id = `nom-${e.id}`;
-    h3.textContent = e.nombre;
-
-    const meta = document.createElement("p");
-    meta.className = "meta";
-    const cat = document.createElement("span");
-    cat.className = "etiqueta-cat";
-    cat.textContent = nombreCategoria[e.categoria];
-    meta.append(cat);
+    const meta = crea("p", { className: "meta" }, crea("span", { className: "etiqueta-cat", textContent: TF.categoria(e.categoria) }));
     if (d != null) {
-      const dist = document.createElement("span");
-      dist.className = "distancia";
-      dist.textContent = z ? TEXTO_ZONA[z] : `A ${formatoKm(d)} aprox.`;
-      meta.append(dist);
+      meta.append(crea("span", { className: "distancia", textContent: z ? t(`zona_${z}`) : t("distancia", { d: formatoKm(d) }) }));
     }
-
-    const dir = document.createElement("p");
-    dir.append(e.direccion, document.createElement("br"), `${e.cp} ${e.localidad} (${e.provincia})`);
-
-    art.append(h3, meta, dir);
+    const direccion = crea("p", { lang: "es" }, e.direccion, document.createElement("br"), `${e.cp} ${e.localidad} (${e.provincia})`);
+    const art = crea("article", { className: "establecimiento", tabIndex: -1, id: `est-${e.id}` },
+      crea("h3", { id: `nom-${e.id}`, lang: "es", textContent: e.nombre }), meta, direccion);
+    art.setAttribute("aria-labelledby", `nom-${e.id}`);
     if (e.precision === "municipio" || e.precision === "codigo-postal") {
-      const aprox = document.createElement("p");
-      aprox.className = "aproximada";
-      aprox.textContent = "Ubicación aproximada: se usa el centro del municipio.";
-      art.append(aprox);
+      art.append(crea("p", { className: "aproximada", textContent: t("ubicacion_aproximada") }));
     }
 
-    const acciones = document.createElement("p");
-    acciones.className = "acciones";
-    const ruta = document.createElement("a");
-    ruta.className = "boton boton--pequeno boton--secundario";
-    ruta.href = enlaceRuta(e);
-    ruta.innerHTML = 'Cómo llegar<span class="visualmente-oculto"></span>';
-    ruta.querySelector("span").textContent = ` a ${e.nombre}`;
-    acciones.append(ruta);
+    const acciones = crea("p", { className: "acciones" },
+      crea("a", { className: "boton boton--pequeno boton--secundario", href: enlaceRuta(e) },
+        t("como_llegar"), oculto(t("como_llegar_a", { nombre: e.nombre }))));
     if (vista === "mapa" && e.lat != null) {
-      const ver = document.createElement("button");
-      ver.type = "button";
-      ver.className = "boton boton--pequeno boton--secundario";
-      ver.innerHTML = 'Ver en el mapa<span class="visualmente-oculto"></span>';
-      ver.querySelector("span").textContent = `: ${e.nombre}`;
+      const ver = crea("button", { type: "button", className: "boton boton--pequeno boton--secundario" }, t("ver_mapa"), oculto(`: ${e.nombre}`));
       ver.addEventListener("click", () => enfocaEnMapa(e));
       acciones.append(ver);
     }
     art.append(acciones);
-    li.append(art);
-    return li;
+    return crea("li", {}, art);
   }
 
   let ultimoAnuncio = "";
   function anunciar(mensaje) {
     // Se vacía y se rellena para que el lector de pantalla lo lea aunque se repita.
+    const anuncio = $("anuncio");
     anuncio.textContent = "";
     ultimoAnuncio = mensaje;
     setTimeout(() => { anuncio.textContent = ultimoAnuncio; }, 60);
@@ -399,20 +344,21 @@
   function cargaLeaflet() {
     if (window.L) return Promise.resolve();
     cargandoLeaflet ??= new Promise((ok, mal) => {
-      const s = document.createElement("script");
-      s.src = `${RAIZ}vendor/leaflet/leaflet.js`;
-      s.onload = ok;
-      s.onerror = mal;
-      document.head.append(s);
+      document.head.append(crea("script", { src: `${RAIZ}vendor/leaflet/leaflet.js`, onload: ok, onerror: mal }));
     });
     return cargandoLeaflet;
+  }
+
+  function marcaVista() {
+    for (const b of grupoVista.querySelectorAll("button")) b.setAttribute("aria-pressed", String(b.dataset.vista === vista));
   }
 
   function cambiaVista(nueva) {
     vista = nueva;
     try { localStorage.setItem("tf-vista", vista); } catch { /* sin almacenamiento */ }
-    for (const b of grupoVista.querySelectorAll("button")) b.setAttribute("aria-pressed", String(b.dataset.vista === vista));
+    marcaVista();
     if (origen) {
+      // Se vuelven a pintar las mismas páginas, ahora con (o sin) «Ver en el mapa».
       lista.replaceChildren();
       const paginas = pagina;
       for (pagina = 1; pagina <= paginas; pagina++) pintaPagina(false);
@@ -421,17 +367,33 @@
     actualizaMapa();
   }
   for (const b of grupoVista.querySelectorAll("button")) b.addEventListener("click", () => cambiaVista(b.dataset.vista));
-  for (const b of grupoVista.querySelectorAll("button")) b.setAttribute("aria-pressed", String(b.dataset.vista === vista));
+  marcaVista();
+
+  function popup(comercios, etiqueta, variasLocalidades) {
+    const ul = crea("ul", { className: "popup-lista" });
+    for (const e of comercios.slice(0, 8)) {
+      const a = crea("a", { href: `#est-${e.id}`, lang: "es", textContent: variasLocalidades ? `${e.nombre} (${e.localidad})` : e.nombre });
+      a.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        const art = $(`est-${e.id}`);
+        art?.focus();
+        art?.scrollIntoView({ block: "center" });
+      });
+      ul.append(crea("li", {}, a));
+    }
+    if (comercios.length > 8) ul.append(crea("li", { textContent: t("mapa_mas", { n: comercios.length - 8 }) }));
+    return crea("div", {}, crea("strong", { textContent: etiqueta }), ul);
+  }
 
   async function actualizaMapa() {
     const mostrar = vista === "mapa" && resultados.length > 0;
     mapaEl.hidden = !mostrar;
-    zona.classList.toggle("con-mapa", mostrar);
+    $("zona-resultados").classList.toggle("con-mapa", mostrar);
     if (!mostrar) return;
     try {
       await cargaLeaflet();
     } catch {
-      mapaEl.textContent = "No se ha podido cargar el mapa. La lista tiene toda la información.";
+      mapaEl.textContent = t("mapa_error");
       return;
     }
     if (!mapa) {
@@ -440,7 +402,7 @@
       mapa.on("zoomend", () => { mapaEl.dataset.zoom = mapa.getZoom(); });
       L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 18,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">colaboradores de OpenStreetMap</a>',
+        attribution: `&copy; <a href="https://www.openstreetmap.org/copyright">${t("mapa_atribucion")}</a>`,
       }).addTo(mapa);
     }
     mapa.invalidateSize();
@@ -448,10 +410,11 @@
     capa = L.layerGroup().addTo(mapa);
     marcadores = new Map();
 
-    // Los comercios de una misma localidad comparten coordenadas: un marcador por punto.
-    const visibles = resultados.slice(0, lista.children.length).filter((r) => r.e.lat != null);
+    // Varios comercios pueden compartir punto (los situados en el centro de su localidad):
+    // un marcador por punto, con el número de comercios.
     const grupos = new Map();
-    for (const { e } of visibles) {
+    for (const { e } of resultados.slice(0, lista.children.length)) {
+      if (e.lat == null) continue;
       const k = `${e.lat},${e.lon}`;
       if (!grupos.has(k)) grupos.set(k, []);
       grupos.get(k).push(e);
@@ -460,50 +423,19 @@
     for (const [k, comercios] of grupos) {
       const [lat, lon] = k.split(",").map(Number);
       const n = comercios.length;
-      const icono = L.divIcon({
-        className: "",
-        html: `<span style="display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#b0141d;color:#fff;font:700 14px system-ui;border:3px solid #fff;box-shadow:0 1px 4px rgb(0 0 0 / 40%)">${n}</span>`,
-        iconSize: [34, 34],
-        iconAnchor: [17, 17],
-      });
-      // Varias localidades pueden compartir punto (pedanías situadas en el centro de su municipio).
       const nombres = [...new Set(comercios.map((e) => e.localidad))];
-      const lugar = nombres.length > 2 ? `${nombres.slice(0, 2).join(", ")} y otras` : nombres.join(" y ");
-      const etiqueta = `${lugar}: ${n} ${n === 1 ? "comercio" : "comercios"}`;
+      const lugar = nombres.length > 2 ? t("mapa_y_otras", { a: nombres[0], b: nombres[1] })
+        : nombres.length === 2 ? t("mapa_y", { a: nombres[0], b: nombres[1] }) : nombres[0];
+      const etiqueta = `${lugar}: ${p("comercios", n)}`;
+      const icono = L.divIcon({ className: "marcador", html: `<span>${n}</span>`, iconSize: [34, 34], iconAnchor: [17, 17] });
       const m = L.marker([lat, lon], { icon: icono, title: etiqueta, alt: etiqueta, keyboard: true }).addTo(capa);
-      const cont = document.createElement("div");
-      const h = document.createElement("strong");
-      h.textContent = etiqueta;
-      const ul = document.createElement("ul");
-      ul.style.paddingLeft = "1.1rem";
-      ul.style.margin = "0.4rem 0 0";
-      for (const e of comercios.slice(0, 8)) {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        a.href = `#est-${e.id}`;
-        a.textContent = nombres.length > 1 ? `${e.nombre} (${e.localidad})` : e.nombre;
-        a.addEventListener("click", (ev) => {
-          ev.preventDefault();
-          const art = document.getElementById(`est-${e.id}`);
-          art?.focus();
-          art?.scrollIntoView({ block: "center" });
-        });
-        li.append(a);
-        ul.append(li);
-      }
-      if (n > 8) {
-        const li = document.createElement("li");
-        li.textContent = `y ${n - 8} más en la lista`;
-        ul.append(li);
-      }
-      cont.append(h, ul);
-      m.bindPopup(cont);
+      m.bindPopup(popup(comercios, etiqueta, nombres.length > 1));
       for (const e of comercios) marcadores.set(e.id, m);
       limites.push([lat, lon]);
     }
     if (origen.lat != null) {
       L.circleMarker([origen.lat, origen.lon], { radius: 8, color: "#0b57d0", weight: 3, fillColor: "#fff", fillOpacity: 1 })
-        .bindTooltip(origen.tipo === "ubicacion" ? "Tu ubicación" : origen.nombre)
+        .bindTooltip(origen.tipo === "ubicacion" ? t("tu_ubicacion") : origen.nombre)
         .addTo(capa);
       limites.push([origen.lat, origen.lon]);
     }
@@ -517,54 +449,48 @@
     m.openPopup();
     mapaEl.scrollIntoView({ block: "nearest" });
     document.querySelectorAll(".establecimiento.activo").forEach((x) => x.classList.remove("activo"));
-    document.getElementById(`est-${e.id}`)?.classList.add("activo");
+    $(`est-${e.id}`)?.classList.add("activo");
   }
 
   // ---- Estado en la URL ----------------------------------------------------------------------
 
   function actualizaUrl() {
-    const p = new URLSearchParams();
-    if (origen.tipo === "provincia") p.set("provincia", origen.provincia);
-    else if (origen.tipo !== "ubicacion") p.set("q", origen.tipo === "cp" ? origen.cp : origen.nombre);
-    if (selCategoria.value) p.set("cat", selCategoria.value);
-    if (selRadio.value !== "25") p.set("km", selRadio.value);
-    if (texto.value.trim()) p.set("texto", texto.value.trim());
-    history.replaceState(null, "", `${location.pathname}${p.size ? `?${p}` : ""}`);
+    const params = new URLSearchParams();
+    if (origen.tipo === "provincia") params.set("provincia", origen.provincia);
+    else if (origen.tipo !== "ubicacion") params.set("q", origen.tipo === "cp" ? origen.cp : origen.nombre);
+    if (selCategoria.value) params.set("cat", selCategoria.value);
+    if (selRadio.value !== "25") params.set("km", selRadio.value);
+    if (texto.value.trim()) params.set("texto", texto.value.trim());
+    history.replaceState(null, "", `${location.pathname}${params.size ? `?${params}` : ""}`);
   }
 
   // ---- Arranque --------------------------------------------------------------------------------
 
-  const opcionTodas = new Option(`Todos (${DATOS.total.toLocaleString("es-ES")})`, "");
-  selCategoria.append(opcionTodas, ...DATOS.categorias.map((c) => new Option(`${c.nombre} (${c.total})`, c.id)));
+  selCategoria.append(new Option(t("todos", { n: DATOS.total }), ""),
+    ...DATOS.categorias.map((c) => new Option(`${TF.categoria(c.id)} (${num(c.total)})`, c.id)));
 
-  const provincias = Object.values(LOC.provincias).sort((a, b) => a.localeCompare(b, "es"));
+  const provincias = Object.values(LOC.provincias).sort(ordenES);
   $("provincias").append(...provincias.map((prov) => {
-    const li = document.createElement("li");
-    const b = document.createElement("button");
-    b.type = "button";
-    b.className = "boton boton--pequeno boton--secundario";
     const n = establecimientos.filter((e) => e.provincia === prov).length;
-    b.textContent = `${prov} (${n})`;
+    const b = crea("button", { type: "button", className: "boton boton--pequeno boton--secundario", textContent: `${prov} (${num(n)})` });
     b.addEventListener("click", () => buscar({ provincia: prov }));
-    li.append(b);
-    return li;
+    return crea("li", {}, b);
   }));
 
-  contenedor.hidden = false;
+  document.querySelector("[data-buscador]").hidden = false;
 
   const params = new URLSearchParams(location.search);
-  if (params.get("cat") && nombreCategoria[params.get("cat")]) selCategoria.value = params.get("cat");
+  if (DATOS.categorias.some((c) => c.id === params.get("cat"))) selCategoria.value = params.get("cat");
   if (["5", "10", "25", "50", "0"].includes(params.get("km"))) selRadio.value = params.get("km");
   if (params.get("texto")) texto.value = params.get("texto");
-  if (params.get("provincia") && provincias.includes(params.get("provincia"))) {
+  if (provincias.includes(params.get("provincia"))) {
     buscar({ provincia: params.get("provincia"), foco: false });
   } else if (params.get("q")) {
     q.value = params.get("q");
     // «en» indica la provincia cuando se eligió una sugerencia en la portada (hay
     // localidades con el mismo nombre en varias provincias).
     const n = normaliza(q.value);
-    const lugar = localidades.find((l) => l.n === n && l.provincia === params.get("en"));
-    buscar({ lugar, foco: false });
+    buscar({ lugar: localidades.find((l) => l.n === n && l.provincia === params.get("en")), foco: false });
   } else if (params.get("cerca") === "1") {
     // Viene del botón «Usar mi ubicación» de la portada: la persona ya lo ha pedido.
     usarUbicacion();

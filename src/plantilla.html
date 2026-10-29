@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="{{lang}}" dir="{{dir}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{titulo_completo}}</title>
+  <meta name="description" content="{{descripcion}}">
+  <meta name="theme-color" content="#b0141d">
+  {{alternativos}}
+  <link rel="icon" href="{{raiz}}assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="{{raiz}}assets/css/estilos.css">
+  <script src="{{raiz}}assets/js/comun.js" defer></script>
+  {{estilos}}
+  {{scripts}}
+</head>
+<body>
+  <a class="saltar" href="#contenido">{{t:saltar}}</a>
+
+  <p class="no-oficial">{{t:aviso_no_oficial}} <a href="{{inicio}}sobre.html">{{t:por_que_existe}}</a></p>
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="{{inicio}}index.html">
+        <img src="{{raiz}}assets/img/tarjeta-familia.jpg" alt="" width="56" height="44">
+        <span>{{t:marca}} <small>Castilla y León</small></span>
+      </a>
+      <nav class="nav-principal" aria-label="{{t:nav_principal}}">
+        <ul>
+          {{nav}}
+        </ul>
+      </nav>
+      <nav class="idiomas" aria-label="{{t:idioma}}">
+        <ul>
+            {{idiomas}}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+    {{migas}}
+    {{contenido}}
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="columnas">
+        <section aria-labelledby="pie-familias">
+          <h2 id="pie-familias">{{t:pie_familias}}</h2>
+          <ul>
+            <li><a href="{{inicio}}familias/activar.html">{{t:pie_activar}}</a></li>
+            <li><a href="{{inicio}}familias/pagar.html">{{t:pie_pagar}}</a></li>
+            <li><a href="{{inicio}}buscar/index.html">{{t:nav_buscar}}</a></li>
+            <li><a href="{{inicio}}familias/saldo.html">{{t:pie_saldo}}</a></li>
+            <li><a href="{{inicio}}familias/problemas.html">{{t:pie_problemas}}</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="pie-comercios">
+          <h2 id="pie-comercios">{{t:pie_comercios}}</h2>
+          <ul>
+            <li><a href="{{inicio}}comercios/index.html">{{t:pie_puedo_cobrar}}</a></li>
+            <li><a href="{{inicio}}comercios/sectores.html">{{t:pie_sectores}}</a></li>
+            <li><a href="{{inicio}}comercios/como-cobrar.html">{{t:pie_caja}}</a></li>
+            <li><a href="{{inicio}}comercios/hazte-colaborador.html">{{t:pie_colaborador}}</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="pie-ayuda">
+          <h2 id="pie-ayuda">{{t:nav_ayuda}}</h2>
+          <ul>
+            <li>{{t:pie_robo}} <a href="tel:900404090" dir="ltr">900 40 40 90</a> {{t:pie_robo_quien}}</li>
+            <li>{{t:pie_activacion}} <a href="tel:900300300" dir="ltr">900 300 300</a> {{t:pie_activacion_quien}}</li>
+            <li>{{t:pie_info}} <a href="tel:012" dir="ltr">012</a></li>
+            <li><a href="mailto:conciliacion.gss@jcyl.es" dir="ltr">conciliacion.gss@jcyl.es</a></li>
+            <li><a href="{{inicio}}ayuda.html">{{t:pie_todos_contactos}}</a></li>
+          </ul>
+        </section>
+      </div>
+      <p class="nota">
+        {{t:pie_nota}} (<a href="{{inicio}}fuentes/index.html">{{t:pie_documentos}}</a>).
+        <a href="{{inicio}}sobre.html">{{t:por_que_existe}}</a> ·
+        <a href="{{inicio}}accesibilidad.html">{{t:pie_accesibilidad}}</a> ·
+        <a href="{{raiz}}propuesta.html" hreflang="es">{{t:pie_propuesta}}</a> ·
+        <a href="https://github.com/jamm87/tarjeta-familia-cyl/issues">{{t:pie_error}}</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

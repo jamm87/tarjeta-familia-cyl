@@ -7,22 +7,8 @@ const DESTINO = "conciliacion.gss@jcyl.es";
 const ASUNTO = "Alta de establecimiento colaborador con la Tarjeta Familia";
 const PROVINCIAS = { "05": "Ávila", "09": "Burgos", "24": "León", "34": "Palencia", "37": "Salamanca", "40": "Segovia", "42": "Soria", "47": "Valladolid", "49": "Zamora" };
 
-const MENSAJES_VACIO = {
-  nombre: "Escribe el nombre de la persona que representa al comercio",
-  apellido1: "Escribe el primer apellido",
-  dni: "Escribe el DNI o NIE",
-  razon: "Escribe la razón social",
-  cif: "Escribe el CIF o NIF",
-  sector: "Elige el sector o actividad",
-  email: "Escribe un correo electrónico",
-  movil: "Escribe un teléfono móvil",
-  comercial: "Escribe el nombre del establecimiento",
-  direccion: "Escribe la dirección del establecimiento",
-  provincia: "Elige la provincia",
-  localidad: "Escribe la localidad",
-  cp: "Escribe el código postal",
-  declaracion: "Marca la casilla de la declaración para poder continuar",
-};
+// Mensajes en el idioma de la página (assets/js/i18n.js).
+const MENSAJES_VACIO = TF.textos.form_vacio;
 
 const LETRAS_DNI = "TRWAGMYFPDXBNJZSQVHLCKE";
 const limpia = (v) => v.toUpperCase().replace(/[\s.-]/g, "");
@@ -55,19 +41,19 @@ function cifValido(valor) {
 const soloDigitos = (v) => v.replace(/[\s.-]/g, "").replace(/^(\+34|0034)/, "");
 
 const VALIDADORES = {
-  dni: (v) => dniValido(v) || "El DNI o NIE no es correcto. Comprueba los números y la letra (por ejemplo: 12345678Z)",
-  cif: (v) => cifValido(v) || "El CIF o NIF no es correcto. Debe ser como B12345678",
-  email: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) || "El correo no es correcto. Debe ser como nombre@ejemplo.es",
-  movil: (v) => /^[67]\d{8}$/.test(soloDigitos(v)) || "El móvil debe tener 9 cifras y empezar por 6 o 7",
-  telefono: (v) => /^[6-9]\d{8}$/.test(soloDigitos(v)) || "El teléfono debe tener 9 cifras",
+  dni: (v) => dniValido(v) || TF.t("form_dni"),
+  cif: (v) => cifValido(v) || TF.t("form_cif"),
+  email: (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) || TF.t("form_email"),
+  movil: (v) => /^[67]\d{8}$/.test(soloDigitos(v)) || TF.t("form_movil"),
+  telefono: (v) => /^[6-9]\d{8}$/.test(soloDigitos(v)) || TF.t("form_telefono"),
   cp: (v, form) => {
     const cp = v.trim();
-    if (!/^\d{5}$/.test(cp)) return "El código postal debe tener 5 cifras";
+    if (!/^\d{5}$/.test(cp)) return TF.t("form_cp_cifras");
     const prov = PROVINCIAS[cp.slice(0, 2)];
-    if (!prov) return "El código postal no es de Castilla y León. La Tarjeta Familia solo funciona en comercios de Castilla y León";
+    if (!prov) return TF.t("form_cp_fuera");
     const elegida = form.elements.provincia.value;
     if (elegida && elegida !== cp.slice(0, 2)) {
-      return `El código postal ${cp} es de ${prov}, pero has elegido ${PROVINCIAS[elegida]}`;
+      return TF.t("form_cp_provincia", { cp, p: prov, e: PROVINCIAS[elegida] });
     }
     return true;
   },
@@ -77,6 +63,7 @@ const form = document.getElementById("form-colaborador");
 const resumen = document.getElementById("resumen-errores");
 const confirmacion = document.getElementById("confirmacion");
 let intentado = false;
+const tituloOriginal = document.title;
 
 function error(campo) {
   const valor = campo.type === "checkbox" ? campo.checked : campo.value.trim();
@@ -125,28 +112,25 @@ function muestraResumen(errores) {
   }));
   resumen.hidden = false;
   resumen.focus();
-  document.title = `(${errores.length} ${errores.length === 1 ? "error" : "errores"}) ${document.title.replace(/^\(\d+ errores?\) /, "")}`;
+  document.title = `${TF.p("form_errores", errores.length)} ${tituloOriginal}`;
 }
 
+// El correo va a la Junta de Castilla y León: se redacta siempre en español, con el nombre
+// en español de cada campo (atributo name) y de cada bloque (data-seccion del fieldset).
 function textoCorreo() {
-  const lineas = [
-    "Solicito que el siguiente establecimiento sea colaborador con la Tarjeta Familia.",
-    "",
-  ];
+  const lineas = ["Solicito que el siguiente establecimiento sea colaborador con la Tarjeta Familia.", ""];
   let seccion = null;
   for (const campo of campos()) {
-    const legend = campo.closest("fieldset")?.querySelector("legend")?.textContent.trim();
-    if (legend !== seccion) {
-      lineas.push("", legend.replace(/^\d+\.\s*/, "").toUpperCase());
-      seccion = legend;
+    const bloque = campo.closest("fieldset")?.dataset.seccion;
+    if (bloque !== seccion) {
+      lineas.push("", bloque.toUpperCase());
+      seccion = bloque;
     }
     let valor;
     if (campo.type === "checkbox") valor = campo.checked ? "Sí" : "No";
-    else if (campo.tagName === "SELECT") valor = campo.value ? campo.selectedOptions[0].textContent : "";
+    else if (campo.id === "provincia") valor = PROVINCIAS[campo.value] ?? "";
     else valor = campo.value.trim();
-    if (!valor) continue;
-    const etiqueta = campo.type === "checkbox" ? campo.name : form.querySelector(`label[for="${campo.id}"]`).childNodes[0].textContent.trim();
-    lineas.push(`${etiqueta}: ${valor}`);
+    if (valor) lineas.push(`${campo.name}: ${valor}`);
   }
   const hoy = new Date().toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" });
   lineas.push("", `En ${form.elements.localidad.value.trim()}, a ${hoy}.`);
@@ -162,7 +146,7 @@ form.addEventListener("submit", (ev) => {
     return;
   }
   resumen.hidden = true;
-  document.title = document.title.replace(/^\(\d+ errores?\) /, "");
+  document.title = tituloOriginal;
   const cuerpo = textoCorreo();
   document.getElementById("resumen-envio").textContent = cuerpo;
   document.getElementById("enlace-correo").href =
@@ -194,8 +178,8 @@ document.getElementById("copiar-datos").addEventListener("click", async () => {
   const estado = document.getElementById("estado-copia");
   try {
     await navigator.clipboard.writeText(`Para: ${DESTINO}\nAsunto: ${ASUNTO}\n\n${textoCorreo()}`);
-    estado.textContent = `Datos copiados. Pégalos en un correo nuevo para ${DESTINO}.`;
+    estado.textContent = TF.t("form_copiado", { destino: DESTINO });
   } catch {
-    estado.textContent = "No se han podido copiar automáticamente. Selecciona el resumen de abajo y cópialo.";
+    estado.textContent = TF.t("form_no_copiado");
   }
 });

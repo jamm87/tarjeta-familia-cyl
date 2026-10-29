@@ -73,7 +73,7 @@ strong { font-weight: 700; }
 }
 
 .saltar {
-  position: absolute; left: 1rem; top: -4rem; z-index: 100;
+  position: absolute; inset-inline-start: 1rem; top: -4rem; z-index: 100;
   background: var(--texto); color: #fff; padding: 0.75rem 1rem;
   border-radius: 0 0 var(--radio) var(--radio); font-weight: 700;
 }
@@ -151,7 +151,7 @@ main > .contenedor > :first-child { margin-top: 0; }
 }
 .puerta h2 { margin: 0 0 0.4rem; font-size: 1.45rem; }
 .puerta p { margin: 0; color: var(--texto-suave); }
-.puerta ul { margin: 0.75rem 0 0; padding-left: 1.2rem; color: var(--texto-suave); }
+.puerta ul { margin: 0.75rem 0 0; padding-inline-start: 1.2rem; color: var(--texto-suave); }
 .puerta--familia { background: var(--familia-claro); border-color: #f2cfe0; }
 .puerta--familia h2 { color: var(--familia); }
 .puerta--comercio { background: var(--comercio-claro); border-color: #bfe1e1; }
@@ -179,8 +179,8 @@ main > .contenedor > :first-child { margin-top: 0; }
 
 /* ---------- Avisos y cajas ---------- */
 .aviso {
-  border-left: 6px solid var(--aviso); background: var(--aviso-claro);
-  padding: 1rem 1.25rem; border-radius: 0 var(--radio) var(--radio) 0; margin: 1.5rem 0;
+  border-inline-start: 6px solid var(--aviso); background: var(--aviso-claro);
+  padding: 1rem 1.25rem; border-start-end-radius: var(--radio); border-end-end-radius: var(--radio); margin: 1.5rem 0;
   max-width: var(--lectura);
 }
 .aviso--info { border-color: var(--comercio); background: var(--comercio-claro); }
@@ -210,12 +210,12 @@ main > .contenedor > :first-child { margin-top: 0; }
 /* ---------- Pasos numerados ---------- */
 .pasos { counter-reset: paso; list-style: none; padding: 0; margin: 1.5rem 0; max-width: var(--lectura); }
 .pasos > li {
-  counter-increment: paso; position: relative; padding: 0 0 1.5rem 3.5rem; margin: 0;
-  border-left: 3px solid var(--borde); margin-left: 1.15rem; padding-left: 2.4rem;
+  counter-increment: paso; position: relative; margin: 0; margin-inline-start: 1.15rem;
+  padding-block: 0 1.5rem; padding-inline: 2.4rem 0; border-inline-start: 3px solid var(--borde);
 }
-.pasos > li:last-child { border-left-color: transparent; padding-bottom: 0; }
+.pasos > li:last-child { border-inline-start-color: transparent; padding-bottom: 0; }
 .pasos > li::before {
-  content: counter(paso); position: absolute; left: -1.35rem; top: -0.1rem;
+  content: counter(paso); position: absolute; inset-inline-start: -1.35rem; top: -0.1rem;
   width: 2.5rem; height: 2.5rem; border-radius: 50%; display: grid; place-items: center;
   background: var(--familia); color: #fff; font-weight: 800;
 }
@@ -253,12 +253,12 @@ main > .contenedor > :first-child { margin-top: 0; }
 .preguntas { max-width: var(--lectura); margin: 1.5rem 0; }
 .preguntas details { border-bottom: 1px solid var(--borde); }
 .preguntas summary {
-  cursor: pointer; padding: 1rem 2.5rem 1rem 0; font-weight: 700; position: relative; list-style: none;
+  cursor: pointer; padding-block: 1rem; padding-inline: 0 2.5rem; font-weight: 700; position: relative; list-style: none;
   min-height: 44px;
 }
 .preguntas summary::-webkit-details-marker { display: none; }
 .preguntas summary::after {
-  content: "+"; position: absolute; right: 0.5rem; top: 0.85rem; font-size: 1.4rem; line-height: 1; color: var(--rojo);
+  content: "+"; position: absolute; inset-inline-end: 0.5rem; top: 0.85rem; font-size: 1.4rem; line-height: 1; color: var(--rojo);
 }
 .preguntas details[open] summary::after { content: "−"; }
 .preguntas details > :not(summary) { margin-top: 0; }
@@ -272,7 +272,8 @@ input[type="text"], input[type="email"], input[type="tel"], input[type="search"]
   width: 100%; font: inherit; color: var(--texto); background: #fff;
   border: 2px solid var(--borde-control); border-radius: 8px; padding: 0.6rem 0.75rem; min-height: 48px;
 }
-select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--texto) 50%), linear-gradient(135deg, var(--texto) 50%, transparent 50%); background-position: calc(100% - 18px) 55%, calc(100% - 12px) 55%; background-size: 6px 6px; background-repeat: no-repeat; padding-right: 2.25rem; }
+select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--texto) 50%), linear-gradient(135deg, var(--texto) 50%, transparent 50%); background-position: calc(100% - 18px) 55%, calc(100% - 12px) 55%; background-size: 6px 6px; background-repeat: no-repeat; padding-inline-end: 2.25rem; }
+[dir="rtl"] select { background-position: 12px 55%, 18px 55%; }
 input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--foco); outline-offset: 1px; border-color: var(--foco); }
 .campo--error input, .campo--error select { border-color: var(--error); }
 .error-campo { display: flex; gap: 0.4rem; color: var(--error); font-weight: 700; margin: 0.35rem 0 0; font-size: 1rem; }
@@ -310,7 +311,7 @@ fieldset legend { padding: 0 0.4rem; font-size: 1.2rem; font-weight: 800; }
 
 .combo { position: relative; }
 .combo [role="listbox"] {
-  position: absolute; z-index: 1000; left: 0; right: 0; top: 100%; margin: 4px 0 0; padding: 0.25rem 0;
+  position: absolute; z-index: 1000; inset-inline: 0; top: 100%; margin: 4px 0 0; padding: 0.25rem 0;
   list-style: none; background: #fff; border: 2px solid var(--borde-control); border-radius: 8px;
   max-height: 18rem; overflow-y: auto; box-shadow: var(--sombra);
 }
@@ -363,7 +364,7 @@ fieldset legend { padding: 0 0.4rem; font-size: 1.2rem; font-weight: 800; }
 /* ---------- Tablas ---------- */
 .tabla-scroll { overflow-x: auto; max-width: 100%; }
 table { border-collapse: collapse; width: 100%; margin: 1rem 0 1.5rem; font-size: 1rem; }
-th, td { text-align: left; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--borde); vertical-align: top; }
+th, td { text-align: start; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--borde); vertical-align: top; }
 thead th { background: var(--fondo-suave); }
 
 /* ---------- Pie ---------- */
@@ -394,13 +395,39 @@ thead th { background: var(--fondo-suave); }
   .solo-impresion { display: block; }
   body { font-size: 12pt; }
   .cabecera { background: none; color: #000; border-bottom: 2px solid #000; }
-  .no-oficial { background: none; color: #000; text-align: left; padding: 0 0 0.5rem; }
+  .no-oficial { background: none; color: #000; text-align: start; padding: 0 0 0.5rem; }
   .cabecera a { color: #000; }
   a[href^="tel:"]::after, a[href^="mailto:"]::after { content: ""; }
   .claves li, .aviso { break-inside: avoid; }
 }
 .resumen-envio { white-space: pre-wrap; font: inherit; background: #fff; padding: 1rem; border-radius: 8px; border: 1px solid var(--borde); }
-.sin-pin blockquote { margin: 0.75rem 0; padding: 0.75rem 1rem; background: #fff; border-radius: 8px; border-left: 4px solid var(--borde-control); }
+.sin-pin blockquote { margin: 0.75rem 0; padding: 0.75rem 1rem; background: #fff; border-radius: 8px; border-inline-start: 4px solid var(--borde-control); }
 .sin-pin blockquote p { margin: 0; }
 .sin-pin__titulo { font-size: 1.2rem; }
 .pasos .aviso { padding: 0.9rem 1rem; }
+
+/* ---------- Idiomas y escritura de derecha a izquierda ---------- */
+[dir="rtl"] .migas li + li::before { content: "‹"; }
+[dir="rtl"] body { font-family: "Segoe UI", Tahoma, "Noto Sans Arabic", "Geeza Pro", system-ui, sans-serif; line-height: 1.75; }
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3 { line-height: 1.45; letter-spacing: 0; }
+.mapa { direction: ltr; }
+.idiomas ul { display: flex; flex-wrap: wrap; gap: 0.25rem; list-style: none; margin: 0; padding: 0; }
+.idiomas li + li { margin: 0; }
+.idiomas a {
+  display: inline-flex; align-items: center; min-height: 44px; padding: 0.3rem 0.7rem; border-radius: 6px;
+  font-size: 0.95rem; text-decoration: none; border: 1px solid rgb(255 255 255 / 45%);
+}
+.idiomas a[aria-current="true"] { background: rgb(255 255 255 / 18%); font-weight: 700; }
+
+/* ---------- Marcadores y ventanas del mapa ---------- */
+.marcador span {
+  display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%;
+  background: var(--rojo); color: #fff; font: 700 14px var(--fuente);
+  border: 3px solid #fff; box-shadow: 0 1px 4px rgb(0 0 0 / 40%);
+}
+.popup-lista { padding-inline-start: 1.1rem; margin: 0.4rem 0 0; }
+
+/* ---------- Capturas de pantalla de las guías ---------- */
+.captura { margin: 0.75rem 0 0.5rem; max-width: 36rem; }
+.captura img { display: block; border: 1px solid var(--borde); border-radius: 8px; box-shadow: var(--sombra); background: #fff; }
+.captura figcaption { font-size: 0.92rem; color: var(--texto-suave); margin-top: 0.4rem; }

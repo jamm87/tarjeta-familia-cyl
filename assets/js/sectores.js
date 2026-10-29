@@ -1,4 +1,5 @@
 // Filtro de la lista de sectores autorizados. Sin JavaScript se ve la lista completa.
+// Busca en la descripción oficial (en español) y en el nombre del grupo (en el idioma de la página).
 const formFiltro = document.querySelector("[data-filtro-sectores]");
 const entrada = document.getElementById("filtro-sector");
 const recuento = formFiltro.querySelector("[data-recuento]");
@@ -21,9 +22,10 @@ function filtra() {
     grupo.hidden = enGrupo === 0;
     visibles += enGrupo;
   }
-  if (!palabras.length) recuento.textContent = `${total} sectores autorizados.`;
-  else if (visibles) recuento.textContent = `${visibles} ${visibles === 1 ? "sector coincide" : "sectores coinciden"} con «${entrada.value.trim()}».`;
-  else recuento.textContent = `Ningún sector coincide con «${entrada.value.trim()}». Prueba con otra palabra o consulta a tu banco.`;
+  const consulta = entrada.value.trim();
+  if (!palabras.length) recuento.textContent = TF.t("sectores_total", { n: total });
+  else if (visibles) recuento.textContent = TF.p("sectores_coinciden", visibles, { q: consulta });
+  else recuento.textContent = TF.t("sectores_ninguno", { q: consulta });
 }
 
 let espera;

@@ -7,7 +7,9 @@
 window.Sugerencias = (() => {
   const normaliza = (t) => t.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[-']/g, " ").replace(/\s+/g, " ").trim();
   const sinArticulo = (t) => t.replace(/^(el|la|los|las) /, "");
-  const plural = (n) => `${n} ${n === 1 ? "comercio" : "comercios"}`;
+  // Textos en el idioma de la página (assets/js/i18n.js); sin él, en español.
+  const plural = (n) => (window.TF ? TF.p("comercios", n) : `${n} ${n === 1 ? "comercio" : "comercios"}`);
+  const deMunicipio = (m) => (window.TF ? TF.t("municipio_de", { m }) : `municipio de ${m}`);
 
   function indices(LOC) {
     // Municipios (código INE) y códigos postales oficiales (CNIG) de toda Castilla y León.
@@ -70,7 +72,7 @@ window.Sugerencias = (() => {
     function describe(l) {
       const comercios = l.comercios ? ` · ${plural(l.comercios)}` : "";
       if (l.tipo === "cp") return { principal: l.cp, extra: `${l.descripcion} · ${l.provincia}${comercios}` };
-      const municipio = !l.esMunicipio && l.ine && municipios[l.ine] ? ` (municipio de ${municipios[l.ine].nombre})` : "";
+      const municipio = !l.esMunicipio && l.ine && municipios[l.ine] ? ` (${deMunicipio(municipios[l.ine].nombre)})` : "";
       return { principal: l.nombre, extra: `${l.provincia}${municipio}${comercios}` };
     }
 
