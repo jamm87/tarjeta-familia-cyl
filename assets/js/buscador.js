@@ -64,11 +64,29 @@
   let pagina = 1;
   let resultados = [];
   let soloCercanos = false; // no hay nada en el radio: se muestran los más cercanos
+  let producto = null; // lo que se quiere comprar (asistente): { id, cats, nombre }
 
   function buscar({ lugar, provincia, foco = true } = {}) {
     if (provincia) {
       origen = { tipo: "provincia", nombre: provincia, provincia };
     } else {
+      // Asistente: «pañales cerca de Villafranca» → producto + lugar.
+      if (!lugar && !combo.seleccion() && q.value.trim()) {
+        const r = Asistente.interpreta(q.value, lugares);
+        const valido = r.lugar && ["localidad", "cp"].includes(r.lugar.tipo);
+        if (r.producto || r.cerca || (valido && lugares.resuelve(q.value).tipo === "desconocido")) {
+          if (r.producto) producto = r.producto;
+          if (valido) {
+            lugar = r.lugar;
+            q.value = lugar.tipo === "cp" ? lugar.cp : lugar.nombre;
+          } else {
+            q.value = "";
+            if (r.cerca) usarUbicacion();
+            else pideLugar(foco);
+            return;
+          }
+        }
+      }
       origen = lugar ?? combo.seleccion() ?? lugares.resuelve(q.value);
       if (!origen) {
         anunciar(t("escribe_lugar"));
@@ -90,7 +108,10 @@
     combo.cerrar();
     buscar();
   });
-  selCategoria.addEventListener("change", repinta);
+  selCategoria.addEventListener("change", () => {
+    if (selCategoria.value) producto = null;
+    repinta();
+  });
   selRadio.addEventListener("change", repinta);
   let esperaTexto;
   texto.addEventListener("input", () => {
@@ -149,12 +170,20 @@
     return null;
   }
 
+  // Producto activo: el elegido con el asistente o el que se escribe en el texto libre
+  // («pañales»). Una categoría elegida en la lista manda sobre el producto.
+  function productoActivo() {
+    if (selCategoria.value) return null;
+    return producto ?? Asistente.separa(texto.value).producto;
+  }
+
   function calcula() {
     const cat = selCategoria.value;
+    const prod = productoActivo();
     const radio = Number(selRadio.value);
-    const palabras = normaliza(texto.value).split(" ").filter(Boolean);
+    const palabras = Asistente.separa(texto.value).resto.split(" ").filter(Boolean);
     const filtrados = establecimientos.filter((e) =>
-      (!cat || e.categoria === cat) && palabras.every((pal) => e.buscable.includes(pal)));
+      (cat ? e.categoria === cat : !prod || prod.cats.includes(e.categoria)) && palabras.every((pal) => e.buscable.includes(pal)));
     soloCercanos = false;
 
     if (origen.tipo === "provincia") {
@@ -193,6 +222,30 @@
 
   // ---- Pintado -----------------------------------------------------------------------------
 
+  // Qué tipos de comercio se muestran para un producto, con un botón para quitar el filtro.
+  function notaProducto(prod) {
+    const tipos = crea("ul", { className: "tipos-producto" },
+      ...prod.cats.map((c) => crea("li", {}, crea("span", { className: "etiqueta-cat", textContent: TF.categoria(c) }))));
+    const quitar = crea("button", { type: "button", className: "boton boton--pequeno boton--secundario", textContent: t("producto_quitar") });
+    quitar.addEventListener("click", () => {
+      producto = null;
+      if (Asistente.separa(texto.value).producto) texto.value = "";
+      repinta();
+      titulo.focus();
+    });
+    return crea("div", { className: "aviso aviso--info nota-producto" },
+      crea("p", { textContent: t("producto_nota", { p: prod.nombre }) }), tipos, crea("p", {}, quitar));
+  }
+
+  // Se sabe qué se quiere comprar pero no dónde: se pide el lugar.
+  function pideLugar(moverFoco) {
+    titulo.textContent = t("donde_producto", { p: producto.nombre });
+    nota.replaceChildren(crea("p", { textContent: t("donde_producto_nota") }));
+    actualizaUrl();
+    anunciar(`${titulo.textContent} ${t("donde_producto_nota")}`);
+    if (moverFoco) q.focus();
+  }
+
   function pintaNoEncontrado(moverFoco) {
     resultados = [];
     const deCyL = Boolean(LOC.provincias[origen.nombre.slice(0, 2)]);
@@ -225,8 +278,9 @@
     const radio = Number(selRadio.value);
     let nombreCat = selCategoria.value ? TF.categoria(selCategoria.value) : "";
     if (TF.textos.filtro_cat_minusculas) nombreCat = nombreCat.toLocaleLowerCase(TF.locale);
+    const prod = productoActivo();
     const vars = {
-      cat: nombreCat ? t("filtro_cat", { cat: nombreCat }) : "",
+      cat: nombreCat ? t("filtro_cat", { cat: nombreCat }) : prod ? t("filtro_producto", { p: prod.nombre }) : "",
       radio: origen.tipo !== "provincia" && radio ? t("filtro_radio", { km: radio }) : "",
       origen: textoOrigen(),
       km: radio,
@@ -234,6 +288,7 @@
     if (soloCercanos) titulo.textContent = p("titulo_cercanos", total, { ...vars, a: aLugar() });
     else titulo.textContent = total ? p("titulo_resultados", total, vars) : t("titulo_ninguno", vars);
 
+    if (prod) nota.append(notaProducto(prod));
     if (soloCercanos) {
       nota.append(crea("p", { className: "aviso aviso--info", textContent: t("aviso_cercanos", vars) }));
     } else if (!total) {
@@ -320,7 +375,19 @@
       acciones.append(ver);
     }
     art.append(acciones);
+    const enlaceError = crea("a", { href: enlaceErrorComercio(e) }, t("error_comercio"), oculto(`: ${e.nombre}`));
+    art.append(crea("p", { className: "error-dato" }, enlaceError));
     return crea("li", {}, art);
+  }
+
+  // Aviso de un dato erróneo: por correo si está configurado (src/config.json) y, si no,
+  // como incidencia de GitHub con el comercio ya identificado.
+  function enlaceErrorComercio(e) {
+    const asunto = t("error_comercio_asunto", { nombre: e.nombre, localidad: e.localidad });
+    const cuerpo = `${e.nombre}\n${e.direccion}\n${e.cp} ${e.localidad} (${e.provincia})\n\n`;
+    const correo = TF.textos.correo_errores;
+    if (correo) return `mailto:${correo}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+    return `https://github.com/${TF.textos.repositorio}/issues/new?title=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
   }
 
   let ultimoAnuncio = "";
@@ -456,9 +523,10 @@
 
   function actualizaUrl() {
     const params = new URLSearchParams();
-    if (origen.tipo === "provincia") params.set("provincia", origen.provincia);
-    else if (origen.tipo !== "ubicacion") params.set("q", origen.tipo === "cp" ? origen.cp : origen.nombre);
+    if (origen?.tipo === "provincia") params.set("provincia", origen.provincia);
+    else if (origen && origen.tipo !== "ubicacion") params.set("q", origen.tipo === "cp" ? origen.cp : origen.nombre);
     if (selCategoria.value) params.set("cat", selCategoria.value);
+    else if (producto) params.set("para", producto.id);
     if (selRadio.value !== "25") params.set("km", selRadio.value);
     if (texto.value.trim()) params.set("texto", texto.value.trim());
     history.replaceState(null, "", `${location.pathname}${params.size ? `?${params}` : ""}`);
@@ -479,8 +547,27 @@
 
   document.querySelector("[data-buscador]").hidden = false;
 
+  // Accesos rápidos: «¿Qué necesitas?»
+  const rapidos = $("productos-rapidos");
+  if (rapidos) {
+    rapidos.append(...["panales", "alimentacion", "higiene", "farmacia", "ropa", "calzado", "puericultura", "juguetes"].map((id) => {
+      const prod = Asistente.producto(id);
+      const b = crea("button", { type: "button", className: "boton boton--pequeno boton--secundario", textContent: prod.nombre });
+      b.setAttribute("aria-pressed", "false");
+      b.addEventListener("click", () => {
+        producto = prod;
+        selCategoria.value = "";
+        rapidos.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+        if (origen) repinta();
+        else pideLugar(true);
+      });
+      return crea("li", {}, b);
+    }));
+  }
+
   const params = new URLSearchParams(location.search);
   if (DATOS.categorias.some((c) => c.id === params.get("cat"))) selCategoria.value = params.get("cat");
+  else if (params.get("para")) producto = Asistente.producto(params.get("para"));
   if (["5", "10", "25", "50", "0"].includes(params.get("km"))) selRadio.value = params.get("km");
   if (params.get("texto")) texto.value = params.get("texto");
   if (provincias.includes(params.get("provincia"))) {
@@ -494,5 +581,7 @@
   } else if (params.get("cerca") === "1") {
     // Viene del botón «Usar mi ubicación» de la portada: la persona ya lo ha pedido.
     usarUbicacion();
+  } else if (producto) {
+    pideLugar(false);
   }
 })();

@@ -2,7 +2,20 @@
   "locale": "en-GB",
   "separador_miles": ",",
   "formato_fecha": "{dia} {mes} {anio}",
-  "meses": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+  "meses": [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ],
   "categorias": {
     "farmacia": "Pharmacy",
     "supermercado": "Supermarket and food",
@@ -64,10 +77,23 @@
     "pie_documentos": "original documents, in Spanish",
     "pie_accesibilidad": "Accessibility",
     "pie_propuesta": "Proposal for the Junta (Spanish)",
-    "pie_error": "Report an error"
+    "pie_error": "Report an error",
+    "error_etiqueta": "Help us improve",
+    "error_titulo": "Spotted something wrong or missing?",
+    "error_texto": "A shop that no longer accepts the card, a wrong address, outdated information… Tell us and we'll fix it.",
+    "error_correo": "Send us an email",
+    "error_github": "Open an issue on GitHub",
+    "error_github_nota": "For GitHub users",
+    "error_sin_correo": "If you don't use GitHub, you'll soon be able to email us.",
+    "error_asunto": "Error on the Tarjeta Familia website",
+    "error_cuerpo": "Page: {pagina}\n\nWhat is wrong:\n\n",
+    "error_con_correo": "Just send us an email: no technical knowledge needed."
   },
   "js": {
-    "comercios": {"one": "{n} shop", "other": "{n} shops"},
+    "comercios": {
+      "one": "{n} shop",
+      "other": "{n} shops"
+    },
     "municipio_de": "municipality of {m}",
     "escribe_lugar": "Type a town or a postcode, or use your location.",
     "geo_no_soportado": "Your browser cannot share your location. Please type your town.",
@@ -94,8 +120,14 @@
     "filtro_cat": " ({cat})",
     "filtro_cat_minusculas": false,
     "filtro_radio": " within {km} km",
-    "titulo_resultados": {"one": "{n} shop{cat}{radio} {origen}", "other": "{n} shops{cat}{radio} {origen}"},
-    "titulo_cercanos": {"one": "The nearest shop{cat} {a}", "other": "The {n} nearest shops{cat} {a}"},
+    "titulo_resultados": {
+      "one": "{n} shop{cat}{radio} {origen}",
+      "other": "{n} shops{cat}{radio} {origen}"
+    },
+    "titulo_cercanos": {
+      "one": "The nearest shop{cat} {a}",
+      "other": "The {n} nearest shops{cat} {a}"
+    },
     "titulo_ninguno": "No partner shops{cat}{radio} {origen}",
     "aviso_cercanos": "There are no partner shops{cat} within {km} km, so these are the nearest ones. You can also pay in other shops from an authorised business type.",
     "recuerda_sector": "You can also pay in other shops from an {enlace}, even if they are not partner shops.",
@@ -124,7 +156,10 @@
     "tu_ubicacion": "Your location",
     "todos": "All ({n})",
     "sectores_total": "{n} authorised business types.",
-    "sectores_coinciden": {"one": "{n} business type matches “{q}”.", "other": "{n} business types match “{q}”."},
+    "sectores_coinciden": {
+      "one": "{n} business type matches “{q}”.",
+      "other": "{n} business types match “{q}”."
+    },
     "sectores_ninguno": "No business type matches “{q}”. Try another word or ask your bank.",
     "form_vacio": {
       "nombre": "Enter the first name of the shop's representative",
@@ -150,8 +185,19 @@
     "form_cp_cifras": "Postcodes have 5 digits",
     "form_cp_fuera": "That postcode is not in Castilla y León, and the Tarjeta Familia only works in shops in Castilla y León",
     "form_cp_provincia": "Postcode {cp} belongs to {p}, but you chose {e}",
-    "form_errores": {"one": "({n} error)", "other": "({n} errors)"},
+    "form_errores": {
+      "one": "({n} error)",
+      "other": "({n} errors)"
+    },
     "form_copiado": "Details copied. Paste them into a new email to {destino}.",
-    "form_no_copiado": "They couldn't be copied automatically. Select the summary below and copy it."
+    "form_no_copiado": "They couldn't be copied automatically. Select the summary below and copy it.",
+    "error_comercio": "Is something wrong with this shop? Let us know",
+    "error_comercio_asunto": "Error in a shop: {nombre} ({localidad})",
+    "filtro_producto": " for {p}",
+    "donde_producto": "Where do you want to buy {p}?",
+    "donde_producto_nota": "Type your town or postcode, or use your location.",
+    "producto_nota": "For {p} we show these types of shop:",
+    "producto_quitar": "Show all types of shop",
+    "productos_titulo": "What do you need?"
   }
 }

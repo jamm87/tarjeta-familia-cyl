@@ -40,11 +40,14 @@ GitHub Pages la publica directamente desde la rama `main` (**Settings → Pages 
 |---|---|
 | `index.html`, `familias/`, `comercios/`, `buscar/`, `ayuda.html`… | Páginas generadas en español (no editar a mano) |
 | `en/`, `ar/` | Páginas generadas en inglés y en árabe (de derecha a izquierda) |
+| `src/config.json` | Repositorio y **correo para avisos de errores** (`correo_errores`; vacío hasta que exista: entonces solo se ofrece GitHub) |
 | `src/plantilla.html` | Plantilla común: cabecera, navegación, selector de idioma y pie |
 | `src/<idioma>/paginas/`, `src/<idioma>/parciales/` | Contenido de cada página en `es`, `en` y `ar` (mismas rutas en los tres idiomas) |
 | `src/i18n/<idioma>.json` | Textos de la plantilla, de los scripts (con plurales) y nombres de categorías; se generan en `assets/i18n/` |
 | `assets/img/guias/` | Capturas de MoneyToPay con los datos personales tapados |
-| `assets/` | CSS, JavaScript (buscador, formulario, filtro de sectores) e imágenes |
+| `assets/` | CSS, JavaScript (buscador, asistente, formulario, filtro de sectores) e imágenes |
+| `assets/js/asistente.js` | Asistente de búsqueda sin servicios externos: entiende «pañales cerca de Villafranca» con un diccionario de productos (es, en, ar) y el índice de localidades |
+| `vendor/inter/` | Tipografía Inter (licencia OFL), servida desde la propia web |
 | `data/establecimientos.json` | 1.623 comercios con categoría y coordenadas (también en `.js` para usar sin servidor) |
 | `data/localidades.json` | 2.289 localidades, los municipios y los 1.965 códigos postales de Castilla y León, para buscar |
 | `data/sectores.json` | 116 sectores autorizados, agrupados |
@@ -98,3 +101,17 @@ El modo `--cartociudad` sitúa cada comercio en su dirección y cada aldea en su
 `CAPTURAS=1 npm test` guarda además capturas en `tests/capturas/`.
 
 Las pruebas automáticas no sustituyen a una auditoría manual ni a pruebas con usuarios y lectores de pantalla.
+
+## Sistema visual
+
+Basado en un lenguaje tipo «documento» (lienzo de papel cálido, tipografía Inter, tarjetas con
+borde fino y sombras muy suaves) con los colores de Castilla y León: el rojo como único acento
+para acciones y enlaces, el morado leonés oscuro solo en la banda de la portada y el oro como
+detalle decorativo. Las variables están al principio de `assets/css/estilos.css`, con sus
+contrastes comprobados (WCAG 2.2 AA).
+
+## Pendiente
+
+- **Correo para avisos de errores**: cuando exista, ponerlo en `src/config.json`
+  (`"correo_errores": "…"`) y ejecutar `python3 scripts/generar_paginas.py`. Aparecerá un botón
+  «Escríbenos un correo» en todas las páginas y los avisos de cada comercio irán a ese correo.

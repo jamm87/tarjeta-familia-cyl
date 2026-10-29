@@ -10,10 +10,10 @@
   <link rel="alternate" hreflang="en" href="../en/index.html">
   <link rel="alternate" hreflang="ar" href="../ar/index.html">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../assets/css/estilos.css?v=f1c066b1">
+  <link rel="stylesheet" href="../assets/css/estilos.css?v=8516fccc">
   <script src="../assets/js/comun.js?v=efed5982" defer></script>
   
-  <script src="../assets/i18n/en.js?v=9cf5172c" defer></script>
+  <script src="../assets/i18n/en.js?v=e872c36a" defer></script>
   <script src="../assets/js/i18n.js?v=9a79707d" defer></script>
   <script src="../assets/js/sugerencias.js?v=d8742ab5" defer></script>
   <script src="../assets/js/portada.js?v=5a932232" defer></script>
@@ -58,12 +58,12 @@
           <form class="buscador-rapido" action="buscar/index.html" method="get" role="search" aria-labelledby="titulo-buscador-rapido">
             <h2 id="titulo-buscador-rapido">Where can I use my card?</h2>
             <div class="campo combo">
-              <label for="q-portada">Town, municipality or postcode</label>
+              <label for="q-portada">Where, and if you like, what you need</label>
               <input type="text" id="q-portada" name="q" autocomplete="off" spellcheck="false"
                      role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerencias-portada"
-                     aria-describedby="ayuda-q-portada" placeholder="For example: Arévalo or 05200">
+                     aria-describedby="ayuda-q-portada" placeholder="E.g. nappies in León">
               <ul id="sugerencias-portada" role="listbox" aria-label="Places" hidden></ul>
-              <span class="visualmente-oculto" id="ayuda-q-portada">Suggestions appear as you type; use the arrow keys to choose one.</span>
+              <span class="visualmente-oculto" id="ayuda-q-portada">Type a town, municipality or postcode; suggestions appear and you can choose one with the arrow keys. You can also type what you need, for example “nappies near Villafranca”.</span>
             </div>
             <div class="acciones">
               <button class="boton" type="submit">Find shops</button>
@@ -116,6 +116,17 @@
     </div>
   </main>
 
+  <section class="avisar-error" id="avisar-error" aria-labelledby="titulo-avisar-error">
+    <div class="contenedor">
+      <div>
+        <span class="etiqueta-pildora">Help us improve</span>
+        <h2 id="titulo-avisar-error">Spotted something wrong or missing?</h2>
+        <p>A shop that no longer accepts the card, a wrong address, outdated information… Tell us and we'll fix it. If you don't use GitHub, you'll soon be able to email us.</p>
+      </div>
+      <p class="acciones"><a class="boton" href="https://github.com/jamm87/tarjeta-familia-cyl/issues/new?title=Error%20on%20the%20Tarjeta%20Familia%20website&amp;body=Page%3A%20en/index.html%0A%0AWhat%20is%20wrong%3A%0A%0A">Open an issue on GitHub</a></p>
+    </div>
+  </section>
+
   <footer class="pie">
     <div class="contenedor">
       <div class="columnas">
@@ -155,7 +166,7 @@
         <a href="sobre.html">Why this site exists</a> ·
         <a href="accesibilidad.html">Accessibility</a> ·
         <a href="../propuesta.html" hreflang="es">Proposal for the Junta (Spanish)</a> ·
-        <a href="https://github.com/jamm87/tarjeta-familia-cyl/issues">Report an error</a>
+        <a href="#avisar-error">Report an error</a>
       </p>
     </div>
   </footer>

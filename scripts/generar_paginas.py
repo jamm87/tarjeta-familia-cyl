@@ -138,16 +138,46 @@ def alternativos(relativa, raiz, disponibles):
         for codigo, datos in IDIOMAS.items() if relativa in disponibles[codigo])
 
 
-def escribe_textos_js(idioma, t):
+def enlace_incidencia(config, titulo, cuerpo):
+    return (f'https://github.com/{config["repositorio"]}/issues/new?'
+            f'title={quote(titulo)}&amp;body={quote(cuerpo)}')
+
+
+def bloque_avisar_error(config, relativa, idioma, t):
+    """Llamada a avisar de un error, encima del pie. El botón de correo solo aparece si
+    src/config.json tiene «correo_errores»."""
+    tp = t["plantilla"]
+    pagina = f'{IDIOMAS[idioma]["carpeta"]}{relativa}'
+    cuerpo = tp["error_cuerpo"].format(pagina=pagina)
+    botones = []
+    if config["correo_errores"]:
+        botones.append(f'<a class="boton" href="mailto:{config["correo_errores"]}?subject={quote(tp["error_asunto"])}'
+                       f'&amp;body={quote(cuerpo)}">{tp["error_correo"]}</a>')
+    clase = "boton boton--secundario" if botones else "boton"
+    botones.append(f'<a class="{clase}" href="{enlace_incidencia(config, tp["error_asunto"], cuerpo)}">'
+                   f'{tp["error_github"]}</a>')
+    nota = f' {tp["error_con_correo"] if config["correo_errores"] else tp["error_sin_correo"]}'
+    return (f'<section class="avisar-error" id="avisar-error" aria-labelledby="titulo-avisar-error">\n'
+            f'    <div class="contenedor">\n      <div>\n'
+            f'        <span class="etiqueta-pildora">{tp["error_etiqueta"]}</span>\n'
+            f'        <h2 id="titulo-avisar-error">{tp["error_titulo"]}</h2>\n'
+            f'        <p>{tp["error_texto"]}{nota}</p>\n      </div>\n'
+            f'      <p class="acciones">{" ".join(botones)}</p>\n'
+            f'    </div>\n  </section>')
+
+
+def escribe_textos_js(idioma, t, config):
     """Textos que usan los scripts del navegador: assets/i18n/<idioma>.js"""
     destino = RAIZ / "assets" / "i18n" / f"{idioma}.js"
     destino.parent.mkdir(parents=True, exist_ok=True)
-    datos = {**t["js"], "categorias": t["categorias"], "locale": t["locale"]}
+    datos = {**t["js"], "categorias": t["categorias"], "locale": t["locale"],
+             "repositorio": config["repositorio"], "correo_errores": config["correo_errores"]}
     destino.write_text(f"window.TF_TEXTOS = {json.dumps(datos, ensure_ascii=False)};\n", encoding="utf-8")
 
 
 def main():
     plantilla = (SRC / "plantilla.html").read_text(encoding="utf-8")
+    config = json.loads((SRC / "config.json").read_text(encoding="utf-8"))
     est = json.loads((RAIZ / "data" / "establecimientos.json").read_text(encoding="utf-8"))
     sectores = json.loads((RAIZ / "data" / "sectores.json").read_text(encoding="utf-8"))
     gerencias = json.loads((RAIZ / "data" / "gerencias.json").read_text(encoding="utf-8"))
@@ -157,7 +187,7 @@ def main():
     total = 0
     for idioma, conf in IDIOMAS.items():
         t = json.loads((SRC / "i18n" / f"{idioma}.json").read_text(encoding="utf-8"))
-        escribe_textos_js(idioma, t)
+        escribe_textos_js(idioma, t, config)
         parciales = {p.stem: p.read_text(encoding="utf-8").strip() for p in (SRC / idioma / "parciales").glob("*.html")}
         sustituciones = {
             "{{contactos}}": parciales["contactos"],
@@ -200,6 +230,7 @@ def main():
                       .replace("{{scripts}}", scripts)
                       .replace("{{nav}}", navegacion(meta.get("seccion"), inicio, t))
                       .replace("{{migas}}", migas(meta.get("migas"), titulo, inicio, t))
+                      .replace("{{avisar_error}}", bloque_avisar_error(config, relativa, idioma, t))
                       .replace("{{contenido}}", cuerpo.strip()))
             pagina = re.sub(r"\{\{t:(\w+)\}\}", lambda x: t["plantilla"][x.group(1)], pagina)
             pagina = con_version(pagina.replace("{{inicio}}", inicio).replace("{{raiz}}", raiz))

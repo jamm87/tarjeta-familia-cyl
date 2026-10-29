@@ -10,15 +10,16 @@
   <link rel="alternate" hreflang="en" href="../en/buscar/index.html">
   <link rel="alternate" hreflang="ar" href="../ar/buscar/index.html">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../assets/css/estilos.css?v=f1c066b1">
+  <link rel="stylesheet" href="../assets/css/estilos.css?v=8516fccc">
   <script src="../assets/js/comun.js?v=efed5982" defer></script>
   <link rel="stylesheet" href="../vendor/leaflet/leaflet.css?v=ec929f11">
-  <script src="../assets/i18n/es.js?v=22229862" defer></script>
+  <script src="../assets/i18n/es.js?v=ca34d067" defer></script>
   <script src="../assets/js/i18n.js?v=9a79707d" defer></script>
   <script src="../data/localidades.js?v=3543a4e7" defer></script>
   <script src="../data/establecimientos.js?v=97ecf7dc" defer></script>
   <script src="../assets/js/sugerencias.js?v=d8742ab5" defer></script>
-  <script src="../assets/js/buscador.js?v=a846cb4e" defer></script>
+  <script src="../assets/js/asistente.js?v=90b6c97a" defer></script>
+  <script src="../assets/js/buscador.js?v=98c884dc" defer></script>
 </head>
 <body>
   <a class="saltar" href="#contenido">Saltar al contenido</a>
@@ -72,12 +73,12 @@
         <form class="panel-busqueda" id="form-busqueda" role="search" aria-label="Buscar comercios colaboradores">
           <div class="donde">
             <div class="campo combo">
-              <label for="q">Localidad, municipio o código postal</label>
+              <label for="q">Dónde, y si quieres, qué necesitas</label>
               <input type="text" id="q" name="q" autocomplete="off" spellcheck="false"
                      role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerencias"
-                     aria-describedby="ayuda-q" placeholder="Por ejemplo: Arévalo o 05200">
+                     aria-describedby="ayuda-q" placeholder="Ej.: pañales en Villafranca">
               <ul id="sugerencias" role="listbox" aria-label="Localidades" hidden></ul>
-              <span class="visualmente-oculto" id="ayuda-q">Al escribir aparecerán sugerencias. Usa las flechas para elegir una.</span>
+              <span class="visualmente-oculto" id="ayuda-q">Escribe una localidad, un municipio o un código postal; aparecerán sugerencias que puedes elegir con las flechas. También puedes escribir lo que necesitas, por ejemplo «pañales cerca de Villafranca».</span>
             </div>
             <button class="boton" type="submit">Buscar</button>
             <button class="boton boton--secundario" type="button" id="ubicacion">
@@ -119,7 +120,10 @@
           </div>
           <p class="visualmente-oculto" role="status" aria-live="polite" id="anuncio"></p>
           <div id="inicio-busqueda">
-            <p>Escribe tu localidad, municipio o código postal, o pulsa «Usar mi ubicación». Si en tu zona no hay comercios colaboradores, verás los más cercanos. También puedes ver todos los de una provincia:</p>
+            <p>Escribe tu localidad, municipio o código postal, o pulsa «Usar mi ubicación». Si en tu zona no hay comercios colaboradores, verás los más cercanos.</p>
+            <h3 id="titulo-productos">¿Qué necesitas?</h3>
+            <ul class="provincias-rapidas" id="productos-rapidos" aria-labelledby="titulo-productos"></ul>
+            <p>O mira todos los comercios de una provincia:</p>
             <ul class="provincias-rapidas" id="provincias"></ul>
           </div>
           <div id="nota-resultados"></div>
@@ -134,6 +138,17 @@
       <p class="aproximada">Fuente: <a href="../fuentes/establecimientos-colaboradores-2026-10-21.pdf">Establecimientos comerciales colaboradores con la Tarjeta Familia (PDF)</a>, Junta de Castilla y León. Las distancias son aproximadas: cada comercio se sitúa por su dirección cuando se ha podido localizar y, si no, en el centro de su localidad.</p>
     </div>
   </main>
+
+  <section class="avisar-error" id="avisar-error" aria-labelledby="titulo-avisar-error">
+    <div class="contenedor">
+      <div>
+        <span class="etiqueta-pildora">Ayúdanos a mejorar</span>
+        <h2 id="titulo-avisar-error">¿Has visto algo mal o que falta?</h2>
+        <p>Un comercio que ya no acepta la tarjeta, una dirección equivocada, un dato desactualizado… Cuéntanoslo y lo corregimos. Si no usas GitHub, pronto podrás escribirnos por correo.</p>
+      </div>
+      <p class="acciones"><a class="boton" href="https://github.com/jamm87/tarjeta-familia-cyl/issues/new?title=Error%20en%20la%20web%20de%20la%20Tarjeta%20Familia&amp;body=P%C3%A1gina%3A%20buscar/index.html%0A%0AQu%C3%A9%20est%C3%A1%20mal%3A%0A%0A">Abrir una incidencia en GitHub</a></p>
+    </div>
+  </section>
 
   <footer class="pie">
     <div class="contenedor">
@@ -174,7 +189,7 @@
         <a href="../sobre.html">Por qué existe esta web</a> ·
         <a href="../accesibilidad.html">Accesibilidad</a> ·
         <a href="../propuesta.html" hreflang="es">Propuesta para la Junta</a> ·
-        <a href="https://github.com/jamm87/tarjeta-familia-cyl/issues">Avisar de un error</a>
+        <a href="#avisar-error">Avisar de un error</a>
       </p>
     </div>
   </footer>

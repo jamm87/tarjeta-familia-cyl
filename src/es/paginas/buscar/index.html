@@ -1,4 +1,4 @@
-<!-- {"titulo": "Dónde usar la tarjeta", "descripcion": "Buscador de comercios colaboradores con la Tarjeta Familia cerca de ti, por localidad, código postal o ubicación.", "seccion": "buscar", "migas": [], "css": ["vendor/leaflet/leaflet.css"], "scripts": ["data/localidades.js", "data/establecimientos.js", "assets/js/sugerencias.js", "assets/js/buscador.js"]} -->
+<!-- {"titulo": "Dónde usar la tarjeta", "descripcion": "Buscador de comercios colaboradores con la Tarjeta Familia cerca de ti, por localidad, código postal o ubicación.", "seccion": "buscar", "migas": [], "css": ["vendor/leaflet/leaflet.css"], "scripts": ["data/localidades.js", "data/establecimientos.js", "assets/js/sugerencias.js", "assets/js/asistente.js", "assets/js/buscador.js"]} -->
 <div class="contenedor">
       <h1>Dónde usar la tarjeta</h1>
       <p class="entradilla">Busca entre los {{total_establecimientos}} comercios colaboradores de Castilla y León (listado del {{fecha_listado}}).</p>
@@ -15,12 +15,12 @@
         <form class="panel-busqueda" id="form-busqueda" role="search" aria-label="Buscar comercios colaboradores">
           <div class="donde">
             <div class="campo combo">
-              <label for="q">Localidad, municipio o código postal</label>
+              <label for="q">Dónde, y si quieres, qué necesitas</label>
               <input type="text" id="q" name="q" autocomplete="off" spellcheck="false"
                      role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerencias"
-                     aria-describedby="ayuda-q" placeholder="Por ejemplo: Arévalo o 05200">
+                     aria-describedby="ayuda-q" placeholder="Ej.: pañales en Villafranca">
               <ul id="sugerencias" role="listbox" aria-label="Localidades" hidden></ul>
-              <span class="visualmente-oculto" id="ayuda-q">Al escribir aparecerán sugerencias. Usa las flechas para elegir una.</span>
+              <span class="visualmente-oculto" id="ayuda-q">Escribe una localidad, un municipio o un código postal; aparecerán sugerencias que puedes elegir con las flechas. También puedes escribir lo que necesitas, por ejemplo «pañales cerca de Villafranca».</span>
             </div>
             <button class="boton" type="submit">Buscar</button>
             <button class="boton boton--secundario" type="button" id="ubicacion">
@@ -62,7 +62,10 @@
           </div>
           <p class="visualmente-oculto" role="status" aria-live="polite" id="anuncio"></p>
           <div id="inicio-busqueda">
-            <p>Escribe tu localidad, municipio o código postal, o pulsa «Usar mi ubicación». Si en tu zona no hay comercios colaboradores, verás los más cercanos. También puedes ver todos los de una provincia:</p>
+            <p>Escribe tu localidad, municipio o código postal, o pulsa «Usar mi ubicación». Si en tu zona no hay comercios colaboradores, verás los más cercanos.</p>
+            <h3 id="titulo-productos">¿Qué necesitas?</h3>
+            <ul class="provincias-rapidas" id="productos-rapidos" aria-labelledby="titulo-productos"></ul>
+            <p>O mira todos los comercios de una provincia:</p>
             <ul class="provincias-rapidas" id="provincias"></ul>
           </div>
           <div id="nota-resultados"></div>

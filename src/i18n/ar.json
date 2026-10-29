@@ -2,7 +2,20 @@
   "locale": "ar-u-nu-latn",
   "separador_miles": ",",
   "formato_fecha": "{dia} {mes} {anio}",
-  "meses": ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"],
+  "meses": [
+    "يناير",
+    "فبراير",
+    "مارس",
+    "أبريل",
+    "مايو",
+    "يونيو",
+    "يوليو",
+    "أغسطس",
+    "سبتمبر",
+    "أكتوبر",
+    "نوفمبر",
+    "ديسمبر"
+  ],
   "categorias": {
     "farmacia": "صيدلية",
     "supermercado": "سوبرماركت ومواد غذائية",
@@ -64,10 +77,27 @@
     "pie_documentos": "الوثائق الأصلية بالإسبانية",
     "pie_accesibilidad": "إمكانية الوصول",
     "pie_propuesta": "مقترح للحكومة الإقليمية (بالإسبانية)",
-    "pie_error": "الإبلاغ عن خطأ"
+    "pie_error": "الإبلاغ عن خطأ",
+    "error_etiqueta": "ساعدنا على التحسين",
+    "error_titulo": "هل رأيت خطأ أو معلومة ناقصة؟",
+    "error_texto": "متجر لم يعد يقبل البطاقة، أو عنوان خاطئ، أو معلومة قديمة… أخبرنا وسنصحّحها.",
+    "error_correo": "راسلنا بالبريد الإلكتروني",
+    "error_github": "افتح بلاغًا على GitHub",
+    "error_github_nota": "لمستخدمي GitHub",
+    "error_sin_correo": "إذا كنت لا تستخدم GitHub، فستتمكن قريبًا من مراسلتنا بالبريد الإلكتروني.",
+    "error_asunto": "خطأ في موقع بطاقة الأسرة",
+    "error_cuerpo": "الصفحة: {pagina}\n\nما الخطأ:\n\n",
+    "error_con_correo": "يكفي أن ترسل لنا بريدًا إلكترونيًا: لا تحتاج إلى أي معرفة تقنية."
   },
   "js": {
-    "comercios": {"zero": "لا توجد متاجر", "one": "متجر واحد", "two": "متجران", "few": "{n} متاجر", "many": "{n} متجرًا", "other": "{n} متجر"},
+    "comercios": {
+      "zero": "لا توجد متاجر",
+      "one": "متجر واحد",
+      "two": "متجران",
+      "few": "{n} متاجر",
+      "many": "{n} متجرًا",
+      "other": "{n} متجر"
+    },
     "municipio_de": "بلدية {m}",
     "escribe_lugar": "اكتب اسم البلدة أو الرمز البريدي، أو استخدم موقعك.",
     "geo_no_soportado": "متصفحك لا يسمح بتحديد الموقع. اكتب اسم بلدتك.",
@@ -94,8 +124,21 @@
     "filtro_cat": " ({cat})",
     "filtro_cat_minusculas": false,
     "filtro_radio": " على بعد أقل من {km} كم",
-    "titulo_resultados": {"zero": "لا توجد متاجر{cat}{radio} {origen}", "one": "متجر واحد{cat}{radio} {origen}", "two": "متجران{cat}{radio} {origen}", "few": "{n} متاجر{cat}{radio} {origen}", "many": "{n} متجرًا{cat}{radio} {origen}", "other": "{n} متجر{cat}{radio} {origen}"},
-    "titulo_cercanos": {"one": "أقرب متجر{cat} {a}", "two": "أقرب متجرين{cat} {a}", "few": "أقرب {n} متاجر{cat} {a}", "many": "أقرب {n} متجرًا{cat} {a}", "other": "أقرب {n} متجر{cat} {a}"},
+    "titulo_resultados": {
+      "zero": "لا توجد متاجر{cat}{radio} {origen}",
+      "one": "متجر واحد{cat}{radio} {origen}",
+      "two": "متجران{cat}{radio} {origen}",
+      "few": "{n} متاجر{cat}{radio} {origen}",
+      "many": "{n} متجرًا{cat}{radio} {origen}",
+      "other": "{n} متجر{cat}{radio} {origen}"
+    },
+    "titulo_cercanos": {
+      "one": "أقرب متجر{cat} {a}",
+      "two": "أقرب متجرين{cat} {a}",
+      "few": "أقرب {n} متاجر{cat} {a}",
+      "many": "أقرب {n} متجرًا{cat} {a}",
+      "other": "أقرب {n} متجر{cat} {a}"
+    },
     "titulo_ninguno": "لا توجد متاجر متعاونة{cat}{radio} {origen}",
     "aviso_cercanos": "لا توجد متاجر متعاونة{cat} على بعد أقل من {km} كم، لذلك نعرض لك أقرب المتاجر. يمكنك أيضًا الدفع في متاجر أخرى ضمن نشاط تجاري مسموح به.",
     "recuerda_sector": "يمكنك أيضًا الدفع في متاجر أخرى ضمن {enlace}، حتى لو لم تكن متاجر متعاونة.",
@@ -124,7 +167,13 @@
     "tu_ubicacion": "موقعك",
     "todos": "الكل ({n})",
     "sectores_total": "عدد الأنشطة المسموح بها: {n}.",
-    "sectores_coinciden": {"one": "نشاط واحد يطابق «{q}».", "two": "نشاطان يطابقان «{q}».", "few": "{n} أنشطة تطابق «{q}».", "many": "{n} نشاطًا يطابق «{q}».", "other": "{n} نشاط يطابق «{q}»."},
+    "sectores_coinciden": {
+      "one": "نشاط واحد يطابق «{q}».",
+      "two": "نشاطان يطابقان «{q}».",
+      "few": "{n} أنشطة تطابق «{q}».",
+      "many": "{n} نشاطًا يطابق «{q}».",
+      "other": "{n} نشاط يطابق «{q}»."
+    },
     "sectores_ninguno": "لا يوجد نشاط يطابق «{q}». جرّب كلمة أخرى أو اسأل البنك الذي تتعامل معه.",
     "form_vacio": {
       "nombre": "اكتب اسم الشخص الذي يمثل المتجر",
@@ -150,8 +199,22 @@
     "form_cp_cifras": "يتكون الرمز البريدي من 5 أرقام",
     "form_cp_fuera": "هذا الرمز البريدي ليس في قشتالة وليون، وبطاقة الأسرة لا تعمل إلا في متاجر قشتالة وليون",
     "form_cp_provincia": "الرمز البريدي {cp} تابع لمقاطعة {p}، لكنك اخترت {e}",
-    "form_errores": {"one": "(خطأ واحد)", "two": "(خطآن)", "few": "({n} أخطاء)", "many": "({n} خطأً)", "other": "({n} خطأ)"},
+    "form_errores": {
+      "one": "(خطأ واحد)",
+      "two": "(خطآن)",
+      "few": "({n} أخطاء)",
+      "many": "({n} خطأً)",
+      "other": "({n} خطأ)"
+    },
     "form_copiado": "تم نسخ البيانات. الصقها في رسالة بريد جديدة إلى {destino}.",
-    "form_no_copiado": "تعذّر النسخ تلقائيًا. حدّد الملخص أدناه وانسخه."
+    "form_no_copiado": "تعذّر النسخ تلقائيًا. حدّد الملخص أدناه وانسخه.",
+    "error_comercio": "هل في بيانات هذا المتجر خطأ؟ أخبرنا",
+    "error_comercio_asunto": "خطأ في متجر: {nombre} ({localidad})",
+    "filtro_producto": " ({p})",
+    "donde_producto": "أين تريد شراء {p}؟",
+    "donde_producto_nota": "اكتب بلدتك أو رمزك البريدي، أو استخدم موقعك.",
+    "producto_nota": "للبحث عن {p} نعرض لك أنواع المتاجر التالية:",
+    "producto_quitar": "عرض كل أنواع المتاجر",
+    "productos_titulo": "ماذا تحتاج؟"
   }
 }

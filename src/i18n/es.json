@@ -2,7 +2,20 @@
   "locale": "es-ES",
   "separador_miles": ".",
   "formato_fecha": "{dia} de {mes} de {anio}",
-  "meses": ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
+  "meses": [
+    "enero",
+    "febrero",
+    "marzo",
+    "abril",
+    "mayo",
+    "junio",
+    "julio",
+    "agosto",
+    "septiembre",
+    "octubre",
+    "noviembre",
+    "diciembre"
+  ],
   "categorias": {
     "farmacia": "Farmacia y parafarmacia",
     "supermercado": "Supermercado y alimentación",
@@ -64,10 +77,23 @@
     "pie_documentos": "documentos originales",
     "pie_accesibilidad": "Accesibilidad",
     "pie_propuesta": "Propuesta para la Junta",
-    "pie_error": "Avisar de un error"
+    "pie_error": "Avisar de un error",
+    "error_etiqueta": "Ayúdanos a mejorar",
+    "error_titulo": "¿Has visto algo mal o que falta?",
+    "error_texto": "Un comercio que ya no acepta la tarjeta, una dirección equivocada, un dato desactualizado… Cuéntanoslo y lo corregimos.",
+    "error_correo": "Escríbenos un correo",
+    "error_github": "Abrir una incidencia en GitHub",
+    "error_github_nota": "Para quien use GitHub",
+    "error_sin_correo": "Si no usas GitHub, pronto podrás escribirnos por correo.",
+    "error_asunto": "Error en la web de la Tarjeta Familia",
+    "error_cuerpo": "Página: {pagina}\n\nQué está mal:\n\n",
+    "error_con_correo": "Basta con escribirnos un correo: no hace falta saber nada técnico."
   },
   "js": {
-    "comercios": {"one": "{n} comercio", "other": "{n} comercios"},
+    "comercios": {
+      "one": "{n} comercio",
+      "other": "{n} comercios"
+    },
     "municipio_de": "municipio de {m}",
     "escribe_lugar": "Escribe una localidad o un código postal, o usa tu ubicación.",
     "geo_no_soportado": "Tu navegador no permite obtener la ubicación. Escribe tu localidad.",
@@ -94,8 +120,14 @@
     "filtro_cat": " de {cat}",
     "filtro_cat_minusculas": true,
     "filtro_radio": " a menos de {km} km",
-    "titulo_resultados": {"one": "{n} comercio{cat}{radio} {origen}", "other": "{n} comercios{cat}{radio} {origen}"},
-    "titulo_cercanos": {"one": "El comercio{cat} más cercano {a}", "other": "Los {n} comercios{cat} más cercanos {a}"},
+    "titulo_resultados": {
+      "one": "{n} comercio{cat}{radio} {origen}",
+      "other": "{n} comercios{cat}{radio} {origen}"
+    },
+    "titulo_cercanos": {
+      "one": "El comercio{cat} más cercano {a}",
+      "other": "Los {n} comercios{cat} más cercanos {a}"
+    },
     "titulo_ninguno": "No hay comercios colaboradores{cat}{radio} {origen}",
     "aviso_cercanos": "No hay comercios colaboradores{cat} a menos de {km} km, así que te mostramos los más cercanos. También puedes pagar en otras tiendas de un sector autorizado.",
     "recuerda_sector": "También puedes pagar en otras tiendas de un {enlace}, aunque no sean colaboradoras.",
@@ -124,7 +156,10 @@
     "tu_ubicacion": "Tu ubicación",
     "todos": "Todos ({n})",
     "sectores_total": "{n} sectores autorizados.",
-    "sectores_coinciden": {"one": "{n} sector coincide con «{q}».", "other": "{n} sectores coinciden con «{q}»."},
+    "sectores_coinciden": {
+      "one": "{n} sector coincide con «{q}».",
+      "other": "{n} sectores coinciden con «{q}»."
+    },
     "sectores_ninguno": "Ningún sector coincide con «{q}». Prueba con otra palabra o consulta a tu banco.",
     "form_vacio": {
       "nombre": "Escribe el nombre de la persona que representa al comercio",
@@ -150,8 +185,19 @@
     "form_cp_cifras": "El código postal debe tener 5 cifras",
     "form_cp_fuera": "Ese código postal no es de Castilla y León, y la Tarjeta Familia solo funciona en comercios de Castilla y León",
     "form_cp_provincia": "El código postal {cp} es de {p}, pero has elegido {e}",
-    "form_errores": {"one": "({n} error)", "other": "({n} errores)"},
+    "form_errores": {
+      "one": "({n} error)",
+      "other": "({n} errores)"
+    },
     "form_copiado": "Datos copiados. Pégalos en un correo nuevo dirigido a {destino}.",
-    "form_no_copiado": "No se han podido copiar automáticamente. Selecciona el resumen de abajo y cópialo."
+    "form_no_copiado": "No se han podido copiar automáticamente. Selecciona el resumen de abajo y cópialo.",
+    "error_comercio": "¿Algún dato mal en este comercio? Avísanos",
+    "error_comercio_asunto": "Error en un comercio: {nombre} ({localidad})",
+    "filtro_producto": " con {p}",
+    "donde_producto": "¿Dónde quieres comprar {p}?",
+    "donde_producto_nota": "Escribe tu localidad o código postal, o usa tu ubicación.",
+    "producto_nota": "Para buscar {p} te mostramos estos tipos de comercio:",
+    "producto_quitar": "Ver todos los tipos de comercio",
+    "productos_titulo": "¿Qué necesitas?"
   }
 }

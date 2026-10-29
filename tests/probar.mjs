@@ -313,6 +313,61 @@ console.log("\nGerencias Territoriales");
   await pagina.context().close();
 }
 
+// ---- 6c. Asistente: «pañales cerca de Villafranca» --------------------------------------------
+console.log("\nAsistente");
+{
+  const pagina = await nuevaPagina(1280);
+  await pagina.goto(BASE + "index.html");
+  await pagina.fill("#q-portada", "pañales cerca de villafranca");
+  await pagina.keyboard.press("Enter");
+  await pagina.waitForSelector(".establecimiento");
+  const tituloA = await pagina.textContent("#titulo-resultados");
+  ok(/con pañales/.test(tituloA) && /Villafranca del Bierzo/.test(tituloA), `Entiende producto y lugar desde la portada: «${tituloA}»`);
+  const cats = await pagina.$$eval(".etiqueta-cat", (els) => [...new Set(els.map((e) => e.textContent))]);
+  ok(cats.length > 0 && cats.every((c) => /Farmacia|Supermercado|Droguería|Puericultura/.test(c)), `Solo tipos de comercio con pañales (${cats.join(", ")})`);
+  ok(new URL(pagina.url()).searchParams.get("para") === "panales", "El producto queda en la URL");
+  await pagina.click(".nota-producto button");
+  const tituloTodos = await pagina.textContent("#titulo-resultados");
+  ok(!/pañales/.test(tituloTodos), `Se puede quitar el filtro del producto: «${tituloTodos}»`);
+
+  await pagina.goto(BASE + "buscar/index.html");
+  await pagina.click("#productos-rapidos button >> text=pañales");
+  ok(/¿Dónde quieres comprar pañales\?/.test(await pagina.textContent("#titulo-resultados")), "Un acceso rápido pide el lugar");
+  await pagina.fill("#q", "05200");
+  await pagina.click("#form-busqueda button[type=submit]");
+  await pagina.waitForFunction(() => /con pañales/.test(document.querySelector("#titulo-resultados").textContent));
+  ok(true, `Y después busca con el producto: «${await pagina.textContent("#titulo-resultados")}»`);
+
+  await pagina.goto(BASE + "buscar/index.html?q=Le%C3%B3n");
+  await pagina.waitForSelector(".establecimiento");
+  await pagina.fill("#texto", "leche infantil");
+  await pagina.waitForFunction(() => /con alimentación infantil/.test(document.querySelector("#titulo-resultados").textContent));
+  ok(true, "El texto libre también entiende productos («leche infantil»)");
+
+  await pagina.goto(BASE + "ar/buscar/index.html");
+  await pagina.fill("#q", "حفاضات في ليون");
+  await pagina.click("#form-busqueda button[type=submit]");
+  await pagina.waitForSelector(".establecimiento");
+  ok(/León/.test(await pagina.textContent("#titulo-resultados")), `En árabe: «${await pagina.textContent("#titulo-resultados")}»`);
+  await pagina.context().close();
+}
+
+// ---- 6d. Avisar de un error --------------------------------------------------------------------
+console.log("\nAvisar de un error");
+{
+  const pagina = await nuevaPagina(1280);
+  for (const ruta of ["index.html", "en/familias/pagar.html", "ar/ayuda.html"]) {
+    await pagina.goto(BASE + ruta);
+    const enlaces = await pagina.$$eval("#avisar-error a", (as) => as.map((a) => a.href));
+    ok(enlaces.length >= 1 && enlaces.some((h) => h.startsWith("https://github.com/jamm87/tarjeta-familia-cyl/issues/new")), `${ruta} invita a avisar de un error`);
+  }
+  await pagina.goto(BASE + "buscar/index.html?q=05200");
+  await pagina.waitForSelector(".establecimiento");
+  const enlace = await pagina.getAttribute(".establecimiento .error-dato a", "href");
+  ok(/issues\/new\?title=Error%20en%20un%20comercio/.test(enlace), "Cada comercio tiene un enlace para avisar de un dato erróneo");
+  await pagina.context().close();
+}
+
 // ---- 7. Idiomas ----------------------------------------------------------------------------
 console.log("\nIdiomas");
 {
