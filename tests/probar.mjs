@@ -18,7 +18,7 @@ const CAPTURAS = process.env.CAPTURAS === "1";
 const PAGINAS = [
   "index.html", "familias/index.html", "familias/activar.html", "familias/pagar.html",
   "familias/que-comprar.html", "familias/saldo.html", "familias/problemas.html", "familias/que-es.html",
-  "familias/preguntas-frecuentes.html", "comercios/index.html", "comercios/sectores.html",
+  "familias/preguntas-frecuentes.html", "familias/conseguir.html", "comercios/index.html", "comercios/sectores.html",
   "comercios/como-cobrar.html", "comercios/hazte-colaborador.html", "buscar/index.html",
   "buscar/index.html?q=Ar%C3%A9valo", "ayuda.html", "accesibilidad.html", "fuentes/index.html", "propuesta.html", "sobre.html",
 ];
