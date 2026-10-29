@@ -1,0 +1,30 @@
+{
+  "fuente": "Directorio de la Sede Electrónica de Castilla y León, Gerencias Territoriales de Servicios Sociales (consultado el 29 de octubre de 2026)",
+  "url": "https://www.tramitacastillayleon.jcyl.es/web/jcyl/AdministracionElectronica/es/PlantillaSimpleDetalle/1251181050732/Ayuda012/1200319183325/DirectorioPadre?plantillaObligatoria=17PlantillaContenidoDirectorio",
+  "cita_previa": "012",
+  "cita_previa_fuera": "983 32 78 50",
+  "gerencias": [
+    {"provincia": "Ávila", "direccion": "Pza. Fuente El Sol, 2", "cp": "05071", "localidad": "Ávila", "telefono": "920 352 165",
+     "mapa": "Plaza Fuente el Sol 2, 05071 Ávila"},
+    {"provincia": "Burgos", "direccion": "Glorieta de Bilbao, 4", "cp": "09006", "localidad": "Burgos", "telefono": "947 264 642",
+     "mapa": "Calle Ana María Lopidana 5, Burgos",
+     "nota": {"es": "El registro está en la C/ Ana María Lopidana, 5: el enlace al mapa lleva allí.",
+              "en": "The register office is at C/ Ana María Lopidana, 5: the map link goes there.",
+              "ar": "مكتب السجل في <span lang=\"es\" dir=\"ltr\">C/ Ana María Lopidana, 5</span>، ورابط الخريطة يوصلك إليه."}},
+    {"provincia": "León", "direccion": "Pza. de Colón, 19", "cp": "24001", "localidad": "León", "telefono": "987 256 612",
+     "mapa": "Plaza de Colón 19, 24001 León"},
+    {"provincia": "Palencia", "direccion": "C/ Valentín Calderón, 2", "cp": "34001", "localidad": "Palencia", "telefono": "979 706 109",
+     "mapa": "Calle Valentín Calderón 2, 34001 Palencia"},
+    {"provincia": "Salamanca", "direccion": "C/ Gran Vía, 53-55", "cp": "37001", "localidad": "Salamanca", "telefono": "923 216 101",
+     "mapa": "Gran Vía 53, 37001 Salamanca"},
+    {"provincia": "Segovia", "direccion": "C/ Infanta Isabel, 16", "cp": "40001", "localidad": "Segovia", "telefono": "921 461 982",
+     "mapa": "Calle Infanta Isabel 16, 40001 Segovia"},
+    {"provincia": "Soria", "direccion": "Paseo del Espolón, 2", "cp": "42001", "localidad": "Soria", "telefono": "975 220 555",
+     "mapa": "Paseo del Espolón 2, 42001 Soria"},
+    {"provincia": "Valladolid", "direccion": "C/ Padre Francisco Suárez, 2", "cp": "47006", "localidad": "Valladolid", "telefono": "983 306 888",
+     "mapa": "Calle Padre Francisco Suárez 2, 47006 Valladolid",
+     "nota": {"es": "Dirección provisional.", "en": "Temporary address.", "ar": "عنوان مؤقت."}},
+    {"provincia": "Zamora", "direccion": "C/ Prado Tuerto, 17", "cp": "49020", "localidad": "Zamora", "telefono": "980 671 300",
+     "mapa": "Calle Prado Tuerto 17, 49020 Zamora"}
+  ]
+}

@@ -300,6 +300,19 @@ console.log("\nSectores");
   await pagina.context().close();
 }
 
+// ---- 6b. Gerencias Territoriales con enlace a Google Maps ----------------------------------
+console.log("\nGerencias Territoriales");
+{
+  const pagina = await nuevaPagina(1280);
+  for (const ruta of ["familias/conseguir.html", "en/familias/conseguir.html", "ar/familias/conseguir.html"]) {
+    await pagina.goto(BASE + ruta);
+    const enlaces = await pagina.$$eval("#gerencias ~ .contactos a[href^='https://www.google.com/maps/search/']", (as) => as.map((a) => decodeURIComponent(new URL(a.href).searchParams.get("query"))));
+    ok(enlaces.length === 9 && enlaces.some((q) => /Prado Tuerto 17, 49020 Zamora/.test(q)) && enlaces.some((q) => /Ana María Lopidana 5, Burgos/.test(q)),
+      `${ruta}: las 9 Gerencias Territoriales enlazan a Google Maps (${enlaces.length})`);
+  }
+  await pagina.context().close();
+}
+
 // ---- 7. Idiomas ----------------------------------------------------------------------------
 console.log("\nIdiomas");
 {

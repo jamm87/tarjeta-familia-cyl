@@ -19,7 +19,7 @@ Marcadores:
     {{raiz}}      ruta relativa a la raíz del sitio (recursos compartidos: assets, data, fuentes)
     {{inicio}}    ruta relativa a la portada del idioma (páginas del mismo idioma)
     {{t:clave}}   texto del diccionario del idioma (sección "plantilla")
-    {{contactos}}, {{sin_pin}}, {{sectores}}, {{total_establecimientos}}, {{fecha_listado}},
+    {{contactos}}, {{sin_pin}}, {{sectores}}, {{gerencias}}, {{total_establecimientos}}, {{fecha_listado}},
     {{total_sectores}}, {{propuesta_md}}
 """
 import hashlib
@@ -27,6 +27,7 @@ import html
 import json
 import re
 from datetime import date
+from urllib.parse import quote
 from pathlib import Path
 
 import markdown
@@ -73,6 +74,25 @@ def bloque_sectores(datos, t):
             f'<span class="codigo">· {len(filas)}</span></h2>\n'
             f'    <ul class="lista-sectores">\n{items}\n    </ul>\n  </section>')
     return "\n".join(partes)
+
+
+def bloque_gerencias(datos, idioma, t):
+    """Oficinas de registro preferentes para el Bono Nacimiento, con enlace a Google Maps."""
+    tp = t["plantilla"]
+    items = []
+    for g in datos["gerencias"]:
+        mapa = "https://www.google.com/maps/search/?api=1&query=" + quote(g["mapa"])
+        nota = f'\n        <p>{g["nota"][idioma]}</p>' if "nota" in g else ""
+        tel = g["telefono"].replace(" ", "")
+        items.append(
+            f'      <li class="contacto">\n'
+            f'        <h3>{html.escape(g["provincia"])}</h3>\n'
+            f'        <p lang="es">{html.escape(g["direccion"])}<br>{g["cp"]} {html.escape(g["localidad"])}</p>{nota}\n'
+            f'        <p>{tp["gerencia_telefono"]} <a href="tel:{tel}" dir="ltr">{g["telefono"]}</a></p>\n'
+            f'        <p><a href="{mapa}">{tp["gerencia_mapa"]}'
+            f'<span class="visualmente-oculto">: {html.escape(g["provincia"])}</span></a></p>\n'
+            f'      </li>')
+    return '<ul class="contactos">\n' + "\n".join(items) + "\n    </ul>"
 
 
 def propuesta(t):
@@ -130,6 +150,7 @@ def main():
     plantilla = (SRC / "plantilla.html").read_text(encoding="utf-8")
     est = json.loads((RAIZ / "data" / "establecimientos.json").read_text(encoding="utf-8"))
     sectores = json.loads((RAIZ / "data" / "sectores.json").read_text(encoding="utf-8"))
+    gerencias = json.loads((RAIZ / "data" / "gerencias.json").read_text(encoding="utf-8"))
     disponibles = {i: {p.relative_to(SRC / i / "paginas").as_posix() for p in (SRC / i / "paginas").rglob("*.html")}
                    for i in IDIOMAS}
 
@@ -142,6 +163,7 @@ def main():
             "{{contactos}}": parciales["contactos"],
             "{{sin_pin}}": parciales["sin-pin"],
             "{{sectores}}": bloque_sectores(sectores, t),
+            "{{gerencias}}": bloque_gerencias(gerencias, idioma, t),
             "{{total_sectores}}": str(sectores["total"]),
             "{{total_establecimientos}}": format(est["total"], ",").replace(",", t["separador_miles"]),
             "{{fecha_listado}}": fecha_larga(est["fechaListado"], t),
