@@ -432,6 +432,7 @@ thead th { background: var(--fondo-suave); }
 .captura { margin: 0.75rem 0 0.5rem; max-width: 36rem; }
 .captura img { display: block; border: 1px solid var(--borde); border-radius: 8px; box-shadow: var(--sombra); background: #fff; }
 .captura figcaption { font-size: 0.92rem; color: var(--texto-suave); margin-top: 0.4rem; }
+.captura--movil { max-width: 20rem; }
 
 /* Índice de una página larga */
 .indice { background: var(--fondo-suave); border-radius: var(--radio); padding: 1rem 1.25rem; margin: 1.5rem 0; max-width: var(--lectura); }
