@@ -38,8 +38,12 @@ GitHub Pages la publica directamente desde la rama `main` (**Settings → Pages 
 
 | Carpeta / fichero | Contenido |
 |---|---|
-| `index.html`, `familias/`, `comercios/`, `buscar/`, `ayuda.html`… | Páginas generadas (no editar a mano) |
-| `src/paginas/`, `src/parciales/` | Contenido de las páginas y plantilla común |
+| `index.html`, `familias/`, `comercios/`, `buscar/`, `ayuda.html`… | Páginas generadas en español (no editar a mano) |
+| `en/`, `ar/` | Páginas generadas en inglés y en árabe (de derecha a izquierda) |
+| `src/plantilla.html` | Plantilla común: cabecera, navegación, selector de idioma y pie |
+| `src/<idioma>/paginas/`, `src/<idioma>/parciales/` | Contenido de cada página en `es`, `en` y `ar` (mismas rutas en los tres idiomas) |
+| `src/i18n/<idioma>.json` | Textos de la plantilla, de los scripts (con plurales) y nombres de categorías; se generan en `assets/i18n/` |
+| `assets/img/guias/` | Capturas de MoneyToPay con los datos personales tapados |
 | `assets/` | CSS, JavaScript (buscador, formulario, filtro de sectores) e imágenes |
 | `data/establecimientos.json` | 1.623 comercios con categoría y coordenadas (también en `.js` para usar sin servidor) |
 | `data/localidades.json` | 2.289 localidades, los municipios y los 1.965 códigos postales de Castilla y León, para buscar |
@@ -68,7 +72,7 @@ python3 scripts/generar_paginas.py
 npm test
 ```
 
-Para cambiar textos, edita `src/paginas/` o `docs/propuesta.md` y ejecuta `python3 scripts/generar_paginas.py`.
+Para cambiar textos, edita `src/<idioma>/paginas/`, `src/i18n/<idioma>.json` o `docs/propuesta.md` y ejecuta `python3 scripts/generar_paginas.py`. Si cambias una página, cambia también sus versiones en los otros idiomas. Los nombres de los campos del formulario (`name`, `data-seccion` y el `value` de los sectores) se quedan en español en los tres idiomas, porque el correo a la Junta se envía siempre en español.
 
 ### Coordenadas
 

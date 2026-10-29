@@ -1,0 +1,65 @@
+<!-- {"titulo": "بطاقة الأسرة · قشتالة وليون", "portada": true, "descripcion": "كيف تفعّل بطاقة الأسرة الخاصة بمنحة الولادة وتستخدمها، وأين تدفع بها، وكيف ينضم المتجر كمتجر متعاون في قشتالة وليون.", "scripts": ["assets/js/sugerencias.js", "assets/js/portada.js"]} -->
+<section class="portada" aria-labelledby="titulo-portada">
+      <div class="contenedor">
+        <div>
+          <h1 id="titulo-portada">بطاقة الأسرة <span lang="es" dir="ltr">(Tarjeta Familia)</span></h1>
+          <p class="entradilla">هي البطاقة التي تدفع بها حكومة قشتالة وليون منحة الولادة (<span lang="es">Bono Nacimiento</span>). هنا تجد في مكان واحد كيف تفعّلها، وكيف تدفع بها، وأين يمكنك استخدامها.</p>
+
+          <form class="buscador-rapido" action="buscar/index.html" method="get" role="search" aria-labelledby="titulo-buscador-rapido">
+            <h2 id="titulo-buscador-rapido">أين يمكنني استخدام بطاقتي؟</h2>
+            <div class="campo combo">
+              <label for="q-portada">البلدة أو البلدية أو الرمز البريدي</label>
+              <input type="text" id="q-portada" name="q" autocomplete="off" spellcheck="false"
+                     role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerencias-portada"
+                     aria-describedby="ayuda-q-portada" placeholder="مثلًا: Arévalo أو 05200">
+              <ul id="sugerencias-portada" role="listbox" aria-label="الأماكن" hidden></ul>
+              <span class="visualmente-oculto" id="ayuda-q-portada">تظهر اقتراحات أثناء الكتابة؛ استخدم الأسهم لاختيار أحدها.</span>
+            </div>
+            <div class="acciones">
+              <button class="boton" type="submit">ابحث عن متاجر</button>
+              <a class="boton boton--secundario" href="buscar/index.html?cerca=1">استخدم موقعي</a>
+            </div>
+          </form>
+        </div>
+        <img src="{{raiz}}assets/img/tarjeta-familia.jpg" width="420" height="330"
+             alt="بطاقة الأسرة: بطاقة VISA من CaixaBank وحكومة قشتالة وليون بخطوط ملوّنة">
+      </div>
+    </section>
+
+    <div class="contenedor">
+      <h2 class="visualmente-oculto">ماذا تحتاج؟</h2>
+      <div class="puertas">
+        <a class="puerta puerta--familia" href="familias/index.html">
+          <h2>لديّ بطاقة الأسرة</h2>
+          <p>للأسر التي حصلت على منحة الولادة.</p>
+          <ul>
+            <li>تفعيلها خطوة بخطوة</li>
+            <li>طريقة الدفع وما يمكن شراؤه</li>
+            <li>الرصيد والفقدان والسرقة</li>
+          </ul>
+          <span class="flecha">الانتقال إلى قسم الأسر</span>
+        </a>
+        <a class="puerta puerta--comercio" href="comercios/index.html">
+          <h2>لديّ متجر</h2>
+          <p>للمتاجر والصيدليات والخدمات في قشتالة وليون.</p>
+          <ul>
+            <li>معرفة ما إذا كان بإمكاني قبول البطاقة</li>
+            <li>كيف يتم الدفع عند الصندوق</li>
+            <li>الانضمام كمتجر متعاون</li>
+          </ul>
+          <span class="flecha">الانتقال إلى قسم المتاجر</span>
+        </a>
+      </div>
+
+      <section class="aviso aviso--importante" aria-labelledby="lo-esencial">
+        <h2 id="lo-esencial">الأساسيات</h2>
+        <ul>
+          <li>قبل استخدامها يجب <a href="familias/activar.html">تفعيلها على موقع moneytopay.com</a>.</li>
+          <li>تُستخدم في <strong>المتاجر الفعلية في قشتالة وليون</strong>، لشراء منتجات وخدمات مخصّصة لأطفالك.</li>
+          <li><strong>ليس لها رقم سري.</strong> إذا طلبه جهاز الدفع، اضغط الزر الأخضر. يتم الدفع بتمرير الشريط المغناطيسي والتوقيع؛ ولا تعمل بالدفع اللاتلامسي.</li>
+          <li>احتفظ بالإيصالات لمدة <strong>6 أشهر</strong>.</li>
+          <li>إذا فقدتها أو سُرقت، اتصل بالرقم <a href="tel:900404090" dir="ltr">900 40 40 90</a> خلال 24 ساعة.</li>
+        </ul>
+        <p class="aproximada">معلومات مأخوذة من الوثائق الرسمية لحكومة قشتالة وليون (قائمة المتاجر بتاريخ {{fecha_listado}}). <a href="sobre.html">لماذا أنشئ هذا الموقع</a>.</p>
+      </section>
+    </div>

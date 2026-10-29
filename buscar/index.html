@@ -1,24 +1,29 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dónde usar la tarjeta · Tarjeta Familia Castilla y León</title>
   <meta name="description" content="Buscador de comercios colaboradores con la Tarjeta Familia cerca de ti, por localidad, código postal o ubicación.">
   <meta name="theme-color" content="#b0141d">
+  <link rel="alternate" hreflang="es" href="../buscar/index.html">
+  <link rel="alternate" hreflang="en" href="../en/buscar/index.html">
+  <link rel="alternate" hreflang="ar" href="../ar/buscar/index.html">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../assets/css/estilos.css">
-  <script src="../assets/js/comun.js" defer></script>
-  <link rel="stylesheet" href="../vendor/leaflet/leaflet.css">
-  <script src="../data/localidades.js" defer></script>
-  <script src="../data/establecimientos.js" defer></script>
-  <script src="../assets/js/sugerencias.js" defer></script>
-  <script src="../assets/js/buscador.js" defer></script>
+  <link rel="stylesheet" href="../assets/css/estilos.css?v=71941bd5">
+  <script src="../assets/js/comun.js?v=efed5982" defer></script>
+  <link rel="stylesheet" href="../vendor/leaflet/leaflet.css?v=ec929f11">
+  <script src="../assets/i18n/es.js?v=22229862" defer></script>
+  <script src="../assets/js/i18n.js?v=9a79707d" defer></script>
+  <script src="../data/localidades.js?v=3543a4e7" defer></script>
+  <script src="../data/establecimientos.js?v=bef2a64e" defer></script>
+  <script src="../assets/js/sugerencias.js?v=d8742ab5" defer></script>
+  <script src="../assets/js/buscador.js?v=a846cb4e" defer></script>
 </head>
 <body>
   <a class="saltar" href="#contenido">Saltar al contenido</a>
 
-  <p class="no-oficial">Web independiente y <strong>no oficial</strong>, hecha por una familia usuaria de la Tarjeta Familia. <a href="../sobre.html">Por qué existe</a></p>
+  <p class="no-oficial">Web independiente y <strong>no oficial</strong>, hecha por una familia que usa la Tarjeta Familia. <a href="../sobre.html">Por qué existe esta web</a></p>
 
   <header class="cabecera">
     <div class="contenedor">
@@ -28,10 +33,17 @@
       </a>
       <nav class="nav-principal" aria-label="Principal">
         <ul>
-          <li><a href="../familias/">Familias</a></li>
-          <li><a href="../comercios/">Comercios</a></li>
-          <li><a href="../buscar/" aria-current="true">Dónde usarla</a></li>
+          <li><a href="../familias/index.html">Familias</a></li>
+          <li><a href="../comercios/index.html">Comercios</a></li>
+          <li><a href="../buscar/index.html" aria-current="true">Dónde usarla</a></li>
           <li><a href="../ayuda.html">Ayuda</a></li>
+        </ul>
+      </nav>
+      <nav class="idiomas" aria-label="Idioma">
+        <ul>
+            <li><a href="../buscar/index.html" hreflang="es" lang="es" aria-current="true">Español</a></li>
+            <li><a href="../en/buscar/index.html" hreflang="en" lang="en">English</a></li>
+            <li><a href="../ar/buscar/index.html" hreflang="ar" lang="ar">العربية</a></li>
         </ul>
       </nav>
     </div>
@@ -107,7 +119,7 @@
           </div>
           <p class="visualmente-oculto" role="status" aria-live="polite" id="anuncio"></p>
           <div id="inicio-busqueda">
-            <p>Escribe tu localidad, municipio o código postal, o pulsa «Usar mi ubicación». Aunque en tu zona no haya comercios colaboradores, te mostraremos los más cercanos. También puedes ver los comercios de una provincia:</p>
+            <p>Escribe tu localidad, municipio o código postal, o pulsa «Usar mi ubicación». Si en tu zona no hay comercios colaboradores, verás los más cercanos. También puedes ver todos los de una provincia:</p>
             <ul class="provincias-rapidas" id="provincias"></ul>
           </div>
           <div id="nota-resultados"></div>
@@ -133,7 +145,7 @@
             <li><a href="../familias/pagar.html">Cómo pagar</a></li>
             <li><a href="../buscar/index.html">Dónde usarla</a></li>
             <li><a href="../familias/saldo.html">Consultar el saldo</a></li>
-            <li><a href="../familias/problemas.html">Pérdida, robo y problemas</a></li>
+            <li><a href="../familias/problemas.html">Pérdida, robo y otros problemas</a></li>
           </ul>
         </section>
         <section aria-labelledby="pie-comercios">
@@ -142,26 +154,25 @@
             <li><a href="../comercios/index.html">¿Puedo cobrar con la tarjeta?</a></li>
             <li><a href="../comercios/sectores.html">Sectores autorizados</a></li>
             <li><a href="../comercios/como-cobrar.html">Guía para la caja</a></li>
-            <li><a href="../comercios/hazte-colaborador.html">Hazte colaborador</a></li>
+            <li><a href="../comercios/hazte-colaborador.html">Hacerse colaborador</a></li>
           </ul>
         </section>
         <section aria-labelledby="pie-ayuda">
           <h2 id="pie-ayuda">Ayuda</h2>
           <ul>
-            <li>Robo o pérdida: <a href="tel:900404090">900 40 40 90</a> (CaixaBank, gratuito)</li>
-            <li>Activación y saldo: <a href="tel:900300300">900 300 300</a> (MoneyToPay, gratuito)</li>
-            <li>Información general: <a href="tel:012">012</a></li>
-            <li><a href="mailto:conciliacion.gss@jcyl.es">conciliacion.gss@jcyl.es</a></li>
+            <li>Robo o pérdida: <a href="tel:900404090" dir="ltr">900 40 40 90</a> (CaixaBank, gratuito)</li>
+            <li>Activación y saldo: <a href="tel:900300300" dir="ltr">900 300 300</a> (MoneyToPay, gratuito)</li>
+            <li>Información general: <a href="tel:012" dir="ltr">012</a></li>
+            <li><a href="mailto:conciliacion.gss@jcyl.es" dir="ltr">conciliacion.gss@jcyl.es</a></li>
             <li><a href="../ayuda.html">Todos los contactos</a></li>
           </ul>
         </section>
       </div>
       <p class="nota">
-        Web independiente, no vinculada a la Junta de Castilla y León, CaixaBank ni MoneyToPay. Contenido elaborado a partir de los documentos públicos de la Consejería de Desregulación, Familia y Ayudas Sociales
-        (<a href="../fuentes/index.html">ver documentos originales</a>). Ante cualquier duda, prevalece la información oficial.
+        Web independiente, sin relación con la Junta de Castilla y León, CaixaBank ni MoneyToPay. El contenido sale de los documentos públicos de la Consejería de Desregulación, Familia y Ayudas Sociales y, ante cualquier duda, prevalece la información oficial (<a href="../fuentes/index.html">documentos originales</a>).
         <a href="../sobre.html">Por qué existe esta web</a> ·
         <a href="../accesibilidad.html">Accesibilidad</a> ·
-        <a href="../propuesta.html">Propuesta para la Junta</a> ·
+        <a href="../propuesta.html" hreflang="es">Propuesta para la Junta</a> ·
         <a href="https://github.com/jamm87/tarjeta-familia-cyl/issues">Avisar de un error</a>
       </p>
     </div>

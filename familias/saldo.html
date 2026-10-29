@@ -1,21 +1,24 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Consulta tu saldo · Tarjeta Familia Castilla y León</title>
+  <title>Consultar el saldo · Tarjeta Familia Castilla y León</title>
   <meta name="description" content="Tres formas de consultar el saldo y los movimientos de la Tarjeta Familia.">
   <meta name="theme-color" content="#b0141d">
+  <link rel="alternate" hreflang="es" href="../familias/saldo.html">
+  <link rel="alternate" hreflang="en" href="../en/familias/saldo.html">
+  <link rel="alternate" hreflang="ar" href="../ar/familias/saldo.html">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../assets/css/estilos.css">
-  <script src="../assets/js/comun.js" defer></script>
+  <link rel="stylesheet" href="../assets/css/estilos.css?v=71941bd5">
+  <script src="../assets/js/comun.js?v=efed5982" defer></script>
   
   
 </head>
 <body>
   <a class="saltar" href="#contenido">Saltar al contenido</a>
 
-  <p class="no-oficial">Web independiente y <strong>no oficial</strong>, hecha por una familia usuaria de la Tarjeta Familia. <a href="../sobre.html">Por qué existe</a></p>
+  <p class="no-oficial">Web independiente y <strong>no oficial</strong>, hecha por una familia que usa la Tarjeta Familia. <a href="../sobre.html">Por qué existe esta web</a></p>
 
   <header class="cabecera">
     <div class="contenedor">
@@ -25,10 +28,17 @@
       </a>
       <nav class="nav-principal" aria-label="Principal">
         <ul>
-          <li><a href="../familias/" aria-current="true">Familias</a></li>
-          <li><a href="../comercios/">Comercios</a></li>
-          <li><a href="../buscar/">Dónde usarla</a></li>
+          <li><a href="../familias/index.html" aria-current="true">Familias</a></li>
+          <li><a href="../comercios/index.html">Comercios</a></li>
+          <li><a href="../buscar/index.html">Dónde usarla</a></li>
           <li><a href="../ayuda.html">Ayuda</a></li>
+        </ul>
+      </nav>
+      <nav class="idiomas" aria-label="Idioma">
+        <ul>
+            <li><a href="../familias/saldo.html" hreflang="es" lang="es" aria-current="true">Español</a></li>
+            <li><a href="../en/familias/saldo.html" hreflang="en" lang="en">English</a></li>
+            <li><a href="../ar/familias/saldo.html" hreflang="ar" lang="ar">العربية</a></li>
         </ul>
       </nav>
     </div>
@@ -39,30 +49,38 @@
       <ol>
         <li><a href="../index.html">Inicio</a></li>
         <li><a href="../familias/index.html">Familias</a></li>
-        <li aria-current="page">Consulta tu saldo</li>
+        <li aria-current="page">Consultar el saldo</li>
       </ol>
     </nav>
     <div class="contenedor lectura">
-      <h1>Consulta tu saldo</h1>
+      <h1>Consultar el saldo</h1>
       <p class="entradilla">Conviene mirarlo antes de una compra grande: si el importe supera el saldo, el pago se rechaza.</p>
 
-      <h2>Opción 1. En tu área privada de MoneyToPay</h2>
+      <h2>Con tu usuario de MoneyToPay</h2>
       <ol>
         <li>Entra en <a href="https://www.moneytopay.com">www.moneytopay.com</a> con tu usuario y contraseña.</li>
-        <li>Ve a «Mis tarjetas». Verás el saldo disponible.</li>
+        <li>Abre «Mis tarjetas»: verás el saldo disponible.</li>
         <li>Para ver los movimientos, pulsa los tres puntos que hay debajo del número de la tarjeta.</li>
       </ol>
+      <figure class="captura">
+        <img src="../assets/img/guias/7-mis-tarjetas.webp" width="960" height="392" loading="lazy"
+             alt="Apartado «Mis tarjetas» con la tarjeta, el saldo disponible resaltado y el botón de tres puntos">
+        <figcaption>«Mis tarjetas», con el saldo disponible.</figcaption>
+      </figure>
 
-      <h2>Opción 2. Sin usuario ni contraseña</h2>
-      <p>Si no consigues entrar en tu área privada:</p>
+      <h2>Sin usuario ni contraseña</h2>
       <ol>
         <li>En <a href="https://www.moneytopay.com">www.moneytopay.com</a>, pulsa «Consulta tu saldo».</li>
-        <li>Escribe los datos de tu tarjeta, marca la casilla «No soy un robot» y pulsa «Consultar».</li>
+        <li>Escribe los datos de la tarjeta, marca «No soy un robot» y pulsa «Consultar».</li>
       </ol>
-      <p>Verás el saldo y los movimientos.</p>
+      <figure class="captura">
+        <img src="../assets/img/guias/9-saldo-sin-registro.webp" width="960" height="542" loading="lazy"
+             alt="Formulario «Consultar saldo y movimientos» con los campos de número de tarjeta, caducidad y CVV2, la casilla «No soy un robot» y el botón «Consultar»">
+        <figcaption>Consulta de saldo sin iniciar sesión.</figcaption>
+      </figure>
 
-      <h2>Opción 3. En un cajero de CaixaBank</h2>
-      <p>Puedes consultar el saldo y los movimientos en cualquier cajero de la red CaixaBank. Recuerda que <strong>no se puede sacar dinero</strong>.</p>
+      <h2>En un cajero de CaixaBank</h2>
+      <p>Puedes consultar el saldo y los movimientos en cualquier cajero de CaixaBank. Lo que no se puede es sacar dinero.</p>
 
       <p class="aproximada">Guía original: <a href="../fuentes/consulte-su-saldo.pdf">Consulte su saldo (PDF)</a>.</p>
     </div>
@@ -78,7 +96,7 @@
             <li><a href="../familias/pagar.html">Cómo pagar</a></li>
             <li><a href="../buscar/index.html">Dónde usarla</a></li>
             <li><a href="../familias/saldo.html">Consultar el saldo</a></li>
-            <li><a href="../familias/problemas.html">Pérdida, robo y problemas</a></li>
+            <li><a href="../familias/problemas.html">Pérdida, robo y otros problemas</a></li>
           </ul>
         </section>
         <section aria-labelledby="pie-comercios">
@@ -87,26 +105,25 @@
             <li><a href="../comercios/index.html">¿Puedo cobrar con la tarjeta?</a></li>
             <li><a href="../comercios/sectores.html">Sectores autorizados</a></li>
             <li><a href="../comercios/como-cobrar.html">Guía para la caja</a></li>
-            <li><a href="../comercios/hazte-colaborador.html">Hazte colaborador</a></li>
+            <li><a href="../comercios/hazte-colaborador.html">Hacerse colaborador</a></li>
           </ul>
         </section>
         <section aria-labelledby="pie-ayuda">
           <h2 id="pie-ayuda">Ayuda</h2>
           <ul>
-            <li>Robo o pérdida: <a href="tel:900404090">900 40 40 90</a> (CaixaBank, gratuito)</li>
-            <li>Activación y saldo: <a href="tel:900300300">900 300 300</a> (MoneyToPay, gratuito)</li>
-            <li>Información general: <a href="tel:012">012</a></li>
-            <li><a href="mailto:conciliacion.gss@jcyl.es">conciliacion.gss@jcyl.es</a></li>
+            <li>Robo o pérdida: <a href="tel:900404090" dir="ltr">900 40 40 90</a> (CaixaBank, gratuito)</li>
+            <li>Activación y saldo: <a href="tel:900300300" dir="ltr">900 300 300</a> (MoneyToPay, gratuito)</li>
+            <li>Información general: <a href="tel:012" dir="ltr">012</a></li>
+            <li><a href="mailto:conciliacion.gss@jcyl.es" dir="ltr">conciliacion.gss@jcyl.es</a></li>
             <li><a href="../ayuda.html">Todos los contactos</a></li>
           </ul>
         </section>
       </div>
       <p class="nota">
-        Web independiente, no vinculada a la Junta de Castilla y León, CaixaBank ni MoneyToPay. Contenido elaborado a partir de los documentos públicos de la Consejería de Desregulación, Familia y Ayudas Sociales
-        (<a href="../fuentes/index.html">ver documentos originales</a>). Ante cualquier duda, prevalece la información oficial.
+        Web independiente, sin relación con la Junta de Castilla y León, CaixaBank ni MoneyToPay. El contenido sale de los documentos públicos de la Consejería de Desregulación, Familia y Ayudas Sociales y, ante cualquier duda, prevalece la información oficial (<a href="../fuentes/index.html">documentos originales</a>).
         <a href="../sobre.html">Por qué existe esta web</a> ·
         <a href="../accesibilidad.html">Accesibilidad</a> ·
-        <a href="../propuesta.html">Propuesta para la Junta</a> ·
+        <a href="../propuesta.html" hreflang="es">Propuesta para la Junta</a> ·
         <a href="https://github.com/jamm87/tarjeta-familia-cyl/issues">Avisar de un error</a>
       </p>
     </div>

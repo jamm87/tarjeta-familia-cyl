@@ -22,6 +22,9 @@ const PAGINAS = [
   "comercios/como-cobrar.html", "comercios/hazte-colaborador.html", "buscar/index.html",
   "buscar/index.html?q=Ar%C3%A9valo", "ayuda.html", "accesibilidad.html", "fuentes/index.html", "propuesta.html", "sobre.html",
 ];
+// Las versiones en inglés y árabe tienen las mismas páginas, salvo la propuesta (solo en español).
+PAGINAS.push(...["en", "ar"].flatMap((idioma) => PAGINAS.filter((r) => r !== "propuesta.html").map((r) => `${idioma}/${r}`)));
+const NO_OFICIAL = /no oficial|unofficial|غير رسمي/;
 
 const TIPOS = { ".html": "text/html; charset=utf-8", ".css": "text/css", ".js": "text/javascript", ".json": "application/json", ".jpg": "image/jpeg", ".png": "image/png", ".svg": "image/svg+xml", ".pdf": "application/pdf" };
 const servidor = createServer(async (req, res) => {
@@ -74,7 +77,7 @@ for (const ancho of [320, 1280]) {
     await pagina.waitForLoadState("networkidle");
     const violaciones = await axe(pagina);
     ok(violaciones.length === 0, `${ruta} @${ancho}px: ${violaciones.length ? violaciones.join("; ") : "sin violaciones"}`);
-    if (ancho === 320) ok(/no oficial/.test(await pagina.textContent(".no-oficial")), `${ruta} indica que la web no es oficial`);
+    if (ancho === 320) ok(NO_OFICIAL.test(await pagina.textContent(".no-oficial")), `${ruta} indica que la web no es oficial`);
     const desborda = await pagina.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
     if (ancho === 320) ok(desborda <= 0, `${ruta} @320px sin desplazamiento horizontal (${desborda}px de más)`);
     if (CAPTURAS) await pagina.screenshot({ path: fileURLToPath(new URL(`capturas/${ruta.replace(/[/?=%]/g, "_")}-${ancho}.png`, import.meta.url)), fullPage: true });
@@ -294,6 +297,61 @@ console.log("\nSectores");
   await pagina.waitForFunction(() => /coincide/.test(document.querySelector("[data-recuento]").textContent));
   const visibles = await pagina.$$eval("[data-texto]:not([hidden])", (els) => els.map((e) => e.textContent));
   ok(visibles.length > 0 && visibles.every((t) => /Zapater/i.test(t)), `El filtro sin tildes encuentra zapaterías (${visibles.length})`);
+  await pagina.context().close();
+}
+
+// ---- 7. Idiomas ----------------------------------------------------------------------------
+console.log("\nIdiomas");
+{
+  const pagina = await nuevaPagina(1280);
+  await pagina.goto(BASE + "familias/pagar.html");
+  await pagina.click(".idiomas a[hreflang=en]");
+  ok(pagina.url().endsWith("/en/familias/pagar.html"), `El selector de idioma lleva a la misma página en inglés (${pagina.url()})`);
+  ok(await pagina.getAttribute("html", "lang") === "en", "La página en inglés declara lang=\"en\"");
+  await pagina.click(".idiomas a[hreflang=ar]");
+  ok(pagina.url().endsWith("/ar/familias/pagar.html"), "Y de ahí a la misma página en árabe");
+  ok(await pagina.getAttribute("html", "dir") === "rtl" && await pagina.getAttribute("html", "lang") === "ar", "La página en árabe es lang=\"ar\" dir=\"rtl\"");
+  const alternativos = await pagina.$$eval("link[rel=alternate]", (els) => els.map((e) => e.hreflang).sort().join(","));
+  ok(alternativos === "ar,en,es", `Enlaza las versiones alternativas con hreflang (${alternativos})`);
+
+  await pagina.goto(BASE + "en/buscar/index.html?q=05200");
+  await pagina.waitForSelector(".establecimiento");
+  const tituloEn = await pagina.textContent("#titulo-resultados");
+  ok(/shops? .*postcode 05200 \(Arévalo\)/.test(tituloEn), `Buscador en inglés: «${tituloEn}»`);
+  ok(/Pharmacy/.test(await pagina.$eval("#categoria", (s) => s.textContent)), "Los tipos de comercio están traducidos");
+  ok(await pagina.$eval(".establecimiento h3", (h) => h.closest("[lang=es]") !== null || h.querySelector("[lang=es]") !== null || h.lang === "es"), "Los nombres de los comercios se marcan en español");
+
+  await pagina.goto(BASE + "ar/buscar/index.html?q=05200");
+  await pagina.waitForSelector(".establecimiento");
+  const tituloAr = await pagina.textContent("#titulo-resultados");
+  ok(/الرمز البريدي 05200/.test(tituloAr), `Buscador en árabe: «${tituloAr}»`);
+  await pagina.click("[data-vista=mapa]");
+  await pagina.waitForSelector(".leaflet-container");
+  ok(await pagina.$eval("#mapa", (m) => getComputedStyle(m).direction) === "ltr", "El mapa mantiene la dirección de izquierda a derecha en árabe");
+
+  await pagina.goto(BASE + "en/comercios/hazte-colaborador.html");
+  await pagina.fill("#nombre", "Ana");
+  await pagina.fill("#apellido1", "García");
+  await pagina.fill("#dni", "12345678Z");
+  await pagina.fill("#razon", "Farmacia Ejemplo, C.B.");
+  await pagina.fill("#cif", "E12345674");
+  await pagina.selectOption("#sector", { index: 1 });
+  await pagina.fill("#email", "ana@ejemplo.es");
+  await pagina.fill("#movil", "612 345 678");
+  await pagina.fill("#comercial", "Farmacia Ejemplo");
+  await pagina.fill("#direccion", "C/ Mayor, 1");
+  await pagina.selectOption("#provincia", "05");
+  await pagina.fill("#localidad", "Arévalo");
+  await pagina.fill("#cp", "47001");
+  await pagina.check("#declaracion");
+  await pagina.click("#form-colaborador button[type=submit]");
+  const errorEn = await pagina.textContent("#error-cp");
+  ok(/Postcode 47001 belongs to Valladolid, but you chose Ávila/.test(errorEn), `Errores del formulario en inglés: «${errorEn}»`);
+  await pagina.fill("#cp", "05200");
+  await pagina.click("#form-colaborador button[type=submit]");
+  const correo = await pagina.textContent("#resumen-envio");
+  ok(/PERSONA QUE REPRESENTA AL COMERCIO/.test(correo) && /Sector\/Actividad: Farmacia/.test(correo) && /Declaración: Sí/.test(correo),
+    "Desde la versión en inglés, el correo a la Junta se redacta en español");
   await pagina.context().close();
 }
 

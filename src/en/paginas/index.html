@@ -1,0 +1,65 @@
+<!-- {"titulo": "Tarjeta Familia · Castilla y León", "portada": true, "descripcion": "How to activate and use the Tarjeta Familia (Birth Grant card), where to pay with it and how shops can join, in Castilla y León.", "scripts": ["assets/js/sugerencias.js", "assets/js/portada.js"]} -->
+<section class="portada" aria-labelledby="titulo-portada">
+      <div class="contenedor">
+        <div>
+          <h1 id="titulo-portada">Tarjeta Familia</h1>
+          <p class="entradilla">The prepaid card the Junta de Castilla y León uses to pay the Birth Grant (<span lang="es">Bono Nacimiento</span>). Everything you need in one place: how to activate it, how to pay with it and where to use it.</p>
+
+          <form class="buscador-rapido" action="buscar/index.html" method="get" role="search" aria-labelledby="titulo-buscador-rapido">
+            <h2 id="titulo-buscador-rapido">Where can I use my card?</h2>
+            <div class="campo combo">
+              <label for="q-portada">Town, municipality or postcode</label>
+              <input type="text" id="q-portada" name="q" autocomplete="off" spellcheck="false"
+                     role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerencias-portada"
+                     aria-describedby="ayuda-q-portada" placeholder="For example: Arévalo or 05200">
+              <ul id="sugerencias-portada" role="listbox" aria-label="Places" hidden></ul>
+              <span class="visualmente-oculto" id="ayuda-q-portada">Suggestions appear as you type; use the arrow keys to choose one.</span>
+            </div>
+            <div class="acciones">
+              <button class="boton" type="submit">Find shops</button>
+              <a class="boton boton--secundario" href="buscar/index.html?cerca=1">Use my location</a>
+            </div>
+          </form>
+        </div>
+        <img src="{{raiz}}assets/img/tarjeta-familia.jpg" width="420" height="330"
+             alt="Tarjeta Familia: a CaixaBank and Junta de Castilla y León VISA card with coloured stripes">
+      </div>
+    </section>
+
+    <div class="contenedor">
+      <h2 class="visualmente-oculto">What do you need?</h2>
+      <div class="puertas">
+        <a class="puerta puerta--familia" href="familias/index.html">
+          <h2>I have a Tarjeta Familia</h2>
+          <p>For families who have received the Birth Grant.</p>
+          <ul>
+            <li>Activate it, step by step</li>
+            <li>How to pay and what you can buy</li>
+            <li>Balance, loss or theft</li>
+          </ul>
+          <span class="flecha">Go to the families section</span>
+        </a>
+        <a class="puerta puerta--comercio" href="comercios/index.html">
+          <h2>I run a shop</h2>
+          <p>For shops, pharmacies and services in Castilla y León.</p>
+          <ul>
+            <li>Check whether I can already accept the card</li>
+            <li>How to take payment at the till</li>
+            <li>Become a partner shop</li>
+          </ul>
+          <span class="flecha">Go to the shops section</span>
+        </a>
+      </div>
+
+      <section class="aviso aviso--importante" aria-labelledby="lo-esencial">
+        <h2 id="lo-esencial">The essentials</h2>
+        <ul>
+          <li>You must <a href="familias/activar.html">activate it on moneytopay.com</a> before using it.</li>
+          <li>It works in <strong>physical shops in Castilla y León</strong>, for products and services for your children.</li>
+          <li><strong>It has no PIN.</strong> If the terminal asks for one, press the green key. You pay by swiping the magnetic stripe and signing; contactless does not work.</li>
+          <li>Keep your receipts for <strong>6 months</strong>.</li>
+          <li>If it is lost or stolen, call <a href="tel:900404090" dir="ltr">900 40 40 90</a> within 24 hours.</li>
+        </ul>
+        <p class="aproximada">Based on the official documents of the Junta de Castilla y León (list of shops dated {{fecha_listado}}). <a href="sobre.html">Why this site exists</a>.</p>
+      </section>
+    </div>

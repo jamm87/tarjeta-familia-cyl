@@ -1,14 +1,14 @@
 <!-- {"titulo": "Hazte colaborador", "descripcion": "Formulario para que un comercio de Castilla y León se haga establecimiento colaborador con la Tarjeta Familia.", "seccion": "comercios", "migas": [["Comercios", "comercios/index.html"]], "scripts": ["assets/js/formulario.js"]} -->
 <div class="contenedor">
       <h1>Hazte comercio colaborador</h1>
-      <p class="entradilla">Es gratis y voluntario. Tu comercio aparecerá en el buscador de la Tarjeta Familia y en el listado de la Junta de Castilla y León.</p>
+      <p class="entradilla">Es gratuito y voluntario. Si autorizas la publicación, tu comercio aparecerá en el listado oficial de la Junta y, con él, en este buscador.</p>
 
       <div class="dos-columnas">
         <div>
           <div class="aviso aviso--info">
-            <p><strong>No necesitas ser colaborador para cobrar con la tarjeta.</strong> Basta con que tu datáfono esté en un <a href="sectores.html">sector autorizado</a>. Ser colaborador sirve para que las familias te encuentren.</p>
+            <p><strong>No necesitas ser colaborador para cobrar con la tarjeta.</strong> Basta con que tu datáfono esté en un <a href="sectores.html">sector autorizado</a>. Ser colaborador sirve, sobre todo, para que las familias te encuentren.</p>
             <p>Si tienes varios establecimientos, rellena un formulario por cada uno.</p>
-            <p>Esta web no recoge tus datos: al terminar, se prepara un correo para que lo envíes desde tu cuenta a la Junta de Castilla y León (<a href="mailto:conciliacion.gss@jcyl.es">conciliacion.gss@jcyl.es</a>), que es quien gestiona las altas.</p>
+            <p>Esta web no guarda ni envía tus datos: al terminar se prepara un correo que mandas tú, desde tu cuenta, a la Junta de Castilla y León (<a href="mailto:conciliacion.gss@jcyl.es" dir="ltr">conciliacion.gss@jcyl.es</a>), que es quien gestiona las altas.</p>
           </div>
 
           <div class="resumen-errores" id="resumen-errores" tabindex="-1" hidden>
@@ -19,7 +19,7 @@
           <form id="form-colaborador" action="mailto:conciliacion.gss@jcyl.es?subject=Alta%20establecimiento%20colaborador%20Tarjeta%20Familia" method="post" enctype="text/plain" novalidate>
             <p>Los campos marcados con <span class="obligatorio" aria-hidden="true">*</span><span class="visualmente-oculto">asterisco</span> son obligatorios.</p>
 
-            <fieldset>
+            <fieldset data-seccion="Persona que representa al comercio">
               <legend>1. Persona que representa al comercio</legend>
               <div class="fila-campos">
                 <div class="campo">
@@ -45,7 +45,7 @@
               </div>
             </fieldset>
 
-            <fieldset>
+            <fieldset data-seccion="Empresa">
               <legend>2. Empresa</legend>
               <div class="campo">
                 <label for="razon">Razón social <span class="obligatorio" aria-hidden="true">*</span></label>
@@ -87,7 +87,7 @@
               </div>
             </fieldset>
 
-            <fieldset>
+            <fieldset data-seccion="Contacto">
               <legend>3. Contacto</legend>
               <div class="campo">
                 <label for="email">Correo electrónico <span class="obligatorio" aria-hidden="true">*</span></label>
@@ -108,7 +108,7 @@
               </div>
             </fieldset>
 
-            <fieldset>
+            <fieldset data-seccion="Establecimiento">
               <legend>4. Establecimiento</legend>
               <p class="ayuda-campo">Estos datos son los que verán las familias en el buscador.</p>
               <div class="campo">
@@ -153,7 +153,7 @@
               </div>
             </fieldset>
 
-            <fieldset>
+            <fieldset data-seccion="Declaración y autorización">
               <legend>5. Declaración y autorización</legend>
               <div class="campo casilla">
                 <input type="checkbox" id="declaracion" name="Declaración" value="Sí" required aria-describedby="error-declaracion">
@@ -188,13 +188,13 @@
         <aside class="lateral" aria-labelledby="lateral-colaborador">
           <h2 id="lateral-colaborador">Qué pasa después</h2>
           <p>La solicitud llega a la Consejería de Desregulación, Familia y Ayudas Sociales. Si autorizas la publicación, tu comercio se incluirá en el listado de establecimientos colaboradores y en este buscador.</p>
-          <p>Para cualquier duda, escribe a <a href="mailto:conciliacion.gss@jcyl.es">conciliacion.gss@jcyl.es</a>.</p>
+          <p>Para cualquier duda, escribe a <a href="mailto:conciliacion.gss@jcyl.es" dir="ltr">conciliacion.gss@jcyl.es</a>.</p>
           <figure>
             <img src="{{raiz}}assets/img/distintivo-aqui.jpg" width="288" height="291" alt="Distintivo: «Establecimiento colaborador. AQUÍ puedes utilizar la Tarjeta Familia»">
             <figcaption>Distintivo para el escaparate.</figcaption>
           </figure>
           <h2>¿Prefieres el formulario en PDF?</h2>
-          <p><a href="../fuentes/formulario-establecimiento-colaborador-2026.pdf">Descargar el formulario original (PDF)</a>. Guárdalo con tus datos y envíalo a <a href="mailto:conciliacion.gss@jcyl.es">conciliacion.gss@jcyl.es</a>.</p>
+          <p><a href="{{raiz}}fuentes/formulario-establecimiento-colaborador-2026.pdf">Descargar el formulario original (PDF)</a>. Rellénalo, guárdalo y envíalo a <a href="mailto:conciliacion.gss@jcyl.es" dir="ltr">conciliacion.gss@jcyl.es</a>.</p>
         </aside>
       </div>
     </div>

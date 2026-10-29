@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessibility · Tarjeta Familia · Castilla y León</title>
+  <meta name="description" content="How this website has been designed so that anyone can use it.">
+  <meta name="theme-color" content="#b0141d">
+  <link rel="alternate" hreflang="es" href="../accesibilidad.html">
+  <link rel="alternate" hreflang="en" href="../en/accesibilidad.html">
+  <link rel="alternate" hreflang="ar" href="../ar/accesibilidad.html">
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/css/estilos.css?v=71941bd5">
+  <script src="../assets/js/comun.js?v=efed5982" defer></script>
+  
+  
+</head>
+<body>
+  <a class="saltar" href="#contenido">Skip to content</a>
+
+  <p class="no-oficial">Independent, <strong>unofficial</strong> website made by a family that uses the Tarjeta Familia. Official information is only published in Spanish. <a href="sobre.html">Why this site exists</a></p>
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="index.html">
+        <img src="../assets/img/tarjeta-familia.jpg" alt="" width="56" height="44">
+        <span>Tarjeta Familia <small>Castilla y León</small></span>
+      </a>
+      <nav class="nav-principal" aria-label="Main">
+        <ul>
+          <li><a href="familias/index.html">Families</a></li>
+          <li><a href="comercios/index.html">Shops</a></li>
+          <li><a href="buscar/index.html">Where to use it</a></li>
+          <li><a href="ayuda.html">Help</a></li>
+        </ul>
+      </nav>
+      <nav class="idiomas" aria-label="Language">
+        <ul>
+            <li><a href="../accesibilidad.html" hreflang="es" lang="es">Español</a></li>
+            <li><a href="../en/accesibilidad.html" hreflang="en" lang="en" aria-current="true">English</a></li>
+            <li><a href="../ar/accesibilidad.html" hreflang="ar" lang="ar">العربية</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+    <nav class="migas contenedor" aria-label="You are here">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li aria-current="page">Accessibility</li>
+      </ol>
+    </nav>
+    <div class="contenedor lectura">
+      <h1>Accessibility</h1>
+      <p class="entradilla">This website aims to meet level AA of the Web Content Accessibility Guidelines (WCAG) 2.2, as required of public-sector websites by standard EN 301 549 and Royal Decree 1112/2018.</p>
+
+      <h2>What we have taken into account</h2>
+      <ul>
+        <li><strong>All the information is on the page</strong>, not in PDFs. The original documents are only linked for reference.</li>
+        <li><strong>Plain language</strong>: short sentences, numbered steps and a single name, “Tarjeta Familia”.</li>
+        <li><strong>Three languages</strong>: Spanish, English and Arabic. The Arabic version is displayed right to left.</li>
+        <li>It can be used <strong>with a keyboard alone</strong> and is marked up for screen readers (headings, landmarks, labels and status messages).</li>
+        <li>The <strong>shop finder works without the map</strong>: the list contains all the information and announces how many results there are.</li>
+        <li><strong>Large text and good contrast</strong> (at least 4.5:1), which can be zoomed to 200% without losing content.</li>
+        <li>Designed <strong>mobile first</strong>, with no horizontal scrolling at 320 pixels wide.</li>
+        <li>Buttons and links with a <strong>touch target of at least 44 × 44 pixels</strong>.</li>
+        <li>Forms with visible labels, hints and <strong>errors explained</strong> next to each field and in a summary.</li>
+        <li>It respects the system setting to <strong>reduce motion</strong>.</li>
+        <li>The practical guides can be <strong>printed</strong>.</li>
+        <li>No cookies are used and your location is not stored. Your browser only remembers whether you prefer to see the map.</li>
+      </ul>
+
+      <h2>Known limitations</h2>
+      <ul>
+        <li>The map uses the Leaflet library and OpenStreetMap tiles. It is an extra: everything it shows is also in the list.</li>
+        <li>Distances are approximate: the official list has no coordinates, so each shop is placed by its address where possible and, otherwise, at the centre of its town.</li>
+        <li>The original PDF documents linked here are not accessible and are only in Spanish.</li>
+        <li>Shop names, addresses and business type descriptions are shown in Spanish, as in the official sources.</li>
+        <li>It has not yet had a full manual audit or testing with real screen readers. If you find a barrier, <a href="https://github.com/jamm87/tarjeta-familia-cyl/issues">let us know</a>.</li>
+      </ul>
+
+      <h2>Automated checks</h2>
+      <p>Every page is checked with <a href="https://github.com/dequelabs/axe-core">axe-core</a> (WCAG 2.0, 2.1 and 2.2 rules, levels A and AA). See <code>tests/probar.mjs</code> in the repository.</p>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="columnas">
+        <section aria-labelledby="pie-familias">
+          <h2 id="pie-familias">For families</h2>
+          <ul>
+            <li><a href="familias/activar.html">Activate the card</a></li>
+            <li><a href="familias/pagar.html">How to pay</a></li>
+            <li><a href="buscar/index.html">Where to use it</a></li>
+            <li><a href="familias/saldo.html">Check your balance</a></li>
+            <li><a href="familias/problemas.html">Loss, theft and other problems</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="pie-comercios">
+          <h2 id="pie-comercios">For shops</h2>
+          <ul>
+            <li><a href="comercios/index.html">Can I accept the card?</a></li>
+            <li><a href="comercios/sectores.html">Authorised business types</a></li>
+            <li><a href="comercios/como-cobrar.html">Checkout guide</a></li>
+            <li><a href="comercios/hazte-colaborador.html">Become a partner shop</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="pie-ayuda">
+          <h2 id="pie-ayuda">Help</h2>
+          <ul>
+            <li>Theft or loss: <a href="tel:900404090" dir="ltr">900 40 40 90</a> (CaixaBank, free)</li>
+            <li>Activation and balance: <a href="tel:900300300" dir="ltr">900 300 300</a> (MoneyToPay, free)</li>
+            <li>General information: <a href="tel:012" dir="ltr">012</a></li>
+            <li><a href="mailto:conciliacion.gss@jcyl.es" dir="ltr">conciliacion.gss@jcyl.es</a></li>
+            <li><a href="ayuda.html">All contacts</a></li>
+          </ul>
+        </section>
+      </div>
+      <p class="nota">
+        Independent website, not affiliated with the Regional Government of Castilla y León (Junta de Castilla y León), CaixaBank or MoneyToPay. The content is based on public documents from the Regional Ministry for Families (Consejería de Desregulación, Familia y Ayudas Sociales). If in doubt, the official information prevails (<a href="fuentes/index.html">original documents, in Spanish</a>).
+        <a href="sobre.html">Why this site exists</a> ·
+        <a href="accesibilidad.html">Accessibility</a> ·
+        <a href="../propuesta.html" hreflang="es">Proposal for the Junta (Spanish)</a> ·
+        <a href="https://github.com/jamm87/tarjeta-familia-cyl/issues">Report an error</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

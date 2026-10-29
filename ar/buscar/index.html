@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>أين تستخدم البطاقة · بطاقة الأسرة · قشتالة وليون</title>
+  <meta name="description" content="ابحث عن المتاجر المتعاونة مع بطاقة الأسرة القريبة منك، حسب البلدة أو الرمز البريدي أو موقعك.">
+  <meta name="theme-color" content="#b0141d">
+  <link rel="alternate" hreflang="es" href="../../buscar/index.html">
+  <link rel="alternate" hreflang="en" href="../../en/buscar/index.html">
+  <link rel="alternate" hreflang="ar" href="../../ar/buscar/index.html">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/estilos.css?v=71941bd5">
+  <script src="../../assets/js/comun.js?v=efed5982" defer></script>
+  <link rel="stylesheet" href="../../vendor/leaflet/leaflet.css?v=ec929f11">
+  <script src="../../assets/i18n/ar.js?v=10f254a0" defer></script>
+  <script src="../../assets/js/i18n.js?v=9a79707d" defer></script>
+  <script src="../../data/localidades.js?v=3543a4e7" defer></script>
+  <script src="../../data/establecimientos.js?v=bef2a64e" defer></script>
+  <script src="../../assets/js/sugerencias.js?v=d8742ab5" defer></script>
+  <script src="../../assets/js/buscador.js?v=a846cb4e" defer></script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">الانتقال إلى المحتوى</a>
+
+  <p class="no-oficial">موقع مستقل <strong>وغير رسمي</strong> أعدّته أسرة تستخدم بطاقة الأسرة (Tarjeta Familia). المعلومات الرسمية متوفرة باللغة الإسبانية فقط. <a href="../sobre.html">لماذا أنشئ هذا الموقع</a></p>
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="../index.html">
+        <img src="../../assets/img/tarjeta-familia.jpg" alt="" width="56" height="44">
+        <span>بطاقة الأسرة <small>Castilla y León</small></span>
+      </a>
+      <nav class="nav-principal" aria-label="القائمة الرئيسية">
+        <ul>
+          <li><a href="../familias/index.html">للأسر</a></li>
+          <li><a href="../comercios/index.html">للمتاجر</a></li>
+          <li><a href="../buscar/index.html" aria-current="true">أين أستخدمها</a></li>
+          <li><a href="../ayuda.html">مساعدة</a></li>
+        </ul>
+      </nav>
+      <nav class="idiomas" aria-label="اللغة">
+        <ul>
+            <li><a href="../../buscar/index.html" hreflang="es" lang="es">Español</a></li>
+            <li><a href="../../en/buscar/index.html" hreflang="en" lang="en">English</a></li>
+            <li><a href="../../ar/buscar/index.html" hreflang="ar" lang="ar" aria-current="true">العربية</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+    <nav class="migas contenedor" aria-label="أنت هنا">
+      <ol>
+        <li><a href="../index.html">الرئيسية</a></li>
+        <li aria-current="page">أين تستخدم البطاقة</li>
+      </ol>
+    </nav>
+    <div class="contenedor">
+      <h1>أين تستخدم البطاقة</h1>
+      <p class="entradilla">ابحث بين 1,623 متجرًا متعاونًا في قشتالة وليون (قائمة بتاريخ 21 أكتوبر 2026).</p>
+
+      <div class="aviso aviso--info">
+        <p><strong>ليس في هذه المتاجر فقط.</strong> يمكنك أيضًا الدفع في أي متجر فعلي في قشتالة وليون من <a href="../comercios/sectores.html">الأنشطة التجارية المسموح بها</a> (الصيدليات، والسوبرماركت، والنظارات، ومتاجر ملابس الأطفال…)، حتى لو لم يظهر هنا.</p>
+      </div>
+
+      <noscript>
+        <p class="sin-js-aviso">يحتاج محرك البحث إلى JavaScript. يمكنك الاطلاع على <a href="../../fuentes/establecimientos-colaboradores-2026-10-21.pdf" hreflang="es">القائمة الكاملة بصيغة PDF</a> (بالإسبانية).</p>
+      </noscript>
+
+      <div class="buscador" data-buscador hidden>
+        <form class="panel-busqueda" id="form-busqueda" role="search" aria-label="البحث عن المتاجر المتعاونة">
+          <div class="donde">
+            <div class="campo combo">
+              <label for="q">البلدة أو البلدية أو الرمز البريدي</label>
+              <input type="text" id="q" name="q" autocomplete="off" spellcheck="false"
+                     role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerencias"
+                     aria-describedby="ayuda-q" placeholder="مثلًا: Arévalo أو 05200">
+              <ul id="sugerencias" role="listbox" aria-label="الأماكن" hidden></ul>
+              <span class="visualmente-oculto" id="ayuda-q">تظهر اقتراحات أثناء الكتابة. استخدم الأسهم لاختيار أحدها.</span>
+            </div>
+            <button class="boton" type="submit">بحث</button>
+            <button class="boton boton--secundario" type="button" id="ubicacion">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+              استخدم موقعي
+            </button>
+          </div>
+          <p class="ayuda-campo" id="estado-ubicacion" role="status" aria-live="polite"></p>
+
+          <div class="filtros">
+            <div class="campo">
+              <label for="categoria">نوع المتجر</label>
+              <select id="categoria" name="cat"></select>
+            </div>
+            <div class="campo">
+              <label for="radio">المسافة</label>
+              <select id="radio" name="km">
+                <option value="5">حتى 5 كم</option>
+                <option value="10">حتى 10 كم</option>
+                <option value="25" selected>حتى 25 كم</option>
+                <option value="50">حتى 50 كم</option>
+                <option value="0">كل قشتالة وليون</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label for="texto">الاسم أو الشارع أو نوع المتجر</label>
+              <input type="search" id="texto" name="texto" autocomplete="off" placeholder="اختياري. مثلًا: صيدلية أو farmacia">
+            </div>
+          </div>
+        </form>
+
+        <section aria-labelledby="titulo-resultados">
+          <div class="resultados-cabecera">
+            <h2 id="titulo-resultados" tabindex="-1">اختر مكان البحث</h2>
+            <div class="vista" role="group" aria-label="طريقة عرض النتائج" hidden>
+              <button type="button" data-vista="lista" aria-pressed="true">قائمة</button>
+              <button type="button" data-vista="mapa" aria-pressed="false">قائمة وخريطة</button>
+            </div>
+          </div>
+          <p class="visualmente-oculto" role="status" aria-live="polite" id="anuncio"></p>
+          <div id="inicio-busqueda">
+            <p>اكتب بلدتك أو بلديتك أو رمزك البريدي، أو اضغط «استخدم موقعي». إذا لم تكن في منطقتك متاجر متعاونة، سترى أقربها. ويمكنك أيضًا عرض جميع متاجر مقاطعة ما:</p>
+            <ul class="provincias-rapidas" id="provincias"></ul>
+          </div>
+          <div id="nota-resultados"></div>
+          <div class="zona-resultados" id="zona-resultados">
+            <ol class="lista-establecimientos" id="lista"></ol>
+            <div class="mapa" id="mapa" role="region" aria-label="خريطة النتائج. المعلومات نفسها موجودة في القائمة." hidden></div>
+          </div>
+          <p class="mas-resultados" hidden><button class="boton boton--secundario" type="button" id="mas">عرض مزيد من النتائج</button></p>
+        </section>
+      </div>
+
+      <p class="aproximada">المصدر: <a href="../../fuentes/establecimientos-colaboradores-2026-10-21.pdf" hreflang="es">المتاجر المتعاونة مع بطاقة الأسرة (PDF بالإسبانية)</a>، حكومة قشتالة وليون. المسافات تقريبية: يُحدَّد موقع كل متجر بعنوانه حين أمكن، وإلا ففي وسط بلدته.</p>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="columnas">
+        <section aria-labelledby="pie-familias">
+          <h2 id="pie-familias">للأسر</h2>
+          <ul>
+            <li><a href="../familias/activar.html">تفعيل البطاقة</a></li>
+            <li><a href="../familias/pagar.html">طريقة الدفع</a></li>
+            <li><a href="../buscar/index.html">أين أستخدمها</a></li>
+            <li><a href="../familias/saldo.html">معرفة الرصيد</a></li>
+            <li><a href="../familias/problemas.html">الفقدان والسرقة ومشكلات أخرى</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="pie-comercios">
+          <h2 id="pie-comercios">للمتاجر</h2>
+          <ul>
+            <li><a href="../comercios/index.html">هل يمكنني قبول البطاقة؟</a></li>
+            <li><a href="../comercios/sectores.html">الأنشطة التجارية المسموح بها</a></li>
+            <li><a href="../comercios/como-cobrar.html">دليل الصندوق</a></li>
+            <li><a href="../comercios/hazte-colaborador.html">الانضمام كمتجر متعاون</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="pie-ayuda">
+          <h2 id="pie-ayuda">مساعدة</h2>
+          <ul>
+            <li>السرقة أو الفقدان: <a href="tel:900404090" dir="ltr">900 40 40 90</a> (CaixaBank، مجاني)</li>
+            <li>التفعيل والرصيد: <a href="tel:900300300" dir="ltr">900 300 300</a> (MoneyToPay، مجاني)</li>
+            <li>معلومات عامة: <a href="tel:012" dir="ltr">012</a></li>
+            <li><a href="mailto:conciliacion.gss@jcyl.es" dir="ltr">conciliacion.gss@jcyl.es</a></li>
+            <li><a href="../ayuda.html">جميع جهات الاتصال</a></li>
+          </ul>
+        </section>
+      </div>
+      <p class="nota">
+        موقع مستقل لا علاقة له بحكومة إقليم قشتالة وليون (Junta de Castilla y León) ولا بـ CaixaBank ولا بـ MoneyToPay. المحتوى مأخوذ من الوثائق العامة لوزارة الأسرة الإقليمية (Consejería de Desregulación, Familia y Ayudas Sociales)، وعند الشك تكون الأولوية للمعلومات الرسمية (<a href="../fuentes/index.html">الوثائق الأصلية بالإسبانية</a>).
+        <a href="../sobre.html">لماذا أنشئ هذا الموقع</a> ·
+        <a href="../accesibilidad.html">إمكانية الوصول</a> ·
+        <a href="../../propuesta.html" hreflang="es">مقترح للحكومة الإقليمية (بالإسبانية)</a> ·
+        <a href="https://github.com/jamm87/tarjeta-familia-cyl/issues">الإبلاغ عن خطأ</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

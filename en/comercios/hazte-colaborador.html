@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Become a partner shop · Tarjeta Familia · Castilla y León</title>
+  <meta name="description" content="Form for a shop in Castilla y León to become a Tarjeta Familia partner shop.">
+  <meta name="theme-color" content="#b0141d">
+  <link rel="alternate" hreflang="es" href="../../comercios/hazte-colaborador.html">
+  <link rel="alternate" hreflang="en" href="../../en/comercios/hazte-colaborador.html">
+  <link rel="alternate" hreflang="ar" href="../../ar/comercios/hazte-colaborador.html">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/estilos.css?v=71941bd5">
+  <script src="../../assets/js/comun.js?v=efed5982" defer></script>
+  
+  <script src="../../assets/i18n/en.js?v=9cf5172c" defer></script>
+  <script src="../../assets/js/i18n.js?v=9a79707d" defer></script>
+  <script src="../../assets/js/formulario.js?v=e05902fe" defer></script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Skip to content</a>
+
+  <p class="no-oficial">Independent, <strong>unofficial</strong> website made by a family that uses the Tarjeta Familia. Official information is only published in Spanish. <a href="../sobre.html">Why this site exists</a></p>
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="../index.html">
+        <img src="../../assets/img/tarjeta-familia.jpg" alt="" width="56" height="44">
+        <span>Tarjeta Familia <small>Castilla y León</small></span>
+      </a>
+      <nav class="nav-principal" aria-label="Main">
+        <ul>
+          <li><a href="../familias/index.html">Families</a></li>
+          <li><a href="../comercios/index.html" aria-current="true">Shops</a></li>
+          <li><a href="../buscar/index.html">Where to use it</a></li>
+          <li><a href="../ayuda.html">Help</a></li>
+        </ul>
+      </nav>
+      <nav class="idiomas" aria-label="Language">
+        <ul>
+            <li><a href="../../comercios/hazte-colaborador.html" hreflang="es" lang="es">Español</a></li>
+            <li><a href="../../en/comercios/hazte-colaborador.html" hreflang="en" lang="en" aria-current="true">English</a></li>
+            <li><a href="../../ar/comercios/hazte-colaborador.html" hreflang="ar" lang="ar">العربية</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+    <nav class="migas contenedor" aria-label="You are here">
+      <ol>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../comercios/index.html">Shops</a></li>
+        <li aria-current="page">Become a partner shop</li>
+      </ol>
+    </nav>
+    <div class="contenedor">
+      <h1>Become a partner shop</h1>
+      <p class="entradilla">It's free and voluntary. If you authorise publication, your shop will appear in the Junta's official list and, from there, in this shop finder.</p>
+
+      <div class="dos-columnas">
+        <div>
+          <div class="aviso aviso--info">
+            <p><strong>You don't need to be a partner to accept the card.</strong> It's enough for your terminal to be in an <a href="sectores.html">authorised business type</a>. Being a partner is mainly about families being able to find you.</p>
+            <p>If you have several shops, fill in one form for each.</p>
+            <p>This website doesn't store or send your data: at the end, an email is prepared for you to send from your own account to the Junta de Castilla y León (<a href="mailto:conciliacion.gss@jcyl.es" dir="ltr">conciliacion.gss@jcyl.es</a>), which handles registrations. <strong>The email is written in Spanish</strong>, as the Junta requires.</p>
+          </div>
+
+          <div class="resumen-errores" id="resumen-errores" tabindex="-1" hidden>
+            <h2>Please check these details before sending</h2>
+            <ul></ul>
+          </div>
+
+          <form id="form-colaborador" action="mailto:conciliacion.gss@jcyl.es?subject=Alta%20establecimiento%20colaborador%20Tarjeta%20Familia" method="post" enctype="text/plain" novalidate>
+            <p>Fields marked with <span class="obligatorio" aria-hidden="true">*</span><span class="visualmente-oculto">an asterisk</span> are required.</p>
+
+            <fieldset data-seccion="Persona que representa al comercio">
+              <legend>1. Person representing the shop</legend>
+              <div class="fila-campos">
+                <div class="campo">
+                  <label for="nombre">First name <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <input type="text" id="nombre" name="Nombre" autocomplete="given-name" required aria-describedby="error-nombre">
+                  <p class="error-campo" id="error-nombre"></p>
+                </div>
+                <div class="campo">
+                  <label for="apellido1">First surname <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <input type="text" id="apellido1" name="Primer apellido" autocomplete="family-name" required aria-describedby="error-apellido1">
+                  <p class="error-campo" id="error-apellido1"></p>
+                </div>
+                <div class="campo">
+                  <label for="apellido2">Second surname</label>
+                  <input type="text" id="apellido2" name="Segundo apellido" autocomplete="additional-name">
+                </div>
+              </div>
+              <div class="campo">
+                <label for="dni">DNI or NIE <span class="obligatorio" aria-hidden="true">*</span></label>
+                <span class="ayuda-campo" id="ayuda-dni">Including the letter. For example: 12345678Z or X1234567L</span>
+                <input type="text" id="dni" name="DNI/NIE" required autocomplete="off" spellcheck="false" aria-describedby="ayuda-dni error-dni" data-validar="dni">
+                <p class="error-campo" id="error-dni"></p>
+              </div>
+            </fieldset>
+
+            <fieldset data-seccion="Empresa">
+              <legend>2. Business</legend>
+              <div class="campo">
+                <label for="razon">Registered business name <span class="obligatorio" aria-hidden="true">*</span></label>
+                <span class="ayuda-campo" id="ayuda-razon">The company's legal name or, if you are self-employed, your full name.</span>
+                <input type="text" id="razon" name="Razón social" autocomplete="organization" required aria-describedby="ayuda-razon error-razon">
+                <p class="error-campo" id="error-razon"></p>
+              </div>
+              <div class="campo">
+                <label for="cif">Tax ID (CIF or NIF) <span class="obligatorio" aria-hidden="true">*</span></label>
+                <span class="ayuda-campo" id="ayuda-cif">For example: B12345678. If you are self-employed, your NIF.</span>
+                <input type="text" id="cif" name="CIF" required autocomplete="off" spellcheck="false" aria-describedby="ayuda-cif error-cif" data-validar="cif">
+                <p class="error-campo" id="error-cif"></p>
+              </div>
+              <div class="fila-campos">
+                <div class="campo">
+                  <label for="sector">Business type or activity <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <select id="sector" name="Sector/Actividad" required aria-describedby="error-sector">
+                    <option value="">Choose one</option>
+                    <option value="Farmacia, parafarmacia u ortopedia">Pharmacy or orthopaedics</option>
+                    <option value="Óptica o audición">Opticians or hearing</option>
+                    <option value="Supermercado o alimentación">Supermarket or food shop</option>
+                    <option value="Droguería o perfumería">Toiletries or perfume</option>
+                    <option value="Ropa o moda infantil">Children's clothing</option>
+                    <option value="Calzado">Shoes</option>
+                    <option value="Puericultura">Baby products</option>
+                    <option value="Juguetes, librería o papelería">Toys, books or stationery</option>
+                    <option value="Salud (clínica, fisioterapia, dentista…)">Health (clinic, physiotherapy, dentist…)</option>
+                    <option value="Hogar o muebles">Home or furniture</option>
+                    <option value="Educación o cuidado infantil">Education or childcare</option>
+                    <option value="Otro">Other</option>
+                  </select>
+                  <p class="error-campo" id="error-sector"></p>
+                </div>
+                <div class="campo">
+                  <label for="cnae">CNAE activity code</label>
+                  <span class="ayuda-campo" id="ayuda-cnae">If you know it. It appears on your business registration.</span>
+                  <input type="text" id="cnae" name="Epígrafe CNAE" inputmode="numeric" autocomplete="off" aria-describedby="ayuda-cnae">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset data-seccion="Contacto">
+              <legend>3. Contact</legend>
+              <div class="campo">
+                <label for="email">Email <span class="obligatorio" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="Correo electrónico" autocomplete="email" required aria-describedby="error-email" data-validar="email" dir="ltr">
+                <p class="error-campo" id="error-email"></p>
+              </div>
+              <div class="fila-campos">
+                <div class="campo">
+                  <label for="movil">Mobile <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <input type="tel" id="movil" name="Móvil" autocomplete="tel-national" inputmode="tel" required aria-describedby="error-movil" data-validar="movil" dir="ltr">
+                  <p class="error-campo" id="error-movil"></p>
+                </div>
+                <div class="campo">
+                  <label for="telefono">Other phone</label>
+                  <input type="tel" id="telefono" name="Teléfono" inputmode="tel" aria-describedby="error-telefono" data-validar="telefono" dir="ltr">
+                  <p class="error-campo" id="error-telefono"></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset data-seccion="Establecimiento">
+              <legend>4. Shop</legend>
+              <p class="ayuda-campo">These are the details families will see in the shop finder.</p>
+              <div class="campo">
+                <label for="comercial">Shop name <span class="obligatorio" aria-hidden="true">*</span></label>
+                <span class="ayuda-campo" id="ayuda-comercial">As shown on your sign, for example: Farmacia del Carmen</span>
+                <input type="text" id="comercial" name="Nombre del establecimiento" required aria-describedby="ayuda-comercial error-comercial">
+                <p class="error-campo" id="error-comercial"></p>
+              </div>
+              <div class="campo">
+                <label for="direccion">Address <span class="obligatorio" aria-hidden="true">*</span></label>
+                <span class="ayuda-campo" id="ayuda-direccion">Street and number, for example: C/ Mayor, 12</span>
+                <input type="text" id="direccion" name="Dirección" autocomplete="street-address" required aria-describedby="ayuda-direccion error-direccion">
+                <p class="error-campo" id="error-direccion"></p>
+              </div>
+              <div class="fila-campos">
+                <div class="campo">
+                  <label for="provincia">Province <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <select id="provincia" name="Provincia" required aria-describedby="error-provincia">
+                    <option value="">Choose one</option>
+                    <option value="05">Ávila</option>
+                    <option value="09">Burgos</option>
+                    <option value="24">León</option>
+                    <option value="34">Palencia</option>
+                    <option value="37">Salamanca</option>
+                    <option value="40">Segovia</option>
+                    <option value="42">Soria</option>
+                    <option value="47">Valladolid</option>
+                    <option value="49">Zamora</option>
+                  </select>
+                  <p class="error-campo" id="error-provincia"></p>
+                </div>
+                <div class="campo">
+                  <label for="localidad">Town <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <input type="text" id="localidad" name="Localidad" autocomplete="address-level2" required aria-describedby="error-localidad">
+                  <p class="error-campo" id="error-localidad"></p>
+                </div>
+                <div class="campo">
+                  <label for="cp">Postcode <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <input type="text" id="cp" name="C.P." autocomplete="postal-code" inputmode="numeric" maxlength="5" required aria-describedby="error-cp" data-validar="cp" dir="ltr">
+                  <p class="error-campo" id="error-cp"></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset data-seccion="Declaración y autorización">
+              <legend>5. Declaration and authorisation</legend>
+              <div class="campo casilla">
+                <input type="checkbox" id="declaracion" name="Declaración" value="Sí" required aria-describedby="error-declaracion">
+                <label for="declaracion">I declare that this shop meets the terms of use of the Tarjeta Familia and ensures responsible consumption in line with the Birth Grant regulations, and I formally register it as a partner shop. <span class="obligatorio" aria-hidden="true">*</span></label>
+              </div>
+              <p class="error-campo" id="error-declaracion"></p>
+              <div class="campo casilla">
+                <input type="checkbox" id="publicar" name="Autorizo la publicación" value="Sí">
+                <label for="publicar">I authorise the Junta de Castilla y León to publish on its website (jcyl.es) that I am a partner shop, together with the details in section 4 (shop). <strong>Without this authorisation your shop will not appear in the shop finder.</strong></label>
+              </div>
+            </fieldset>
+
+            <div class="acciones">
+              <button class="boton boton--comercio" type="submit">Review and send</button>
+            </div>
+          </form>
+
+          <section id="confirmacion" class="aviso aviso--ok" tabindex="-1" hidden aria-labelledby="titulo-confirmacion">
+            <h2 id="titulo-confirmacion">Almost done: send the email</h2>
+            <p>We have prepared an email in Spanish to <strong dir="ltr">conciliacion.gss@jcyl.es</strong> with your details. Open it with the button and click “Send” in your email program.</p>
+            <div class="acciones">
+              <a class="boton boton--comercio" id="enlace-correo" href="mailto:conciliacion.gss@jcyl.es">Open my email</a>
+              <button class="boton boton--secundario" type="button" id="copiar-datos">Copy the details</button>
+              <button class="boton boton--secundario" type="button" id="volver-formulario">Correct the details</button>
+            </div>
+            <p role="status" aria-live="polite" id="estado-copia"></p>
+            <h3>Summary of what you are sending</h3>
+            <pre class="resumen-envio" id="resumen-envio" lang="es" dir="ltr"></pre>
+          </section>
+        </div>
+
+        <aside class="lateral" aria-labelledby="lateral-colaborador">
+          <h2 id="lateral-colaborador">What happens next</h2>
+          <p>Your application goes to the Regional Ministry for Families. If you authorise publication, your shop will be added to the list of partner shops and to this shop finder.</p>
+          <p>For any questions, email <a href="mailto:conciliacion.gss@jcyl.es" dir="ltr">conciliacion.gss@jcyl.es</a>.</p>
+          <figure>
+            <img src="../../assets/img/distintivo-aqui.jpg" width="288" height="291" alt="Sticker in Spanish: «Establecimiento colaborador. AQUÍ puedes utilizar la Tarjeta Familia» (partner shop: you can use the Tarjeta Familia here)">
+            <figcaption>Window sticker.</figcaption>
+          </figure>
+          <h2>Prefer the PDF form?</h2>
+          <p><a href="../../fuentes/formulario-establecimiento-colaborador-2026.pdf" hreflang="es">Download the original form (PDF, Spanish)</a>. Fill it in, save it and send it to <a href="mailto:conciliacion.gss@jcyl.es" dir="ltr">conciliacion.gss@jcyl.es</a>.</p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="columnas">
+        <section aria-labelledby="pie-familias">
+          <h2 id="pie-familias">For families</h2>
+          <ul>
+            <li><a href="../familias/activar.html">Activate the card</a></li>
+            <li><a href="../familias/pagar.html">How to pay</a></li>
+            <li><a href="../buscar/index.html">Where to use it</a></li>
+            <li><a href="../familias/saldo.html">Check your balance</a></li>
+            <li><a href="../familias/problemas.html">Loss, theft and other problems</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="pie-comercios">
+          <h2 id="pie-comercios">For shops</h2>
+          <ul>
+            <li><a href="../comercios/index.html">Can I accept the card?</a></li>
+            <li><a href="../comercios/sectores.html">Authorised business types</a></li>
+            <li><a href="../comercios/como-cobrar.html">Checkout guide</a></li>
+            <li><a href="../comercios/hazte-colaborador.html">Become a partner shop</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="pie-ayuda">
+          <h2 id="pie-ayuda">Help</h2>
+          <ul>
+            <li>Theft or loss: <a href="tel:900404090" dir="ltr">900 40 40 90</a> (CaixaBank, free)</li>
+            <li>Activation and balance: <a href="tel:900300300" dir="ltr">900 300 300</a> (MoneyToPay, free)</li>
+            <li>General information: <a href="tel:012" dir="ltr">012</a></li>
+            <li><a href="mailto:conciliacion.gss@jcyl.es" dir="ltr">conciliacion.gss@jcyl.es</a></li>
+            <li><a href="../ayuda.html">All contacts</a></li>
+          </ul>
+        </section>
+      </div>
+      <p class="nota">
+        Independent website, not affiliated with the Regional Government of Castilla y León (Junta de Castilla y León), CaixaBank or MoneyToPay. The content is based on public documents from the Regional Ministry for Families (Consejería de Desregulación, Familia y Ayudas Sociales). If in doubt, the official information prevails (<a href="../fuentes/index.html">original documents, in Spanish</a>).
+        <a href="../sobre.html">Why this site exists</a> ·
+        <a href="../accesibilidad.html">Accessibility</a> ·
+        <a href="../../propuesta.html" hreflang="es">Proposal for the Junta (Spanish)</a> ·
+        <a href="https://github.com/jamm87/tarjeta-familia-cyl/issues">Report an error</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

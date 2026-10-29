@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>انضم كمتجر متعاون · بطاقة الأسرة · قشتالة وليون</title>
+  <meta name="description" content="نموذج لانضمام متجر في قشتالة وليون كمتجر متعاون مع بطاقة الأسرة.">
+  <meta name="theme-color" content="#b0141d">
+  <link rel="alternate" hreflang="es" href="../../comercios/hazte-colaborador.html">
+  <link rel="alternate" hreflang="en" href="../../en/comercios/hazte-colaborador.html">
+  <link rel="alternate" hreflang="ar" href="../../ar/comercios/hazte-colaborador.html">
+  <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../../assets/css/estilos.css?v=71941bd5">
+  <script src="../../assets/js/comun.js?v=efed5982" defer></script>
+  
+  <script src="../../assets/i18n/ar.js?v=10f254a0" defer></script>
+  <script src="../../assets/js/i18n.js?v=9a79707d" defer></script>
+  <script src="../../assets/js/formulario.js?v=e05902fe" defer></script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">الانتقال إلى المحتوى</a>
+
+  <p class="no-oficial">موقع مستقل <strong>وغير رسمي</strong> أعدّته أسرة تستخدم بطاقة الأسرة (Tarjeta Familia). المعلومات الرسمية متوفرة باللغة الإسبانية فقط. <a href="../sobre.html">لماذا أنشئ هذا الموقع</a></p>
+
+  <header class="cabecera">
+    <div class="contenedor">
+      <a class="marca" href="../index.html">
+        <img src="../../assets/img/tarjeta-familia.jpg" alt="" width="56" height="44">
+        <span>بطاقة الأسرة <small>Castilla y León</small></span>
+      </a>
+      <nav class="nav-principal" aria-label="القائمة الرئيسية">
+        <ul>
+          <li><a href="../familias/index.html">للأسر</a></li>
+          <li><a href="../comercios/index.html" aria-current="true">للمتاجر</a></li>
+          <li><a href="../buscar/index.html">أين أستخدمها</a></li>
+          <li><a href="../ayuda.html">مساعدة</a></li>
+        </ul>
+      </nav>
+      <nav class="idiomas" aria-label="اللغة">
+        <ul>
+            <li><a href="../../comercios/hazte-colaborador.html" hreflang="es" lang="es">Español</a></li>
+            <li><a href="../../en/comercios/hazte-colaborador.html" hreflang="en" lang="en">English</a></li>
+            <li><a href="../../ar/comercios/hazte-colaborador.html" hreflang="ar" lang="ar" aria-current="true">العربية</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" tabindex="-1">
+    <nav class="migas contenedor" aria-label="أنت هنا">
+      <ol>
+        <li><a href="../index.html">الرئيسية</a></li>
+        <li><a href="../comercios/index.html">للمتاجر</a></li>
+        <li aria-current="page">انضم كمتجر متعاون</li>
+      </ol>
+    </nav>
+    <div class="contenedor">
+      <h1>انضم كمتجر متعاون</h1>
+      <p class="entradilla">الانضمام مجاني وطوعي. إذا وافقت على النشر، سيظهر متجرك في القائمة الرسمية لحكومة الإقليم، ومن ثم في محرك البحث هذا.</p>
+
+      <div class="dos-columnas">
+        <div>
+          <div class="aviso aviso--info">
+            <p><strong>لا يلزم أن تكون متعاونًا لقبول البطاقة.</strong> يكفي أن يكون جهاز الدفع لديك في <a href="sectores.html">نشاط تجاري مسموح به</a>. الغاية من الانضمام هي أساسًا أن تجدك الأسر.</p>
+            <p>إذا كان لديك أكثر من محل، املأ نموذجًا لكل محل.</p>
+            <p>هذا الموقع لا يحفظ بياناتك ولا يرسلها: في النهاية يُجهَّز بريد إلكتروني ترسله أنت من حسابك إلى حكومة قشتالة وليون (<a href="mailto:conciliacion.gss@jcyl.es" dir="ltr">conciliacion.gss@jcyl.es</a>)، وهي الجهة التي تدير طلبات الانضمام. <strong>يُكتب البريد بالإسبانية</strong> كما تشترط الإدارة.</p>
+          </div>
+
+          <div class="resumen-errores" id="resumen-errores" tabindex="-1" hidden>
+            <h2>راجع هذه البيانات قبل الإرسال</h2>
+            <ul></ul>
+          </div>
+
+          <form id="form-colaborador" action="mailto:conciliacion.gss@jcyl.es?subject=Alta%20establecimiento%20colaborador%20Tarjeta%20Familia" method="post" enctype="text/plain" novalidate>
+            <p>الحقول المعلّمة بـ <span class="obligatorio" aria-hidden="true">*</span><span class="visualmente-oculto">نجمة</span> إلزامية.</p>
+
+            <fieldset data-seccion="Persona que representa al comercio">
+              <legend>1. الشخص الذي يمثّل المتجر</legend>
+              <div class="fila-campos">
+                <div class="campo">
+                  <label for="nombre">الاسم <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <input type="text" id="nombre" name="Nombre" autocomplete="given-name" required aria-describedby="error-nombre">
+                  <p class="error-campo" id="error-nombre"></p>
+                </div>
+                <div class="campo">
+                  <label for="apellido1">اسم العائلة الأول <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <input type="text" id="apellido1" name="Primer apellido" autocomplete="family-name" required aria-describedby="error-apellido1">
+                  <p class="error-campo" id="error-apellido1"></p>
+                </div>
+                <div class="campo">
+                  <label for="apellido2">اسم العائلة الثاني</label>
+                  <input type="text" id="apellido2" name="Segundo apellido" autocomplete="additional-name">
+                </div>
+              </div>
+              <div class="campo">
+                <label for="dni">DNI أو NIE <span class="obligatorio" aria-hidden="true">*</span></label>
+                <span class="ayuda-campo" id="ayuda-dni">مع الحرف. مثلًا: <span dir="ltr">12345678Z</span> أو <span dir="ltr">X1234567L</span></span>
+                <input type="text" id="dni" name="DNI/NIE" required autocomplete="off" spellcheck="false" aria-describedby="ayuda-dni error-dni" data-validar="dni" dir="ltr">
+                <p class="error-campo" id="error-dni"></p>
+              </div>
+            </fieldset>
+
+            <fieldset data-seccion="Empresa">
+              <legend>2. الشركة</legend>
+              <div class="campo">
+                <label for="razon">الاسم التجاري المسجّل <span class="obligatorio" aria-hidden="true">*</span></label>
+                <span class="ayuda-campo" id="ayuda-razon">الاسم القانوني للشركة، أو اسمك الكامل إذا كنت تعمل لحسابك الخاص.</span>
+                <input type="text" id="razon" name="Razón social" autocomplete="organization" required aria-describedby="ayuda-razon error-razon">
+                <p class="error-campo" id="error-razon"></p>
+              </div>
+              <div class="campo">
+                <label for="cif">الرقم الضريبي (CIF أو NIF) <span class="obligatorio" aria-hidden="true">*</span></label>
+                <span class="ayuda-campo" id="ayuda-cif">مثلًا: <span dir="ltr">B12345678</span>. إذا كنت تعمل لحسابك الخاص، رقمك NIF.</span>
+                <input type="text" id="cif" name="CIF" required autocomplete="off" spellcheck="false" aria-describedby="ayuda-cif error-cif" data-validar="cif" dir="ltr">
+                <p class="error-campo" id="error-cif"></p>
+              </div>
+              <div class="fila-campos">
+                <div class="campo">
+                  <label for="sector">النشاط التجاري <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <select id="sector" name="Sector/Actividad" required aria-describedby="error-sector">
+                    <option value="">اختر نشاطًا</option>
+                    <option value="Farmacia, parafarmacia u ortopedia">صيدلية أو أجهزة تقويمية</option>
+                    <option value="Óptica o audición">نظارات أو سمعيات</option>
+                    <option value="Supermercado o alimentación">سوبرماركت أو مواد غذائية</option>
+                    <option value="Droguería o perfumería">مواد تنظيف أو عطور</option>
+                    <option value="Ropa o moda infantil">ملابس أطفال</option>
+                    <option value="Calzado">أحذية</option>
+                    <option value="Puericultura">مستلزمات الرضّع</option>
+                    <option value="Juguetes, librería o papelería">ألعاب أو كتب أو قرطاسية</option>
+                    <option value="Salud (clínica, fisioterapia, dentista…)">صحة (عيادة، علاج طبيعي، طبيب أسنان…)</option>
+                    <option value="Hogar o muebles">المنزل أو الأثاث</option>
+                    <option value="Educación o cuidado infantil">تعليم أو رعاية أطفال</option>
+                    <option value="Otro">غير ذلك</option>
+                  </select>
+                  <p class="error-campo" id="error-sector"></p>
+                </div>
+                <div class="campo">
+                  <label for="cnae">رمز النشاط CNAE</label>
+                  <span class="ayuda-campo" id="ayuda-cnae">إن كنت تعرفه. يظهر في تسجيل نشاطك.</span>
+                  <input type="text" id="cnae" name="Epígrafe CNAE" inputmode="numeric" autocomplete="off" aria-describedby="ayuda-cnae" dir="ltr">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset data-seccion="Contacto">
+              <legend>3. الاتصال</legend>
+              <div class="campo">
+                <label for="email">البريد الإلكتروني <span class="obligatorio" aria-hidden="true">*</span></label>
+                <input type="email" id="email" name="Correo electrónico" autocomplete="email" required aria-describedby="error-email" data-validar="email" dir="ltr">
+                <p class="error-campo" id="error-email"></p>
+              </div>
+              <div class="fila-campos">
+                <div class="campo">
+                  <label for="movil">الهاتف المحمول <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <input type="tel" id="movil" name="Móvil" autocomplete="tel-national" inputmode="tel" required aria-describedby="error-movil" data-validar="movil" dir="ltr">
+                  <p class="error-campo" id="error-movil"></p>
+                </div>
+                <div class="campo">
+                  <label for="telefono">هاتف آخر</label>
+                  <input type="tel" id="telefono" name="Teléfono" inputmode="tel" aria-describedby="error-telefono" data-validar="telefono" dir="ltr">
+                  <p class="error-campo" id="error-telefono"></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset data-seccion="Establecimiento">
+              <legend>4. المحل</legend>
+              <p class="ayuda-campo">هذه هي البيانات التي ستراها الأسر في محرك البحث. اكتبها بالحروف اللاتينية كما تظهر على لافتتك.</p>
+              <div class="campo">
+                <label for="comercial">اسم المحل <span class="obligatorio" aria-hidden="true">*</span></label>
+                <span class="ayuda-campo" id="ayuda-comercial">كما يظهر على اللافتة، مثلًا: Farmacia del Carmen</span>
+                <input type="text" id="comercial" name="Nombre del establecimiento" required aria-describedby="ayuda-comercial error-comercial">
+                <p class="error-campo" id="error-comercial"></p>
+              </div>
+              <div class="campo">
+                <label for="direccion">العنوان <span class="obligatorio" aria-hidden="true">*</span></label>
+                <span class="ayuda-campo" id="ayuda-direccion">الشارع والرقم، مثلًا: <span dir="ltr">C/ Mayor, 12</span></span>
+                <input type="text" id="direccion" name="Dirección" autocomplete="street-address" required aria-describedby="ayuda-direccion error-direccion">
+                <p class="error-campo" id="error-direccion"></p>
+              </div>
+              <div class="fila-campos">
+                <div class="campo">
+                  <label for="provincia">المقاطعة <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <select id="provincia" name="Provincia" required aria-describedby="error-provincia">
+                    <option value="">اختر مقاطعة</option>
+                    <option value="05">Ávila</option>
+                    <option value="09">Burgos</option>
+                    <option value="24">León</option>
+                    <option value="34">Palencia</option>
+                    <option value="37">Salamanca</option>
+                    <option value="40">Segovia</option>
+                    <option value="42">Soria</option>
+                    <option value="47">Valladolid</option>
+                    <option value="49">Zamora</option>
+                  </select>
+                  <p class="error-campo" id="error-provincia"></p>
+                </div>
+                <div class="campo">
+                  <label for="localidad">البلدة <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <input type="text" id="localidad" name="Localidad" autocomplete="address-level2" required aria-describedby="error-localidad">
+                  <p class="error-campo" id="error-localidad"></p>
+                </div>
+                <div class="campo">
+                  <label for="cp">الرمز البريدي <span class="obligatorio" aria-hidden="true">*</span></label>
+                  <input type="text" id="cp" name="C.P." autocomplete="postal-code" inputmode="numeric" maxlength="5" required aria-describedby="error-cp" data-validar="cp" dir="ltr">
+                  <p class="error-campo" id="error-cp"></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset data-seccion="Declaración y autorización">
+              <legend>5. الإقرار والتفويض</legend>
+              <div class="campo casilla">
+                <input type="checkbox" id="declaracion" name="Declaración" value="Sí" required aria-describedby="error-declaracion">
+                <label for="declaracion">أقرّ بأن هذا المحل يلتزم بشروط استخدام بطاقة الأسرة ويضمن الاستهلاك المسؤول وفق أنظمة منحة الولادة، وأعتمد صفته كمتجر متعاون. <span class="obligatorio" aria-hidden="true">*</span></label>
+              </div>
+              <p class="error-campo" id="error-declaracion"></p>
+              <div class="campo casilla">
+                <input type="checkbox" id="publicar" name="Autorizo la publicación" value="Sí">
+                <label for="publicar">أوافق على أن يُنشر في موقع حكومة قشتالة وليون (jcyl.es) أنني متجر متعاون، مع بيانات القسم 4 (المحل). <strong>بدون هذه الموافقة لن يظهر متجرك في محرك البحث.</strong></label>
+              </div>
+            </fieldset>
+
+            <div class="acciones">
+              <button class="boton boton--comercio" type="submit">مراجعة وإرسال</button>
+            </div>
+          </form>
+
+          <section id="confirmacion" class="aviso aviso--ok" tabindex="-1" hidden aria-labelledby="titulo-confirmacion">
+            <h2 id="titulo-confirmacion">بقيت خطوة: أرسل البريد</h2>
+            <p>جهّزنا بريدًا بالإسبانية إلى <strong dir="ltr">conciliacion.gss@jcyl.es</strong> يتضمن بياناتك. افتحه بالزر واضغط «إرسال» في برنامج البريد لديك.</p>
+            <div class="acciones">
+              <a class="boton boton--comercio" id="enlace-correo" href="mailto:conciliacion.gss@jcyl.es">افتح بريدي</a>
+              <button class="boton boton--secundario" type="button" id="copiar-datos">انسخ البيانات</button>
+              <button class="boton boton--secundario" type="button" id="volver-formulario">صحّح البيانات</button>
+            </div>
+            <p role="status" aria-live="polite" id="estado-copia"></p>
+            <h3>ملخص ما سترسله</h3>
+            <pre class="resumen-envio" id="resumen-envio" lang="es" dir="ltr"></pre>
+          </section>
+        </div>
+
+        <aside class="lateral" aria-labelledby="lateral-colaborador">
+          <h2 id="lateral-colaborador">ماذا يحدث بعد ذلك</h2>
+          <p>يصل الطلب إلى الوزارة الإقليمية للأسرة. إذا وافقت على النشر، يُضاف متجرك إلى قائمة المتاجر المتعاونة وإلى محرك البحث هذا.</p>
+          <p>لأي استفسار، راسل <a href="mailto:conciliacion.gss@jcyl.es" dir="ltr">conciliacion.gss@jcyl.es</a>.</p>
+          <figure>
+            <img src="../../assets/img/distintivo-aqui.jpg" width="288" height="291" alt="ملصق بالإسبانية: «Establecimiento colaborador. AQUÍ puedes utilizar la Tarjeta Familia» (متجر متعاون: هنا يمكنك استخدام بطاقة الأسرة)">
+            <figcaption>ملصق الواجهة.</figcaption>
+          </figure>
+          <h2>تفضّل النموذج بصيغة PDF؟</h2>
+          <p><a href="../../fuentes/formulario-establecimiento-colaborador-2026.pdf" hreflang="es">نزّل النموذج الأصلي (PDF بالإسبانية)</a>. املأه واحفظه وأرسله إلى <a href="mailto:conciliacion.gss@jcyl.es" dir="ltr">conciliacion.gss@jcyl.es</a>.</p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+      <div class="columnas">
+        <section aria-labelledby="pie-familias">
+          <h2 id="pie-familias">للأسر</h2>
+          <ul>
+            <li><a href="../familias/activar.html">تفعيل البطاقة</a></li>
+            <li><a href="../familias/pagar.html">طريقة الدفع</a></li>
+            <li><a href="../buscar/index.html">أين أستخدمها</a></li>
+            <li><a href="../familias/saldo.html">معرفة الرصيد</a></li>
+            <li><a href="../familias/problemas.html">الفقدان والسرقة ومشكلات أخرى</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="pie-comercios">
+          <h2 id="pie-comercios">للمتاجر</h2>
+          <ul>
+            <li><a href="../comercios/index.html">هل يمكنني قبول البطاقة؟</a></li>
+            <li><a href="../comercios/sectores.html">الأنشطة التجارية المسموح بها</a></li>
+            <li><a href="../comercios/como-cobrar.html">دليل الصندوق</a></li>
+            <li><a href="../comercios/hazte-colaborador.html">الانضمام كمتجر متعاون</a></li>
+          </ul>
+        </section>
+        <section aria-labelledby="pie-ayuda">
+          <h2 id="pie-ayuda">مساعدة</h2>
+          <ul>
+            <li>السرقة أو الفقدان: <a href="tel:900404090" dir="ltr">900 40 40 90</a> (CaixaBank، مجاني)</li>
+            <li>التفعيل والرصيد: <a href="tel:900300300" dir="ltr">900 300 300</a> (MoneyToPay، مجاني)</li>
+            <li>معلومات عامة: <a href="tel:012" dir="ltr">012</a></li>
+            <li><a href="mailto:conciliacion.gss@jcyl.es" dir="ltr">conciliacion.gss@jcyl.es</a></li>
+            <li><a href="../ayuda.html">جميع جهات الاتصال</a></li>
+          </ul>
+        </section>
+      </div>
+      <p class="nota">
+        موقع مستقل لا علاقة له بحكومة إقليم قشتالة وليون (Junta de Castilla y León) ولا بـ CaixaBank ولا بـ MoneyToPay. المحتوى مأخوذ من الوثائق العامة لوزارة الأسرة الإقليمية (Consejería de Desregulación, Familia y Ayudas Sociales)، وعند الشك تكون الأولوية للمعلومات الرسمية (<a href="../fuentes/index.html">الوثائق الأصلية بالإسبانية</a>).
+        <a href="../sobre.html">لماذا أنشئ هذا الموقع</a> ·
+        <a href="../accesibilidad.html">إمكانية الوصول</a> ·
+        <a href="../../propuesta.html" hreflang="es">مقترح للحكومة الإقليمية (بالإسبانية)</a> ·
+        <a href="https://github.com/jamm87/tarjeta-familia-cyl/issues">الإبلاغ عن خطأ</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

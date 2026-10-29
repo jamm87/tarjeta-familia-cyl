@@ -1,0 +1,25 @@
+<!-- {"titulo": "Authorised business types", "descripcion": "Searchable list of the business types where the Tarjeta Familia can be used.", "seccion": "comercios", "migas": [["Shops", "comercios/index.html"]], "scripts": ["assets/js/sectores.js"]} -->
+<div class="contenedor">
+      <h1>Authorised business types</h1>
+      <p class="entradilla">The Tarjeta Familia works in any shop whose card terminal is registered under one of these {{total_sectores}} business types, whether or not it is a partner shop.</p>
+
+      <div class="aviso aviso--info">
+        <p><strong>Don't know which business type your terminal is under?</strong> Ask your bank: it can confirm the type used to process your payments.</p>
+        <p>The codes are those of the card payment networks: <abbr title="Spanish payment network sector">ES</abbr> is the national code and <abbr title="International merchant category code (MCC)">IN</abbr> the international one (MCC). Descriptions are given in Spanish, as in the official document.</p>
+      </div>
+
+      <form class="panel-busqueda no-imprimir" role="search" aria-label="Filter business types" data-filtro-sectores hidden>
+        <div class="campo">
+          <label for="filtro-sector">Search by business type (in Spanish) or code</label>
+          <span class="ayuda-campo" id="ayuda-filtro">For example: farmacia (pharmacy), juguetes (toys), calzado (shoes) or 5912</span>
+          <input type="search" id="filtro-sector" aria-describedby="ayuda-filtro" autocomplete="off">
+        </div>
+        <p role="status" aria-live="polite" data-recuento></p>
+      </form>
+
+      <div data-sectores>
+{{sectores}}
+      </div>
+
+      <p class="aproximada">Source: <a href="{{raiz}}fuentes/ramos-autorizados-2024-06-25.pdf" hreflang="es">Business types in which the Tarjeta Familia can operate (PDF, Spanish, 25 June 2024)</a>. Some descriptions are cut short in the original document.</p>
+    </div>

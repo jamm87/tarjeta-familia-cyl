@@ -1,0 +1,78 @@
+<!-- {"titulo": "Where to use the card", "descripcion": "Find Tarjeta Familia partner shops near you, by town, postcode or location.", "seccion": "buscar", "migas": [], "css": ["vendor/leaflet/leaflet.css"], "scripts": ["data/localidades.js", "data/establecimientos.js", "assets/js/sugerencias.js", "assets/js/buscador.js"]} -->
+<div class="contenedor">
+      <h1>Where to use the card</h1>
+      <p class="entradilla">Search the {{total_establecimientos}} partner shops in Castilla y León (list dated {{fecha_listado}}).</p>
+
+      <div class="aviso aviso--info">
+        <p><strong>Not only in these shops.</strong> You can also pay in any physical shop in Castilla y León in an <a href="../comercios/sectores.html">authorised business type</a> (pharmacies, supermarkets, opticians, children's clothing shops…), even if it doesn't appear here.</p>
+      </div>
+
+      <noscript>
+        <p class="sin-js-aviso">The shop finder needs JavaScript. You can view the <a href="{{raiz}}fuentes/establecimientos-colaboradores-2026-10-21.pdf" hreflang="es">full list as a PDF</a> (Spanish).</p>
+      </noscript>
+
+      <div class="buscador" data-buscador hidden>
+        <form class="panel-busqueda" id="form-busqueda" role="search" aria-label="Find partner shops">
+          <div class="donde">
+            <div class="campo combo">
+              <label for="q">Town, municipality or postcode</label>
+              <input type="text" id="q" name="q" autocomplete="off" spellcheck="false"
+                     role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerencias"
+                     aria-describedby="ayuda-q" placeholder="For example: Arévalo or 05200">
+              <ul id="sugerencias" role="listbox" aria-label="Places" hidden></ul>
+              <span class="visualmente-oculto" id="ayuda-q">Suggestions appear as you type. Use the arrow keys to choose one.</span>
+            </div>
+            <button class="boton" type="submit">Search</button>
+            <button class="boton boton--secundario" type="button" id="ubicacion">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+              Use my location
+            </button>
+          </div>
+          <p class="ayuda-campo" id="estado-ubicacion" role="status" aria-live="polite"></p>
+
+          <div class="filtros">
+            <div class="campo">
+              <label for="categoria">Type of shop</label>
+              <select id="categoria" name="cat"></select>
+            </div>
+            <div class="campo">
+              <label for="radio">Distance</label>
+              <select id="radio" name="km">
+                <option value="5">Up to 5 km</option>
+                <option value="10">Up to 10 km</option>
+                <option value="25" selected>Up to 25 km</option>
+                <option value="50">Up to 50 km</option>
+                <option value="0">All of Castilla y León</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label for="texto">Name, street or type of shop</label>
+              <input type="search" id="texto" name="texto" autocomplete="off" placeholder="Optional. For example: pharmacy">
+            </div>
+          </div>
+        </form>
+
+        <section aria-labelledby="titulo-resultados">
+          <div class="resultados-cabecera">
+            <h2 id="titulo-resultados" tabindex="-1">Choose where to search</h2>
+            <div class="vista" role="group" aria-label="How to view the results" hidden>
+              <button type="button" data-vista="lista" aria-pressed="true">List</button>
+              <button type="button" data-vista="mapa" aria-pressed="false">List and map</button>
+            </div>
+          </div>
+          <p class="visualmente-oculto" role="status" aria-live="polite" id="anuncio"></p>
+          <div id="inicio-busqueda">
+            <p>Type your town, municipality or postcode, or click “Use my location”. If there are no partner shops in your area, you will see the nearest ones. You can also see all the shops in a province:</p>
+            <ul class="provincias-rapidas" id="provincias"></ul>
+          </div>
+          <div id="nota-resultados"></div>
+          <div class="zona-resultados" id="zona-resultados">
+            <ol class="lista-establecimientos" id="lista"></ol>
+            <div class="mapa" id="mapa" role="region" aria-label="Map of results. The same information is in the list." hidden></div>
+          </div>
+          <p class="mas-resultados" hidden><button class="boton boton--secundario" type="button" id="mas">Show more results</button></p>
+        </section>
+      </div>
+
+      <p class="aproximada">Source: <a href="{{raiz}}fuentes/establecimientos-colaboradores-2026-10-21.pdf" hreflang="es">Partner shops accepting the Tarjeta Familia (PDF, Spanish)</a>, Junta de Castilla y León. Distances are approximate: each shop is placed by its address where it could be located and, otherwise, at the centre of its town.</p>
+    </div>

@@ -1,0 +1,78 @@
+<!-- {"titulo": "أين تستخدم البطاقة", "descripcion": "ابحث عن المتاجر المتعاونة مع بطاقة الأسرة القريبة منك، حسب البلدة أو الرمز البريدي أو موقعك.", "seccion": "buscar", "migas": [], "css": ["vendor/leaflet/leaflet.css"], "scripts": ["data/localidades.js", "data/establecimientos.js", "assets/js/sugerencias.js", "assets/js/buscador.js"]} -->
+<div class="contenedor">
+      <h1>أين تستخدم البطاقة</h1>
+      <p class="entradilla">ابحث بين {{total_establecimientos}} متجرًا متعاونًا في قشتالة وليون (قائمة بتاريخ {{fecha_listado}}).</p>
+
+      <div class="aviso aviso--info">
+        <p><strong>ليس في هذه المتاجر فقط.</strong> يمكنك أيضًا الدفع في أي متجر فعلي في قشتالة وليون من <a href="../comercios/sectores.html">الأنشطة التجارية المسموح بها</a> (الصيدليات، والسوبرماركت، والنظارات، ومتاجر ملابس الأطفال…)، حتى لو لم يظهر هنا.</p>
+      </div>
+
+      <noscript>
+        <p class="sin-js-aviso">يحتاج محرك البحث إلى JavaScript. يمكنك الاطلاع على <a href="{{raiz}}fuentes/establecimientos-colaboradores-2026-10-21.pdf" hreflang="es">القائمة الكاملة بصيغة PDF</a> (بالإسبانية).</p>
+      </noscript>
+
+      <div class="buscador" data-buscador hidden>
+        <form class="panel-busqueda" id="form-busqueda" role="search" aria-label="البحث عن المتاجر المتعاونة">
+          <div class="donde">
+            <div class="campo combo">
+              <label for="q">البلدة أو البلدية أو الرمز البريدي</label>
+              <input type="text" id="q" name="q" autocomplete="off" spellcheck="false"
+                     role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="sugerencias"
+                     aria-describedby="ayuda-q" placeholder="مثلًا: Arévalo أو 05200">
+              <ul id="sugerencias" role="listbox" aria-label="الأماكن" hidden></ul>
+              <span class="visualmente-oculto" id="ayuda-q">تظهر اقتراحات أثناء الكتابة. استخدم الأسهم لاختيار أحدها.</span>
+            </div>
+            <button class="boton" type="submit">بحث</button>
+            <button class="boton boton--secundario" type="button" id="ubicacion">
+              <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+              استخدم موقعي
+            </button>
+          </div>
+          <p class="ayuda-campo" id="estado-ubicacion" role="status" aria-live="polite"></p>
+
+          <div class="filtros">
+            <div class="campo">
+              <label for="categoria">نوع المتجر</label>
+              <select id="categoria" name="cat"></select>
+            </div>
+            <div class="campo">
+              <label for="radio">المسافة</label>
+              <select id="radio" name="km">
+                <option value="5">حتى 5 كم</option>
+                <option value="10">حتى 10 كم</option>
+                <option value="25" selected>حتى 25 كم</option>
+                <option value="50">حتى 50 كم</option>
+                <option value="0">كل قشتالة وليون</option>
+              </select>
+            </div>
+            <div class="campo">
+              <label for="texto">الاسم أو الشارع أو نوع المتجر</label>
+              <input type="search" id="texto" name="texto" autocomplete="off" placeholder="اختياري. مثلًا: صيدلية أو farmacia">
+            </div>
+          </div>
+        </form>
+
+        <section aria-labelledby="titulo-resultados">
+          <div class="resultados-cabecera">
+            <h2 id="titulo-resultados" tabindex="-1">اختر مكان البحث</h2>
+            <div class="vista" role="group" aria-label="طريقة عرض النتائج" hidden>
+              <button type="button" data-vista="lista" aria-pressed="true">قائمة</button>
+              <button type="button" data-vista="mapa" aria-pressed="false">قائمة وخريطة</button>
+            </div>
+          </div>
+          <p class="visualmente-oculto" role="status" aria-live="polite" id="anuncio"></p>
+          <div id="inicio-busqueda">
+            <p>اكتب بلدتك أو بلديتك أو رمزك البريدي، أو اضغط «استخدم موقعي». إذا لم تكن في منطقتك متاجر متعاونة، سترى أقربها. ويمكنك أيضًا عرض جميع متاجر مقاطعة ما:</p>
+            <ul class="provincias-rapidas" id="provincias"></ul>
+          </div>
+          <div id="nota-resultados"></div>
+          <div class="zona-resultados" id="zona-resultados">
+            <ol class="lista-establecimientos" id="lista"></ol>
+            <div class="mapa" id="mapa" role="region" aria-label="خريطة النتائج. المعلومات نفسها موجودة في القائمة." hidden></div>
+          </div>
+          <p class="mas-resultados" hidden><button class="boton boton--secundario" type="button" id="mas">عرض مزيد من النتائج</button></p>
+        </section>
+      </div>
+
+      <p class="aproximada">المصدر: <a href="{{raiz}}fuentes/establecimientos-colaboradores-2026-10-21.pdf" hreflang="es">المتاجر المتعاونة مع بطاقة الأسرة (PDF بالإسبانية)</a>، حكومة قشتالة وليون. المسافات تقريبية: يُحدَّد موقع كل متجر بعنوانه حين أمكن، وإلا ففي وسط بلدته.</p>
+    </div>

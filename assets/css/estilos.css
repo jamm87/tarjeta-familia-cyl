@@ -410,6 +410,7 @@ thead th { background: var(--fondo-suave); }
 [dir="rtl"] .migas li + li::before { content: "‹"; }
 [dir="rtl"] body { font-family: "Segoe UI", Tahoma, "Noto Sans Arabic", "Geeza Pro", system-ui, sans-serif; line-height: 1.75; }
 [dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3 { line-height: 1.45; letter-spacing: 0; }
+[dir="rtl"] :is(p, h3, li, td, a)[lang="es"]:not([dir]) { unicode-bidi: plaintext; text-align: right; }
 .mapa { direction: ltr; }
 .idiomas ul { display: flex; flex-wrap: wrap; gap: 0.25rem; list-style: none; margin: 0; padding: 0; }
 .idiomas li + li { margin: 0; }

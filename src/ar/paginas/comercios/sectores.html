@@ -1,0 +1,25 @@
+<!-- {"titulo": "الأنشطة التجارية المسموح بها", "descripcion": "قائمة الأنشطة التجارية التي يمكن الدفع فيها ببطاقة الأسرة، مع محرك بحث.", "seccion": "comercios", "migas": [["للمتاجر", "comercios/index.html"]], "scripts": ["assets/js/sectores.js"]} -->
+<div class="contenedor">
+      <h1>الأنشطة التجارية المسموح بها</h1>
+      <p class="entradilla">تعمل بطاقة الأسرة في المتاجر التي يكون جهاز الدفع فيها مسجّلًا في أحد هذه الأنشطة الـ {{total_sectores}}، سواء كانت متعاونة أم لا.</p>
+
+      <div class="aviso aviso--info">
+        <p><strong>لا تعرف النشاط المسجّل عليه جهاز الدفع لديك؟</strong> اسأل مصرفك: يمكنه تأكيد النشاط الذي يعالج به مدفوعاتك.</p>
+        <p>الرموز هي رموز شبكة الدفع: <abbr title="رمز قطاع شبكة الدفع الإسبانية">ES</abbr> هو الرمز الوطني و<abbr title="رمز فئة التاجر الدولي (MCC)">IN</abbr> الرمز الدولي (MCC). الأوصاف بالإسبانية كما في الوثيقة الرسمية.</p>
+      </div>
+
+      <form class="panel-busqueda no-imprimir" role="search" aria-label="تصفية الأنشطة التجارية" data-filtro-sectores hidden>
+        <div class="campo">
+          <label for="filtro-sector">ابحث عن نوع نشاطك (بالإسبانية) أو رمزه</label>
+          <span class="ayuda-campo" id="ayuda-filtro">مثلًا: farmacia (صيدلية)، juguetes (ألعاب)، calzado (أحذية) أو 5912</span>
+          <input type="search" id="filtro-sector" aria-describedby="ayuda-filtro" autocomplete="off">
+        </div>
+        <p role="status" aria-live="polite" data-recuento></p>
+      </form>
+
+      <div data-sectores>
+{{sectores}}
+      </div>
+
+      <p class="aproximada">المصدر: <a href="{{raiz}}fuentes/ramos-autorizados-2024-06-25.pdf" hreflang="es">الأنشطة التي يمكن أن تعمل فيها بطاقة الأسرة (PDF بالإسبانية، 25 يونيو 2024)</a>. بعض الأوصاف مقتطعة في الوثيقة الأصلية.</p>
+    </div>

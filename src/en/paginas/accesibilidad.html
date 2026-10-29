@@ -1,0 +1,33 @@
+<!-- {"titulo": "Accessibility", "descripcion": "How this website has been designed so that anyone can use it.", "migas": []} -->
+<div class="contenedor lectura">
+      <h1>Accessibility</h1>
+      <p class="entradilla">This website aims to meet level AA of the Web Content Accessibility Guidelines (WCAG) 2.2, as required of public-sector websites by standard EN 301 549 and Royal Decree 1112/2018.</p>
+
+      <h2>What we have taken into account</h2>
+      <ul>
+        <li><strong>All the information is on the page</strong>, not in PDFs. The original documents are only linked for reference.</li>
+        <li><strong>Plain language</strong>: short sentences, numbered steps and a single name, “Tarjeta Familia”.</li>
+        <li><strong>Three languages</strong>: Spanish, English and Arabic. The Arabic version is displayed right to left.</li>
+        <li>It can be used <strong>with a keyboard alone</strong> and is marked up for screen readers (headings, landmarks, labels and status messages).</li>
+        <li>The <strong>shop finder works without the map</strong>: the list contains all the information and announces how many results there are.</li>
+        <li><strong>Large text and good contrast</strong> (at least 4.5:1), which can be zoomed to 200% without losing content.</li>
+        <li>Designed <strong>mobile first</strong>, with no horizontal scrolling at 320 pixels wide.</li>
+        <li>Buttons and links with a <strong>touch target of at least 44 × 44 pixels</strong>.</li>
+        <li>Forms with visible labels, hints and <strong>errors explained</strong> next to each field and in a summary.</li>
+        <li>It respects the system setting to <strong>reduce motion</strong>.</li>
+        <li>The practical guides can be <strong>printed</strong>.</li>
+        <li>No cookies are used and your location is not stored. Your browser only remembers whether you prefer to see the map.</li>
+      </ul>
+
+      <h2>Known limitations</h2>
+      <ul>
+        <li>The map uses the Leaflet library and OpenStreetMap tiles. It is an extra: everything it shows is also in the list.</li>
+        <li>Distances are approximate: the official list has no coordinates, so each shop is placed by its address where possible and, otherwise, at the centre of its town.</li>
+        <li>The original PDF documents linked here are not accessible and are only in Spanish.</li>
+        <li>Shop names, addresses and business type descriptions are shown in Spanish, as in the official sources.</li>
+        <li>It has not yet had a full manual audit or testing with real screen readers. If you find a barrier, <a href="https://github.com/jamm87/tarjeta-familia-cyl/issues">let us know</a>.</li>
+      </ul>
+
+      <h2>Automated checks</h2>
+      <p>Every page is checked with <a href="https://github.com/dequelabs/axe-core">axe-core</a> (WCAG 2.0, 2.1 and 2.2 rules, levels A and AA). See <code>tests/probar.mjs</code> in the repository.</p>
+    </div>
